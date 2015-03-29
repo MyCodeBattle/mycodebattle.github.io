@@ -1132,17 +1132,7 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10254/</loc>
-    <lastmod>2014-11-13T10:44:29.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10344/</loc>
-    <lastmod>2014-11-13T10:44:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10359/</loc>
     <lastmod>2014-11-13T10:44:29.000Z</lastmod>
   </url>
   
@@ -1152,7 +1142,17 @@
   </url>
   
   <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10254/</loc>
+    <lastmod>2014-11-13T10:44:29.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-763/</loc>
+    <lastmod>2014-11-13T10:44:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10359/</loc>
     <lastmod>2014-11-13T10:44:29.000Z</lastmod>
   </url>
   
@@ -1347,41 +1347,6 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11389/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1368/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_3-barn1/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_3-milk/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1468/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-11729/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1467/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11039/</loc>
     <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
@@ -1392,12 +1357,12 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/HDU-5055/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1335/</loc>
     <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/10/UVa-812/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/HDU-5055/</loc>
     <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
@@ -1407,12 +1372,7 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1344/</loc>
-    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1418/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1368/</loc>
     <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
@@ -1422,57 +1382,57 @@
   </url>
   
   <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-11729/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_3-barn1/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1418/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_3-milk/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1422/</loc>
     <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1335/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/10/UVa-812/</loc>
     <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11549/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1468/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-11995/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1467/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/10/UVa-471/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11389/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/ZJU-3818/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1344/</loc>
+    <lastmod>2014-10-14T10:57:36.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11520/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-701/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-19299/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11636/</loc>
-    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1509/</loc>
     <lastmod>2014-10-14T10:55:48.000Z</lastmod>
   </url>
   
@@ -1482,32 +1442,47 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10205/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11549/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/codeforces-472c/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-11636/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/codeforces-472b/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/ZJU-3818/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_2-transform/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/10/UVa-471/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/CF-459C/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-19299/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/usaco-1_5-superprime-rib/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-1509/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-701/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-11995/</loc>
+    <lastmod>2014-10-14T10:55:48.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/10/ACDream-1417/</loc>
     <lastmod>2014-10-14T10:55:47.000Z</lastmod>
   </url>
   
@@ -1517,22 +1492,7 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_3-crypt1/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10277/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_1-beads/</loc>
-    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/Codeforces-442A/</loc>
     <lastmod>2014-10-14T10:55:47.000Z</lastmod>
   </url>
   
@@ -1542,7 +1502,47 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/10/ACDream-1417/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/Codeforces-442A/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_2-transform/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/USACO-1_3-crypt1/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10205/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/UVa-10277/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/08/CF-459C/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/codeforces-472b/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/usaco-1_5-superprime-rib/</loc>
+    <lastmod>2014-10-14T10:55:47.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/codeforces-472c/</loc>
     <lastmod>2014-10-14T10:55:47.000Z</lastmod>
   </url>
   
@@ -1552,7 +1552,7 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-669/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/10/UVa-524/</loc>
     <lastmod>2014-10-14T10:54:01.000Z</lastmod>
   </url>
   
@@ -1562,7 +1562,7 @@
   </url>
   
   <url>
-    <loc>http://mycodebattle.gitcafe.io/2014/10/UVa-524/</loc>
+    <loc>http://mycodebattle.gitcafe.io/2014/09/UVa-669/</loc>
     <lastmod>2014-10-14T10:54:01.000Z</lastmod>
   </url>
   

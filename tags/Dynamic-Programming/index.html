@@ -1,0 +1,1111 @@
+
+  <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Tag: Dynamic Programming | PureFrog&#39;s Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="MyCodeBattle">
+    
+    <meta name="description" content="blog">
+    
+    
+    
+    
+    <link rel="alternative" href="/atom.xml" title="PureFrog&#39;s Home" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/head.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/head.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+    <meta name="baidu-site-verification" content="Kq4US8OC0n" />
+    <meta name="360-site-verification" content="d6c7372c8a1fc4ead1f694869d711a0d" />
+    <meta name="google-site-verification" content="3wG4RXSpXmSmM8sbHIsNntQKIenc4NyTtHzxS78VAYg" />
+    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/autocomplete.js"></script>
+    <script src="/js/common.js"></script>
+    <style type="text/css">
+            .ac_results {
+                padding: 0px;
+                border: 1px solid black;
+                background-color: white;
+                overflow: hidden;
+                z-index: 99999;
+            }
+            .ac_results ul {
+                width: 100%;
+                list-style-position: outside;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .ac_results li {
+                margin: 0px;
+                padding: 2px 5px;
+                cursor: default;
+                display: block;
+                font: menu;
+                font-size: 12px;
+                line-height: 16px;
+                overflow: hidden;
+            }
+            .ac_loading {
+                background: #FFF;
+            }
+            .ac_odd {
+                background-color: #EEE;
+            }
+            .ac_over {
+                background-color: #AAA;
+                color: #FFF;
+            }
+        </style>    
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6d96406c8d21c73964f41c65bc548afd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+    <body>
+      <header>
+        <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="PureFrog&#39;s Home" title="PureFrog&#39;s Home"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="PureFrog&#39;s Home">PureFrog&#39;s Home</a></h1>
+				<h2 class="blog-motto">The daily life about a frog.</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+						<li><a href="/cartoon">补番列表</a></li>
+					
+						<li><a href="/RunningLog">跑步日志</a></li>
+					
+					<li>
+ 					
+	                <form id="searchform" class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+	                    <label>Search</label>
+	                    <input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="输入题号搜索(ˉ▽￣～)" />
+	                </form>					
+					</li>
+				</ul>
+			</nav>			
+</div>
+      </header>
+      <div id="container">
+        
+
+<div class="archive-title" >
+  <h2 class="tag-icon">Dynamic Programming</h2>
+  
+</div>
+<div id="main" class="archive-part clearfix">
+  <div id="archive-page">
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10616/" title="UVa 10616 - Divisible Group Sums" itemprop="url">
+  
+
+    <time datetime="2014-08-08T11:25:31.000Z" itemprop="datePublished">Aug 8 2014 19:25</time>
+
+
+    <h1 itemprop="name">UVa 10616 - Divisible Group Sums</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10912/" title="UVa 10912 - Simple Minded Hashing" itemprop="url">
+  
+
+    <time datetime="2014-08-08T08:34:58.000Z" itemprop="datePublished">Aug 8 2014 16:34</time>
+
+
+    <h1 itemprop="name">UVa 10912 - Simple Minded Hashing</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10721/" title="UVa 10721 - Bar Codes" itemprop="url">
+  
+
+    <time datetime="2014-08-07T14:56:51.000Z" itemprop="datePublished">Aug 7 2014 22:56</time>
+
+
+    <h1 itemprop="name">UVa 10721 - Bar Codes</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10943/" title="UVa 10943 - How do you add?" itemprop="url">
+  
+
+    <time datetime="2014-08-07T09:11:52.000Z" itemprop="datePublished">Aug 7 2014 17:11</time>
+
+
+    <h1 itemprop="name">UVa 10943 - How do you add?</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10081/" title="UVa 10081 - Tight Words" itemprop="url">
+  
+
+    <time datetime="2014-08-07T08:10:43.000Z" itemprop="datePublished">Aug 7 2014 16:10</time>
+
+
+    <h1 itemprop="name">UVa 10081 - Tight Words</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10157/" title="UVa 10157 - Expressions" itemprop="url">
+  
+
+    <time datetime="2014-08-06T14:16:30.000Z" itemprop="datePublished">Aug 6 2014 22:16</time>
+
+
+    <h1 itemprop="name">UVa 10157 - Expressions</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10128/" title="UVa 10128 - Queue" itemprop="url">
+  
+
+    <time datetime="2014-08-06T13:39:24.000Z" itemprop="datePublished">Aug 6 2014 21:39</time>
+
+
+    <h1 itemprop="name">UVa 10128 - Queue</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/08/UVa-10910/" title="UVa 10910 - Marks Distribution" itemprop="url">
+  
+
+    <time datetime="2014-08-05T12:02:00.000Z" itemprop="datePublished">Aug 5 2014 20:02</time>
+
+
+    <h1 itemprop="name">UVa 10910 - Marks Distribution</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-542/" title="UVa 542 - France &#39;98" itemprop="url">
+  
+
+    <time datetime="2014-07-31T14:31:24.000Z" itemprop="datePublished">Jul 31 2014 22:31</time>
+
+
+    <h1 itemprop="name">UVa 542 - France &#39;98</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/Vijos-P1028/" title="Vijos P1028 - 魔族密码" itemprop="url">
+  
+
+    <time datetime="2014-07-26T01:43:20.000Z" itemprop="datePublished">Jul 26 2014 9:43</time>
+
+
+    <h1 itemprop="name">Vijos P1028 - 魔族密码</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10163/" title="UVa 10163 - Storage Keepers" itemprop="url">
+  
+
+    <time datetime="2014-07-24T07:28:05.000Z" itemprop="datePublished">Jul 24 2014 15:28</time>
+
+
+    <h1 itemprop="name">UVa 10163 - Storage Keepers</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10599/" title="UVa 10599 - Robots(II)" itemprop="url">
+  
+
+    <time datetime="2014-07-23T12:16:35.000Z" itemprop="datePublished">Jul 23 2014 20:16</time>
+
+
+    <h1 itemprop="name">UVa 10599 - Robots(II)</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-11258/" title="UVa 11258 - String Partition" itemprop="url">
+  
+
+    <time datetime="2014-07-22T14:31:41.000Z" itemprop="datePublished">Jul 22 2014 22:31</time>
+
+
+    <h1 itemprop="name">UVa 11258 - String Partition</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-11008/" title="UVa 11008 - Antimatter Ray Clearcutting" itemprop="url">
+  
+
+    <time datetime="2014-07-22T08:06:14.000Z" itemprop="datePublished">Jul 22 2014 16:06</time>
+
+
+    <h1 itemprop="name">UVa 11008 - Antimatter Ray Clearcutting</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10913/" title="UVa 10913 - Walking on a Grid" itemprop="url">
+  
+
+    <time datetime="2014-07-22T02:47:37.000Z" itemprop="datePublished">Jul 22 2014 10:47</time>
+
+
+    <h1 itemprop="name">UVa 10913 - Walking on a Grid</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10604/" title="UVa 10604 - Chemical Reaction" itemprop="url">
+  
+
+    <time datetime="2014-07-20T12:18:59.000Z" itemprop="datePublished">Jul 20 2014 20:18</time>
+
+
+    <h1 itemprop="name">UVa 10604 - Chemical Reaction</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-607/" title="UVa 607 - Scheduling Lectures" itemprop="url">
+  
+
+    <time datetime="2014-07-19T01:54:28.000Z" itemprop="datePublished">Jul 19 2014 9:54</time>
+
+
+    <h1 itemprop="name">UVa 607 - Scheduling Lectures</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10118/" title="UVa 10118 - Free Candies" itemprop="url">
+  
+
+    <time datetime="2014-07-18T08:58:31.000Z" itemprop="datePublished">Jul 18 2014 16:58</time>
+
+
+    <h1 itemprop="name">UVa 10118 - Free Candies</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10626/" title="UVa 10626 - Buying Coke" itemprop="url">
+  
+
+    <time datetime="2014-07-17T15:18:06.000Z" itemprop="datePublished">Jul 17 2014 23:18</time>
+
+
+    <h1 itemprop="name">UVa 10626 - Buying Coke</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-662/" title="UVa 662 - Fast Food" itemprop="url">
+  
+
+    <time datetime="2014-07-17T13:21:48.000Z" itemprop="datePublished">Jul 17 2014 21:21</time>
+
+
+    <h1 itemprop="name">UVa 662 - Fast Food</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10564/" title="UVa 10564 - Paths through the Hourglass" itemprop="url">
+  
+
+    <time datetime="2014-07-16T15:57:38.000Z" itemprop="datePublished">Jul 16 2014 23:57</time>
+
+
+    <h1 itemprop="name">UVa 10564 - Paths through the Hourglass</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10635/" title="UVa 10635 - Prince and Princess" itemprop="url">
+  
+
+    <time datetime="2014-07-15T08:55:57.000Z" itemprop="datePublished">Jul 15 2014 16:55</time>
+
+
+    <h1 itemprop="name">UVa 10635 - Prince and Princess</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10911/" title="UVa 10911 - Forming Quiz Teams" itemprop="url">
+  
+
+    <time datetime="2014-07-14T16:46:12.000Z" itemprop="datePublished">Jul 15 2014 0:46</time>
+
+
+    <h1 itemprop="name">UVa 10911 - Forming Quiz Teams</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-11151/" title="UVa 11151 - Longest Palindrome" itemprop="url">
+  
+
+    <time datetime="2014-07-14T10:46:39.000Z" itemprop="datePublished">Jul 14 2014 18:46</time>
+
+
+    <h1 itemprop="name">UVa 11151 - Longest Palindrome</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10891/" title="UVa 10891 - Game of Sum" itemprop="url">
+  
+
+    <time datetime="2014-07-14T08:26:18.000Z" itemprop="datePublished">Jul 14 2014 16:26</time>
+
+
+    <h1 itemprop="name">UVa 10891 - Game of Sum</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10313/" title="UVa 10313 - Pay the Price" itemprop="url">
+  
+
+    <time datetime="2014-07-14T05:05:20.000Z" itemprop="datePublished">Jul 14 2014 13:05</time>
+
+
+    <h1 itemprop="name">UVa 10313 - Pay the Price</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10453/" title="UVa 10453 - Make Palindrome" itemprop="url">
+  
+
+    <time datetime="2014-07-13T11:22:16.000Z" itemprop="datePublished">Jul 13 2014 19:22</time>
+
+
+    <h1 itemprop="name">UVa 10453 - Make Palindrome</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10201/" title="UVa 10201 - Adventures in Moving - Part IV" itemprop="url">
+  
+
+    <time datetime="2014-07-12T14:41:58.000Z" itemprop="datePublished">Jul 12 2014 22:41</time>
+
+
+    <h1 itemprop="name">UVa 10201 - Adventures in Moving - Part IV</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10154/" title="UVa 10154 - Weights and Measures" itemprop="url">
+  
+
+    <time datetime="2014-07-12T07:01:10.000Z" itemprop="datePublished">Jul 12 2014 15:01</time>
+
+
+    <h1 itemprop="name">UVa 10154 - Weights and Measures</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10271/" title="UVa 10271 - Chopsticks" itemprop="url">
+  
+
+    <time datetime="2014-07-11T14:40:46.000Z" itemprop="datePublished">Jul 11 2014 22:40</time>
+
+
+    <h1 itemprop="name">UVa 10271 - Chopsticks</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10617/" title="UVa 10617 - Again Palindrome" itemprop="url">
+  
+
+    <time datetime="2014-07-11T13:25:34.000Z" itemprop="datePublished">Jul 11 2014 21:25</time>
+
+
+    <h1 itemprop="name">UVa 10617 - Again Palindrome</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-11137/" title="UVa 11137 - Ingenuous Cubrency" itemprop="url">
+  
+
+    <time datetime="2014-07-11T13:22:07.000Z" itemprop="datePublished">Jul 11 2014 21:22</time>
+
+
+    <h1 itemprop="name">UVa 11137 - Ingenuous Cubrency</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10739/" title="UVa 10739 - String to Palindrome" itemprop="url">
+  
+
+    <time datetime="2014-07-11T04:49:31.000Z" itemprop="datePublished">Jul 11 2014 12:49</time>
+
+
+    <h1 itemprop="name">UVa 10739 - String to Palindrome</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10306/" title="UVa 10306 - e-Coins" itemprop="url">
+  
+
+    <time datetime="2014-07-10T06:58:48.000Z" itemprop="datePublished">Jul 10 2014 14:58</time>
+
+
+    <h1 itemprop="name">UVa 10306 - e-Coins</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-590/" title="UVa 590 - Always on the run" itemprop="url">
+  
+
+    <time datetime="2014-07-10T01:27:48.000Z" itemprop="datePublished">Jul 10 2014 9:27</time>
+
+
+    <h1 itemprop="name">UVa 590 - Always on the run</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10651/" title="UVa 10651 - Pebble Solitaire" itemprop="url">
+  
+
+    <time datetime="2014-07-09T08:19:05.000Z" itemprop="datePublished">Jul 9 2014 16:19</time>
+
+
+    <h1 itemprop="name">UVa 10651 - Pebble Solitaire</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10534/" title="UVa 10534 - Wavio Sequence" itemprop="url">
+  
+
+    <time datetime="2014-07-09T04:37:39.000Z" itemprop="datePublished">Jul 9 2014 12:37</time>
+
+
+    <h1 itemprop="name">UVa 10534 - Wavio Sequence</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10069/" title="UVa 10069 - Distinct Subsequences" itemprop="url">
+  
+
+    <time datetime="2014-07-09T02:10:42.000Z" itemprop="datePublished">Jul 9 2014 10:10</time>
+
+
+    <h1 itemprop="name">UVa 10069 - Distinct Subsequences</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-825/" title="UVa 825 - Walking on the Safe Side" itemprop="url">
+  
+
+    <time datetime="2014-07-08T11:05:47.000Z" itemprop="datePublished">Jul 8 2014 19:05</time>
+
+
+    <h1 itemprop="name">UVa 825 - Walking on the Safe Side</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-620/" title="UVa 620 - Cellular Structure" itemprop="url">
+  
+
+    <time datetime="2014-07-08T08:21:27.000Z" itemprop="datePublished">Jul 8 2014 16:21</time>
+
+
+    <h1 itemprop="name">UVa 620 - Cellular Structure</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10404/" title="UVa 10404 - Bachet&#39;s Game" itemprop="url">
+  
+
+    <time datetime="2014-07-08T03:28:09.000Z" itemprop="datePublished">Jul 8 2014 11:28</time>
+
+
+    <h1 itemprop="name">UVa 10404 - Bachet&#39;s Game</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-437/" title="UVa 437 - The Tower of Babylon" itemprop="url">
+  
+
+    <time datetime="2014-07-07T15:09:14.000Z" itemprop="datePublished">Jul 7 2014 23:09</time>
+
+
+    <h1 itemprop="name">UVa 437 - The Tower of Babylon</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10285/" title="UVa 10285 - Longest Run on a Snowboard" itemprop="url">
+  
+
+    <time datetime="2014-07-07T10:59:15.000Z" itemprop="datePublished">Jul 7 2014 18:59</time>
+
+
+    <h1 itemprop="name">UVa 10285 - Longest Run on a Snowboard</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-531/" title="UVa 531 - Compromise" itemprop="url">
+  
+
+    <time datetime="2014-07-07T09:09:55.000Z" itemprop="datePublished">Jul 7 2014 17:09</time>
+
+
+    <h1 itemprop="name">UVa 531 - Compromise</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10465/" title="UVa 10465 - Homer Simpson" itemprop="url">
+  
+
+    <time datetime="2014-07-07T08:45:53.000Z" itemprop="datePublished">Jul 7 2014 16:45</time>
+
+
+    <h1 itemprop="name">UVa 10465 - Homer Simpson</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10130/" title="UVa 10130 - SuperSale" itemprop="url">
+  
+
+    <time datetime="2014-07-06T03:35:21.000Z" itemprop="datePublished">Jul 6 2014 11:35</time>
+
+
+    <h1 itemprop="name">UVa 10130 - SuperSale</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-624/" title="UVa 624 - CD" itemprop="url">
+  
+
+    <time datetime="2014-07-05T16:31:49.000Z" itemprop="datePublished">Jul 6 2014 0:31</time>
+
+
+    <h1 itemprop="name">UVa 624 - CD</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/HDU-2546/" title="HDU 2546 - 饭卡" itemprop="url">
+  
+
+    <time datetime="2014-07-05T14:20:23.000Z" itemprop="datePublished">Jul 5 2014 22:20</time>
+
+
+    <h1 itemprop="name">HDU 2546 - 饭卡</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/HDU-2602/" title="HDU 2602 - Bone Collector" itemprop="url">
+  
+
+    <time datetime="2014-07-05T13:18:34.000Z" itemprop="datePublished">Jul 5 2014 21:18</time>
+
+
+    <h1 itemprop="name">HDU 2602 - Bone Collector</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-348/" title="UVa 348 - Optimal Array Multiplication Sequence" itemprop="url">
+  
+
+    <time datetime="2014-07-05T12:01:54.000Z" itemprop="datePublished">Jul 5 2014 20:01</time>
+
+
+    <h1 itemprop="name">UVa 348 - Optimal Array Multiplication Sequence</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-562/" title="UVa 562 - Dividing coins" itemprop="url">
+  
+
+    <time datetime="2014-07-03T08:21:40.000Z" itemprop="datePublished">Jul 3 2014 16:21</time>
+
+
+    <h1 itemprop="name">UVa 562 - Dividing coins</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-357/" title="UVa 357 - Let Me Count The Ways" itemprop="url">
+  
+
+    <time datetime="2014-07-03T07:27:03.000Z" itemprop="datePublished">Jul 3 2014 15:27</time>
+
+
+    <h1 itemprop="name">UVa 357 - Let Me Count The Ways</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-147/" title="UVa 147 - Dollars" itemprop="url">
+  
+
+    <time datetime="2014-07-03T03:43:05.000Z" itemprop="datePublished">Jul 3 2014 11:43</time>
+
+
+    <h1 itemprop="name">UVa 147 - Dollars</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10192/" title="UVa 10192 - Vacation" itemprop="url">
+  
+
+    <time datetime="2014-07-03T02:02:12.000Z" itemprop="datePublished">Jul 3 2014 10:02</time>
+
+
+    <h1 itemprop="name">UVa 10192 - Vacation</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-116/" title="UVa 116 - Unidirectional TSP" itemprop="url">
+  
+
+    <time datetime="2014-07-02T07:54:09.000Z" itemprop="datePublished">Jul 2 2014 15:54</time>
+
+
+    <h1 itemprop="name">UVa 116 - Unidirectional TSP</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/UVa-10066/" title="UVa 10066 - The Twin Towers" itemprop="url">
+  
+
+    <time datetime="2014-07-02T03:06:51.000Z" itemprop="datePublished">Jul 2 2014 11:06</time>
+
+
+    <h1 itemprop="name">UVa 10066 - The Twin Towers</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/06/UVa-10131/" title="UVa 10131 - Is Bigger Smarter?" itemprop="url">
+  
+
+    <time datetime="2014-06-30T13:39:56.000Z" itemprop="datePublished">Jun 30 2014 21:39</time>
+
+
+    <h1 itemprop="name">UVa 10131 - Is Bigger Smarter?</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/06/UVa-10003/" title="UVa 10003 - Cutting Sticks" itemprop="url">
+  
+
+    <time datetime="2014-06-30T08:22:25.000Z" itemprop="datePublished">Jun 30 2014 16:22</time>
+
+
+    <h1 itemprop="name">UVa 10003 - Cutting Sticks</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/06/UVa-674/" title="UVa 674 - Coin Change" itemprop="url">
+  
+
+    <time datetime="2014-06-29T12:06:17.000Z" itemprop="datePublished">Jun 29 2014 20:06</time>
+
+
+    <h1 itemprop="name">UVa 674 - Coin Change</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/06/UVa-10405/" title="UVa 10405 - Longest Common Subsequence" itemprop="url">
+  
+
+    <time datetime="2014-06-29T09:19:54.000Z" itemprop="datePublished">Jun 29 2014 17:19</time>
+
+
+    <h1 itemprop="name">UVa 10405 - Longest Common Subsequence</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/06/UVa-103/" title="UVa 103 - Stacking Boxes" itemprop="url">
+  
+
+    <time datetime="2014-06-29T02:57:45.000Z" itemprop="datePublished">Jun 29 2014 10:57</time>
+
+
+    <h1 itemprop="name">UVa 103 - Stacking Boxes</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/06/UVa-111/" title="UVa 111 - History Grading" itemprop="url">
+  
+
+    <time datetime="2014-06-28T10:22:27.000Z" itemprop="datePublished">Jun 28 2014 18:22</time>
+
+
+    <h1 itemprop="name">UVa 111 - History Grading</h1>
+
+  </a>
+</section>
+
+
+  </div>
+</div>
+
+      </div>
+      <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> More is different. <br/>
+			(ˉ▽￣～)</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/MyCodeBattle" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015 
+		
+		<a href="http://mycodebattle.com/about" target="_blank" title="MyCodeBattle">MyCodeBattle</a>
+		
+		</p>
+</div>
+</footer>
+      
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+<div id="totop">
+<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+</div>
+
+<script src="/js/totop.js"></script>
+
+<script type="text/x-mathjax-config"> 
+MathJax.Hub.Config({ 
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} 
+}); 
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6d96406c8d21c73964f41c65bc548afd' type='text/javascript'%3E%3C/script%3E"));
+</script>
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+   </html>

@@ -1,0 +1,4084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[PureFrog's Home]]></title>
+  <subtitle><![CDATA[The daily life about a frog.]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://mycodebattle.com/"/>
+  <updated>2015-03-29T14:12:57.775Z</updated>
+  <id>http://mycodebattle.com/</id>
+  
+  <author>
+    <name><![CDATA[MyCodeBattle]]></name>
+    <email><![CDATA[mycodebattle@126.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[HDU 5195 - DZY Loves Topological Sorting (贪心 + 拓扑排序)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-5195/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-5195/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 525D - Arthur and Walls (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/03/codeforces-525d/"/>
+    <id>http://mycodebattle.com/2015/03/codeforces-525d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 525C - Ilya and Sticks (贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/03/codeforces-525c/"/>
+    <id>http://mycodebattle.com/2015/03/codeforces-525c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4349 - Xiao Ming's Hope (Lucas定理)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-4349/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-4349/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3037 - Saving Beans (Lucas定理)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-3037/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-3037/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1611 - The Suspects (并查集)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-1611/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-1611/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4121 - Xiangqi (模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-4121/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-4121/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5188 - zhx and contest (排序 + 背包)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-5188/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-5188/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HihoCoder 1044 - 状态压缩 (状态压缩DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/hihocoder-1044/"/>
+    <id>http://mycodebattle.com/2015/03/hihocoder-1044/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 653 Div2 Problem 500 - RockPaperScissorsMagicEasy (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/topcoder-srm-653-div2-500/"/>
+    <id>http://mycodebattle.com/2015/03/topcoder-srm-653-div2-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXXIV]]></title>
+    <link href="http://mycodebattle.com/2015/03/nothing-35/"/>
+    <id>http://mycodebattle.com/2015/03/nothing-35/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 651 Div2 Problem 500 - FoxAndSouvenirTheNext (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/topcoder-651-500/"/>
+    <id>http://mycodebattle.com/2015/03/topcoder-651-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5187 - zhx's contest (思维 + 快速乘)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-5187/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-5187/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 3659 - Conquer a New Region (并查集)]]></title>
+    <link href="http://mycodebattle.com/2015/03/ZJU-3659/"/>
+    <id>http://mycodebattle.com/2015/03/ZJU-3659/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1198 - Farm Irrigation (并查集)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-1198/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-1198/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Google Code Jam 2014 1A - Charging Chaos (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/03/gcj-2014-1a-a/"/>
+    <id>http://mycodebattle.com/2015/03/gcj-2014-1a-a/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 3768 - Continuous Login (二分 + DFSID)]]></title>
+    <link href="http://mycodebattle.com/2015/03/ZJU-3768/"/>
+    <id>http://mycodebattle.com/2015/03/ZJU-3768/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1551 - Cable master (二分)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-1551/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-1551/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 652 Div2 Problem 1000 - NoRightTurnDiv2 (几何 + 贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/03/topcoder-652-div2-1000/"/>
+    <id>http://mycodebattle.com/2015/03/topcoder-652-div2-1000/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4768 - Flyer (二分区间)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-4768/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-4768/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[大二下计划]]></title>
+    <link href="http://mycodebattle.com/2015/03/The-plan-of-the-second-term-of-the-second-year-of-college/"/>
+    <id>http://mycodebattle.com/2015/03/The-plan-of-the-second-term-of-the-second-year-of-college/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4430 - Yukari's Birthday (二分 + 思维)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-4430/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-4430/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3104 - Drying (思维 + 二分)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-3104/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-3104/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5183 - Negative and Positive (NP) (二分 + 思维)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-5183/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-5183/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3258 - River Hopscotch (二分)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-3258/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-3258/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXXIV]]></title>
+    <link href="http://mycodebattle.com/2015/03/nothing-34/"/>
+    <id>http://mycodebattle.com/2015/03/nothing-34/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2785 - 4 Values whose Sum is 0 (二分 + 思维)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2785/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2785/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4287 - Intelligent IME (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-4287/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-4287/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3833 - YY's new problem (等差数列)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-3833/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-3833/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2002 - Squares (计算几何 + 二分)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2002/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2002/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[计算几何备忘]]></title>
+    <link href="http://mycodebattle.com/2015/03/computation-geometry-memo/"/>
+    <id>http://mycodebattle.com/2015/03/computation-geometry-memo/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3496 - Watch The Movie (二维背包)]]></title>
+    <link href="http://mycodebattle.com/2015/03/HDU-3496/"/>
+    <id>http://mycodebattle.com/2015/03/HDU-3496/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2392 - Space Elevator (背包)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2392/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2392/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU2385 - Apple Catching (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2385/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2385/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2353 - Ministry (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2353/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2353/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2264 - Advanced Fruits (LCS)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2264/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2264/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2231 - Moo Volume (计算贡献)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2231/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2231/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2192 - Zipper (DP | DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2192/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2192/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2184 - cow Exhibition (0-1背包)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2184/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2184/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2181 - Jumping Cows (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2181/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2181/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2137 - Cowties (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-2137/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-2137/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1985 - Cow Marathon (树的直径)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-1985/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-1985/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 521A - DNA Alignment (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/03/codeforces-521a/"/>
+    <id>http://mycodebattle.com/2015/03/codeforces-521a/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1946 - Cow Cycling (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-1946/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-1946/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1925 - Spiderman (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/03/PKU-1925/"/>
+    <id>http://mycodebattle.com/2015/03/PKU-1925/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10691 - Subway (思维 + 区间选点)]]></title>
+    <link href="http://mycodebattle.com/2015/03/UVa-10691/"/>
+    <id>http://mycodebattle.com/2015/03/UVa-10691/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5179 - beautiful number (DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-5179/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-5179/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 519D - A and B and Interesting Substrings (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-519d/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-519d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3333 - Turing Tree (树状数组 + 离线处理)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-3333/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-3333/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1432 - Fire-Control System (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/UVa-1432/"/>
+    <id>http://mycodebattle.com/2015/02/UVa-1432/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Light 1135 - Count the Multiples of 3 (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2015/02/lightoj-1135/"/>
+    <id>http://mycodebattle.com/2015/02/lightoj-1135/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 518D - Ilya and Escalator (概率DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-518d/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-518d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 518C - Anya and Smartphone (模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-518c/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-518c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2836 - Traversal (树状数组 + DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2836/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2836/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Repeated DNA Sequences (Hash)]]></title>
+    <link href="http://mycodebattle.com/2015/02/leetcode-repeted%20dna%20sequences/"/>
+    <id>http://mycodebattle.com/2015/02/leetcode-repeted dna sequences/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 12265 - Selling Land (单挑队列)]]></title>
+    <link href="http://mycodebattle.com/2015/02/UVa-12265/"/>
+    <id>http://mycodebattle.com/2015/02/UVa-12265/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SDUT 2886 - Weighted Median (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/SDUT-2886/"/>
+    <id>http://mycodebattle.com/2015/02/SDUT-2886/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2619 - Love you Ten thousand years (数论 + 原根)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2619/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2619/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2837 - Calculation (计算指数 + 欧拉函数)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2837/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2837/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3364 - Lanterns (高斯消元 + 异或方程组)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-3364/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-3364/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3816 - To Be NUMBER ONE (数学)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-3816/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-3816/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 202 - Repeating Decimals (模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/02/UVa-202/"/>
+    <id>http://mycodebattle.com/2015/02/UVa-202/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1451 - Average (斜率优化 + 单挑队列)]]></title>
+    <link href="http://mycodebattle.com/2015/02/UVa-1451/"/>
+    <id>http://mycodebattle.com/2015/02/UVa-1451/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2814 - Interesting Fibonacci (Fibonacci性质 + 循环节)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2814/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2814/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 650 Div2 Problem 500 - TaroFillingAStringDiv2 (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/topcoder-srm-650-div2-500/"/>
+    <id>http://mycodebattle.com/2015/02/topcoder-srm-650-div2-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2710 - Max Factor (素数筛)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2710/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2710/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2650 - A math problem (高斯素数扩展)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2650/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2650/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2620 - Ice Rain (数学)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2620/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2620/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 515C - Drazil and Factorial (贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-515c/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-515c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 515D - Drazil and Tiles (拓扑排序)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-515d/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-515d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2588 - GCD (欧拉函数)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2588/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2588/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Universal 66 - 新年的巧克力棒 (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/uoj-66/"/>
+    <id>http://mycodebattle.com/2015/02/uoj-66/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2582 - f(n) (规律)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2582/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2582/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2378 - Cutting Banknotes (数学)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2378/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2378/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 649 Div2 Problem 1000 - XorSequenceEasy (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/topcoder-srm-649-div2-1000/"/>
+    <id>http://mycodebattle.com/2015/02/topcoder-srm-649-div2-1000/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CodeChef STFM - Chef and Strange Formula (康托展开)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codechef-stfm/"/>
+    <id>http://mycodebattle.com/2015/02/codechef-stfm/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 514C - Watto and Mechanism (Trie + DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-514c/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-514c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXXIII]]></title>
+    <link href="http://mycodebattle.com/2015/02/nothing-33/"/>
+    <id>http://mycodebattle.com/2015/02/nothing-33/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5175 - Misaki's Kiss again (数学)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-5175/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-5175/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SDUT 2879 - Colorful Cupcakes (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/SDUT-2879/"/>
+    <id>http://mycodebattle.com/2015/02/SDUT-2879/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SDUT 2882 - Full Binary Tree(思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/SDUT-2882/"/>
+    <id>http://mycodebattle.com/2015/02/SDUT-2882/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1185 - Big Number (数学)]]></title>
+    <link href="http://mycodebattle.com/2015/02/UVa-1185/"/>
+    <id>http://mycodebattle.com/2015/02/UVa-1185/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1325 - Hypertransmission (思维 + 扫描)]]></title>
+    <link href="http://mycodebattle.com/2015/02/UVa-1325/"/>
+    <id>http://mycodebattle.com/2015/02/UVa-1325/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SDUT 2157 - Greatest Number (二分)]]></title>
+    <link href="http://mycodebattle.com/2015/02/SDUT-2157/"/>
+    <id>http://mycodebattle.com/2015/02/SDUT-2157/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SDUT 2159 - Ivan comes again! (模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/02/SDUT-2159/"/>
+    <id>http://mycodebattle.com/2015/02/SDUT-2159/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2608 - 0 or 1 (数论 + 唯一分解定理)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2608/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2608/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 649 Div2 Problem 500 - CartInSupermarketEasy (区间DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/topcoder-srm-649-div2-500/"/>
+    <id>http://mycodebattle.com/2015/02/topcoder-srm-649-div2-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2351 - One is an Interesting Number (模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2351/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2351/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4704 - Sum (费马小定理)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-4704/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-4704/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 508D - Tanya and Password (欧拉道路)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-508d/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-508d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2303 - The Embarrassed Cryptographer (Java高精度)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2303/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2303/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2197 - 本原串 (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2197/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2197/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5172 - GTY's gay friends (线段树)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-5172/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-5172/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 513B2 -  Permutations (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-513b/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-513b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5171 - GTY's birthday gift (矩阵快速幂)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-5171/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-5171/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2126 - Largest prime factor (素数筛变种→因素筛)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-2126/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-2126/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1999 - 不可摸数 (打表)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-1999/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-1999/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11021 - Tribles (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/UVa-11021/"/>
+    <id>http://mycodebattle.com/2015/02/UVa-11021/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 648 Div2 Problem 1000 - ABC (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/topcoder-srm-648-div2-problem-1000/"/>
+    <id>http://mycodebattle.com/2015/02/topcoder-srm-648-div2-problem-1000/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1973 - Prime Path (BFS)]]></title>
+    <link href="http://mycodebattle.com/2015/02/HDU-1973/"/>
+    <id>http://mycodebattle.com/2015/02/HDU-1973/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 510D - Fox And Jumping (DP)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-510d/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-510d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 510C - Fox And Names (拓扑排序)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-510c/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-510c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXXII]]></title>
+    <link href="http://mycodebattle.com/2015/02/nothing-32/"/>
+    <id>http://mycodebattle.com/2015/02/nothing-32/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 509E - Pretty Song (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-509e/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-509e/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 509C - Sums of Digits (DFSID + 贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/02/codeforces-509c/"/>
+    <id>http://mycodebattle.com/2015/02/codeforces-509c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10730 - Antiarithmetic? (等差数列)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-10730/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-10730/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 467D - Fedor and Essay (反向建图 + DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/01/codeforces-467d/"/>
+    <id>http://mycodebattle.com/2015/01/codeforces-467d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1930 - And Now, a Remainder from Our Sponsor (不互素的中国剩余定理)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1930/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1930/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10535 - Shooter (最多区间覆盖的点 + 扫描)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-10535/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-10535/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1920 - Jackpot (LCM)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1920/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1920/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1905 -  Pseudoprime numbers (快速幂)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1905/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1905/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1852 - Beijing 2008 (模除法)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1852/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1852/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1312 - Cricket Field (高效枚举)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-1312/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-1312/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1787 - GCD Again (欧拉函数)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1787/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1787/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1719 - Friend (推公式)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1719/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1719/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1576 - A/B (模除法 + 求逆元)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1576/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1576/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2891 - Strange Way to Express Integers (中国剩余定理不互质情况)]]></title>
+    <link href="http://mycodebattle.com/2015/01/PKU-2891/"/>
+    <id>http://mycodebattle.com/2015/01/PKU-2891/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1573 - X问题 (中国剩余定理不互质情况)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1573/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1573/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 508C - Anya and Ghosts (模拟 + 贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/01/codeforces-508c/"/>
+    <id>http://mycodebattle.com/2015/01/codeforces-508c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1492 - The number of divisors(约数) about Humble Numbers (唯一分解定理)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1492/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1492/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1452 - Happy 2004 (因子和是积性函数 + 模运算处理除法 + 快速幂取模)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1452/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1452/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1431 - 素数回文 (打表)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1431/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1431/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1397 - Goldbach's Conjecture (筛素数)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1397/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1397/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1395 - 2^x mod n = 1 (欧拉定理 + 快速幂取模)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1395/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1395/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1370 - Biorhythms (中国剩余定理)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1370/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1370/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1299 - Diophantus of Alexandria (唯一分解定理)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1299/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1299/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1239 - Calling Extraterrestrial Intelligence Again (枚举)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1239/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1239/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1211 - RSA (欧几里得扩展 + 快速幂取模)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1211/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1211/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1124 - Factorial]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1124/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1124/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 647 Div2 Problem 500 - TravellingSalesmanEasy (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/01/topcoder-srm-647-div2-problem-500/"/>
+    <id>http://mycodebattle.com/2015/01/topcoder-srm-647-div2-problem-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1121 - Complete the Sequence (差分递推规律)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1121/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1121/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5163 - Taking Bus (模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-5163/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-5163/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1111 - Secret Code (DFS + 一点数学 + 模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1111/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1111/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 507C - Guess Your Way Out! (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/01/codeforces-507c/"/>
+    <id>http://mycodebattle.com/2015/01/codeforces-507c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1005 - Number Sequence (规律)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-1005/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-1005/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LaTex备忘]]></title>
+    <link href="http://mycodebattle.com/2015/01/LaTex-memo/"/>
+    <id>http://mycodebattle.com/2015/01/LaTex-memo/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2447 - RSA (欧几里得扩展 + 大合数分解)]]></title>
+    <link href="http://mycodebattle.com/2015/01/PKU-2447/"/>
+    <id>http://mycodebattle.com/2015/01/PKU-2447/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1811 - Prime Test (大素数测试和因数分解)]]></title>
+    <link href="http://mycodebattle.com/2015/01/PKU-1811/"/>
+    <id>http://mycodebattle.com/2015/01/PKU-1811/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2407 - Relatives (欧拉函数)]]></title>
+    <link href="http://mycodebattle.com/2015/01/PKU-2407/"/>
+    <id>http://mycodebattle.com/2015/01/PKU-2407/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2262 - Goldbach's Conjecture (数论)]]></title>
+    <link href="http://mycodebattle.com/2015/01/PKU-2262/"/>
+    <id>http://mycodebattle.com/2015/01/PKU-2262/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1142 - Smith Numbers (数论)]]></title>
+    <link href="http://mycodebattle.com/2015/01/PKU-1142/"/>
+    <id>http://mycodebattle.com/2015/01/PKU-1142/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1061 - 青蛙的约会 (扩展欧几里得)]]></title>
+    <link href="http://mycodebattle.com/2015/01/PKU-1061/"/>
+    <id>http://mycodebattle.com/2015/01/PKU-1061/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 211 - The Domino Effect (DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-211/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-211/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11426 - GCD - Extreme (II) (数论)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11426/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11426/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1449 - Dominating Patterns (AC自动机)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-1449/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-1449/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project Euler]]></title>
+    <link href="http://mycodebattle.com/2015/01/Project-Euler/"/>
+    <id>http://mycodebattle.com/2015/01/Project-Euler/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1554 - Binary Search (枚举)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-1554/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-1554/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2222 - Keywords Search (AC自动机)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-2222/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-2222/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 668 - Parliament (贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-668/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-668/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXXI]]></title>
+    <link href="http://mycodebattle.com/2015/01/nothing-31/"/>
+    <id>http://mycodebattle.com/2015/01/nothing-31/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3696 - Farm Game (DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-3696/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-3696/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 505B - Mr. Kitayuta's Colorful Graph (DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/01/codeforces-505b/"/>
+    <id>http://mycodebattle.com/2015/01/codeforces-505b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11986 - Save from Radiation (推理)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11986/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11986/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Permutation Sequence]]></title>
+    <link href="http://mycodebattle.com/2015/01/leetcode-permutation-sequence/"/>
+    <id>http://mycodebattle.com/2015/01/leetcode-permutation-sequence/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 646 Div2 Problem 500 - TheGridDivTwo (BFS + 优先队列)]]></title>
+    <link href="http://mycodebattle.com/2015/01/topcoder-srm-646-div2-problem-500/"/>
+    <id>http://mycodebattle.com/2015/01/topcoder-srm-646-div2-problem-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXX]]></title>
+    <link href="http://mycodebattle.com/2015/01/nothing-30/"/>
+    <id>http://mycodebattle.com/2015/01/nothing-30/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11920 - 0 s, 1 s and ? Marks (二分 + DP)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11920/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11920/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11776 - Oh Your Royal Greediness! (贪心 + 模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11776/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11776/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 645 Div2 Problem 500 - ConnectingCars (枚举)]]></title>
+    <link href="http://mycodebattle.com/2015/01/topcoder-srm-645-problem-500/"/>
+    <id>http://mycodebattle.com/2015/01/topcoder-srm-645-problem-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 501C - Misha and Forest (机智)]]></title>
+    <link href="http://mycodebattle.com/2015/01/codeforces-501c/"/>
+    <id>http://mycodebattle.com/2015/01/codeforces-501c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11714 - Blind Sorting (机智)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11714/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11714/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 501B - Misha and Changing Handles (STL)]]></title>
+    <link href="http://mycodebattle.com/2015/01/codeforces-501b/"/>
+    <id>http://mycodebattle.com/2015/01/codeforces-501b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11387 - The 3-Regular Graph (构造)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11387/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11387/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11269 - Setting Problems (贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11269/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11269/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXIX]]></title>
+    <link href="http://mycodebattle.com/2015/01/nothing-29/"/>
+    <id>http://mycodebattle.com/2015/01/nothing-29/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11012 - Cosmic Cabbages (机智地枚举)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-11012/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-11012/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10771 - Barbarian tribes (思维)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-10771/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-10771/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10747 - Maximum Subsequence (贪心 + 细节)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-10747/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-10747/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10624 - Super Number (DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-10624/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-10624/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXVIII]]></title>
+    <link href="http://mycodebattle.com/2015/01/nothing-28/"/>
+    <id>http://mycodebattle.com/2015/01/nothing-28/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10483 - The Sum Equals the Product (枚举)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-10483/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-10483/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Sum Root to Leaf Numbers (DFS)]]></title>
+    <link href="http://mycodebattle.com/2015/01/leetcode-sum-root-to-leaf-numbers/"/>
+    <id>http://mycodebattle.com/2015/01/leetcode-sum-root-to-leaf-numbers/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 7B - Memory Manager (模拟)]]></title>
+    <link href="http://mycodebattle.com/2015/01/codeforces-7b/"/>
+    <id>http://mycodebattle.com/2015/01/codeforces-7b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5154 - Harry and Magical Computer (并查集)]]></title>
+    <link href="http://mycodebattle.com/2015/01/HDU-5154/"/>
+    <id>http://mycodebattle.com/2015/01/HDU-5154/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 644 Div2 Problem 500 - LostCharacter (贪心)]]></title>
+    <link href="http://mycodebattle.com/2015/01/topcoder-srm-644-div2-500/"/>
+    <id>http://mycodebattle.com/2015/01/topcoder-srm-644-div2-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10479 - The Hendrie Sequence (规律)]]></title>
+    <link href="http://mycodebattle.com/2015/01/UVa-10479/"/>
+    <id>http://mycodebattle.com/2015/01/UVa-10479/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Good Bye 2014]]></title>
+    <link href="http://mycodebattle.com/2014/12/good-bye-2014/"/>
+    <id>http://mycodebattle.com/2014/12/good-bye-2014/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 500C - New Year Book Reading (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/12/codeforces-500c/"/>
+    <id>http://mycodebattle.com/2014/12/codeforces-500c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 500B - New Year Permutation (思维)]]></title>
+    <link href="http://mycodebattle.com/2014/12/codeforces-500b/"/>
+    <id>http://mycodebattle.com/2014/12/codeforces-500b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10396 - Vampire Numbers (暴力)]]></title>
+    <link href="http://mycodebattle.com/2014/12/UVa-10396/"/>
+    <id>http://mycodebattle.com/2014/12/UVa-10396/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXVII]]></title>
+    <link href="http://mycodebattle.com/2014/12/nothing-27/"/>
+    <id>http://mycodebattle.com/2014/12/nothing-27/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Binary Tree Level Order Traversal (DFSID)]]></title>
+    <link href="http://mycodebattle.com/2014/12/leetoj-binary-tree-level-order-traversal/"/>
+    <id>http://mycodebattle.com/2014/12/leetoj-binary-tree-level-order-traversal/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10120 - Gift?! (数学)]]></title>
+    <link href="http://mycodebattle.com/2014/12/UVa-10120/"/>
+    <id>http://mycodebattle.com/2014/12/UVa-10120/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11127 - Triple-Free Binary Strings (位运算 + DFS)]]></title>
+    <link href="http://mycodebattle.com/2014/12/UVa-11127/"/>
+    <id>http://mycodebattle.com/2014/12/UVa-11127/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2186 - Popular Cows (强连通 + 缩点)]]></title>
+    <link href="http://mycodebattle.com/2014/12/PKU-2186/"/>
+    <id>http://mycodebattle.com/2014/12/PKU-2186/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Git命令备忘]]></title>
+    <link href="http://mycodebattle.com/2014/12/memorandum-of-git/"/>
+    <id>http://mycodebattle.com/2014/12/memorandum-of-git/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2553 - The Bottom of a Graph (强连通 + 缩点)]]></title>
+    <link href="http://mycodebattle.com/2014/12/PKU-2553/"/>
+    <id>http://mycodebattle.com/2014/12/PKU-2553/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXVI]]></title>
+    <link href="http://mycodebattle.com/2014/12/nothing-26/"/>
+    <id>http://mycodebattle.com/2014/12/nothing-26/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10037 - Bridge (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/12/UVa-10037/"/>
+    <id>http://mycodebattle.com/2014/12/UVa-10037/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1374 - Power Calculus (DFSID)]]></title>
+    <link href="http://mycodebattle.com/2014/12/UVa-1374/"/>
+    <id>http://mycodebattle.com/2014/12/UVa-1374/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1236 - Network of Schools (强连通 + 缩点)]]></title>
+    <link href="http://mycodebattle.com/2014/12/PKU-1236/"/>
+    <id>http://mycodebattle.com/2014/12/PKU-1236/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1827 - Summer Holiday (强连通 + 缩点)]]></title>
+    <link href="http://mycodebattle.com/2014/12/HDU-1827/"/>
+    <id>http://mycodebattle.com/2014/12/HDU-1827/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2767 - Proving Equivalences (强连通 + 缩点)]]></title>
+    <link href="http://mycodebattle.com/2014/12/HDU-2767/"/>
+    <id>http://mycodebattle.com/2014/12/HDU-2767/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[POJ 3180 - The Cow Prom (强连通)]]></title>
+    <link href="http://mycodebattle.com/2014/12/PKU-3180/"/>
+    <id>http://mycodebattle.com/2014/12/PKU-3180/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1269 - 迷宫城堡 (强连通)]]></title>
+    <link href="http://mycodebattle.com/2014/12/HDU-1269/"/>
+    <id>http://mycodebattle.com/2014/12/HDU-1269/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 493C - Vasya and Basketball (二分)]]></title>
+    <link href="http://mycodebattle.com/2014/12/codeforces-493c/"/>
+    <id>http://mycodebattle.com/2014/12/codeforces-493c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 493B - Vasya and Wrestling (模拟)]]></title>
+    <link href="http://mycodebattle.com/2014/12/codeforces-493b/"/>
+    <id>http://mycodebattle.com/2014/12/codeforces-493b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXV]]></title>
+    <link href="http://mycodebattle.com/2014/12/nothing-25/"/>
+    <id>http://mycodebattle.com/2014/12/nothing-25/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 492D - Vanya and Computer Game (二分)]]></title>
+    <link href="http://mycodebattle.com/2014/12/codeforces-492d/"/>
+    <id>http://mycodebattle.com/2014/12/codeforces-492d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1377 - Ruler (BFS)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-1377/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-1377/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 490B - Queue (模拟)]]></title>
+    <link href="http://mycodebattle.com/2014/11/codeforces-490B/"/>
+    <id>http://mycodebattle.com/2014/11/codeforces-490B/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1445 - Cubist Artwork]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-1445/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-1445/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXIV]]></title>
+    <link href="http://mycodebattle.com/2014/11/nothing-24/"/>
+    <id>http://mycodebattle.com/2014/11/nothing-24/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1420 - Priest John's Busiest Day (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-1420/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-1420/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXIII]]></title>
+    <link href="http://mycodebattle.com/2014/11/nothing-23/"/>
+    <id>http://mycodebattle.com/2014/11/nothing-23/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10318 - Security Panel (暴力 + 剪枝 + 回溯)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-10318/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-10318/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5108 - Alexandra and Prime Numbers (暴力)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-5108/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-5108/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 488B - Candy Boxes (构造)]]></title>
+    <link href="http://mycodebattle.com/2014/11/codeforces-488B/"/>
+    <id>http://mycodebattle.com/2014/11/codeforces-488B/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[URAL 1036 - Lucky Tickets (高精度 + 基本计数)]]></title>
+    <link href="http://mycodebattle.com/2014/11/URAL-1036/"/>
+    <id>http://mycodebattle.com/2014/11/URAL-1036/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 3233 - Lucky Number (容斥原理)]]></title>
+    <link href="http://mycodebattle.com/2014/11/ZJU-3233/"/>
+    <id>http://mycodebattle.com/2014/11/ZJU-3233/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXII]]></title>
+    <link href="http://mycodebattle.com/2014/11/nothing-22/"/>
+    <id>http://mycodebattle.com/2014/11/nothing-22/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1555 - Garland (二分)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-1555/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-1555/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1523 - Helicopter (暴力)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-1523/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-1523/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 489C - Given Length and Sum of Digits... (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/11/codeforces-489c/"/>
+    <id>http://mycodebattle.com/2014/11/codeforces-489c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 489B - BerSU Ball (乱搞)]]></title>
+    <link href="http://mycodebattle.com/2014/11/codeforces-489b/"/>
+    <id>http://mycodebattle.com/2014/11/codeforces-489b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1695 - GCD (容斥原理)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-1695/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-1695/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2841 - Visible Trees (容斥原理)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-2841/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-2841/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5104 - Primes Problem (枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-5104/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-5104/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1419 - Ugly Windows (DFS + 暴力)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-1419/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-1419/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1796 - How many integers can you find (容斥原理)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-1796/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-1796/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3208 - Integer's Power (容斥原理)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-3208/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-3208/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2204 - Eddy's爱好 (容斥原理)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-2204/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-2204/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XXI]]></title>
+    <link href="http://mycodebattle.com/2014/11/nothing-21/"/>
+    <id>http://mycodebattle.com/2014/11/nothing-21/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3450 - Corporate Identity (二分 + 暴力)]]></title>
+    <link href="http://mycodebattle.com/2014/11/PKU-3450/"/>
+    <id>http://mycodebattle.com/2014/11/PKU-3450/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2594 - Simpsons’ Hidden Talents (KMP & next数组性质)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-2594/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-2594/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5101 - Select (基本计数)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-5101/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-5101/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XX]]></title>
+    <link href="http://mycodebattle.com/2014/11/nothing-20/"/>
+    <id>http://mycodebattle.com/2014/11/nothing-20/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1153 - Keep the Customer Satisfied (贪心 + 优先队列)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-1153/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-1153/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 484A - Bits (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/11/Codeforces-484a/"/>
+    <id>http://mycodebattle.com/2014/11/Codeforces-484a/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11401 - Triangle Counting (容斥原理)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-11401/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-11401/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11538 - Chess Queen (组合数学 & 推公式)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-11538/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-11538/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1028 - Ignatius and the Princess III (简单DP)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-1028/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-1028/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XIX]]></title>
+    <link href="http://mycodebattle.com/2014/11/nothing-19/"/>
+    <id>http://mycodebattle.com/2014/11/nothing-19/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 529 - Addition Chains (DFSID + 剪枝)]]></title>
+    <link href="http://mycodebattle.com/2014/11/UVa-529/"/>
+    <id>http://mycodebattle.com/2014/11/UVa-529/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZSTU 3113 - Interval Challenge (树状数组 + 离散化)]]></title>
+    <link href="http://mycodebattle.com/2014/11/ZSTU-3113/"/>
+    <id>http://mycodebattle.com/2014/11/ZSTU-3113/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XVIII]]></title>
+    <link href="http://mycodebattle.com/2014/11/nothing-18/"/>
+    <id>http://mycodebattle.com/2014/11/nothing-18/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4046 - Panda (线段树 + 单点更新)]]></title>
+    <link href="http://mycodebattle.com/2014/11/HDU-4046/"/>
+    <id>http://mycodebattle.com/2014/11/HDU-4046/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4000 - Fruit Ninja (树状数组 + 推理)]]></title>
+    <link href="http://mycodebattle.com/2014/10/HDU-4000/"/>
+    <id>http://mycodebattle.com/2014/10/HDU-4000/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2352 - Stars (树状数组)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2352/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2352/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2481 - Cows (树状数组)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2481/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2481/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[接下来的计划]]></title>
+    <link href="http://mycodebattle.com/2014/10/da-or-plan/"/>
+    <id>http://mycodebattle.com/2014/10/da-or-plan/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[记第一次区域赛]]></title>
+    <link href="http://mycodebattle.com/2014/10/the-first-reional/"/>
+    <id>http://mycodebattle.com/2014/10/the-first-reional/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[URAL 1209 - 1, 10, 100, 1000... (简单推导)]]></title>
+    <link href="http://mycodebattle.com/2014/10/URAL-1209/"/>
+    <id>http://mycodebattle.com/2014/10/URAL-1209/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1508 - Equipment (状态压缩 + 枚举子集)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-1508/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-1508/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XVII]]></title>
+    <link href="http://mycodebattle.com/2014/10/nothing-17/"/>
+    <id>http://mycodebattle.com/2014/10/nothing-17/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1533 - Moving Pegs (隐式图搜索 + 状态压缩)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-1533/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-1533/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1584 - Circular Sequence (枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-1584/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-1584/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1157 - LITTLE SHOP OF FLOWERS (一般DP)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-1157/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-1157/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3080 - Blue Jeans (KMP + 枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3080/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3080/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2185 - Milking Grid (next数组的应用)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2185/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2185/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[NYIST 542 - 试制品 (STL + 小暴力)]]></title>
+    <link href="http://mycodebattle.com/2014/10/NYIST-542/"/>
+    <id>http://mycodebattle.com/2014/10/NYIST-542/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 478C - Table Decorations (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/10/codeforces-478c/"/>
+    <id>http://mycodebattle.com/2014/10/codeforces-478c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3264 - Balanced Lineup (基础线段树)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3264/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3264/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 656 - Optimal Programs (DFSID + 模拟 + 枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-656/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-656/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XVI]]></title>
+    <link href="http://mycodebattle.com/2014/10/nothing-16/"/>
+    <id>http://mycodebattle.com/2014/10/nothing-16/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 654 - Ratio (枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-654/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-654/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 585 - Triangles (枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-585/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-585/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1853 - Cyclic Tour (最小费用最大流)]]></title>
+    <link href="http://mycodebattle.com/2014/10/HDU-1853/"/>
+    <id>http://mycodebattle.com/2014/10/HDU-1853/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2195 - Going Home (最小费用最大流)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2195/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2195/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3692 - Kindergarten (最大团)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3692/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3692/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 225 - Golygons (回溯 + 剪枝)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-225/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-225/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2771 - Guardian of Decency (最大独立集)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2771/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2771/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3216 - Repairing Company (最小边覆盖 + Floyd)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3216/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3216/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 3829 - Known Notation (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/10/ZJU-3829/"/>
+    <id>http://mycodebattle.com/2014/10/ZJU-3829/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 476C - Dreamoon and Sums (数学)]]></title>
+    <link href="http://mycodebattle.com/2014/10/codeforces-476c/"/>
+    <id>http://mycodebattle.com/2014/10/codeforces-476c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2724 - Purifying Machine (最小边覆盖)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2724/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2724/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5063 - Operation the Sequence (置换)]]></title>
+    <link href="http://mycodebattle.com/2014/10/HDU-5063/"/>
+    <id>http://mycodebattle.com/2014/10/HDU-5063/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2226 - Muddy Fields (最小点覆盖)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2226/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2226/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1469 - COURSES (最大匹配)]]></title>
+    <link href="http://mycodebattle.com/2014/10/HDU-1469/"/>
+    <id>http://mycodebattle.com/2014/10/HDU-1469/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3605 - Escape (多重匹配 | 最大流 & Dinic)]]></title>
+    <link href="http://mycodebattle.com/2014/10/HDU-3605/"/>
+    <id>http://mycodebattle.com/2014/10/HDU-3605/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 4160 - Dolls (最大匹配)]]></title>
+    <link href="http://mycodebattle.com/2014/10/HDU-4160/"/>
+    <id>http://mycodebattle.com/2014/10/HDU-4160/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1325 - Machine Schedule (最小点覆盖 & Hungarian)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-1325/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-1325/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3041 - Asteroids (最小点覆盖 & 匈牙利)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3041/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3041/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2446 - Chessboard (最大匹配 & 匈牙利)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2446/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2446/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 524 - Prime Ring Problem (回溯)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-524/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-524/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2536 - Gopher II (最大流 & ISAP & Dinic | 最大匹配)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2536/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2536/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 471 - Magic Numbers (暴力)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-471/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-471/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2584 - T-Shirt Gumbo (二分图最大匹配 & 匈牙利算法 | 最大流 & EK)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2584/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2584/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2239 - Selecting Courses (最大匹配 & Hungarian)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2239/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2239/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1274 - The Perfect Stall (最大匹配 & Hungarian)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-1274/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-1274/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 2750 - Idiomatic Phrases Game (最短路，吐血AC)]]></title>
+    <link href="http://mycodebattle.com/2014/10/ZJU-2750/"/>
+    <id>http://mycodebattle.com/2014/10/ZJU-2750/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU  3321 - Apple Tree (树状数组 + DFS)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3321/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3321/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 1511 - Invitation Cards (最短路 & Dijkstra)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-1511/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-1511/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 563 - Crimewave (拆点 + 最大流 & EK)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-563/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-563/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 474D - Flowers (0 - 1背包)]]></title>
+    <link href="http://mycodebattle.com/2014/10/codeforces-474d/"/>
+    <id>http://mycodebattle.com/2014/10/codeforces-474d/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3667 - Hotel (线段树 + 区间合并 + 区间覆盖)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3667/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3667/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 753 - A Plug for UNIX (最大流 | EK)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-753/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-753/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11045 - My T-shirt suits me (最大流 & EK)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-11045/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-11045/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1314 - NASA的食物计划 (二维背包)]]></title>
+    <link href="http://mycodebattle.com/2014/10/Vijos-1314/"/>
+    <id>http://mycodebattle.com/2014/10/Vijos-1314/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1317 - 开心的金明 (背包)]]></title>
+    <link href="http://mycodebattle.com/2014/10/Vijos-1317/"/>
+    <id>http://mycodebattle.com/2014/10/Vijos-1317/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 4047 - Garden (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-4047/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-4047/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XV]]></title>
+    <link href="http://mycodebattle.com/2014/10/nothing-XV/"/>
+    <id>http://mycodebattle.com/2014/10/nothing-XV/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1556 - Color the ball (树状数组 | 线段树)]]></title>
+    <link href="http://mycodebattle.com/2014/10/HDU-1556/"/>
+    <id>http://mycodebattle.com/2014/10/HDU-1556/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10806 - Dijkstra, Dijkstra. (费用流)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-10806/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-10806/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ACDream 1417 - Numbers (枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/10/ACDream-1417/"/>
+    <id>http://mycodebattle.com/2014/10/ACDream-1417/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10330 - Power Transmission (最大流 & Edmonds - Karp)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-10330/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-10330/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 3402 - Color the Ball (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/10/ZJU-3402/"/>
+    <id>http://mycodebattle.com/2014/10/ZJU-3402/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11732 - strcmp() Anyone? (Trie + 邻接表)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-11732/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-11732/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[URAL 1019 - Line Painting (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/10/URAL-1019/"/>
+    <id>http://mycodebattle.com/2014/10/URAL-1019/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2777 - Count Color (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2777/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2777/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 1610 - Count the Colors (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/10/ZJU-1610/"/>
+    <id>http://mycodebattle.com/2014/10/ZJU-1610/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 812 - Trade on Verweggistan (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/10/UVa-812/"/>
+    <id>http://mycodebattle.com/2014/10/UVa-812/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2528 - Mayor's posters (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-2528/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-2528/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3468 - A Simple Problem with Integers (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/10/PKU-3468/"/>
+    <id>http://mycodebattle.com/2014/10/PKU-3468/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[记在大学的第二个国庆]]></title>
+    <link href="http://mycodebattle.com/2014/09/the-second-national-day-in-university/"/>
+    <id>http://mycodebattle.com/2014/09/the-second-national-day-in-university/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XIV]]></title>
+    <link href="http://mycodebattle.com/2014/09/nothing-XIV/"/>
+    <id>http://mycodebattle.com/2014/09/nothing-XIV/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1698 - Just a Hook (线段树 + 区间修改)]]></title>
+    <link href="http://mycodebattle.com/2014/09/HDU-1698/"/>
+    <id>http://mycodebattle.com/2014/09/HDU-1698/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[线段树题集]]></title>
+    <link href="http://mycodebattle.com/2014/09/problem-set-of-segment-tree/"/>
+    <id>http://mycodebattle.com/2014/09/problem-set-of-segment-tree/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2406 - Power Strings (KMP性质的应用)]]></title>
+    <link href="http://mycodebattle.com/2014/09/PKU-2406/"/>
+    <id>http://mycodebattle.com/2014/09/PKU-2406/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1328 - Period (KMP性质的应用)]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1328/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1328/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 472C - Design Tutorial → Make It Nondeterministic (模拟)]]></title>
+    <link href="http://mycodebattle.com/2014/09/codeforces-472c/"/>
+    <id>http://mycodebattle.com/2014/09/codeforces-472c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 472B - Design Tutorial → Learn from Life (模拟)]]></title>
+    <link href="http://mycodebattle.com/2014/09/codeforces-472b/"/>
+    <id>http://mycodebattle.com/2014/09/codeforces-472b/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2752 - Seek the Name, Seek the Fame (KMP)]]></title>
+    <link href="http://mycodebattle.com/2014/09/PKU-2752/"/>
+    <id>http://mycodebattle.com/2014/09/PKU-2752/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[输入外挂]]></title>
+    <link href="http://mycodebattle.com/2014/09/input-acce/"/>
+    <id>http://mycodebattle.com/2014/09/input-acce/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5055 - Bob and math problem (贪心)]]></title>
+    <link href="http://mycodebattle.com/2014/09/HDU-5055/"/>
+    <id>http://mycodebattle.com/2014/09/HDU-5055/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5056 - Boring count]]></title>
+    <link href="http://mycodebattle.com/2014/09/HDU-5056/"/>
+    <id>http://mycodebattle.com/2014/09/HDU-5056/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XIII]]></title>
+    <link href="http://mycodebattle.com/2014/09/nothing-XIII/"/>
+    <id>http://mycodebattle.com/2014/09/nothing-XIII/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3461 - Oulipo (KMP)]]></title>
+    <link href="http://mycodebattle.com/2014/09/PKU-3461/"/>
+    <id>http://mycodebattle.com/2014/09/PKU-3461/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 669 - Defragment (DFS)]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-669/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-669/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XII]]></title>
+    <link href="http://mycodebattle.com/2014/09/nothing-XII/"/>
+    <id>http://mycodebattle.com/2014/09/nothing-XII/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1711 - Number Sequence (KMP)]]></title>
+    <link href="http://mycodebattle.com/2014/09/HDU-1711/"/>
+    <id>http://mycodebattle.com/2014/09/HDU-1711/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 634 Div2 Problem 500 - ShoppingSurvey]]></title>
+    <link href="http://mycodebattle.com/2014/09/topcoder-srm-634-div2-500/"/>
+    <id>http://mycodebattle.com/2014/09/topcoder-srm-634-div2-500/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 634 Div2 Problem 1000 - SpecialStrings]]></title>
+    <link href="http://mycodebattle.com/2014/09/topcoder-634-div2-1000/"/>
+    <id>http://mycodebattle.com/2014/09/topcoder-634-div2-1000/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CodeForces 471C - MUH and House of Cards]]></title>
+    <link href="http://mycodebattle.com/2014/09/codeforces-471c/"/>
+    <id>http://mycodebattle.com/2014/09/codeforces-471c/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 311 - Packets (构造)]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-311/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-311/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.5 - Superprime Rib (DFS + 枚举)]]></title>
+    <link href="http://mycodebattle.com/2014/09/usaco-1_5-superprime-rib/"/>
+    <id>http://mycodebattle.com/2014/09/usaco-1_5-superprime-rib/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1401 - Remember the Word (Trie + DP)]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1401/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1401/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11584 - Partitioning by Palindromes (简单DP)]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11584/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11584/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.5 - Number Triangles (简单DP)]]></title>
+    <link href="http://mycodebattle.com/2014/09/USACO-1_5-number-trangles/"/>
+    <id>http://mycodebattle.com/2014/09/USACO-1_5-number-trangles/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.4 - Arithmetic Progressions （暴力）]]></title>
+    <link href="http://mycodebattle.com/2014/09/usaco-1_4-aripron/"/>
+    <id>http://mycodebattle.com/2014/09/usaco-1_4-aripron/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 3630 - Phone List (Trie)]]></title>
+    <link href="http://mycodebattle.com/2014/09/PKU-3630/"/>
+    <id>http://mycodebattle.com/2014/09/PKU-3630/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PKU 2001 - Shortest Prefixes (Trie)]]></title>
+    <link href="http://mycodebattle.com/2014/09/PKU-2001/"/>
+    <id>http://mycodebattle.com/2014/09/PKU-2001/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CodeForces 467A - 24 Game]]></title>
+    <link href="http://mycodebattle.com/2014/09/codeforces-467a/"/>
+    <id>http://mycodebattle.com/2014/09/codeforces-467a/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Maximum Depth of Binary Tree]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-maximum-depth-of-binary-tree/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-maximum-depth-of-binary-tree/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Remove Duplicates from Sorted Array]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-remove-duplicates-from-sorted-array/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-remove-duplicates-from-sorted-array/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Pow(x, n)]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-pow/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-pow/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10317 - Equating Equations]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-10317/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-10317/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[STL使用小记]]></title>
+    <link href="http://mycodebattle.com/2014/09/my-experience-of-using-STL/"/>
+    <id>http://mycodebattle.com/2014/09/my-experience-of-using-STL/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Surrounded Regions]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-surrounded-regions/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-surrounded-regions/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1509 - Leet]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1509/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1509/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1346 - Songs]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1346/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1346/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1330 - City Game]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1330/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1330/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 5019 - Revenge of GCD]]></title>
+    <link href="http://mycodebattle.com/2014/09/HDU-5019/"/>
+    <id>http://mycodebattle.com/2014/09/HDU-5019/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 633 Div2 Problem 250 - Target]]></title>
+    <link href="http://mycodebattle.com/2014/09/topcoder-srm-633-div2-250/"/>
+    <id>http://mycodebattle.com/2014/09/topcoder-srm-633-div2-250/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TopCoder SRM 633 Div2 Problem 500 - Jumping]]></title>
+    <link href="http://mycodebattle.com/2014/09/topcoder-srm-633-250/"/>
+    <id>http://mycodebattle.com/2014/09/topcoder-srm-633-250/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11825 - Hackers' Crackdown]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11825/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11825/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[C++里的几个常用的二进制位内置函数]]></title>
+    <link href="http://mycodebattle.com/2014/09/built-in-function-in-c++/"/>
+    <id>http://mycodebattle.com/2014/09/built-in-function-in-c++/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces Round 267 (Div. 2) C - George and Job]]></title>
+    <link href="http://mycodebattle.com/2014/09/Codeforces-Round-267-C/"/>
+    <id>http://mycodebattle.com/2014/09/Codeforces-Round-267-C/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ACDream 1191 - Dragon Maze]]></title>
+    <link href="http://mycodebattle.com/2014/09/ACDream-1191/"/>
+    <id>http://mycodebattle.com/2014/09/ACDream-1191/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ACDream 1209 - qj的招待会]]></title>
+    <link href="http://mycodebattle.com/2014/09/ACDream-1209/"/>
+    <id>http://mycodebattle.com/2014/09/ACDream-1209/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1481 - Genome Evolution]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1481/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1481/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Count and Say]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-count-and-say/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-count-and-say/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Merge Sorted Array]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-merge-sorted-array/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-merge-sorted-array/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1326 - Jurassic Remains]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1326/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1326/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Partition List]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-partition-list/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-partition-list/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 XI]]></title>
+    <link href="http://mycodebattle.com/2014/09/nothing-XI/"/>
+    <id>http://mycodebattle.com/2014/09/nothing-XI/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1468 - Restaurant]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1468/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1468/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1418 - WonderTeam]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1418/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1418/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Gas Station]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-gas-station/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-gas-station/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10917 - Walk Through the Forest]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-10917/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-10917/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Unique Paths]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-unique-path/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-unique-path/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Pascal's Triangle]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-triangle/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-triangle/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Evaluate Reverse Polish Notation]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-RPN/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-RPN/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Reverse Words in a String]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-reverse-string/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-reverse-string/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode - Flatten Binary Tree to Linked List]]></title>
+    <link href="http://mycodebattle.com/2014/09/leetcode-list/"/>
+    <id>http://mycodebattle.com/2014/09/leetcode-list/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1467 - Installations]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1467/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1467/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11389 - The Bus Driver Problem]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11389/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11389/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1344 - Tian Ji -- The Horse Racing]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1344/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1344/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1450 - Airport]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1450/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1450/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 VIII]]></title>
+    <link href="http://mycodebattle.com/2014/09/nothing-VIII/"/>
+    <id>http://mycodebattle.com/2014/09/nothing-VIII/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.4 - Mother's Milk]]></title>
+    <link href="http://mycodebattle.com/2014/09/USACO-1_4-milk3/"/>
+    <id>http://mycodebattle.com/2014/09/USACO-1_4-milk3/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[记在学校的第二个中秋节]]></title>
+    <link href="http://mycodebattle.com/2014/09/the-second-mid-autumn-in-university/"/>
+    <id>http://mycodebattle.com/2014/09/the-second-mid-autumn-in-university/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 3818 - Pretty Poem]]></title>
+    <link href="http://mycodebattle.com/2014/09/ZJU-3818/"/>
+    <id>http://mycodebattle.com/2014/09/ZJU-3818/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ZJU 3811 - Untrusted Patrol]]></title>
+    <link href="http://mycodebattle.com/2014/09/ZOJ-3811/"/>
+    <id>http://mycodebattle.com/2014/09/ZOJ-3811/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[记第一次网络赛]]></title>
+    <link href="http://mycodebattle.com/2014/09/the-first-network-regional/"/>
+    <id>http://mycodebattle.com/2014/09/the-first-network-regional/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 442A - Borya and Hanabi]]></title>
+    <link href="http://mycodebattle.com/2014/09/Codeforces-442A/"/>
+    <id>http://mycodebattle.com/2014/09/Codeforces-442A/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11134 - Fabled Rooks]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11134/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11134/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 VII]]></title>
+    <link href="http://mycodebattle.com/2014/09/nothing-VII/"/>
+    <id>http://mycodebattle.com/2014/09/nothing-VII/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1254 - 推箱子]]></title>
+    <link href="http://mycodebattle.com/2014/09/HDU-1254/"/>
+    <id>http://mycodebattle.com/2014/09/HDU-1254/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 2678 - Subsequence]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-2678/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-2678/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1335 - Beijing Guards]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1335/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1335/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1422 - Processor]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1422/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1422/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1368 - DNA Consensus String]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1368/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1368/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1339 - Ancient Cipher]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1339/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1339/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11039 - Building designing]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11039/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11039/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11636 - Hello World!]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11636/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11636/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11549 - Calculator Conundrum]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11549/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11549/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1267 - Network]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-1267/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-1267/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11520 - Fill the Square]]></title>
+    <link href="http://mycodebattle.com/2014/09/UVa-11520/"/>
+    <id>http://mycodebattle.com/2014/09/UVa-11520/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces Round - 264 (Div. 2)]]></title>
+    <link href="http://mycodebattle.com/2014/08/Codeforces-Round-264/"/>
+    <id>http://mycodebattle.com/2014/08/Codeforces-Round-264/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[记一次普通的旅途]]></title>
+    <link href="http://mycodebattle.com/2014/08/a-nomal-travel/"/>
+    <id>http://mycodebattle.com/2014/08/a-nomal-travel/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关于大一暑假&新学期计划]]></title>
+    <link href="http://mycodebattle.com/2014/08/about-da-yi-summer-vacation/"/>
+    <id>http://mycodebattle.com/2014/08/about-da-yi-summer-vacation/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11464 - Even Parity]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11464/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11464/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1250 - 最勇敢的机器人]]></title>
+    <link href="http://mycodebattle.com/2014/08/Vijos-1250/"/>
+    <id>http://mycodebattle.com/2014/08/Vijos-1250/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2795 - Billboard]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-2795/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-2795/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关于折腾]]></title>
+    <link href="http://mycodebattle.com/2014/08/about-zhe-teng/"/>
+    <id>http://mycodebattle.com/2014/08/about-zhe-teng/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1394 - Minimum Inversion Number]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1394/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1394/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces 459C - Pashmak and Buses]]></title>
+    <link href="http://mycodebattle.com/2014/08/CF-459C/"/>
+    <id>http://mycodebattle.com/2014/08/CF-459C/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11384 - Help is needed for Dexter]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11384/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11384/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1166 - 敌兵布阵]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1166/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1166/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11462 - Age Sort]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11462/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11462/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11078 - Open Credit System]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11078/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11078/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1754 - I Hate It]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1754/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1754/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2120 - Ice_cream's world I]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-2120/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-2120/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1232 - 畅通工程]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1232/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1232/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11235 - Frequent values]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11235/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11235/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[数据结构部分备忘]]></title>
+    <link href="http://mycodebattle.com/2014/08/DS-memo/"/>
+    <id>http://mycodebattle.com/2014/08/DS-memo/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1428 - Ping pong]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-1428/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-1428/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1317 - XYZZY]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1317/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1317/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1856 - More is better]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1856/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1856/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1272 - 小希的迷宫]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1272/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1272/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1213 - How Many Tables]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1213/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1213/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[并查集&MST题集]]></title>
+    <link href="http://mycodebattle.com/2014/08/problem-set-of-ds-and-mst/"/>
+    <id>http://mycodebattle.com/2014/08/problem-set-of-ds-and-mst/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1329 - Corporative Network]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-1329/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-1329/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1203 - Argus]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-1203/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-1203/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 19299 - Piotr's Ants]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-19299/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-19299/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1198 - 最佳课题选择]]></title>
+    <link href="http://mycodebattle.com/2014/08/Vijos-1189/"/>
+    <id>http://mycodebattle.com/2014/08/Vijos-1189/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[搜索部分备忘]]></title>
+    <link href="http://mycodebattle.com/2014/08/search-memo/"/>
+    <id>http://mycodebattle.com/2014/08/search-memo/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1159 - 岳麓山上打水]]></title>
+    <link href="http://mycodebattle.com/2014/08/Vijos-1159/"/>
+    <id>http://mycodebattle.com/2014/08/Vijos-1159/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11300 - Spreading the Wealth]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11300/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11300/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11991 - Easy Problem from Rujia Liu?]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11991/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11991/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces Round - 262 (Div. 2)]]></title>
+    <link href="http://mycodebattle.com/2014/08/Codeforces-Round-262/"/>
+    <id>http://mycodebattle.com/2014/08/Codeforces-Round-262/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11995 - I Can Guess the Data Structure!]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11995/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11995/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 1160 - X-Plosives]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-1160/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-1160/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11729 - Commando War]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11729/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11729/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 VI]]></title>
+    <link href="http://mycodebattle.com/2014/08/nothing-VI/"/>
+    <id>http://mycodebattle.com/2014/08/nothing-VI/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1153 - 猫狗大战]]></title>
+    <link href="http://mycodebattle.com/2014/08/Vijos-1153/"/>
+    <id>http://mycodebattle.com/2014/08/Vijos-1153/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos - P1071 新年趣事之打牌]]></title>
+    <link href="http://mycodebattle.com/2014/08/Vijos-1071/"/>
+    <id>http://mycodebattle.com/2014/08/Vijos-1071/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1158 - Employment Planning]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1158/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1158/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11292 - Dragon of Loowater]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11292/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11292/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1059 - 积木城堡]]></title>
+    <link href="http://mycodebattle.com/2014/08/Vijos-1059/"/>
+    <id>http://mycodebattle.com/2014/08/Vijos-1059/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1037 - 搭建双塔]]></title>
+    <link href="http://mycodebattle.com/2014/08/Vijos-1037/"/>
+    <id>http://mycodebattle.com/2014/08/Vijos-1037/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.3 - Prime Cryptarithm]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_3-crypt1/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_3-crypt1/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1217 - Arbitrage]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1217/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1217/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1874 - 畅通工程续]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1874/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1874/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2112 - HDU Today]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-2112/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-2112/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2066 - 一个人的旅行]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-2066/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-2066/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 3790 - 最短路径问题]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-3790/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-3790/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2544 - 最短路]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-2544/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-2544/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[最短路&差分约束题集]]></title>
+    <link href="http://mycodebattle.com/2014/08/problem-sets-of-sp-and-dc/"/>
+    <id>http://mycodebattle.com/2014/08/problem-sets-of-sp-and-dc/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1548 - A strange lift]]></title>
+    <link href="http://mycodebattle.com/2014/08/HDU-1548/"/>
+    <id>http://mycodebattle.com/2014/08/HDU-1548/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.3 - Barn Repair]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_3-barn1/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_3-barn1/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10803 - Thunder Mountain]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10803/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10803/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 125 - Numbering Paths]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-125/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-125/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.3 - Mixing Milk]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_3-milk/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_3-milk/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.2 - Dual Palindromes]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_2-dualpal/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_2-dualpal/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.2 - Palindromic Squares]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_2-palsquare/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_2-palsquare/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 558 - Wormholes]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-558/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-558/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10986 - Sending email]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10986/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10986/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 V]]></title>
+    <link href="http://mycodebattle.com/2014/08/nothing-V/"/>
+    <id>http://mycodebattle.com/2014/08/nothing-V/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10801 - Lift Hopping]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10801/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10801/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.2 - Name That Number]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_2-namenum/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_2-namenum/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10099 - The Tourist Guide]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10099/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10099/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.2 - Transformations]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_2-transform/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_2-transform/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10369 - Arctic Network]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10369/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10369/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10397 - Connect the Campus]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10397/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10397/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10048 - Audiophobia]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10408/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10408/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.2 - Milking Cows]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_2-milk2/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_2-milk2/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.1 - Broken Necklace]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_1-beads/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_1-beads/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 567 - Risk]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-567/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-567/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[图论部分备忘]]></title>
+    <link href="http://mycodebattle.com/2014/08/graph-memo/"/>
+    <id>http://mycodebattle.com/2014/08/graph-memo/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10034 - Freckles]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10034/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10034/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1 备忘]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-sec-1-memo/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-sec-1-memo/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.1 - Friday the Thirteenth]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO_1-friday/"/>
+    <id>http://mycodebattle.com/2014/08/USACO_1-friday/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10570 - Meeting with Aliens]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10570/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10570/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 306 - Cipher]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-306/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-306/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.1 - Greedy Gift Givers]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_1-gift1/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_1-gift1/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USACO Section 1.1 - Your Ride Is Here]]></title>
+    <link href="http://mycodebattle.com/2014/08/USACO-1_1-ride/"/>
+    <id>http://mycodebattle.com/2014/08/USACO-1_1-ride/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10994 - Simple Addition]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10994/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10994/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 696 - How Many Knights]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-696/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-696/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 701 - The Archeologists' Dilemma]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-701/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-701/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces Round - 260 (Div. 2) A ~ C]]></title>
+    <link href="http://mycodebattle.com/2014/08/Codeforces-Round-260-Div2/"/>
+    <id>http://mycodebattle.com/2014/08/Codeforces-Round-260-Div2/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10205 - Stack 'em Up]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10205/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10205/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10616 - Divisible Group Sums]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10616/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10616/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10912 - Simple Minded Hashing]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10912/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10912/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10721 - Bar Codes]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10721/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10721/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10943 - How do you add?]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10943/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10943/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 IV]]></title>
+    <link href="http://mycodebattle.com/2014/08/nothing-IV/"/>
+    <id>http://mycodebattle.com/2014/08/nothing-IV/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10081 - Tight Words]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10081/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10081/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10157 - Expressions]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10157/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10157/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10128 - Queue]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10128/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10128/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10254 - The Priest Mathematician]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10254/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10254/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10910 - Marks Distribution]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10910/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10910/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11069 - A Graph Problem]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-11069/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-11069/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10918 - Tri Tiling]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10918/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10918/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10519 - !! Really Strange !!]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10519/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10519/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10359 - Tiling]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10359/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10359/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10079 - Pizza Cutting]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10079/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10079/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 991 - Safe Salutations]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-991/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-991/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10236 - The Fibonacci Primes]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10236/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10236/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 763 - Fibinary Numbers]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-763/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-763/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10229 - Modular Fibonacci]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10229/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10229/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10344 - Ray Through Glasses]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10344/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10344/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10862 - Connect the Cable Wires]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10862/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10862/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10518 - How Many Calls?]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10518/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10518/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10303 - How Many Trees?]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10303/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10303/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10183 - How Many Fibs?]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10183/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10183/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10169 - Urn-ball Probabilities !]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10169/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10169/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10277 - Boastin' Red Socks]]></title>
+    <link href="http://mycodebattle.com/2014/08/UVa-10277/"/>
+    <id>http://mycodebattle.com/2014/08/UVa-10277/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 542 - France '98]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-542/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-542/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10759 - Dice Throwing]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10759/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10759/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10491 - Cows and Cars]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10491/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10491/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10056 - What is the Probability ?]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10056/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10056/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vim 快捷键整理]]></title>
+    <link href="http://mycodebattle.com/2014/07/shortcut-key-of-Vim/"/>
+    <id>http://mycodebattle.com/2014/07/shortcut-key-of-Vim/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 1113 - Word Amalgamation]]></title>
+    <link href="http://mycodebattle.com/2014/07/HDU-1113/"/>
+    <id>http://mycodebattle.com/2014/07/HDU-1113/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10375 - Choose and divide]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10375/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10375/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10105 - Polynomial Coefficients]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10105/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10105/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[取模（mod）与取余（rem）的区别]]></title>
+    <link href="http://mycodebattle.com/2014/07/difference-between-mod-and-rem/"/>
+    <id>http://mycodebattle.com/2014/07/difference-between-mod-and-rem/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 571 - Jugs]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-571/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-571/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11029 - Leading and Trailing]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-11029/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-11029/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[数论部分备忘]]></title>
+    <link href="http://mycodebattle.com/2014/07/Number-Theory-memo/"/>
+    <id>http://mycodebattle.com/2014/07/Number-Theory-memo/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10820 - Send a Table]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10820/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10820/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10717 - Mint]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10717/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10717/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10791 - Minimum Sum LCM]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10791/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10791/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11121 - Base -2]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-11121/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-11121/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10673 - Play with Floor and Ceil]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10673/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10673/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 106 - Fermat vs. Pythagoras]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-106/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-106/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vijos P1028 - 魔族密码]]></title>
+    <link href="http://mycodebattle.com/2014/07/Vijos-P1028/"/>
+    <id>http://mycodebattle.com/2014/07/Vijos-P1028/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[NYOJ 306 - 走迷宫]]></title>
+    <link href="http://mycodebattle.com/2014/07/NYIST-306/"/>
+    <id>http://mycodebattle.com/2014/07/NYIST-306/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 128 - Software CRC]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-128/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-128/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10006 - Carmichael Numbers]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10006/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10006/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 138 - Street Numbers]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-138/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-138/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10163 - Storage Keepers]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10163/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10163/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10599 - Robots(II)]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10599/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10599/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11258 - String Partition]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-11258/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-11258/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11008 - Antimatter Ray Clearcutting]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-11008/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-11008/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10913 - Walking on a Grid]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10913/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10913/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10604 - Chemical Reaction]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10604/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10604/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 607 - Scheduling Lectures]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-607/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-607/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10118 - Free Candies]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10118/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10118/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10626 - Buying Coke]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10626/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10626/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 662 - Fast Food]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-662/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-662/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10564 - Paths through the Hourglass]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10564/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10564/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10635 - Prince and Princess]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10635/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10635/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10911 - Forming Quiz Teams]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10911/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10911/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11151 - Longest Palindrome]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-11151/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-11151/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10891 - Game of Sum]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10891/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10891/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10313 - Pay the Price]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10313/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10313/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[为博客增加搜索功能]]></title>
+    <link href="http://mycodebattle.com/2014/07/add-the-search-function/"/>
+    <id>http://mycodebattle.com/2014/07/add-the-search-function/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10453 - Make Palindrome]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10453/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10453/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10201 - Adventures in Moving - Part IV]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10201/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10201/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10154 - Weights and Measures]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10154/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10154/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10271 - Chopsticks]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10271/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10271/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10617 - Again Palindrome]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10617/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10617/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 11137 - Ingenuous Cubrency]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-11137/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-11137/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10739 - String to Palindrome]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10739/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10739/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 III]]></title>
+    <link href="http://mycodebattle.com/2014/07/nothing-III/"/>
+    <id>http://mycodebattle.com/2014/07/nothing-III/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SDUT 2765 - 母牛的故事]]></title>
+    <link href="http://mycodebattle.com/2014/07/SDUT-2765/"/>
+    <id>http://mycodebattle.com/2014/07/SDUT-2765/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10306 - e-Coins]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10306/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10306/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 590 - Always on the run]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-590/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-590/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10651 - Pebble Solitaire]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10651/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10651/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10534 - Wavio Sequence]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10534/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10534/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10069 - Distinct Subsequences]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10069/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10069/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 825 - Walking on the Safe Side]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-825/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-825/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 620 - Cellular Structure]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-620/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-620/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10404 - Bachet's Game]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10404/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10404/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 437 - The Tower of Babylon]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-437/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-437/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10285 - Longest Run on a Snowboard]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10285/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10285/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 531 - Compromise]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-531/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-531/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10465 - Homer Simpson]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10465/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10465/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Codeforces Round - 255 (Div. 2) A~B]]></title>
+    <link href="http://mycodebattle.com/2014/07/Codeforces%20Round%20-%20255%20(Div.%202)/"/>
+    <id>http://mycodebattle.com/2014/07/Codeforces Round - 255 (Div. 2)/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10130 - SuperSale]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10130/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10130/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 624 - CD]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-624/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-624/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2546 - 饭卡]]></title>
+    <link href="http://mycodebattle.com/2014/07/HDU-2546/"/>
+    <id>http://mycodebattle.com/2014/07/HDU-2546/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HDU 2602 - Bone Collector]]></title>
+    <link href="http://mycodebattle.com/2014/07/HDU-2602/"/>
+    <id>http://mycodebattle.com/2014/07/HDU-2602/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 348 - Optimal Array Multiplication Sequence]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-348/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-348/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 II]]></title>
+    <link href="http://mycodebattle.com/2014/07/nothing-II/"/>
+    <id>http://mycodebattle.com/2014/07/nothing-II/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 562 - Dividing coins]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-562/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-562/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 357 - Let Me Count The Ways]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-357/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-357/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 147 - Dollars]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-147/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-147/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10192 - Vacation]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10192/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10192/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 116 - Unidirectional TSP]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-116/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-116/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10066 - The Twin Towers]]></title>
+    <link href="http://mycodebattle.com/2014/07/UVa-10066/"/>
+    <id>http://mycodebattle.com/2014/07/UVa-10066/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[杂记 I]]></title>
+    <link href="http://mycodebattle.com/2014/06/nothing-I/"/>
+    <id>http://mycodebattle.com/2014/06/nothing-I/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10131 - Is Bigger Smarter?]]></title>
+    <link href="http://mycodebattle.com/2014/06/UVa-10131/"/>
+    <id>http://mycodebattle.com/2014/06/UVa-10131/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10003 - Cutting Sticks]]></title>
+    <link href="http://mycodebattle.com/2014/06/UVa-10003/"/>
+    <id>http://mycodebattle.com/2014/06/UVa-10003/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 674 - Coin Change]]></title>
+    <link href="http://mycodebattle.com/2014/06/UVa-674/"/>
+    <id>http://mycodebattle.com/2014/06/UVa-674/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 10405 - Longest Common Subsequence]]></title>
+    <link href="http://mycodebattle.com/2014/06/UVa-10405/"/>
+    <id>http://mycodebattle.com/2014/06/UVa-10405/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 103 - Stacking Boxes]]></title>
+    <link href="http://mycodebattle.com/2014/06/UVa-103/"/>
+    <id>http://mycodebattle.com/2014/06/UVa-103/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UVa 111 - History Grading]]></title>
+    <link href="http://mycodebattle.com/2014/06/UVa-111/"/>
+    <id>http://mycodebattle.com/2014/06/UVa-111/</id>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[写在最前面]]></title>
+    <link href="http://mycodebattle.com/2014/06/preface/"/>
+    <id>http://mycodebattle.com/2014/06/preface/</id>
+    
+  </entry>
+  
+</feed>

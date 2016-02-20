@@ -1,5 +1,5 @@
 ---
-categories: Solvint-Reports
+categories: Solving-Reports
 date: 2015-08-29 22:16:49
 title: 把之前的扯蛋都存到github了
 tags: 

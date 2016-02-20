@@ -1,5 +1,5 @@
 ---
-categories: Solvint-Reports
+categories: Solving-Reports
 date: 2015-10-24 11:41:50
 title: CodeChef ADTRI - Rupsa and Equilateral Triangle (数论 + 费马平方和定理)
 tags: [Online Judge - CodeChef, Math - Number Theory]

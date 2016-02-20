@@ -1,5 +1,5 @@
 ---
-categories: Solvint-Reports
+categories: Solving-Reports
 date: 2015-09-20 20:00:00
 title: Project Euler
 tags:

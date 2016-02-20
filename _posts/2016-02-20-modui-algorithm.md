@@ -1,5 +1,5 @@
 ---
-categories: Solvint-Reports
+categories: Solving-Reports
 date: 2015-09-30 12:36:38
 title: BZ 2038 - 小Z的袜子 (莫队)
 tags: [Online Judge - BZ, Algorithm - MoDui]

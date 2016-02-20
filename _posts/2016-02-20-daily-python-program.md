@@ -1,5 +1,5 @@
 ---
-categories: Solvint-Reports
+categories: Solving-Reports
 date: 2015-09-22 12:28:46
 title: Python 练习册，每天一个小程序
 tags: 

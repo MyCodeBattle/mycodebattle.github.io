@@ -19,7 +19,7 @@ layout: post
 写到这里本来要写段int降序排序的，然后我才发现Java不提供对基本类型的定义排序（ ＴДＴ）
 在我理解中如果返回1就说明这两个元素要换位置。
 
-```java
+```
 public class Solution {
 
     public static void main(String[] args) {

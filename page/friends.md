@@ -13,5 +13,5 @@ permalink: /friends/
 [AOQNRMGYXLMV](http://aoqnrmgyxlmv.github.io/)<br>
 [YiFan](http://www.zhuoyifan.net/)<br>
 [CHEATBEATER](http://cheatbeater.tk/)<br>
-[Richard](http://richardzhang.info/)<br>、
+[Richard](http://richardzhang.info/)<br>
 [Sevenskey](http://www.sevenskey.xyz/365/index.html)<br>

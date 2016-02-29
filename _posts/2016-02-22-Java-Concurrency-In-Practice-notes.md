@@ -108,4 +108,16 @@ Java 5.0中加入了`ConcurrentHashMap`和`CopyOnWriteArrayList`，后者适合�
  平时的时候消费者使用自己的Deque，万一自己的用完了，就可以从别人的队尾「偷」东西，减少了contention.
  
  ## Blocking and Interruptible Methods
+ 
+ `Interruption`是一个合作的机制，线程A并不能强制要求线程B暂停。
+ 
+ 我们最好对`InterruptedException`做出处理。
+ 
+ ## Synchronizers
+ 
+ Synchronizer是那些根据自身状态协调控制流的**对象**。
 
+### Latches
+
+Latch可以延迟线程，直到满足所有条件线程才开始运行，就像门一样。
+这有点像`Toposort`，一个活动要满足之前的条件才能举行。 

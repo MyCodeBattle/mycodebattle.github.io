@@ -54,4 +54,18 @@ public class statelesFactorizer implements Servlet {
 当计数器为0时，锁释放。
 
 
+# Chapter5. Building Blocks
+<s>中间的有机会再补</s>
+
+## Synchronized Collections
+
+### Problems with Synchronized Collections
+
+虽然`Vector`和`Hashtable`是线程安全的，但这并不意味着我们可以随意使用，在某些复合操作下。
+
+比如说两个方法`getLast`和`deleteLast`，如果他们同时获取了List的Length，那么deleteLast又先于getLast执行，就会抛出数组越界的异常，这样我们只能把这两个复合操作加上`client-side locking`。
+
+如果使用普通的循环遍历容器，可能会抛出数组越界; 如果用`Iterator`来遍历，可能会抛出`ConcurrentModificationException`。这时候我们如果使用`client-side locking`就可能会造成死锁。
+
+
 

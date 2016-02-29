@@ -52,5 +52,5 @@ private class Itr implements Iterator<E> {
 
 # 解决办法
 
-1. 给抛出异常的方法加锁
+1. 给抛出异常的方法加锁。
 2. 使用`CopyOnWriteArray`。这个类每add一次就new一个新的数组，所以原来的不会变。然而这样就看不到新的修改了。根据情景使用吧。

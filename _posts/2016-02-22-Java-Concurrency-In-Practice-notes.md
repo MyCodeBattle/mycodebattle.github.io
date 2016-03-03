@@ -165,3 +165,29 @@ Barriers可以等待一组线程，等他们全部到达的时候一起释放。
 - 线程间的竞争会消耗资源。
 - 能创建的线程有上限。
 
+## The Executor Framework
+
+`Executor`使用线程池来管理线程，可以重复利用已经创建出来的线程。我们并不用手动创建新的线程。
+
+### Thread Pools
+
+线程池可以重复利用线程，使得响应更迅速。
+`newFixedThreadPool`是固定大小的线程池。
+`newCachedThreadPool` 一个缓存的线程池，当线程池大小超过工作需求时可以方便地收割空闲进程。但是大小没上限。
+`newSingleThreadExecutor` 创建单例线程，线序执行任务，提供足够的内在同步方法保证任何的修改对接下来的任务都可见。
+`newScheduledThreadPool` 支持延迟和任务的周期执行。
+
+### Executor Lifecycle
+
+`ExecutorService`接口提供了控制生命周期的几个方法。
+调用`shutdown`的时候，它不再接受新的任务，而会把当前执行的任务执行完，这时候的状态是`shutdown`。
+在这之后状态变为`terminated`。
+
+### Delayed and Periodic Tasks
+
+`Timer`类可以让线程运行设定时间，然而有一些缺点，包括一旦抛出了一个 unchecked Exception，整个`TimerTasks`就 terminates 了。
+
+文章中建议用`Delay?Queu`或者`BlockingQueue`代替。
+
+
+

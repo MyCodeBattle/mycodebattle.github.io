@@ -15,3 +15,4 @@ permalink: /friends/
 [CHEATBEATER](http://cheatbeater.tk/)<br>
 [Richard](http://richardzhang.info/)<br>
 [Sevenskey](http://www.sevenskey.xyz/365/index.html)<br>
+[CodeMIRACLE](http://codemiracle.cnblogs.com/)<br>

@@ -3,6 +3,7 @@ title: Java Concurrency In Practice 笔记
 layout: post
 date: 2016-02-22
 categories: Java Notes
+updated: 2016-03-04
 ---
 
 我就想看看我能写多久。
@@ -187,7 +188,94 @@ Barriers可以等待一组线程，等他们全部到达的时候一起释放。
 
 `Timer`类可以让线程运行设定时间，然而有一些缺点，包括一旦抛出了一个 unchecked Exception，整个`TimerTasks`就 terminates 了。
 
-文章中建议用`Delay?Queu`或者`BlockingQueue`代替。
+文章中建议用`DelayQueue`或者`BlockingQueue`代替。
+
+
+## Finding Exploitable Parallelism
+
+我们要尽可能地找到任务中可以并行的部分。
+
+### CompletionService
+
+> "如果向Executor提交了一组计算任务，并且希望在计算完成后获得结果，那么可以保留与每个任务关联的Future，然后反复使用get方法，同时将参数timeout指定为0，从而通过轮询来判断任务是否完成。这种方法虽然可行，但却有些繁琐。幸运的是，还有一种更好的方法：完成服务CompletionService。"
+
+这个接口和ExecutorService的区别主要在使用后者的时候我们要不断调用get判断工作是否完成，这个一旦take就是已经完成的任务。
+还是有点搞不清楚。
+
+### Summary
+
+本章主要讲了如何使用`Executor`和相关的接口。以及如何开发出程序的并行性。
+
+# Chapter 7. Cancellation and Shutdown
+
+Java并不提供API强制终止线程。因为这样可能让共享的数据处于一个异常的状态。所以它提供了一个「合作机制」。
+是否处理好 failure、shutdown、和 cancellation 是鉴别一个应用是否表现良好的重要方面。
+
+## Task Cancellation
+
+我们可以使用一个`boolean`变量`cancel`来标记是否有取消的请求。不过这样当线程被阻塞时便无法检查到这个变量，所以就会一直阻塞下去。
+
+更好的办法是使用`interrupt`。
+
+### Interruption
+
+使用`interrupt`的时候，即使线程被阻塞也能收到消息。
+`interrupted`方法返回了一个`boolean`，判断中断位是否被设置。如果被设置了，之后中断位会被清零，所以使用的时候要注意。
+
+
+### Responding to Interruption
+
+这章讲得好玄幻，基本看不懂。
+大概就是讲当interrupt的时候，线程会抛出`InterruptedException`，这时候我们不能吞了它，要么做出处理，要么向上级 throw。
+
+
+### Cancellation Via Future
+
+当我们把 task 提交给 Executor 运行的时候，我们不知道 task 会被哪个线程执行，所以不能用 Thread.interrupt 方法。
+这时候可以用`Future`的`cancel`方法。
+该方法返回 false，如果 task 不能被取消（已经完成、已经取消）。
+如果成功，尚未启动的任务永远不会启动。
+
+如果任务已经启动，看传进去的参数，如果是`true`就会标记`interrupt`，否则失败。
+
+如果一个任务没有处理中断异常，总是应该传入`false`。
+
+
+# Chapter 13 - Explicit Locks
+
+## Lock and ReentrantLock
+
+`Lock`和`synchronized`的区别在于 Lock 更加灵活。
+synchronized 的时候，线程一旦等待 synchronized 锁住的对象的时候便不能中断。
+lock 还能用来锁一些结点，比如说 list 里的，这样我们能并发地访问每一个结点。（ConcurrentHashMap 的思想？）
+
+## Polled and Timed Lock Acquisition
+
+lock 可以设置等待获取锁的时间，一旦到达时间就放弃。方法是`lock.tryLock(time, NANOSECONDS)`.
+
+## Interruptible Lock Acquisition
+
+`lock.lockInterruptibly()`提供了能中断的 lock。
+
+## Fairness
+
+lock 分为 fair 和 unfair 两个，默认是 unfair。通常情况下 unfair 的 lock performance 要优于 fair lock。
+考虑以下情形：
+A 拿着锁，B 请求锁，然后进入队列。这时候 A 要释放锁，这时候 C 来了。如果是 fair lock，这时候会唤醒 B，让 B 先上。
+但是可能发生这种情况：C 插队，等它运行完 B 才刚刚被唤醒，这样就是双赢了。
+事实上 intrinsic lock 也是 unfair 的，虽然 JLS 没有规定。
+
+
+## Choosing Between Synchronized and ReentrantLock
+
+虽然 Lock 的效率通常比 intrinsic lock 要高，但是作者还是建议除非我们要用到 advanced features 的时候才考虑用 lock，通常的话还是使用 intrinsic lock 比较保险。因为 lock 要手动释放和获取。
+
+## Read-write Locks
+
+读写锁常用在读操作比写操作大得多的情况下。它能让多个读线程同时访问。
+如果在其他情况下，性能是不如 lock 的 - 因为它就是用 lock 实现的。
+
+插句无关的话：`ReadWriteMap`并没有实现`Map`接口，因为有些方法比如`entrySet`很难实现，一些简单的就够了。
 
 
 

@@ -23,3 +23,20 @@ Starting with Redis 2.6.12 SET supports a set of options that modify its behavio
 
 如果正确执行返回`OK`，否则返回`NULL`。
 
+# keys *
+
+查找 key 的信息。
+
+# flushadb
+
+删除当前数据库的信息。
+
+# flushall
+
+删除全部数据库里的信息。
+
+#select
+
+默认 Redis 开了16个数据库。我们可以用 `select 2`来切换不同的数据库。
+
+

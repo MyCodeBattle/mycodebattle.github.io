@@ -16,3 +16,6 @@ permalink: /friends/
 [Richard](http://richardzhang.info/)<br>
 [Sevenskey](http://www.sevenskey.xyz/365/index.html)<br>
 [CodeMIRACLE](http://codemiracle.cnblogs.com/)<br>
+[scf0920](http://blog.csdn.net/scf0920)<br>
+[ltwy](http://ltwy.me/)<br>
+

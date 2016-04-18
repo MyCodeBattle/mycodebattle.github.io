@@ -2,6 +2,7 @@
 title: Redis 源码阅读 - 整数集合
 categories: Redis
 date: 2016-04-16
+layout: post
 ---
 
 整数集合是有序的，不包含重复元素的。

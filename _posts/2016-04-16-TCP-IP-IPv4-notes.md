@@ -2,6 +2,7 @@
 title: TCP/IP 协议族 - IPv4 地址笔记
 date: 2016-04-16
 categories: TCP/IP
+layout: post
 ---
 
 # 分类编址

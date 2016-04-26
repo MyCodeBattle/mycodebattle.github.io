@@ -1,2 +1,5 @@
 *~
 *.swp
+.sass-cache/
+_site/
+a

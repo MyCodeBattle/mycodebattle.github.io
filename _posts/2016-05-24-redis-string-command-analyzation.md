@@ -8,6 +8,7 @@ categories: Redis
 #set key value [NX] [XX]#
 
 先调用`setKey`。<br>
+
 ```
 void setKey(redisDb *db, robj *key, robj *val) {
     if (lookupKeyWrite(db,key) == NULL) {
@@ -20,6 +21,7 @@ void setKey(redisDb *db, robj *key, robj *val) {
     signalModifiedKey(db,key);
 }
 ```
+
 然后这时候要判断是覆盖还是新增加的，所以调用了`lookupKeyWrite`，接着调用了`lookupKey`，这里调用了`dictFind`获得了`dictEntry`。
 
 如果`dictEntry`是 NULL，就调用 `dbAdd`，否则调用`dbOverWrite`。
@@ -28,6 +30,7 @@ void setKey(redisDb *db, robj *key, robj *val) {
 Hash 一发 key，然后与一下容量，拿到桶，然后就是遍历比较了。
 
 来看看`dbAdd`的过程。<br>
+
 ```
 void dbAdd(redisDb *db, robj *key, robj *val) {
     sds copy = sdsdup(key->ptr);
@@ -38,9 +41,11 @@ void dbAdd(redisDb *db, robj *key, robj *val) {
     if (server.cluster_enabled) slotToKeyAdd(key);
  }
 ```
+
 显然就是把`key`先弄成一个`sds`，然后加到 db 的 dict 里。
 
 `dbOverWrite`<br>
+
 ```
 void dbOverwrite(redisDb *db, robj *key, robj *val) {
     dictEntry *de = dictFind(db->dict,key->ptr);

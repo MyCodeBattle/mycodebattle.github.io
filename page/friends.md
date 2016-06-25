@@ -18,4 +18,7 @@ permalink: /friends/
 [CodeMIRACLE](http://codemiracle.cnblogs.com/)<br>
 [scf0920](http://blog.csdn.net/scf0920)<br>
 [ltwy](http://ltwy.me/)<br>
+[Bipedalbit](http://blog.bipedalbit.net/)<br>
+[BigBallon](http://bigballon.github.io/)<br>
+
 

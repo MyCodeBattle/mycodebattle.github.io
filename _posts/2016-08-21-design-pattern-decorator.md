@@ -35,14 +35,15 @@ public class LogExample {
 
 ![decorator](http://pic002.cnblogs.com/images/2012/267603/2012010318015849.jpg)
 
-`Component`是需要规范的动作。
-`ConcreteComponent`是要被装饰的类。
-`Decorator` 持有一个`Component`实例。
-`ConcreteDecorator`负责装饰
+- `Component`是需要规范的动作。
+- `ConcreteComponent`是要被装饰的类。
+- `Decorator` 持有一个`Component`实例。
+- `ConcreteDecorator`负责装饰
 
 举个栗子
 
 `Component`
+
 ```
 package designpattern.decorator;
 
@@ -71,6 +72,7 @@ public class Logger implements Log {
 ```
 
 `Decorator`
+    
 ```
 package designpattern.decorator;
 
@@ -149,6 +151,13 @@ public class Solution {
     }
 }
 ```
+
+```
+普通的日志
+记录错误日志
+警告日志
+```
+
 
 这样就达到了任意组合的效果。
 

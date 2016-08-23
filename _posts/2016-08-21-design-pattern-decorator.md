@@ -1,7 +1,7 @@
 ---
 title: 设计模式之装饰模式
 layout: post
-date: 2016-08-10
+date: 2016-08-21
 categories: Design Pattern
 ---
 

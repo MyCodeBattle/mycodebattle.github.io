@@ -9,7 +9,7 @@ categories: Design Pattern
 
 # UML 类图
 
-![proxy](http://s9.sinaimg.cn/bmiddle/5632ed9f06ee514f5dd78)
+![proxy](http://images.cnitblog.com/blog/299855/201310/03085612-1e68bd5a753b44ce8349d046b52a29e7.png)
 
 # 举个栗子
 

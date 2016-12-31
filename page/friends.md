@@ -8,7 +8,7 @@ permalink: /friends/
 
 [IlluZ](http://illuz.github.io/)<br>
 [Binary10](http://cuichen.cc/)<br>
-[Scalpel](http://scalpel.xyz/)<br>
+[Scalpel](http://scalpel.vip/)<br>
 [Winterfell30](http://winterfell30.com/)<br>
 [ArcPhase](http://arcphase20.com/)<br>
 [ACEndless](http://jianyan.me/)<br>

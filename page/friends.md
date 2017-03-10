@@ -18,7 +18,7 @@ permalink: /friends/
 [CHEATBEATER](http://cheatbeater.tk/)<br>
 [Richard](http://richardzhang.info/)<br>
 [Sevenskey](http://www.sevenskey.xyz/365/index.html)<br>
-[CodeMIRACLE](http://codemiracle.cnblogs.com/)<br>
+[binvec](http://binvec.xyz)<br>
 [scf0920](http://blog.csdn.net/scf0920)<br>
 [ltwy](http://ltwy.me/)<br>
 [Bipedalbit](http://blog.bipedalbit.net/)<br>

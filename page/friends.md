@@ -5,7 +5,7 @@ permalink: /friends/
 ---
 
 ## ORDER BY 节操 ASC
-
+[syh](http://syhdaily.com/)<br>
 [IlluZ](http://illuz.github.io/)<br>
 [Binary10](http://cuichen.cc/)<br>
 [Scalpel](http://scalpel.vip/)<br>

@@ -21,5 +21,6 @@ permalink: /friends/
 [scf0920](http://blog.csdn.net/scf0920)<br>
 [Bipedalbit](http://blog.bipedalbit.net/)<br>
 [BigBallon](http://bigballon.github.io/)<br>
+[LiZiShu](http://www.cnblogs.com/wuyuewoniu/)<br>
 
 

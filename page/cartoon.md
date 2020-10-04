@@ -8,6 +8,8 @@ title: 补番/剧记录
 
 「某科学的超电磁炮T」20.10
 
+「神之塔」弃
+
 「魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～」20.9
 
 「刀剑神域 Alicization War of Underworld -THE LAST SEASON-」20.9

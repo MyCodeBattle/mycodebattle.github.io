@@ -5,6 +5,7 @@ title: About
 ---
 
 - 已毕业
-- 并没有在互联网行业工作
+- CSRC 搬砖
 - 联系邮箱：mycodebattle[at]outlook.com
+
 

@@ -17,31 +17,31 @@ H1, H2, H3, H4 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, SimSun, serif; 
   width: 98%;
   line-height: 150%;
-  color: #666666;
+  color: #4A90E2;
   font-size: 30px;
 }
 
 H1, H2 {
   margin-bottom: 1.67em;
   padding: 0.2em;
-  border-bottom: 2px LightGrey solid;
+  border-bottom: 2px #4A90E2 solid;
 }
 
 H3, H4 {
   margin-top: 2.14em;
   margin-bottom: 1.5em;
-  border-bottom: 1px LightGrey solid;
+  border-bottom: 1px #4A90E2 solid;
 }
 
 blockquote {
   margin: 0 0 0 0.25em;
   padding: 0 0 0 0.5em;
-  border-left: 0.25em lightgrey solid;
+  border-left: 0.25em #4A90E2 solid;
 }
 
 pre {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-  border: solid 1px #ddd;
+  border: solid 1px #4A90E2;
   border-radius: 3px;
   background-color: #f8f8ff;
   padding: 6px 10px;
@@ -53,7 +53,7 @@ pre {
 code {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
   font-size: 0.75em;
-  border: solid 1px #ddd;
+  border: solid 1px #4A90E2;
   border-radius: 3px;
   background-color: #f8f8ff;
   margin: 0 2px;
@@ -73,7 +73,7 @@ pre code {
 a {
   text-decoration: none;
   padding: 1px;
-  color: #204A87;
+  color: #4A90E2;
   word-wrap: break-word;
   word-break: break-all;
 }
@@ -89,18 +89,18 @@ div.tag_cloud a {
 
 div.nav a {
   text-decoration: none;
-  color: #555;
+  color: #4A90E2;
 }
 
 div.nav a:hover {
-  background-color: LightGrey;
+  background-color: #4A90E2;
   color: #ffffff;
 }
 
 div.nav {
-  border-top: 1px solid #d4d4d4;
-  border-left: 1px solid #d4d4d4;
-  border-right: 1px solid #d4d4d4;
+  border-top: 1px solid #4A90E2;
+  border-left: 1px solid #4A90E2;
+  border-right: 1px solid #4A90E2;
   margin: auto;
   padding: 0 5% 0 5%;
   width: 700px;
@@ -136,12 +136,12 @@ img.emoji {
 hr {
   border: 0;
   height: 2px;
-  background-color: LightGrey;
+  background-color: #4A90E2;
   margin: 0.75em 0;
 }
 
 strong {
-  color: #666666;
+  color: #4A90E2;
 }
 
 div.overview {
@@ -156,7 +156,7 @@ div.date {
   padding-top: 1px;
   float: left; 
   width: 25%; 
-  color: #555;
+  color: #4A90E2;
   text-align: right; 
   font-style: italic; 
   font-size: 0.75em;
@@ -166,7 +166,7 @@ div.paginator {
   margin-left: 20%;
   float: center;
   width: 60%;
-  color: #555;
+  color: #4A90E2;
   text-align: center;
   font-size: 0.75em;
 }
@@ -184,7 +184,7 @@ div.paginator {
 
 .prev_next li span {
   padding: 0 0.5em 0 0.5em;
-  background-color: lightslategrey;
+  background-color: #4A90E2;
   color: #fff;
   margin-right: 0.5em;
 }
@@ -196,7 +196,7 @@ div.post_footer {
 }
 
 div.post_footer a {
-  border: LightGrey 1px dashed;
+  border: #4A90E2 1px dashed;
 }
 
 table {

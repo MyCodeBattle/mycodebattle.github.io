@@ -21,10 +21,18 @@ layout: post
 $$f\left( n\right) =\dfrac {n * \left( n+1\right) } {2} + 1$$
 
 ## 代码
-    
-    
-    1234567891011
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std; int main(){    LL ans, n;    while (~scanf("%lld", &n), n >= 0)        printf("%lld\n", n * (n + 1) / 2 + 1);    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+ 
+int main()
+{
+    LL ans, n;
+    while (~scanf("%lld", &n), n >= 0)
+        printf("%lld\n", n * (n + 1) / 2 + 1);
+    return 0;
+}
 ```

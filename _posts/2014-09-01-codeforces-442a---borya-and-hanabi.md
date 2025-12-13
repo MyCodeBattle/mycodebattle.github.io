@@ -30,10 +30,77 @@ layout: post
 
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970
 
-| ```c++
-#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))const int MAXN = 5000 + 5;const int INF = 0x3f3f3f3f;using namespace std; int sel[10], mp[10][10]; int Change(char *s){    if (s[0] == 'R') return 5;    if (s[0] == 'G') return 6;    if (s[0] == 'B') return 7;    if (s[0] == 'Y') return 8;    if (s[0] == 'W') return 9;} int main(){    //freopen("input.txt", "r", stdin);    int n, i, j;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        char s[10];        scanf("%s", s);        int x = Change(s);        mp[x][s[1] - '1'] = 1;    }    int ans = 100;    for (int stat = 0; stat < (1 << 10); stat++)    {        memset(sel, 0, sizeof sel);        bool flag = true;        int temp = 0, emp = 0, modi = 0;        for (i = 0; i < 10; i++)            if (stat & (1 << i)) temp++;        if (temp >= ans)            continue;        for (i = 0; i < 5; i++)            for (j = 5; j < 10; j++)            {                if (mp[j][i])                {                    if (stat & (1 << i) && stat & (1 << j))                        continue;                    else if (stat & (1 << i))                    {                        sel[i]++;                        if (sel[i] > 1) flag = false;                    }                    else if (stat & (1 << j))                    {                        sel[j]++;                        if (sel[j] > 1) flag = false;                    }                    else                    {                        emp++;                        if (emp > 1) flag = false;                    }                    modi = 1;                }            }        if (flag && modi) ans = min(ans, temp);    }    printf("%d\n", ans);    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+const int MAXN = 5000 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+int sel[10], mp[10][10];
+ 
+int Change(char *s)
+{
+    if (s[0] == 'R') return 5;
+    if (s[0] == 'G') return 6;
+    if (s[0] == 'B') return 7;
+    if (s[0] == 'Y') return 8;
+    if (s[0] == 'W') return 9;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, i, j;
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+        char s[10];
+        scanf("%s", s);
+        int x = Change(s);
+        mp[x][s[1] - '1'] = 1;
+    }
+    int ans = 100;
+    for (int stat = 0; stat < (1 << 10); stat++)
+    {
+        memset(sel, 0, sizeof sel);
+        bool flag = true;
+        int temp = 0, emp = 0, modi = 0;
+        for (i = 0; i < 10; i++)
+            if (stat & (1 << i)) temp++;
+        if (temp >= ans)
+            continue;
+        for (i = 0; i < 5; i++)
+            for (j = 5; j < 10; j++)
+            {
+                if (mp[j][i])
+                {
+                    if (stat & (1 << i) && stat & (1 << j))
+                        continue;
+                    else if (stat & (1 << i))
+                    {
+                        sel[i]++;
+                        if (sel[i] > 1) flag = false;
+                    }
+                    else if (stat & (1 << j))
+                    {
+                        sel[j]++;
+                        if (sel[j] > 1) flag = false;
+                    }
+                    else
+                    {
+                        emp++;
+                        if (emp > 1) flag = false;
+                    }
+                    modi = 1;
+                }
+            }
+        if (flag && modi) ans = min(ans, temp);
+    }
+    printf("%d\n", ans);
+    return 0;
+}
 ```

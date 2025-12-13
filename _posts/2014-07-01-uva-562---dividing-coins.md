@@ -19,10 +19,38 @@ layout: post
 两份差最小，也就是使有一份尽量接近sum / 2，这样就是0-1背包了。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 100 + 10;int coin[MAXN], dp[MAXN * 500];int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, n, sum, temp;    scanf("%d", &T);    while (T--)    {        memset(dp, 0, sizeof(dp));        temp = 0;        scanf("%d", &n);        for (i = 0; i < n; i++)        {            scanf("%d", &coin[i]);            temp += coin[i];        }        sum = temp / 2;        for (i = 0; i < n; i++)            for (j = sum; j >= coin[i]; j--)                dp[j] = max(dp[j], dp[j - coin[i]] + coin[i]);        printf("%d\n", temp - dp[sum] * 2);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+const int MAXN = 100 + 10;
+
+int coin[MAXN], dp[MAXN * 500];
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j, n, sum, temp;
+    scanf("%d", &T);
+    while (T--)
+    {
+        memset(dp, 0, sizeof(dp));
+        temp = 0;
+        scanf("%d", &n);
+        for (i = 0; i < n; i++)
+        {
+            scanf("%d", &coin[i]);
+            temp += coin[i];
+        }
+        sum = temp / 2;
+        for (i = 0; i < n; i++)
+            for (j = sum; j >= coin[i]; j--)
+                dp[j] = max(dp[j], dp[j - coin[i]] + coin[i]);
+        printf("%d\n", temp - dp[sum] * 2);
+    }
+    return 0;
+}
 ```

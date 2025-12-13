@@ -20,10 +20,54 @@ layout: post
 其中$dp[i][j]$表示前i个骰子总和为j的种类数。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647
 
-| ```c++
-#include <bits/stdc++.h>#define ull unsigned long longusing namespace std; ull dp[25][151]; ull GCD(ull a, ull b){    return !b ? a: GCD(b, a % b);} int main(){    //freopen("input.txt", "r", stdin);    int n, sum, i, j;    for (i = 1; i <= 24; i++)        for (j = 1; j <= 150; j++)        {            if (i == 1 && j <= 6)                dp[i][j] = 1;            for (int k = 1; k <= 6; k++)            {                if (j >= k)                    dp[i][j] += dp[i - 1][j - k];            }        }    while (~scanf("%d%d", &n, ∑), n + sum)    {        ull all = 0, cur = 0;        for (i = n; i <= 6 * n; i++)        {            all += dp[n][i];            if (i >= sum)                cur += dp[n][i];        }        if (cur == all)            printf("1\n");        else if (cur == 0)            printf("0\n");        else        {            ull temp = GCD(all, cur);            printf("%llu/%llu\n", cur / temp, all / temp);        }    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define ull unsigned long long
+using namespace std;
+ 
+ull dp[25][151];
+ 
+ull GCD(ull a, ull b)
+{
+    return !b ? a: GCD(b, a % b);
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, sum, i, j;
+    for (i = 1; i <= 24; i++)
+        for (j = 1; j <= 150; j++)
+        {
+            if (i == 1 && j <= 6)
+                dp[i][j] = 1;
+            for (int k = 1; k <= 6; k++)
+            {
+                if (j >= k)
+                    dp[i][j] += dp[i - 1][j - k];
+            }
+        }
+    while (~scanf("%d%d", &n, ∑), n + sum)
+    {
+        ull all = 0, cur = 0;
+        for (i = n; i <= 6 * n; i++)
+        {
+            all += dp[n][i];
+            if (i >= sum)
+                cur += dp[n][i];
+        }
+        if (cur == all)
+            printf("1\n");
+        else if (cur == 0)
+            printf("0\n");
+        else
+        {
+            ull temp = GCD(all, cur);
+            printf("%llu/%llu\n", cur / temp, all / temp);
+        }
+    }
+    return 0;
+}
 ```

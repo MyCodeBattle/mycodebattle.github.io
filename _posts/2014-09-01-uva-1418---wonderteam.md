@@ -37,10 +37,33 @@ layout: post
 然后就可以算出排名了。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526
 
-| ```c++
-#include<bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 1000 + 5;const int INF = 0x3f3f3f3f;using namespace std; typedef pair<int, int> pii;typedef vector<int> vei;typedef vector<pair<int, int> >veii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii;typedef priority_queue<pii, vector<pii>, greater<pii> >pquii; int main(){    int n, i, j;    while (scanf("%d", &n), n)    {        if (n <= 3) printf("1\n");        else if (n <= 4) printf("2\n");        else printf("%d\n", n);    }    return 0;}
+
+```c++
+#include<bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+#define MP(a, b) make_pair(a, b)
+const int MAXN = 1000 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+typedef pair<int, int> pii;
+typedef vector<int> vei;
+typedef vector<pair<int, int> >veii;
+typedef vector<int>::iterator viti;
+typedef vector<pii>::iterator vitii;
+typedef priority_queue<pii, vector<pii>, greater<pii> >pquii;
+ 
+int main()
+{
+    int n, i, j;
+    while (scanf("%d", &n), n)
+    {
+        if (n <= 3) printf("1\n");
+        else if (n <= 4) printf("2\n");
+        else printf("%d\n", n);
+    }
+    return 0;
+}
 ```

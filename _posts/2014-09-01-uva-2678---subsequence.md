@@ -25,10 +25,38 @@ s[i] <= s[j] - sum.
 这时候可以用lower_bound，直接找i，对于每个j。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031
 
-| ```c++
-#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))const int MAXN = 1e5 + 5;const int INF = 0x3f3f3f3f;using namespace std; int num[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, s, i, j;    while (~scanf("%d%d", &n, &s))    {        int ans = INF;        for (i = 1; i <= n; i++)        {            scanf("%d", #[i]);            num[i] += num[i - 1];        }        for (i = 1; i <= n; i++)        {            int k = lower_bound(num, num + n, num[i] - s) - num;            if (k > 0)                ans = min(ans, i - k + 1);        }        printf("%d\n", ans == INF ? 0 : ans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+const int MAXN = 1e5 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+int num[MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, s, i, j;
+    while (~scanf("%d%d", &n, &s))
+    {
+        int ans = INF;
+        for (i = 1; i <= n; i++)
+        {
+            scanf("%d", #[i]);
+            num[i] += num[i - 1];
+        }
+        for (i = 1; i <= n; i++)
+        {
+            int k = lower_bound(num, num + n, num[i] - s) - num;
+            if (k > 0)
+                ans = min(ans, i - k + 1);
+        }
+        printf("%d\n", ans == INF ? 0 : ans);
+    }
+    return 0;
+}
 ```

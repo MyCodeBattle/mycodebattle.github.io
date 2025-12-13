@@ -13,10 +13,38 @@ layout: post
 枚举公差，直接用数组判断。学过高等数学的我们知道这样的复杂度是$O(nlogn)$
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031
 
-| ```c++
-int arr[MAXN], n; bool Solve(){    for (int i = 1; i <= n; i++)        for (int j = 1; j <= n; j++)        {            if (i+(j<<1) > n) break;            if (arr[i] < arr[i+j] && arr[i+j] < arr[i+j*2]) return true;            if (arr[i] > arr[i+j] && arr[i+j] > arr[i+j*2]) return true;        }    return false;}int main(){    //ROP;    int T;    scanf("%d", &T);    while (T--)    {        scanf("%d", &n);        for (int i = 0; i < n; i++)        {            int tmp;            scanf("%d", &tmp);            arr[tmp] = i;        }        printf("%s\n", Solve() ? "Y" : "N");    }    return 0;}
+
+```c++
+int arr[MAXN], n;
+ 
+bool Solve()
+{
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= n; j++)
+        {
+            if (i+(j<<1) > n) break;
+            if (arr[i] < arr[i+j] && arr[i+j] < arr[i+j*2]) return true;
+            if (arr[i] > arr[i+j] && arr[i+j] > arr[i+j*2]) return true;
+        }
+    return false;
+}
+int main()
+{
+    //ROP;
+    int T;
+    scanf("%d", &T);
+    while (T--)
+    {
+        scanf("%d", &n);
+        for (int i = 0; i < n; i++)
+        {
+            int tmp;
+            scanf("%d", &tmp);
+            arr[tmp] = i;
+        }
+        printf("%s\n", Solve() ? "Y" : "N");
+    }
+    return 0;
+}
 ```

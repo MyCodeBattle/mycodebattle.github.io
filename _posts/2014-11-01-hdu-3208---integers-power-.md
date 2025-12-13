@@ -26,10 +26,61 @@ layout: post
 pow精度被卡，学习了用Java二分。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354
 
-| ```c++
-import java.io.BufferedInputStream;import java.math.BigInteger;import java.util.Scanner;import java.math.*; public class Main {     static int MAXN = 60;     static long Pow(long num, int k) {         long l = 1, r = num + 1, mid, ans = 1;        while (l < r) {            mid = (l + r) / 2;            if (BigInteger.valueOf(mid).pow(k).compareTo(BigInteger.valueOf(num)) <= 0) {                //System.out.println(mid);                l = mid + 1;                ans = mid;            }            else r = mid;        }        return ans;    }     static long Sum(long k) {         long[] dp = new long[MAXN];        for (int i = 1; i < MAXN; i++) dp[i] = 0;        for (int i = 1; i < MAXN; i++) {            long n = Pow(k, i);            if (n < 2) break;            dp[i] = n - 1;            //System.out.println(n - 1);        }        for (int i = MAXN - 1; i > 0; i--) {            if (i * 2 >= MAXN) continue;            for (int j = i * 2; j < MAXN; j += i) dp[i] -= dp[j];        }        long ans = 0;        for (int i = 1; i < MAXN; i++) ans += i * dp[i];        //System.out.println(ans);        return ans;    }     public static void main(String[] args) {        Scanner in = new Scanner(new BufferedInputStream(System.in));        long a, b;        while (in.hasNext()) {            a = in.nextLong(); b = in.nextLong();            if (a + b == 0) break;            System.out.println(Sum(b) - Sum(a - 1));        }    }}
+
+```c++
+import java.io.BufferedInputStream;
+import java.math.BigInteger;
+import java.util.Scanner;
+import java.math.*;
+ 
+public class Main {
+ 
+    static int MAXN = 60;
+ 
+    static long Pow(long num, int k) {
+ 
+        long l = 1, r = num + 1, mid, ans = 1;
+        while (l < r) {
+            mid = (l + r) / 2;
+            if (BigInteger.valueOf(mid).pow(k).compareTo(BigInteger.valueOf(num)) <= 0) {
+                //System.out.println(mid);
+                l = mid + 1;
+                ans = mid;
+            }
+            else r = mid;
+        }
+        return ans;
+    }
+ 
+    static long Sum(long k) {
+ 
+        long[] dp = new long[MAXN];
+        for (int i = 1; i < MAXN; i++) dp[i] = 0;
+        for (int i = 1; i < MAXN; i++) {
+            long n = Pow(k, i);
+            if (n < 2) break;
+            dp[i] = n - 1;
+            //System.out.println(n - 1);
+        }
+        for (int i = MAXN - 1; i > 0; i--) {
+            if (i * 2 >= MAXN) continue;
+            for (int j = i * 2; j < MAXN; j += i) dp[i] -= dp[j];
+        }
+        long ans = 0;
+        for (int i = 1; i < MAXN; i++) ans += i * dp[i];
+        //System.out.println(ans);
+        return ans;
+    }
+ 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
+        long a, b;
+        while (in.hasNext()) {
+            a = in.nextLong(); b = in.nextLong();
+            if (a + b == 0) break;
+            System.out.println(Sum(b) - Sum(a - 1));
+        }
+    }
+}
 ```

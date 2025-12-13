@@ -23,10 +23,30 @@ layout: post
 如果出现交叉，那个交叉的点就可以作为先前的最优点被选中。所以这种情况不会出现。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223
 
-| ```c++
-class NoRightTurnDiv2 {    public:    vector<int> findPath(vector<int> x, vector<int> y) {        MS(vis, 0);        int n = SZ(x), cur = 0;        vector<int> res;        cur = min_element(x.begin(), x.end()) - x.begin();        for (int k = 0; k < n; k++)        {            res.PB(cur);            vis[cur] = 1;            int nxt = -1;            for (int i = 0; i < n; i++)            {                if (vis[i]) continue;                if (nxt == -1) nxt = i;                else if ((x[nxt]-x[cur]) * (y[i]-y[cur]) - (x[i]-x[cur]) * (y[nxt]-y[cur]) < 0) nxt = i;            }            cur = nxt;        }        return res;    }};
+
+```c++
+class NoRightTurnDiv2 {
+    public:
+    vector<int> findPath(vector<int> x, vector<int> y) {
+        MS(vis, 0);
+        int n = SZ(x), cur = 0;
+        vector<int> res;
+        cur = min_element(x.begin(), x.end()) - x.begin();
+        for (int k = 0; k < n; k++)
+        {
+            res.PB(cur);
+            vis[cur] = 1;
+            int nxt = -1;
+            for (int i = 0; i < n; i++)
+            {
+                if (vis[i]) continue;
+                if (nxt == -1) nxt = i;
+                else if ((x[nxt]-x[cur]) * (y[i]-y[cur]) - (x[i]-x[cur]) * (y[nxt]-y[cur]) < 0) nxt = i;
+            }
+            cur = nxt;
+        }
+        return res;
+    }
+};
 ```

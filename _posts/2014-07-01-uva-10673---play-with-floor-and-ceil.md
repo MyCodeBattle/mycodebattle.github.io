@@ -19,10 +19,41 @@ layout: post
 继续学习。可耻地套了模板。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 1e6 + 100;const int INF = 0x3f3f3f3f; void GCDExt(LL a, LL b, LL &d, LL &x, LL &y){    if (!b)        d = a, x = 1, y = 0;    else    {        GCDExt(b, a % b, d, y, x);        y -= x * (a / b);    }} int main(){    //freopen("input.txt", "r", stdin);    LL x, y, d, a, b, k, i, j, T, c;    scanf("%lld", &T);    while (T--)    {        scanf("%lld%lld", &c, &k);        LL a = (LL)floor(c * 1.0 / k);        LL b = (LL)ceil(c * 1.0 / k);        GCDExt(a, b, d, x, y);        x *= (c / d);        y *= (c / d);        printf("%lld %lld\n", x, y);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+const int MAXN = 1e6 + 100;
+const int INF = 0x3f3f3f3f;
+ 
+void GCDExt(LL a, LL b, LL &d, LL &x, LL &y)
+{
+    if (!b)
+        d = a, x = 1, y = 0;
+    else
+    {
+        GCDExt(b, a % b, d, y, x);
+        y -= x * (a / b);
+    }
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    LL x, y, d, a, b, k, i, j, T, c;
+    scanf("%lld", &T);
+    while (T--)
+    {
+        scanf("%lld%lld", &c, &k);
+        LL a = (LL)floor(c * 1.0 / k);
+        LL b = (LL)ceil(c * 1.0 / k);
+        GCDExt(a, b, d, x, y);
+        x *= (c / d);
+        y *= (c / d);
+        printf("%lld %lld\n", x, y);
+    }
+    return 0;
+}
 ```

@@ -24,10 +24,39 @@ B是A的子序列，求A中有几个B。
 > a[j] != b[i], dp[i][j] = dp[i][j - 1]
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132
 
-| ```c++
-import java.math.*;import java.io.*;import java.text.*;import java.util.*;public class Main {     public static void main(String[] args) {        Scanner cin = new Scanner (new BufferedInputStream (System.in));        BigInteger dp[][] = new BigInteger[110][11000];        String a, b;        int T, i, j;        T = cin.nextInt();        while (T-- > 0) {            a = cin.next();            b = cin.next();            int alen = a.length();            int blen = b.length();            for (i = 0; i <= alen; i++) {                dp[0][i] = BigInteger.ONE;            }            for (i = 1; i <= blen; i++) {                dp[i][0] = BigInteger.ZERO;                for (j = 1; j <= alen; j++) {                    dp[i][j] = dp[i][j - 1];                    if (b.charAt(i - 1) == a.charAt(j - 1)) {                        dp[i][j] = dp[i][j].add(dp[i - 1][j - 1]);                    }                }            }            System.out.println(dp[blen][alen]);        }    }}
+
+```c++
+import java.math.*;
+import java.io.*;
+import java.text.*;
+import java.util.*;
+public class Main {
+     public static void main(String[] args) {
+        Scanner cin = new Scanner (new BufferedInputStream (System.in));
+        BigInteger dp[][] = new BigInteger[110][11000];
+        String a, b;
+        int T, i, j;
+        T = cin.nextInt();
+        while (T-- > 0) {
+            a = cin.next();
+            b = cin.next();
+            int alen = a.length();
+            int blen = b.length();
+            for (i = 0; i <= alen; i++) {
+                dp[0][i] = BigInteger.ONE;
+            }
+            for (i = 1; i <= blen; i++) {
+                dp[i][0] = BigInteger.ZERO;
+                for (j = 1; j <= alen; j++) {
+                    dp[i][j] = dp[i][j - 1];
+                    if (b.charAt(i - 1) == a.charAt(j - 1)) {
+                        dp[i][j] = dp[i][j].add(dp[i - 1][j - 1]);
+                    }
+                }
+            }
+            System.out.println(dp[blen][alen]);
+        }
+    }
+}
 ```

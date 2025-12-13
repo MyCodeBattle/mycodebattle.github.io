@@ -23,10 +23,71 @@ layout: post
 因为每个位置必有一枚棋子，也就是取出来的旗子如果判断可以放下去的话就放，直到填满。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364
 
-| ```c++
-#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))const int MAXN = 5000 + 5;const int INF = 0x3f3f3f3f;using namespace std; struct POINT{    int id, l, r;    bool operator < (const POINT &a) const    {        if (l != a.l)            return l > a.l;        else            return r > a.r;    }}rpit[MAXN], cpit[MAXN]; priority_queue<POINT> qu;int n, ans[MAXN][2]; bool Check(POINT *arr, int pos){    while (!qu.empty())        qu.pop();    for (int i = 0; i < n; i++)        qu.push(arr[i]);    int cnt = 1;    while (!qu.empty())    {        POINT cur = qu.top(); qu.pop();        if (cur.r < cnt || cur.l > cnt) return false;        if (cur.l < cnt)        {            cur.l = cnt;            qu.push(cur);            continue;        }        ans[cur.id][pos] = cnt;        cnt++;    }    return true;} int main(){    //freopen("input.txt", "r", stdin);    int i, j;    while (scanf("%d", &n), n)    {        for (i = 0; i < n; i++)        {            scanf("%d%d%d%d", &rpit[i].l, &cpit[i].l, &rpit[i].r, &cpit[i].r);            rpit[i].id = cpit[i].id = i;        }        if (Check(rpit, 0) && Check(cpit, 1))            for (i = 0; i < n; i++)                printf("%d %d\n", ans[i][0], ans[i][1]);        else            puts("IMPOSSIBLE");    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+const int MAXN = 5000 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+struct POINT
+{
+    int id, l, r;
+    bool operator < (const POINT &a) const
+    {
+        if (l != a.l)
+            return l > a.l;
+        else
+            return r > a.r;
+    }
+}rpit[MAXN], cpit[MAXN];
+ 
+priority_queue<POINT> qu;
+int n, ans[MAXN][2];
+ 
+bool Check(POINT *arr, int pos)
+{
+    while (!qu.empty())
+        qu.pop();
+    for (int i = 0; i < n; i++)
+        qu.push(arr[i]);
+    int cnt = 1;
+    while (!qu.empty())
+    {
+        POINT cur = qu.top(); qu.pop();
+        if (cur.r < cnt || cur.l > cnt) return false;
+        if (cur.l < cnt)
+        {
+            cur.l = cnt;
+            qu.push(cur);
+            continue;
+        }
+        ans[cur.id][pos] = cnt;
+        cnt++;
+    }
+    return true;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j;
+    while (scanf("%d", &n), n)
+    {
+        for (i = 0; i < n; i++)
+        {
+            scanf("%d%d%d%d", &rpit[i].l, &cpit[i].l, &rpit[i].r, &cpit[i].r);
+            rpit[i].id = cpit[i].id = i;
+        }
+        if (Check(rpit, 0) && Check(cpit, 1))
+            for (i = 0; i < n; i++)
+                printf("%d %d\n", ans[i][0], ans[i][1]);
+        else
+            puts("IMPOSSIBLE");
+    }
+    return 0;
+}
 ```

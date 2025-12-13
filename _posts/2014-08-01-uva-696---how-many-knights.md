@@ -21,10 +21,31 @@ layout: post
 如果row >= 2的话，隔一个放一个是最多的。row = 2 和row = 1讨论一下即可。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000") int main(){    int row, col, i, j, a, b, ans;    while (scanf("%d%d", &a, &b), a + b)    {        row = min(a, b);        col = max(a, b);        if (row == 1)            printf("%d knights may be placed on a %d row %d column board.\n", a * b, a, b);        else if (row == 2)        {            ans = 4 * (col / 4) + 2 * (col % 4 <= 2 ? col % 4 : 2);            printf("%d knights may be placed on a %d row %d column board.\n", ans,  a, b);        }        else            printf("%d knights may be placed on a %d row %d column board.\n", (a * b + 1) >> 1, a, b);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+#pragma comment(linker, "/STACK:102400000,102400000")
+ 
+int main()
+{
+    int row, col, i, j, a, b, ans;
+    while (scanf("%d%d", &a, &b), a + b)
+    {
+        row = min(a, b);
+        col = max(a, b);
+        if (row == 1)
+            printf("%d knights may be placed on a %d row %d column board.\n", a * b, a, b);
+        else if (row == 2)
+        {
+            ans = 4 * (col / 4) + 2 * (col % 4 <= 2 ? col % 4 : 2);
+            printf("%d knights may be placed on a %d row %d column board.\n", ans,  a, b);
+        }
+        else
+            printf("%d knights may be placed on a %d row %d column board.\n", (a * b + 1) >> 1, a, b);
+    }
+    return 0;
+}
 ```

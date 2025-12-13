@@ -19,10 +19,40 @@ $dp(i, j)表示前i个字符，当前位置是j字符的最少的数量$
 $$dp(i, j) = \begin{cases} min(dp(i-1, 0)+1, dp(i-1, 1)) & \text{j == 0} \\\ min(dp(i-1, 0), dp(i-1, 1)+1) & \text{j==1} \\\ \end{cases} \\\ \text{if(str[i] == '?')} \\\ dp(i, 0) = min(dp(i-1, 0) + 1, dp(i-1, 1)) \\\ dp(i, 1) = min(dp(i-1, 0), dp(i-1, 1) + 1)$$
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233
 
-| ```c++
-class TaroFillingAStringDiv2 {    public:    int getNumber(string str) {        if (str.empty() || SZ(str) == 1) return 0;        MS(dp, INF);        dp[0][0] = dp[0][1] = 0;        if (str[0] == 'A') dp[0][1] = INF;        if (str[0] == 'B') dp[0][0] = INF;        for (int i = 1; i < SZ(str); i++)        {            if (str[i] != '?')            {                if (str[i] == 'A')                {                    dp[i][0] = min(dp[i-1][1], dp[i-1][0] + 1);                    dp[i][1] = INF;                }                else                {                    dp[i][1] = min(dp[i-1][1] + 1, dp[i-1][0]);                    dp[i][0] = INF;                }            }            else            {                dp[i][0] = min(dp[i-1][1], dp[i-1][0] + 1);                dp[i][1] = min(dp[i-1][1] + 1, dp[i-1][0]);            }        }        int len = SZ(str) - 1;        return min(dp[len][0], dp[len][1]);    }};
+
+```c++
+class TaroFillingAStringDiv2 {
+    public:
+    int getNumber(string str) {
+        if (str.empty() || SZ(str) == 1) return 0;
+        MS(dp, INF);
+        dp[0][0] = dp[0][1] = 0;
+        if (str[0] == 'A') dp[0][1] = INF;
+        if (str[0] == 'B') dp[0][0] = INF;
+        for (int i = 1; i < SZ(str); i++)
+        {
+            if (str[i] != '?')
+            {
+                if (str[i] == 'A')
+                {
+                    dp[i][0] = min(dp[i-1][1], dp[i-1][0] + 1);
+                    dp[i][1] = INF;
+                }
+                else
+                {
+                    dp[i][1] = min(dp[i-1][1] + 1, dp[i-1][0]);
+                    dp[i][0] = INF;
+                }
+            }
+            else
+            {
+                dp[i][0] = min(dp[i-1][1], dp[i-1][0] + 1);
+                dp[i][1] = min(dp[i-1][1] + 1, dp[i-1][0]);
+            }
+        }
+        int len = SZ(str) - 1;
+        return min(dp[len][0], dp[len][1]);
+    }
+};
 ```

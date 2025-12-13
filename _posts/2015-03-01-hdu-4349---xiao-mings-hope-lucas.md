@@ -17,10 +17,14 @@ layout: post
 所以最后的答案是$(1<<Number_of_Two(n))$
 
 ## 代码
-    
-    
-    1234567
 
-| ```c++
-int main(){    int n;    while (~scanf("%d", &n))        printf("%d\n", (1<<__builtin_popcount(n)));    return 0;}
+
+```c++
+int main()
+{
+    int n;
+    while (~scanf("%d", &n))
+        printf("%d\n", (1<<__builtin_popcount(n)));
+    return 0;
+}
 ```

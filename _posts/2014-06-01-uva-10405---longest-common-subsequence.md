@@ -19,10 +19,37 @@ layout: post
 题目简单粗暴地告诉我们求最长公共子序列。。。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 1000 + 100;int dp[MAXN][MAXN];int main(){    //freopen("input.txt", "r", stdin);    int i, j, ans;    char astr[MAXN], bstr[MAXN];    while (gets(astr))    {        memset(dp, 0, sizeof(dp));        gets(bstr);        int len1 = strlen(astr), len2 = strlen(bstr);        for (i = 1; i <= strlen(astr); i++)            for (j = 1; j <= strlen(bstr); j++)            {                if (astr[i - 1] == bstr[j - 1])                    dp[i][j] = dp[i - 1][j - 1] + 1;                else                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);            }            printf("%d\n", dp[len1][len2]);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+const int MAXN = 1000 + 100;
+
+int dp[MAXN][MAXN];
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j, ans;
+    char astr[MAXN], bstr[MAXN];
+    while (gets(astr))
+    {
+        memset(dp, 0, sizeof(dp));
+        gets(bstr);
+        int len1 = strlen(astr), len2 = strlen(bstr);
+        for (i = 1; i <= strlen(astr); i++)
+            for (j = 1; j <= strlen(bstr); j++)
+            {
+                if (astr[i - 1] == bstr[j - 1])
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                else
+                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+            }
+            printf("%d\n", dp[len1][len2]);
+    }
+    return 0;
+}
 ```

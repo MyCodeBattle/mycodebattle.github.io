@@ -112,7 +112,7 @@ layout: post
 3328 Cliff Climbing  
 3439 Server Relocation  
 3463 Sightseeing 次短路条数  
-3159  
+
 3521 Geometric Map 计算几何+最短路  
 3549 GSM phone 计算几何+最短路  
 3594 Escort of Dr. Who How  
@@ -148,7 +148,4 @@ layout: post
 1364 King  
 1716 Integer Intervals  
 2949 Word Rings  
-2983 Is the Information Reliable?  
-3159  
-3169  
-3687
+2983 Is the Information Reliable?

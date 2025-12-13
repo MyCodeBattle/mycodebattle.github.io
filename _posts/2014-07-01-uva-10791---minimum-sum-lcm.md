@@ -23,10 +23,43 @@ layout: post
 
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long long int main(){    //freopen("input.txt", "r", stdin);    LL num, sum;    int i, j, cnt, cases = 0;    while (scanf("%lld", #), num)    {        sum = cnt = 0;        LL r = num;        int lim = (int)sqrt(num * 1.0 + 0.5);        for (i = 2; i <= lim && r != 1; i++)            if (!(r % i))            {                cnt++;                LL temp = 1;                while (!(r % i))                {                    temp *= i;                    r /= i;                }                sum += temp;            }        printf("Case %d: ", ++cases);        if (!cnt || (cnt == 1 && r == 1))            printf("%lld\n", 1 + num);        else if (r != 1)    //最后剩下的数可能不是1            printf("%lld\n", sum + r);        else            printf("%lld\n", sum);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    LL num, sum;
+    int i, j, cnt, cases = 0;
+    while (scanf("%lld", #), num)
+    {
+        sum = cnt = 0;
+        LL r = num;
+        int lim = (int)sqrt(num * 1.0 + 0.5);
+        for (i = 2; i <= lim && r != 1; i++)
+            if (!(r % i))
+            {
+                cnt++;
+                LL temp = 1;
+                while (!(r % i))
+                {
+                    temp *= i;
+                    r /= i;
+                }
+                sum += temp;
+            }
+        printf("Case %d: ", ++cases);
+        if (!cnt || (cnt == 1 && r == 1))
+            printf("%lld\n", 1 + num);
+        else if (r != 1)    //最后剩下的数可能不是1
+            printf("%lld\n", sum + r);
+        else
+            printf("%lld\n", sum);
+    }
+    return 0;
+}
 ```

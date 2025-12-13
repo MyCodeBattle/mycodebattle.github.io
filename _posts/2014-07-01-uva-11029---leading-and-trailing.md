@@ -27,10 +27,35 @@ layout: post
 $10^i$无关，所以只和$10^j$有关。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std; LL PowMod(int a, int m, int n){    if (m == 1)        return a % n;    LL x = PowMod(a, m >> 1, n);    LL ans = x * x % n;    if (m & 1)        ans = ans * a % n;    return ans;} int main(){    int T, a, b;    scanf("%d", &T);    while (T--)    {        scanf("%d%d", &a, &b);        LL lans = PowMod(a, b, 1000);        int ans = (int)pow(10 * 1.0, 2 + fmod(b * log10(a), 1));        printf("%d...%03lld\n", ans, lans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+ 
+LL PowMod(int a, int m, int n)
+{
+    if (m == 1)
+        return a % n;
+    LL x = PowMod(a, m >> 1, n);
+    LL ans = x * x % n;
+    if (m & 1)
+        ans = ans * a % n;
+    return ans;
+}
+ 
+int main()
+{
+    int T, a, b;
+    scanf("%d", &T);
+    while (T--)
+    {
+        scanf("%d%d", &a, &b);
+        LL lans = PowMod(a, b, 1000);
+        int ans = (int)pow(10 * 1.0, 2 + fmod(b * log10(a), 1));
+        printf("%d...%03lld\n", ans, lans);
+    }
+    return 0;
+}
 ```

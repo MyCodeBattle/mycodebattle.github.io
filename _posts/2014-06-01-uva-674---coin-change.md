@@ -17,10 +17,39 @@ layout: post
 主要就是用二维数组表示出状态，然后累加起来。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132
 
-| ```c++
-#include <cstdio>#include <cstring>using namespace std;const int MAXN = 7489 + 100;int dp[MAXN][5], money[] = {1, 5, 10, 25, 50};int DFS(int target, int k){    int &ans = dp[target][k];    if (ans != -1)        return ans;    ans = 0;    for (int i = k; i < 5; i++)        if (target >= money[i])            ans += DFS(target - money[i], i);    return ans;}int main(){    int cents, n, i, j;    memset(dp, -1, sizeof(dp));    for (i = 0; i < 5; i++)        dp[0][i] = 1;    while (~scanf("%d", &cents))    {        int ans = DFS(cents, 0);        printf("%d\n", ans);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+using namespace std;
+const int MAXN = 7489 + 100;
+
+int dp[MAXN][5], money[] = {1, 5, 10, 25, 50};
+
+int DFS(int target, int k)
+{
+    int &ans = dp[target][k];
+    if (ans != -1)
+        return ans;
+    ans = 0;
+    for (int i = k; i < 5; i++)
+        if (target >= money[i])
+            ans += DFS(target - money[i], i);
+    return ans;
+}
+
+int main()
+{
+    int cents, n, i, j;
+    memset(dp, -1, sizeof(dp));
+    for (i = 0; i < 5; i++)
+        dp[0][i] = 1;
+    while (~scanf("%d", &cents))
+    {
+        int ans = DFS(cents, 0);
+        printf("%d\n", ans);
+    }
+    return 0;
+}
 ```

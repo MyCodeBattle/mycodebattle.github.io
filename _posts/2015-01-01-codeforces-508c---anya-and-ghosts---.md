@@ -31,10 +31,38 @@ Anya点亮一根蜡烛要一秒，每根蜡烛持续m秒
 （为啥我看到蜡烛就想到了皮鞭。。）
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031
 
-| ```c++
-priority_queue<int, vector<int>, greater<int> >Q; int main(){    //ROP;    int n, last, least;    scanf("%d%d%d", &n, &last, &least);    if (last < least)    {        puts("-1");        return 0;    }    int fir, ans = 0;    for (int i = 0; i < n; i++)    {        int tme;        scanf("%d", &tme);        while (!Q.empty() && Q.top() < tme) Q.pop();        if (SZ(Q) < least)        {            int tmp = SZ(Q);            for (int j = tme - 1, cnt = 0; cnt < least - tmp; cnt++, j--)            {                Q.push(j + last);                ans++;            }        }    }    printf("%d\n", ans);    return 0;}
+
+```c++
+priority_queue<int, vector<int>, greater<int> >Q;
+ 
+int main()
+{
+    //ROP;
+    int n, last, least;
+    scanf("%d%d%d", &n, &last, &least);
+    if (last < least)
+    {
+        puts("-1");
+        return 0;
+    }
+    int fir, ans = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int tme;
+        scanf("%d", &tme);
+        while (!Q.empty() && Q.top() < tme) Q.pop();
+        if (SZ(Q) < least)
+        {
+            int tmp = SZ(Q);
+            for (int j = tme - 1, cnt = 0; cnt < least - tmp; cnt++, j--)
+            {
+                Q.push(j + last);
+                ans++;
+            }
+        }
+    }
+    printf("%d\n", ans);
+    return 0;
+}
 ```

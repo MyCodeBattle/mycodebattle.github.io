@@ -17,10 +17,67 @@ layout: post
 用map记录，然后输出。因为要按照输入的顺序输出，想不到其他的方法，就又开了一个数组。。。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960
 
-| ```c++
-/*ID: mycodeb1LANG: C++TASK: gift1*/ #include <bits/stdc++.h>using namespace std; map<string, int> mp;map<string, int>::iterator it;string ss[11]; void Solve(int money, int num, string curName){    string name;    int t = money / num;    int tt = money % num;    for (int i = 0; i < num; i++)    {        cin >> name;        it = mp.find(name);        it->second += t;    }    it = mp.find(curName);    it->second = it->second - money + tt;} int main(){    //freopen("in.txt", "r", stdin);    freopen("gift1.in", "r", stdin);    freopen("gift1.out", "w", stdout);    ios::sync_with_stdio(false);     int i, j, n, money, num;    cin >> n;    string str;    for (i = 0; i < n; i++)    {        cin >> str;        ss[i] = str;        mp[str] = 0;    }    for (i = 0; i < n; i++)    {        cin >> str;     //current giver;        cin >> money >> num;        if (!num || !money)            continue;        Solve(money, num, str);    }    for (i = 0; i < n; i++)    {        cout << ss[i] << " ";        it = mp.find(ss[i]);        cout << it->second << endl;    }    return 0;}
+
+```c++
+/*
+ID: mycodeb1
+LANG: C++
+TASK: gift1
+*/
+ 
+#include <bits/stdc++.h>
+using namespace std;
+ 
+map<string, int> mp;
+map<string, int>::iterator it;
+string ss[11];
+ 
+void Solve(int money, int num, string curName)
+{
+    string name;
+    int t = money / num;
+    int tt = money % num;
+    for (int i = 0; i < num; i++)
+    {
+        cin >> name;
+        it = mp.find(name);
+        it->second += t;
+    }
+    it = mp.find(curName);
+    it->second = it->second - money + tt;
+}
+ 
+int main()
+{
+    //freopen("in.txt", "r", stdin);
+    freopen("gift1.in", "r", stdin);
+    freopen("gift1.out", "w", stdout);
+    ios::sync_with_stdio(false);
+ 
+    int i, j, n, money, num;
+    cin >> n;
+    string str;
+    for (i = 0; i < n; i++)
+    {
+        cin >> str;
+        ss[i] = str;
+        mp[str] = 0;
+    }
+    for (i = 0; i < n; i++)
+    {
+        cin >> str;     //current giver;
+        cin >> money >> num;
+        if (!num || !money)
+            continue;
+        Solve(money, num, str);
+    }
+    for (i = 0; i < n; i++)
+    {
+        cout << ss[i] << " ";
+        it = mp.find(ss[i]);
+        cout << it->second << endl;
+    }
+    return 0;
+}
 ```

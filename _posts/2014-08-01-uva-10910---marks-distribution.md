@@ -23,10 +23,45 @@ $dp(i, j)$表示前i个课程总分为j的情况有多少
 还是记忆化搜索用得顺手╰（￣▽￣）╭
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std;const int MAXN = 70; LL dp[80][80];int rem, n, sum, least; LL DFS(int n, int curSum, int res){    if (sum - res < least)        return 0;    if (n == 1)        return 1;    LL &cur = dp[n][curSum];    if (cur != -1)        return cur;    cur = 0;    for (int i = least; i <= least + rem; i++)        if (curSum >= i)            cur += DFS(n - 1, curSum - i, res + i);    return cur;} int main(){    //freopen("input.txt", "r", stdin);    int i, j, T;    scanf("%d", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        scanf("%d%d%d", &n, ∑, &least);        rem = sum - n * least;        printf("%lld\n", DFS(n, sum, 0));    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+const int MAXN = 70;
+ 
+LL dp[80][80];
+int rem, n, sum, least;
+ 
+LL DFS(int n, int curSum, int res)
+{
+    if (sum - res < least)
+        return 0;
+    if (n == 1)
+        return 1;
+    LL &cur = dp[n][curSum];
+    if (cur != -1)
+        return cur;
+    cur = 0;
+    for (int i = least; i <= least + rem; i++)
+        if (curSum >= i)
+            cur += DFS(n - 1, curSum - i, res + i);
+    return cur;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j, T;
+    scanf("%d", &T);
+    while (T--)
+    {
+        memset(dp, -1, sizeof dp);
+        scanf("%d%d%d", &n, ∑, &least);
+        rem = sum - n * least;
+        printf("%lld\n", DFS(n, sum, 0));
+    }
+    return 0;
+}
 ```

@@ -27,10 +27,41 @@ layout: post
 这样就没人买到全部的商品了。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334
 
-| ```c++
-#include <cstdio>#include <cmath>#include <cstring>#include <ctime>#include <iostream>#include <algorithm>#include <set>#include <vector>#include <sstream>#include <typeinfo>#include <fstream> using namespace std; class ShoppingSurveyDiv2 {    int num[110];    public:    int minValue(int N, vector<int> s) {        int cnt = 0;        int len = s.size(), j = 1;        for (int i = 0; i < len; i++)        {            while (s[i]--)            {                num[j]++;                j++;                if (j > N) j = 1;            }        }        for (int i = 1; i <= N; i++)            if (num[i] >= len) cnt++;        return cnt;    }};
+
+```c++
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <vector>
+#include <sstream>
+#include <typeinfo>
+#include <fstream>
+ 
+using namespace std;
+ 
+class ShoppingSurveyDiv2 {
+    int num[110];
+    public:
+    int minValue(int N, vector<int> s) {
+        int cnt = 0;
+        int len = s.size(), j = 1;
+        for (int i = 0; i < len; i++)
+        {
+            while (s[i]--)
+            {
+                num[j]++;
+                j++;
+                if (j > N) j = 1;
+            }
+        }
+        for (int i = 1; i <= N; i++)
+            if (num[i] >= len) cnt++;
+        return cnt;
+    }
+};
 ```

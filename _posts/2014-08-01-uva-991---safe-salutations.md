@@ -29,10 +29,28 @@ $$f(n) = f(0) * f(n - 1) + f(1) * f(n - 2) + … + f(n - 1) * f(0)$$
 $$ f\left( n\right) =\dfrac {f\left( n-1\right) \cdot \left( 4n-2\right) } {n+1} $$
 
 ## 代码
-    
-    
-    123456789101112131415161718192021
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std; int main(){    bool first = true;    LL C[20], i;    int n;    C[0] = 0, C[1] = 1;    for (i = 2; i <= 10; i++)        C[i] = C[i - 1] * (4 * i - 2) / (i + 1);    while (~scanf("%d", &n))    {        if (!first)            printf("\n");        first = false;        printf("%lld\n", C[n]);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+ 
+int main()
+{
+    bool first = true;
+    LL C[20], i;
+    int n;
+    C[0] = 0, C[1] = 1;
+    for (i = 2; i <= 10; i++)
+        C[i] = C[i - 1] * (4 * i - 2) / (i + 1);
+    while (~scanf("%d", &n))
+    {
+        if (!first)
+            printf("\n");
+        first = false;
+        printf("%lld\n", C[n]);
+    }
+    return 0;
+}
 ```

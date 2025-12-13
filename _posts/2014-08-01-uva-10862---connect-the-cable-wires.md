@@ -37,10 +37,28 @@ $$dp[n - 1] = 2 * dp[n - 2] + dp[n - 3] + … + dp[1]$$
 $$dp[n] = 3 * dp[n - 1] - dp[n - 2]$$
 
 ## 代码
-    
-    
-    123456789101112131415161718192021
 
-| ```c++
-import java.math.*;import java.util.*;import java.io.*; public class Main {    public static void main(String[] args) {        Scanner in = new Scanner(System.in);        BigInteger[] dp = new BigInteger[2014];        dp[1] = BigInteger.valueOf(1);        dp[2] = BigInteger.valueOf(3);        for (int i = 3; i < 2014; i++)            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(3)).subtract(dp[i - 2]);        while (true) {            int n = in.nextInt();            if (n == 0)                break;            System.out.println(dp[n]);        }     }}
+
+```c++
+import java.math.*;
+import java.util.*;
+import java.io.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        BigInteger[] dp = new BigInteger[2014];
+        dp[1] = BigInteger.valueOf(1);
+        dp[2] = BigInteger.valueOf(3);
+        for (int i = 3; i < 2014; i++)
+            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(3)).subtract(dp[i - 2]);
+        while (true) {
+            int n = in.nextInt();
+            if (n == 0)
+                break;
+            System.out.println(dp[n]);
+        }
+ 
+    }
+}
 ```

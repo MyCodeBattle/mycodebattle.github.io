@@ -31,10 +31,78 @@ layout: post
 如果$dp[i][j] == dp[i + 1][j] + 1$，说明$str[j]$的右边加了个$str[i]$，所以要先输出$str[i]$，递归后再次输出$str[i]$。反之亦然。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 1000 + 100;const int INF = 0x3f3f3f3f;char str[MAXN];int dp[MAXN][MAXN];void PrintAns(int x, int y){    if (x > y)        return;    if (x == y)    {        printf("%c", str[x]);        return;    }    if (str[x] == str[y])    {        printf("%c", str[x]);        PrintAns(x + 1, y - 1);        printf("%c", str[y]);    }    else if (dp[x][y] == dp[x + 1][y] + 1)    {        printf("%c", str[x]);        PrintAns(x + 1, y);        printf("%c", str[x]);    }    else    {        printf("%c", str[y]);        PrintAns(x , y - 1);        printf("%c", str[y]);    }    return;}int DFS(int x, int y){    int &ans = dp[x][y];    if (x >= y)        return ans = 0;    if (ans != INF)        return ans;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1);    else        ans = min(DFS(x + 1, y), DFS(x, y - 1)) + 1;    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int i, j, k, n, len;    while (gets(str))    {        len = strlen(str);        for (i = 0; i <= len; i++)            for (j = 0; j <= len; j++)                dp[i][j] = INF;        DFS(0, len - 1);        printf("%d ", dp[0][len - 1]);        PrintAns(0, len - 1);        putchar(10);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+const int MAXN = 1000 + 100;
+const int INF = 0x3f3f3f3f;
+
+char str[MAXN];
+int dp[MAXN][MAXN];
+
+void PrintAns(int x, int y)
+{
+    if (x > y)
+        return;
+    if (x == y)
+    {
+        printf("%c", str[x]);
+        return;
+    }
+    if (str[x] == str[y])
+    {
+        printf("%c", str[x]);
+        PrintAns(x + 1, y - 1);
+        printf("%c", str[y]);
+    }
+    else if (dp[x][y] == dp[x + 1][y] + 1)
+    {
+        printf("%c", str[x]);
+        PrintAns(x + 1, y);
+        printf("%c", str[x]);
+    }
+    else
+    {
+        printf("%c", str[y]);
+        PrintAns(x , y - 1);
+        printf("%c", str[y]);
+    }
+    return;
+}
+
+int DFS(int x, int y)
+{
+    int &ans = dp[x][y];
+    if (x >= y)
+        return ans = 0;
+    if (ans != INF)
+        return ans;
+    if (str[x] == str[y])
+        ans = DFS(x + 1, y - 1);
+    else
+        ans = min(DFS(x + 1, y), DFS(x, y - 1)) + 1;
+    return ans;
+}
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j, k, n, len;
+    while (gets(str))
+    {
+        len = strlen(str);
+        for (i = 0; i <= len; i++)
+            for (j = 0; j <= len; j++)
+                dp[i][j] = INF;
+        DFS(0, len - 1);
+        printf("%d ", dp[0][len - 1]);
+        PrintAns(0, len - 1);
+        putchar(10);
+    }
+    return 0;
+}
 ```

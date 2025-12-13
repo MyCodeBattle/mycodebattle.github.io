@@ -99,11 +99,40 @@ def extract_code_blocks(html_content):
     code_blocks = []
     code_counter = 0
     
-    # 处理<pre>标签中的代码
+    # 处理figure.highlight表格结构的代码块
+    for figure in soup.find_all('figure', class_='highlight'):
+        table = figure.find('table')
+        if table:
+            # 找到代码列（td.code）
+            code_td = table.select_one('td.code')
+            if code_td:
+                # 提取代码内容
+                code_lines = []
+                for line in code_td.find_all('div', class_='line'):
+                    code_lines.append(line.get_text())
+                code = '\n'.join(code_lines)
+                code = code.strip()
+                
+                if code:
+                    # 替换整个figure为标记
+                    placeholder = f"__CODE_BLOCK_{code_counter}__"
+                    figure.replace_with(placeholder)
+                    code_blocks.append(code)
+                    code_counter += 1
+    
+    # 处理普通<pre>标签中的代码
     for pre in soup.find_all('pre'):
         code = pre.get_text()
         # 清理代码，移除行号和特殊字符
+        # 移除连续的数字行号
+        code = re.sub(r'^\s*\d{3,}\s*$', '', code, flags=re.MULTILINE)
+        # 移除单个数字行号
         code = re.sub(r'^\s*\d+\s*', '', code, flags=re.MULTILINE)
+        # 移除表格分隔符
+        code = re.sub(r'^\s*\|\s*$', '', code, flags=re.MULTILINE)
+        code = re.sub(r'^\s*---\|---\s*$', '', code, flags=re.MULTILINE)
+        # 移除多余的空行
+        code = re.sub(r'\n{3,}', '\n\n', code)
         code = code.strip()
         if code:
             # 替换代码块为标记
@@ -161,7 +190,7 @@ def convert_html_to_md(html_file):
             # 确保代码块正确换行
             code_lines = code.split('\n')
             formatted_code = '\n'.join(code_lines)
-            md_content = md_content.replace(placeholder, f'```c++\n{formatted_code}\n```')
+            md_content = md_content.replace(placeholder, f'\n```c++\n{formatted_code}\n```\n')
     
     # 清理Markdown内容
     # 移除网站标题
@@ -172,9 +201,10 @@ def convert_html_to_md(html_file):
     md_content = re.sub(r'\[Solving Reports\](/categories/Solving-Reports/)', '', md_content)
     md_content = re.sub(r'\[Online Judge.*?\](/tags/.*?)', '', md_content)
     md_content = re.sub(r'\[Math.*?\](/tags/.*?)', '', md_content)
-    # 移除表格格式残留
-    md_content = re.sub(r'^---\|---\s*$', '', md_content, flags=re.MULTILINE)
-    md_content = re.sub(r'^\|\s*$', '', md_content, flags=re.MULTILINE)
+    # 移除残留的行号和表格符号
+    md_content = re.sub(r'^\s*\d{3,}\s*$', '', md_content, flags=re.MULTILINE)
+    md_content = re.sub(r'^\s*\|\s*$', '', md_content, flags=re.MULTILINE)
+    md_content = re.sub(r'^\s*---\|---\s*$', '', md_content, flags=re.MULTILINE)
     # 清理多余的空行
     md_content = re.sub(r'\n{4,}', '\n\n\n', md_content)
     # 清理文件开头和结尾的空行

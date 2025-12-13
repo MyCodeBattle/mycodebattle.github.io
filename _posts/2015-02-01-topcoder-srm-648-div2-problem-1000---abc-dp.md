@@ -23,10 +23,54 @@ $dp[i][j][k][l]$表示i个A，j个B，k个C组成的字符串里有l对s[i] < s[
 然后递归输出
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647
 
-| ```c++
-int dp[MAXN][MAXN][MAXN][500]; class ABC { public:    string ans;    void Output(int a, int b, int c, int d)    {        if (a+b+c+d == 0) return;        if (dp[a][b][c][d] == 1)        {            Output(a-1, b, c, d);            ans += 'A';        }        else if (dp[a][b][c][d] == 2)        {            Output(a, b-1, c, d-a);            ans += 'B';        }        else if (dp[a][b][c][d] == 3)        {            Output(a, b, c-1, d-a-b);            ans += 'C';        }    }    string createString(int N, int K) {        dp[0][0][0][0] = 1;        for (int i = 0; i <= N; i++)            for (int j = 0; j+i <= N; j++)                for (int k = 0; k+j+i <= N; k++)                    for (int l = 0; l <= K; l++)                    {                        if (dp[i][j][k][l])                        {                            if (i+j+k == N && l == K)                            {                                Output(i, j, k, l);                                return ans;                            }                            dp[i+1][j][k][l] = 1;                            if (l+i <= K) dp[i][j+1][k][l+i] = 2;                            if (l+i+j <= K) dp[i][j][k+1][l+i+j] = 3;                        }                    }        return ans;    }};
+
+```c++
+int dp[MAXN][MAXN][MAXN][500];
+ 
+class ABC {
+ 
+public:
+    string ans;
+    void Output(int a, int b, int c, int d)
+    {
+        if (a+b+c+d == 0) return;
+        if (dp[a][b][c][d] == 1)
+        {
+            Output(a-1, b, c, d);
+            ans += 'A';
+        }
+        else if (dp[a][b][c][d] == 2)
+        {
+            Output(a, b-1, c, d-a);
+            ans += 'B';
+        }
+        else if (dp[a][b][c][d] == 3)
+        {
+            Output(a, b, c-1, d-a-b);
+            ans += 'C';
+        }
+    }
+    string createString(int N, int K) {
+        dp[0][0][0][0] = 1;
+        for (int i = 0; i <= N; i++)
+            for (int j = 0; j+i <= N; j++)
+                for (int k = 0; k+j+i <= N; k++)
+                    for (int l = 0; l <= K; l++)
+                    {
+                        if (dp[i][j][k][l])
+                        {
+                            if (i+j+k == N && l == K)
+                            {
+                                Output(i, j, k, l);
+                                return ans;
+                            }
+                            dp[i+1][j][k][l] = 1;
+                            if (l+i <= K) dp[i][j+1][k][l+i] = 2;
+                            if (l+i+j <= K) dp[i][j][k+1][l+i+j] = 3;
+                        }
+                    }
+        return ans;
+    }
+};
 ```

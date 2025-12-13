@@ -15,10 +15,64 @@ layout: post
 暴力
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657
 
-| ```c++
-/*ID: mycodeb1LANG: C++TASK: crypt1*/ #include <cstdio>using namespace std;const int MAXN = 10; int num[MAXN]; bool Check(int n){    while (n)    {        if (!num[n % 10])            return false;        n /= 10;    }    return true;}int main(){    //freopen("input.txt", "r", stdin);    freopen("crypt1.in", "r", stdin);    freopen("crypt1.out", "w", stdout);     int n, i, j, a;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        scanf("%d", &a);        num[a] = 1;    }    int cnt = 0;    for (i = 100; i <= 999; i++)    {        if (Check(i))            for (j = 10; j * i < 10000; j++)                if (Check(j))                {                    if (i * (j % 10) < 1000)                    {                        if (Check(i * (j % 10)))                        {                            int t = j / 10;                            if (i * t < 1000)                                if (Check(i * t) && Check(i * j))                                    cnt++;                        }                    }                }    }    printf("%d\n", cnt);    return 0;}
+
+```c++
+/*
+ID: mycodeb1
+LANG: C++
+TASK: crypt1
+*/
+ 
+#include <cstdio>
+using namespace std;
+const int MAXN = 10;
+ 
+int num[MAXN];
+ 
+bool Check(int n)
+{
+    while (n)
+    {
+        if (!num[n % 10])
+            return false;
+        n /= 10;
+    }
+    return true;
+}
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    freopen("crypt1.in", "r", stdin);
+    freopen("crypt1.out", "w", stdout);
+ 
+    int n, i, j, a;
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a);
+        num[a] = 1;
+    }
+    int cnt = 0;
+    for (i = 100; i <= 999; i++)
+    {
+        if (Check(i))
+            for (j = 10; j * i < 10000; j++)
+                if (Check(j))
+                {
+                    if (i * (j % 10) < 1000)
+                    {
+                        if (Check(i * (j % 10)))
+                        {
+                            int t = j / 10;
+                            if (i * t < 1000)
+                                if (Check(i * t) && Check(i * j))
+                                    cnt++;
+                        }
+                    }
+                }
+    }
+    printf("%d\n", cnt);
+    return 0;
+}
 ```

@@ -20,10 +20,55 @@ layout: post
 一开始用$O(n^2)$的dp，TLE了。参考了**shuangde800** 的解题报告才了解还有一种$O(nlogn)$的方法。学习之。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| ```c++
-#include <cstdio>#include <vector>#include <algorithm>using namespace std;const int MAXN = 10000 + 100; int num[MAXN], left[MAXN], right[MAXN];vector<int> ve; ​int main(){    //freopen("in.txt", "r", stdin);    int T, i, j, n;    while (~scanf("%d", &n))    {        for (i = 0; i < n; i++)            scanf("%d", #[i]);        ve.clear();        for (i = 0; i < n; i++)        {            if (ve.empty() || num[i] > ve.back())                ve.push_back(num[i]);            else            {                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();                ve[t] = num[i];            }            left[i] = ve.size();        }        ve.clear();        for (i = n - 1; i >= 0; i--)        {            if (ve.empty() || num[i] > ve.back())                ve.push_back(num[i]);            else            {                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();                ve[t] = num[i];            }            right[i] = ve.size();        }        int ans = 0;        for (i = 0; i < n; i++)            ans = max(ans, min(left[i], right[i]) * 2 - 1);        printf("%d\n", ans);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+using namespace std;
+const int MAXN = 10000 + 100;
+ 
+int num[MAXN], left[MAXN], right[MAXN];
+vector<int> ve;
+ 
+​int main()
+{
+    //freopen("in.txt", "r", stdin);
+    int T, i, j, n;
+    while (~scanf("%d", &n))
+    {
+        for (i = 0; i < n; i++)
+            scanf("%d", #[i]);
+        ve.clear();
+        for (i = 0; i < n; i++)
+        {
+            if (ve.empty() || num[i] > ve.back())
+                ve.push_back(num[i]);
+            else
+            {
+                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();
+                ve[t] = num[i];
+            }
+            left[i] = ve.size();
+        }
+        ve.clear();
+        for (i = n - 1; i >= 0; i--)
+        {
+            if (ve.empty() || num[i] > ve.back())
+                ve.push_back(num[i]);
+            else
+            {
+                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();
+                ve[t] = num[i];
+            }
+            right[i] = ve.size();
+        }
+        int ans = 0;
+        for (i = 0; i < n; i++)
+            ans = max(ans, min(left[i], right[i]) * 2 - 1);
+        printf("%d\n", ans);
+    }
+    return 0;
+}
 ```

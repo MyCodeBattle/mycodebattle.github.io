@@ -19,10 +19,57 @@ layout: post
 暴力就行。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 1000 + 5; int mp[MAXN][MAXN], n, k, d, cnt = 0, tmp[MAXN]; bool Judge(){    int temp = 1;    for (int i = 0; i < d; i++)    {        temp *= k;        if (temp >= n)            return true;    }    return false;} void DFS(int cur){    if (cnt == n)        return;    if (cur == d)    {        memcpy(mp[cnt++], tmp, sizeof tmp);        return;    }    int &t = tmp[cur];    for (t = 1; t <= k; t++)        DFS(cur + 1);} int main(){    //freopen("input.txt", "r", stdin);    int i, j;    scanf("%d%d%d", &n, &k, &d);    if (!Judge())    {        printf("-1\n");        return 0;    }    if (k > 1000) k = 1000;    DFS(0);    for (i = 0; i < d; i++)        for (j = 0; j < n; j++)            j == n - 1 ? printf("%d\n", mp[j][i]) : printf("%d ", mp[j][i]);    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+const int MAXN = 1000 + 5;
+ 
+int mp[MAXN][MAXN], n, k, d, cnt = 0, tmp[MAXN];
+ 
+bool Judge()
+{
+    int temp = 1;
+    for (int i = 0; i < d; i++)
+    {
+        temp *= k;
+        if (temp >= n)
+            return true;
+    }
+    return false;
+}
+ 
+void DFS(int cur)
+{
+    if (cnt == n)
+        return;
+    if (cur == d)
+    {
+        memcpy(mp[cnt++], tmp, sizeof tmp);
+        return;
+    }
+    int &t = tmp[cur];
+    for (t = 1; t <= k; t++)
+        DFS(cur + 1);
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j;
+    scanf("%d%d%d", &n, &k, &d);
+    if (!Judge())
+    {
+        printf("-1\n");
+        return 0;
+    }
+    if (k > 1000) k = 1000;
+    DFS(0);
+    for (i = 0; i < d; i++)
+        for (j = 0; j < n; j++)
+            j == n - 1 ? printf("%d\n", mp[j][i]) : printf("%d ", mp[j][i]);
+    return 0;
+}
 ```

@@ -26,10 +26,57 @@ layout: post
 在完成最低限度的建房子之后，如果要加木棒，只能3根3根加。所以判断n-k能不能整除3即可。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950
 
-| ```c++
-#include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <ctime>#include <cstdlib>#include <fstream>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 2000 + 5;const int MOD = 20071027; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int main(){    LL n, i, j;    cin >> n;    LL ans = 0;    for (i = 1; ; i++)    {        LL temp = (((1 + i) * i) >> 1) * 3 - i;        if (temp > n) break;        if ((n - temp) % 3 == 0) ans++;    }    cout << ans << endl;    return 0;}
+
+```c++
+#include <cstdio>
+#include <stack>
+#include <set>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <functional>
+#include <cstring>
+#include <algorithm>
+#include <cctype>
+#include <ctime>
+#include <cstdlib>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <map>
+#include <cmath>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+#define MP(a, b) make_pair(a, b)
+#define MS(arr, num) memset(arr, num, sizeof(arr))
+#define PB push_back
+#define F first
+#define S second
+#define ROP freopen("input.txt", "r", stdin);
+const double PI = acos(-1.0);
+const int INF = 0x3f3f3f3f;
+using namespace std;
+const int MAXN = 2000 + 5;
+const int MOD = 20071027;
+ 
+typedef pair<int, int> pii;
+typedef vector<int>::iterator viti;
+typedef vector<pii>::iterator vitii;
+ 
+int main()
+{
+    LL n, i, j;
+    cin >> n;
+    LL ans = 0;
+    for (i = 1; ; i++)
+    {
+        LL temp = (((1 + i) * i) >> 1) * 3 - i;
+        if (temp > n) break;
+        if ((n - temp) % 3 == 0) ans++;
+    }
+    cout << ans << endl;
+    return 0;
+}
 ```

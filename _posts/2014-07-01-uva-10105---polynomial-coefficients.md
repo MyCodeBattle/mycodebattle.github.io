@@ -25,10 +25,37 @@ $$\dfrac {n!} {k_{0}\cdot \left({n-k_0}!\right)}\cdot \dfrac {\left( n-k_{0}\rig
 约分，以此类推，最后只剩$n!$除以每项的阶乘
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std; int fac[20]; void Fac(){    fac[1] = fac[0] = 1;    for (int i = 2; i <= 14; i++)        fac[i] = fac[i - 1] * i;} int main(){    //freopen("input.txt", "r", stdin);    Fac();    int n, k, i, j, temp;    while (~scanf("%d%d", &n, &k))    {        int ans = fac[n];        for (i = 0; i < k; i++)        {            scanf("%d", &temp);            ans /= fac[temp];        }        printf("%d\n", ans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+ 
+int fac[20];
+ 
+void Fac()
+{
+    fac[1] = fac[0] = 1;
+    for (int i = 2; i <= 14; i++)
+        fac[i] = fac[i - 1] * i;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    Fac();
+    int n, k, i, j, temp;
+    while (~scanf("%d%d", &n, &k))
+    {
+        int ans = fac[n];
+        for (i = 0; i < k; i++)
+        {
+            scanf("%d", &temp);
+            ans /= fac[temp];
+        }
+        printf("%d\n", ans);
+    }
+    return 0;
+}
 ```

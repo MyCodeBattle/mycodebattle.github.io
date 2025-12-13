@@ -26,10 +26,57 @@ layout: post
 其余情况都可以跳到。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950
 
-| ```c++
-#include <cstdio>#include <cmath>#include <cstring>#include <ctime>#include <iostream>#include <algorithm>#include <set>#include <vector>#include <sstream>#include <typeinfo>#include <fstream>#define LL long long using namespace std; class Jumping {public:    string ableToGet(int x, int y, vector<int> jumpLengths) {        sort(jumpLengths.begin(), jumpLengths.end());        if (jumpLengths.size() == 1)        {            int cur = jumpLengths[0];            if (cur * cur != x * x + y * y) return "Not able";            else return "Able";        }        else        {            LL dis = 0, judgeDis = 0;            for (int i = 0; i < jumpLengths.size(); i++)            {                dis += jumpLengths[i];                if (i == jumpLengths.size() - 2) judgeDis = dis;            }            int cur = jumpLengths.back();            if (dis * dis >= x * x + y * y)            {                if (cur > judgeDis)                {                    if ((cur - judgeDis) * (cur - judgeDis) <= x * x + y * y)                        return "Able";                    else return "Not able";                }                return "Able";            }            else return "Not able";        }    }}; // Powered by Greed 2.0-RC
+
+```c++
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <vector>
+#include <sstream>
+#include <typeinfo>
+#include <fstream>
+#define LL long long
+ 
+using namespace std;
+ 
+class Jumping {
+public:
+    string ableToGet(int x, int y, vector<int> jumpLengths) {
+        sort(jumpLengths.begin(), jumpLengths.end());
+        if (jumpLengths.size() == 1)
+        {
+            int cur = jumpLengths[0];
+            if (cur * cur != x * x + y * y) return "Not able";
+            else return "Able";
+        }
+        else
+        {
+            LL dis = 0, judgeDis = 0;
+            for (int i = 0; i < jumpLengths.size(); i++)
+            {
+                dis += jumpLengths[i];
+                if (i == jumpLengths.size() - 2) judgeDis = dis;
+            }
+            int cur = jumpLengths.back();
+            if (dis * dis >= x * x + y * y)
+            {
+                if (cur > judgeDis)
+                {
+                    if ((cur - judgeDis) * (cur - judgeDis) <= x * x + y * y)
+                        return "Able";
+                    else return "Not able";
+                }
+                return "Able";
+            }
+            else return "Not able";
+        }
+    }
+};
+ 
+// Powered by Greed 2.0-RC
 ```

@@ -30,10 +30,25 @@ layout: post
 Fibonacci
 
 ## 代码
-    
-    
-    123456789101112131415161718
 
-| ```c++
-import java.math.*;import java.util.*;import java.io.*; public class Main {    public static void main(String[] args) {        Scanner in = new Scanner(System.in);        BigInteger[] dp = new BigInteger[1111];        dp[0] = BigInteger.valueOf(1);        dp[1] = BigInteger.valueOf(2);        for (int i = 2; i < 1111; i++)            dp[i] = dp[i - 1].add(dp[i - 2]);        while (in.hasNext()) {            int n = in.nextInt();            System.out.println(dp[n]);        }    }}
+
+```c++
+import java.math.*;
+import java.util.*;
+import java.io.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        BigInteger[] dp = new BigInteger[1111];
+        dp[0] = BigInteger.valueOf(1);
+        dp[1] = BigInteger.valueOf(2);
+        for (int i = 2; i < 1111; i++)
+            dp[i] = dp[i - 1].add(dp[i - 2]);
+        while (in.hasNext()) {
+            int n = in.nextInt();
+            System.out.println(dp[n]);
+        }
+    }
+}
 ```

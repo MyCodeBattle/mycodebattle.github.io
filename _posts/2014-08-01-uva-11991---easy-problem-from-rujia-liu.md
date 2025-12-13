@@ -19,10 +19,35 @@ layout: post
 用vector数组，记录下标
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;const int MAXN = 1e6 + 10;const int INF = 0x3f3f3f3f; vector<int> ve[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, m, i, j, a, b;    while (~scanf("%d%d", &n, &m))    {        for (i = 0; i < MAXN; i++)            ve[i].clear();        for (i = 0; i < n; i++)        {            scanf("%d", &a);            ve[a].push_back(i);        }        for (i = 0; i < m; i++)        {            scanf("%d%d", &a, &b);            printf("%d\n", ve[b].size() >= a ? ve[b][a - 1] + 1 : 0);        }    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+const int MAXN = 1e6 + 10;
+const int INF = 0x3f3f3f3f;
+ 
+vector<int> ve[MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, m, i, j, a, b;
+    while (~scanf("%d%d", &n, &m))
+    {
+        for (i = 0; i < MAXN; i++)
+            ve[i].clear();
+        for (i = 0; i < n; i++)
+        {
+            scanf("%d", &a);
+            ve[a].push_back(i);
+        }
+        for (i = 0; i < m; i++)
+        {
+            scanf("%d%d", &a, &b);
+            printf("%d\n", ve[b].size() >= a ? ve[b][a - 1] + 1 : 0);
+        }
+    }
+    return 0;
+}
 ```

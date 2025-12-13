@@ -20,10 +20,60 @@ layout: post
 状态转移方程$dp[xxxxxx] = min(d[xxxxxx], dp[x - 1][y - 1][z + 1][xxx] + xy.heat)$，其中x、y是反应的两个试剂。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;const int INF = 0x3f3f3f3f;const int MAXN = 40 + 5; int dp[MAXN][MAXN][MAXN][MAXN], mp[MAXN][4], vis[25], layer[5], n; int DFS(int cnt){    int &cur = dp[layer[0]][layer[1]][layer[2]][layer[3]];    if (cnt == 5)        return cur = 0;    if (cur != -1)        return cur;    cur = 0;    for (int i = 0; i < 4; i++)    {        if (layer[i] == n)            continue;        int temp = mp[layer[i]++][i];        if (vis[temp])        {            vis[temp] = 0;            cur = max(cur, DFS(cnt - 1) + 1);            vis[temp] = 1;        }        else        {            vis[temp] = 1;            cur = max(cur, DFS(cnt + 1));            vis[temp] = 0;        }        layer[i]--;    }    return cur;} int main(){    //freopen("input.txt", "r", stdin);    int i, j;    while (scanf("%d", &n), n)    {        memset(dp, -1, sizeof dp);        memset(vis, 0, sizeof vis);        memset(layer, 0, sizeof layer);        for (i = 0; i < n; i++)            for (j = 0; j < 4; j++)                scanf("%d", ∓[i][j]);        printf("%d\n", DFS(0));    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+const int INF = 0x3f3f3f3f;
+const int MAXN = 40 + 5;
+ 
+int dp[MAXN][MAXN][MAXN][MAXN], mp[MAXN][4], vis[25], layer[5], n;
+ 
+int DFS(int cnt)
+{
+    int &cur = dp[layer[0]][layer[1]][layer[2]][layer[3]];
+    if (cnt == 5)
+        return cur = 0;
+    if (cur != -1)
+        return cur;
+    cur = 0;
+    for (int i = 0; i < 4; i++)
+    {
+        if (layer[i] == n)
+            continue;
+        int temp = mp[layer[i]++][i];
+        if (vis[temp])
+        {
+            vis[temp] = 0;
+            cur = max(cur, DFS(cnt - 1) + 1);
+            vis[temp] = 1;
+        }
+        else
+        {
+            vis[temp] = 1;
+            cur = max(cur, DFS(cnt + 1));
+            vis[temp] = 0;
+        }
+        layer[i]--;
+    }
+    return cur;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j;
+    while (scanf("%d", &n), n)
+    {
+        memset(dp, -1, sizeof dp);
+        memset(vis, 0, sizeof vis);
+        memset(layer, 0, sizeof layer);
+        for (i = 0; i < n; i++)
+            for (j = 0; j < 4; j++)
+                scanf("%d", ∓[i][j]);
+        printf("%d\n", DFS(0));
+    }
+    return 0;
+}
 ```

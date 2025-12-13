@@ -15,10 +15,30 @@ layout: post
 照着输就行。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223
 
-| ```c++
-class Solution {    vector<vector<int> >vve;public:    vector<vector<int> > generate(int numRows) {        for (int i = 1; i <= numRows; i++)        {            vector<int> cur;            for (int j = 0; j < i; j++)            {                if (j == 0) cur.push_back(1);                else                {                    if (j != i - 1)                        cur.push_back(vve[i - 2][j] + vve[i - 2][j - 1]);                    else                        cur.push_back(1);                }            }            vve.push_back(cur);        }        return vve;    }};
+
+```c++
+class Solution {
+    vector<vector<int> >vve;
+public:
+    vector<vector<int> > generate(int numRows) {
+        for (int i = 1; i <= numRows; i++)
+        {
+            vector<int> cur;
+            for (int j = 0; j < i; j++)
+            {
+                if (j == 0) cur.push_back(1);
+                else
+                {
+                    if (j != i - 1)
+                        cur.push_back(vve[i - 2][j] + vve[i - 2][j - 1]);
+                    else
+                        cur.push_back(1);
+                }
+            }
+            vve.push_back(cur);
+        }
+        return vve;
+    }
+};
 ```

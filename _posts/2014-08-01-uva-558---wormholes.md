@@ -23,10 +23,66 @@ layout: post
 如果是Bellman算法，在进行完n-1轮后，再对每条边判断一下，加入这条边是否会使得顶点v的最短路再缩短。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long longconst int EMAXN = 2e3 + 100;const int VMAXN = 1e3 + 100;const int INF = 0x3f3f3f3f; int head[VMAXN], n, m, vis[VMAXN], cnt[VMAXN];int next[EMAXN], u[EMAXN], v[EMAXN], w[EMAXN], d[EMAXN]; int SPFA(int st){    memset(vis, 0, sizeof vis);    memset(cnt, 0, sizeof cnt);    queue<int> qu;    for (int i = 0; i < n; i++)        d[i] = INF;    d[st] = 0;    cnt[st]++;    qu.push(st);    while (!qu.empty())    {        int t = qu.front();        qu.pop();        vis[t] = 0;        for (int e = head[t]; e != -1; e = next[e])            if (d[v[e]] > d[t] + w[e])            {                d[v[e]] = d[t] + w[e];                if (!vis[v[e]])                {                    qu.push(v[e]), vis[v[e]] = 1;                    if (++cnt[v[e]] == n)                        return 1;                }            }    }    return 0;} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j;    scanf("%d", &T);    while (T--)    {        memset(head, -1, sizeof head);        scanf("%d%d", &n, &m);        for (i = 0; i < m; i++)        {            scanf("%d%d%d", &u[i], &v[i], &w[i]);            next[i] = head[u[i]];            head[u[i]] = i;        }        printf("%s\n", SPFA(0) ? "possible" : "not possible");    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+const int EMAXN = 2e3 + 100;
+const int VMAXN = 1e3 + 100;
+const int INF = 0x3f3f3f3f;
+ 
+int head[VMAXN], n, m, vis[VMAXN], cnt[VMAXN];
+int next[EMAXN], u[EMAXN], v[EMAXN], w[EMAXN], d[EMAXN];
+ 
+int SPFA(int st)
+{
+    memset(vis, 0, sizeof vis);
+    memset(cnt, 0, sizeof cnt);
+    queue<int> qu;
+    for (int i = 0; i < n; i++)
+        d[i] = INF;
+    d[st] = 0;
+    cnt[st]++;
+    qu.push(st);
+    while (!qu.empty())
+    {
+        int t = qu.front();
+        qu.pop();
+        vis[t] = 0;
+        for (int e = head[t]; e != -1; e = next[e])
+            if (d[v[e]] > d[t] + w[e])
+            {
+                d[v[e]] = d[t] + w[e];
+                if (!vis[v[e]])
+                {
+                    qu.push(v[e]), vis[v[e]] = 1;
+                    if (++cnt[v[e]] == n)
+                        return 1;
+                }
+            }
+    }
+    return 0;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j;
+    scanf("%d", &T);
+    while (T--)
+    {
+        memset(head, -1, sizeof head);
+        scanf("%d%d", &n, &m);
+        for (i = 0; i < m; i++)
+        {
+            scanf("%d%d%d", &u[i], &v[i], &w[i]);
+            next[i] = head[u[i]];
+            head[u[i]] = i;
+        }
+        printf("%s\n", SPFA(0) ? "possible" : "not possible");
+    }
+    return 0;
+}
 ```

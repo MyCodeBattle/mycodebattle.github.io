@@ -26,10 +26,59 @@ layout: post
 反正到了最后肯定要赖掉一只，注意一下平局。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152
 
-| ```c++
-#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 1000 + 5;const int INF = 0x3f3f3f3f;using namespace std; int t[MAXN], w[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, n;    while (scanf("%d", &n), n)    {        int ans = 0;        for (i = 0; i < n; i++)            scanf("%d", &t[i]);        for (i = 0; i < n; i++)            scanf("%d", &w[i]);        sort(t, t + n);        sort(w, w + n);        int len1 = n - 1, len2 = n - 1;        int s = 0, ss = 0;        bool flag = true;        while (flag)        {            if (ss == len2) flag = false;            if (t[len1] > w[len2])            {                ans++;                len1--, len2--;            }            else            {                if (t[s] > w[ss])                {                    ans++;                    s++, ss++;                }                else                {                    if(t[s] < w[len2]) ans--;                    s++, len2--;                }            }        }        printf("%d\n", ans * 200);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+#define MP(a, b) make_pair(a, b)
+const int MAXN = 1000 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+int t[MAXN], w[MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j, n;
+    while (scanf("%d", &n), n)
+    {
+        int ans = 0;
+        for (i = 0; i < n; i++)
+            scanf("%d", &t[i]);
+        for (i = 0; i < n; i++)
+            scanf("%d", &w[i]);
+        sort(t, t + n);
+        sort(w, w + n);
+        int len1 = n - 1, len2 = n - 1;
+        int s = 0, ss = 0;
+        bool flag = true;
+        while (flag)
+        {
+            if (ss == len2) flag = false;
+            if (t[len1] > w[len2])
+            {
+                ans++;
+                len1--, len2--;
+            }
+            else
+            {
+                if (t[s] > w[ss])
+                {
+                    ans++;
+                    s++, ss++;
+                }
+                else
+                {
+                    if(t[s] < w[len2]) ans--;
+                    s++, len2--;
+                }
+            }
+        }
+        printf("%d\n", ans * 200);
+    }
+    return 0;
+}
 ```

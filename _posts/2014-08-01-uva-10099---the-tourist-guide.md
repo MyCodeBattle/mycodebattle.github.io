@@ -21,10 +21,42 @@ layout: post
 一开始样例都看不懂，怎么算都是四趟。原来导游也算一人（ ＴДＴ）
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 100 + 10;const int INF = 0x3f3f3f3f; int mp[MAXN][MAXN], n; void Floyd(){    for (int k = 1; k <= n; k++)        for (int i = 1; i <= n; i++)            for (int j = 1; j <= n; j++)                mp[i][j] = max(min(mp[i][k], mp[k][j]), mp[i][j]);} int main(){    //freopen("input.txt", "r", stdin);    int nedge, i, j, a, b, c, st, ed, npeo, cases = 0;    while (scanf("%d%d", &n, &nedge), n + nedge)    {        memset(mp, 0, sizeof mp);        for (i = 0; i < nedge; i++)        {            scanf("%d%d%d", &a, &b, &c);            mp[a][b] = mp[b][a] = c;        }        Floyd();        scanf("%d%d%d", &st, &ed, &npeo);        printf("Scenario #%d\n", ++cases);        printf("Minimum Number of Trips = %.f\n\n", ceil(npeo * 1.0 / (mp[st][ed] - 1)));    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+const int MAXN = 100 + 10;
+const int INF = 0x3f3f3f3f;
+ 
+int mp[MAXN][MAXN], n;
+ 
+void Floyd()
+{
+    for (int k = 1; k <= n; k++)
+        for (int i = 1; i <= n; i++)
+            for (int j = 1; j <= n; j++)
+                mp[i][j] = max(min(mp[i][k], mp[k][j]), mp[i][j]);
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int nedge, i, j, a, b, c, st, ed, npeo, cases = 0;
+    while (scanf("%d%d", &n, &nedge), n + nedge)
+    {
+        memset(mp, 0, sizeof mp);
+        for (i = 0; i < nedge; i++)
+        {
+            scanf("%d%d%d", &a, &b, &c);
+            mp[a][b] = mp[b][a] = c;
+        }
+        Floyd();
+        scanf("%d%d%d", &st, &ed, &npeo);
+        printf("Scenario #%d\n", ++cases);
+        printf("Minimum Number of Trips = %.f\n\n", ceil(npeo * 1.0 / (mp[st][ed] - 1)));
+    }
+    return 0;
+}
 ```

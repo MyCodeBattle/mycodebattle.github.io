@@ -21,17 +21,56 @@ layout: post
 
 所以 $ans = (C_n^0 + C_n_1 + ... + C_n^n) * 2 - 2 = 2^n-2$
 
-特判一下```c++
+特判一下
+```c++
 n=1
-```和```c++
+```
+和
+```c++
 p=1
-```的情况。
+```
+的情况。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738
 
-| ```c++
-LL Multi(LL a, LL b, LL n){    LL ret = 0;    while (b)    {        if (b & 1) ret = (ret + a) % n;        a = (a<<1) % n;        b >>= 1;    }    return ret;} LL pow_mod(LL a, LL m, LL n){    LL ret = 1;    while (m)    {        if (m & 1) ret = Multi(ret, a, n);        a = Multi(a, a, n);        m >>= 1;    }    return ret;} int main(){    //ROP;    LL n, p;    while (cin >> n >> p)    {        if (p == 1) { cout << "0" << endl; continue; }        if (n == 1) { cout << "1" << endl; continue; }        LL ans = pow_mod(2, n, p);        ans -= 2;        cout << (ans % p + p) % p << endl;    }    return 0;}
+
+```c++
+LL Multi(LL a, LL b, LL n)
+{
+    LL ret = 0;
+    while (b)
+    {
+        if (b & 1) ret = (ret + a) % n;
+        a = (a<<1) % n;
+        b >>= 1;
+    }
+    return ret;
+}
+ 
+LL pow_mod(LL a, LL m, LL n)
+{
+    LL ret = 1;
+    while (m)
+    {
+        if (m & 1) ret = Multi(ret, a, n);
+        a = Multi(a, a, n);
+        m >>= 1;
+    }
+    return ret;
+}
+ 
+int main()
+{
+    //ROP;
+    LL n, p;
+    while (cin >> n >> p)
+    {
+        if (p == 1) { cout << "0" << endl; continue; }
+        if (n == 1) { cout << "1" << endl; continue; }
+        LL ans = pow_mod(2, n, p);
+        ans -= 2;
+        cout << (ans % p + p) % p << endl;
+    }
+    return 0;
+}
 ```

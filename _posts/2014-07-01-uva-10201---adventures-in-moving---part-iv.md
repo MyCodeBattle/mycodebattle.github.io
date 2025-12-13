@@ -36,10 +36,72 @@ layout: post
 感觉这个是一道挺好的题目。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int INF = 0x3f3f3f3f; struct POINT{    int dis, price;}; int dp[110][220];   //dp[i][j]表示在第i个加油站剩余油量为j时所用最少钱POINT oil[110]; int main(){    //freopen("in.txt", "r", stdin);    int T, i, j, n, distance, t;    bool flag;    char num[110];    scanf("%d%*c", &T);    while (T--)    {        flag = true;        int k = 1;        scanf("%d%*c", &distance);        oil[0].dis = oil[0].price = 0;        while (gets(num) && num[0] != 0)        {            sscanf(num, "%d%d", &oil[k].dis, &oil[k].price);            k++;            if (oil[k - 1].dis > distance)                k--;        }        k--;        for (i = 0; i <= k; i++)            for (j = 0; j <= 200; j++)                dp[i][j] = INF;        dp[0][100] = 0;        for (i = 1; i <= k; i++)        {            int dis = oil[i].dis - oil[i - 1].dis;             if (dis > 200)            {                flag = false;                break;            }            for (j = 0; j <= 200; j++)            {                if (j + dis <= 200)                    dp[i][j] = dp[i - 1][j + dis];                for (t = 0; t <= j; t++)                    if (j + dis - t <= 200 && dp[i - 1][j + dis - t] != INF)                        dp[i][j] = min(dp[i - 1][j + dis - t] + t * oil[i].price, dp[i][j]);            }        }        if (100 + distance - oil[k].dis > 200 || dp[k][100 + distance - oil[k].dis] == INF || flag == false)            printf("Impossible\n");        else            printf("%d\n", dp[k][100 + distance - oil[k].dis]);        if (T)            printf("\n");    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+const int INF = 0x3f3f3f3f;
+ 
+struct POINT
+{
+    int dis, price;
+};
+ 
+int dp[110][220];   //dp[i][j]表示在第i个加油站剩余油量为j时所用最少钱
+POINT oil[110];
+ 
+int main()
+{
+    //freopen("in.txt", "r", stdin);
+    int T, i, j, n, distance, t;
+    bool flag;
+    char num[110];
+    scanf("%d%*c", &T);
+    while (T--)
+    {
+        flag = true;
+        int k = 1;
+        scanf("%d%*c", &distance);
+        oil[0].dis = oil[0].price = 0;
+        while (gets(num) && num[0] != 0)
+        {
+            sscanf(num, "%d%d", &oil[k].dis, &oil[k].price);
+            k++;
+            if (oil[k - 1].dis > distance)
+                k--;
+        }
+        k--;
+        for (i = 0; i <= k; i++)
+            for (j = 0; j <= 200; j++)
+                dp[i][j] = INF;
+        dp[0][100] = 0;
+        for (i = 1; i <= k; i++)
+        {
+            int dis = oil[i].dis - oil[i - 1].dis; 
+            if (dis > 200)
+            {
+                flag = false;
+                break;
+            }
+            for (j = 0; j <= 200; j++)
+            {
+                if (j + dis <= 200)
+                    dp[i][j] = dp[i - 1][j + dis];
+                for (t = 0; t <= j; t++)
+                    if (j + dis - t <= 200 && dp[i - 1][j + dis - t] != INF)
+                        dp[i][j] = min(dp[i - 1][j + dis - t] + t * oil[i].price, dp[i][j]);
+            }
+        }
+        if (100 + distance - oil[k].dis > 200 || dp[k][100 + distance - oil[k].dis] == INF || flag == false)
+            printf("Impossible\n");
+        else
+            printf("%d\n", dp[k][100 + distance - oil[k].dis]);
+        if (T)
+            printf("\n");
+    }
+    return 0;
+}
 ```

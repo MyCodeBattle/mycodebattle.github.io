@@ -15,10 +15,61 @@ layout: post
 直接转换，倒着输出。回文串随便输。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354
 
-| ```c++
-/*ID: mycodeb1LANG: C++TASK: palsquare*/ #include <bits/stdc++.h>using namespace std;const int WMAXN = 5000;const char cstr[] = "0123456789ABCDEFGHIJ"; string str;int base; string Convert(int num){    str.clear();    int k = 0;    while (num)    {        str += cstr[num % base];        num /= base;    }    return str;} bool isOK(string s){    int len = s.length();    for (int i = 0, j = len - 1; i < j; i++, j--)        if (s[i] != s[j])            return false;    return true;} int main(){    freopen("palsquare.in", "r", stdin);    freopen("palsquare.out", "w", stdout);    ios::sync_with_stdio(false);     int i, j;    scanf("%d", &base);    for (i = 1; i <= 300; i++)        if (isOK(Convert(i * i)))        {            Convert(i);            reverse(str.begin(), str.end());            cout << str << " ";            Convert(i * i);            cout << str << endl;        }    return 0;}
+
+```c++
+/*
+ID: mycodeb1
+LANG: C++
+TASK: palsquare
+*/
+ 
+#include <bits/stdc++.h>
+using namespace std;
+const int WMAXN = 5000;
+const char cstr[] = "0123456789ABCDEFGHIJ";
+ 
+string str;
+int base;
+ 
+string Convert(int num)
+{
+    str.clear();
+    int k = 0;
+    while (num)
+    {
+        str += cstr[num % base];
+        num /= base;
+    }
+    return str;
+}
+ 
+bool isOK(string s)
+{
+    int len = s.length();
+    for (int i = 0, j = len - 1; i < j; i++, j--)
+        if (s[i] != s[j])
+            return false;
+    return true;
+}
+ 
+int main()
+{
+    freopen("palsquare.in", "r", stdin);
+    freopen("palsquare.out", "w", stdout);
+    ios::sync_with_stdio(false);
+ 
+    int i, j;
+    scanf("%d", &base);
+    for (i = 1; i <= 300; i++)
+        if (isOK(Convert(i * i)))
+        {
+            Convert(i);
+            reverse(str.begin(), str.end());
+            cout << str << " ";
+            Convert(i * i);
+            cout << str << endl;
+        }
+    return 0;
+}
 ```

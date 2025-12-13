@@ -27,10 +27,55 @@ layout: post
 然后用一下Lucas定理。。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| ```c++
-LL Extend_GCD(LL a, LL b, LL &d, LL &x, LL &y){    if (!b) { d = a, x = 1, y = 0; }    else    {        Extend_GCD(b, a%b, d, y, x);        y -= x * (a/b);    }} LL inv(LL a, LL p){    LL d, x, y;    Extend_GCD(a, p, d, x, y);    return (x+p) % p;} LL C(LL n, LL m, LL p){    LL ret = 1, a = 1, b = 1;    while (m)    {        a = a*n%p;        b = b*m%p;        n--, m--;    }    return a * inv(b, p) % p;} LL Lucas(LL n, LL m, LL p){    if (m == 0) return 1;    return C(n%p, m%p, p) * Lucas(n/p, m/p, p)%p;} int main(){    //ROP;    int T;    cin >> T;    while (T--)    {        LL n, m, p;        cin >> n >> m >> p;        cout << Lucas(m+n, n, p) << endl;    }    return 0;}
+
+```c++
+LL Extend_GCD(LL a, LL b, LL &d, LL &x, LL &y)
+{
+    if (!b) { d = a, x = 1, y = 0; }
+    else
+    {
+        Extend_GCD(b, a%b, d, y, x);
+        y -= x * (a/b);
+    }
+}
+ 
+LL inv(LL a, LL p)
+{
+    LL d, x, y;
+    Extend_GCD(a, p, d, x, y);
+    return (x+p) % p;
+}
+ 
+LL C(LL n, LL m, LL p)
+{
+    LL ret = 1, a = 1, b = 1;
+    while (m)
+    {
+        a = a*n%p;
+        b = b*m%p;
+        n--, m--;
+    }
+    return a * inv(b, p) % p;
+}
+ 
+LL Lucas(LL n, LL m, LL p)
+{
+    if (m == 0) return 1;
+    return C(n%p, m%p, p) * Lucas(n/p, m/p, p)%p;
+}
+ 
+int main()
+{
+    //ROP;
+    int T;
+    cin >> T;
+    while (T--)
+    {
+        LL n, m, p;
+        cin >> n >> m >> p;
+        cout << Lucas(m+n, n, p) << endl;
+    }
+    return 0;
+}
 ```

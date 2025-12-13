@@ -15,10 +15,30 @@ layout: post
 直接用string了。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223
 
-| ```c++
-class Solution {public:    string countAndSay(int n)    {        string str = "1";        for (int cnt = 2; cnt <= n; cnt++)        {            string curStr;            for (string::iterator it = str.begin(); it != str.end(); )            {                string::iterator ed = it;                while (ed != str.end() && *ed == *it) ed++;                int pre = count(it, ed, *it);                stringstream sstr;                sstr << pre;                curStr += sstr.str() + *it;                it = ed;            }            str = curStr;        }        return str;    }};
+
+```c++
+class Solution {
+public:
+    string countAndSay(int n)
+    {
+        string str = "1";
+        for (int cnt = 2; cnt <= n; cnt++)
+        {
+            string curStr;
+            for (string::iterator it = str.begin(); it != str.end(); )
+            {
+                string::iterator ed = it;
+                while (ed != str.end() && *ed == *it) ed++;
+                int pre = count(it, ed, *it);
+                stringstream sstr;
+                sstr << pre;
+                curStr += sstr.str() + *it;
+                it = ed;
+            }
+            str = curStr;
+        }
+        return str;
+    }
+};
 ```

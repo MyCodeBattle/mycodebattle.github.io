@@ -15,10 +15,50 @@ layout: post
 直接扫描字典，如果有相同的就输出。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940414243
 
-| ```c++
-/*ID: mycodeb1LANG: C++TASK: namenum*/ #include <bits/stdc++.h>using namespace std;const int WMAXN = 5000;const char cstr[] = "2223334445556667077888999"; vector<string> key, word; int main(){    //ifstream fin("input.txt");    ifstream fin("namenum.in");    ifstream fdicin("dict.txt");    ofstream fout("namenum.out");    //ios::sync_with_stdio(false);     int i, j;    string temp;    while (fdicin >> temp)    {        word.push_back(temp);        string t;        for (j = 0; j < temp.length(); j++)            t += cstr[temp[j] - 'A'];        key.push_back(t);    }    fin >> temp;    int flag = 0;    for (i = 0; i < key.size(); i++)        if (temp == key[i])        {            flag = 1;            fout << word[i] << endl;        }    if (flag == 0)        fout << "NONE" << endl;    return 0;}
+
+```c++
+/*
+ID: mycodeb1
+LANG: C++
+TASK: namenum
+*/
+ 
+#include <bits/stdc++.h>
+using namespace std;
+const int WMAXN = 5000;
+const char cstr[] = "2223334445556667077888999";
+ 
+vector<string> key, word;
+ 
+int main()
+{
+    //ifstream fin("input.txt");
+    ifstream fin("namenum.in");
+    ifstream fdicin("dict.txt");
+    ofstream fout("namenum.out");
+    //ios::sync_with_stdio(false);
+ 
+    int i, j;
+    string temp;
+    while (fdicin >> temp)
+    {
+        word.push_back(temp);
+        string t;
+        for (j = 0; j < temp.length(); j++)
+            t += cstr[temp[j] - 'A'];
+        key.push_back(t);
+    }
+    fin >> temp;
+    int flag = 0;
+    for (i = 0; i < key.size(); i++)
+        if (temp == key[i])
+        {
+            flag = 1;
+            fout << word[i] << endl;
+        }
+    if (flag == 0)
+        fout << "NONE" << endl;
+    return 0;
+}
 ```

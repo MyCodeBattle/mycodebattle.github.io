@@ -19,10 +19,55 @@ layout: post
 PS:看多了ACM里各位巨巨的代码之后再看网上的一些代码，真是。。。太不优雅了。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| ```c++
-#define MP(a, b) make_pair(a, b)typedef pair<int, int> pii; int dir[][2] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} };class Solution {public:    void BFS(vector<vector<char> > ∓, int x, int y)    {        mp[x][y] = 'T';        queue<pii> qu;        qu.push(MP(x, y));        while (!qu.empty())        {            pii cur = qu.front(); qu.pop();            x = cur.first, y = cur.second;            for (int i = 0; i < 4; i++)            {                int xx = x + dir[i][0], yy = y + dir[i][1];                if (xx < 0 || xx >= row || yy < 0 || yy >= col || mp[xx][yy] != 'O') continue;                mp[xx][yy] = 'T';                qu.push(MP(xx, yy));            }        }    }    void solve(vector<vector<char> > ∓)    {        if (mp.empty() || mp[0].empty()) return;        row = (int)mp.size(), col = (int)mp[0].size();        for (int i = 0; i < col; i++)        {            if (mp[0][i] == 'O') BFS(mp, 0, i);            if (mp[row - 1][i] == 'O') BFS(mp, row - 1, i);        }        for (int i = 1; i < row - 1; i++)        {            if (mp[i][0] == 'O') BFS(mp, i, 0);            if (mp[i][col - 1] == 'O') BFS(mp, i, col - 1);        }        for (int i = 0; i < row; i++)            for (int j = 0; j < col; j++)            {                if (mp[i][j] == 'T') mp[i][j] = 'O';                else if (mp[i][j] == 'O') mp[i][j] = 'X';            }    }private:    int row, col;};
+
+```c++
+#define MP(a, b) make_pair(a, b)
+typedef pair<int, int> pii;
+ 
+int dir[][2] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
+class Solution {
+public:
+    void BFS(vector<vector<char> > ∓, int x, int y)
+    {
+        mp[x][y] = 'T';
+        queue<pii> qu;
+        qu.push(MP(x, y));
+        while (!qu.empty())
+        {
+            pii cur = qu.front(); qu.pop();
+            x = cur.first, y = cur.second;
+            for (int i = 0; i < 4; i++)
+            {
+                int xx = x + dir[i][0], yy = y + dir[i][1];
+                if (xx < 0 || xx >= row || yy < 0 || yy >= col || mp[xx][yy] != 'O') continue;
+                mp[xx][yy] = 'T';
+                qu.push(MP(xx, yy));
+            }
+        }
+    }
+    void solve(vector<vector<char> > ∓)
+    {
+        if (mp.empty() || mp[0].empty()) return;
+        row = (int)mp.size(), col = (int)mp[0].size();
+        for (int i = 0; i < col; i++)
+        {
+            if (mp[0][i] == 'O') BFS(mp, 0, i);
+            if (mp[row - 1][i] == 'O') BFS(mp, row - 1, i);
+        }
+        for (int i = 1; i < row - 1; i++)
+        {
+            if (mp[i][0] == 'O') BFS(mp, i, 0);
+            if (mp[i][col - 1] == 'O') BFS(mp, i, col - 1);
+        }
+        for (int i = 0; i < row; i++)
+            for (int j = 0; j < col; j++)
+            {
+                if (mp[i][j] == 'T') mp[i][j] = 'O';
+                else if (mp[i][j] == 'O') mp[i][j] = 'X';
+            }
+    }
+private:
+    int row, col;
+};
 ```

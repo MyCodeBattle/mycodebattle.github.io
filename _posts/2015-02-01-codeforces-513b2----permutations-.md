@@ -31,10 +31,35 @@ P为一个序列。
 以此类推。把1放后面之后减去1放前面能得到的情况，然后考虑2。和考虑1是一样的。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728
 
-| ```c++
-int vis[100];vector<int> ans; int main(){    LL n, k;    cin >> n >> k;    int pos = 1;    for (int i = 0; i < n; i++)        for (; pos <= n; pos++)        {            if (k > (1ll<<(n-pos-1))) k -= (1ll<<(n-pos-1));            else            {                vis[pos] = 1;                ans.PB(pos);                pos++;                break;            }        }    for (int i = n; i >= 1; i--)    {        if (vis[i]) continue;        ans.PB(i);    }    for (auto i: ans) printf("%d ", i);    return 0;}
+
+```c++
+int vis[100];
+vector<int> ans;
+ 
+int main()
+{
+    LL n, k;
+    cin >> n >> k;
+    int pos = 1;
+    for (int i = 0; i < n; i++)
+        for (; pos <= n; pos++)
+        {
+            if (k > (1ll<<(n-pos-1))) k -= (1ll<<(n-pos-1));
+            else
+            {
+                vis[pos] = 1;
+                ans.PB(pos);
+                pos++;
+                break;
+            }
+        }
+    for (int i = n; i >= 1; i--)
+    {
+        if (vis[i]) continue;
+        ans.PB(i);
+    }
+    for (auto i: ans) printf("%d ", i);
+    return 0;
+}
 ```

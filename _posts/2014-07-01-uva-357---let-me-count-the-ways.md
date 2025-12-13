@@ -15,10 +15,47 @@ layout: post
 因为不想在一片绿色中空出一道白色才做的。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>#define LL long longusing namespace std;const int MAXN = 30000 + 100;const int mon[] = {1, 5, 10, 25, 50};LL d[MAXN][5];LL DP(int rim, int us){    LL &ans = d[rim][us];    if (ans != -1)        return ans;    ans = 0;    for (int i = us; i < 5; i++)        if (rim >= mon[i])            ans += DP(rim - mon[i], i);    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int temp;    LL i, j, ans, money;    memset(d, -1, sizeof(d));    for (i = 0; i < 5; i++)        d[0][i] = 1;    while (~scanf("%d", &temp))    {        ans = DP(temp, 0);        if (ans == 1)            printf("There is only 1 way to produce %d cents change.\n", temp);        else            printf("There are %lld ways to produce %d cents change.\n", ans, temp);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#define LL long long
+using namespace std;
+const int MAXN = 30000 + 100;
+const int mon[] = {1, 5, 10, 25, 50};
+
+LL d[MAXN][5];
+
+LL DP(int rim, int us)
+{
+    LL &ans = d[rim][us];
+    if (ans != -1)
+        return ans;
+    ans = 0;
+    for (int i = us; i < 5; i++)
+        if (rim >= mon[i])
+            ans += DP(rim - mon[i], i);
+    return ans;
+}
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int temp;
+    LL i, j, ans, money;
+    memset(d, -1, sizeof(d));
+    for (i = 0; i < 5; i++)
+        d[0][i] = 1;
+    while (~scanf("%d", &temp))
+    {
+        ans = DP(temp, 0);
+        if (ans == 1)
+            printf("There is only 1 way to produce %d cents change.\n", temp);
+        else
+            printf("There are %lld ways to produce %d cents change.\n", ans, temp);
+    }
+    return 0;
+}
 ```

@@ -19,10 +19,29 @@ layout: post
 $dp[i][j] = dp[i-1][j] * (1-p) + dp[i-1][j-1] * p$
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122
 
-| ```c++
-double dp[MAXN][MAXN]; int main(){    int n, t;    double p;    scanf("%d%lf%d", &n, &p, &t);    dp[0][0] = 1;    for (int i = 0; i < t; i++)    {        for (int j = 0; j < n; j++)        {            dp[i+1][j+1] += dp[i][j]*p;            dp[i+1][j] += dp[i][j]*(1-p);        }        dp[i+1][n] += dp[i][n];    }    double ans = 0;    for (int i = 1; i <= n; i++) ans += dp[t][i] * i;    printf("%.8f\n", ans);    return 0;}
+
+```c++
+double dp[MAXN][MAXN];
+ 
+int main()
+{
+    int n, t;
+    double p;
+    scanf("%d%lf%d", &n, &p, &t);
+    dp[0][0] = 1;
+    for (int i = 0; i < t; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            dp[i+1][j+1] += dp[i][j]*p;
+            dp[i+1][j] += dp[i][j]*(1-p);
+        }
+        dp[i+1][n] += dp[i][n];
+    }
+    double ans = 0;
+    for (int i = 1; i <= n; i++) ans += dp[t][i] * i;
+    printf("%.8f\n", ans);
+    return 0;
+}
 ```

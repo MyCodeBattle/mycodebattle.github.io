@@ -30,10 +30,46 @@ $$
 > 同理，如果b[i]!=b[j]，那么f[i][j]= f[i+1][j]+f[i][j-1]-f[i+1][j-1]。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>using namespace std; char str[100];long long dp[65][65]; long long DFS(int x, int y){    long long &ans = dp[x][y];    if (ans != -1)        return ans;    if (x > y)        return ans = 0;    if (x == y)        return ans = 1;    ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1) + 1;    ans += DFS(x + 1, y) + DFS(x, y - 1) - DFS(x + 1, y - 1);    return ans;} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        int len = strlen(str);        DFS(0, len - 1);        printf("%lld\n", dp[0][len - 1]);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+ 
+char str[100];
+long long dp[65][65];
+ 
+long long DFS(int x, int y)
+{
+    long long &ans = dp[x][y];
+    if (ans != -1)
+        return ans;
+    if (x > y)
+        return ans = 0;
+    if (x == y)
+        return ans = 1;
+    ans = 0;
+    if (str[x] == str[y])
+        ans = DFS(x + 1, y - 1) + 1;
+    ans += DFS(x + 1, y) + DFS(x, y - 1) - DFS(x + 1, y - 1);
+    return ans;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j;
+    scanf("%d%*c", &T);
+    while (T--)
+    {
+        memset(dp, -1, sizeof dp);
+        gets(str);
+        int len = strlen(str);
+        DFS(0, len - 1);
+        printf("%lld\n", dp[0][len - 1]);
+    }
+    return 0;
+}
 ```

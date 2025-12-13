@@ -50,12 +50,32 @@ $dp(i, j)$表示现在数是i，还有j次分解机会，这时候最少需要�
 拆！$dp(i, j) = min(dp(i, j), 1+max(dp(I, J), dp(currentN-I, currentK-1-J))), 1<=I<=currentN, 0 <= K < currentK $
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122
 
-| ```c++
-int dp[110][110]; class CartInSupermarketEasy {public:    int DFS(int N, int K)    {        if (dp[N][K] != -1) return dp[N][K];        if (K == 0) return dp[N][K] = N;        if (N == 1) return dp[N][K] = 1;        if (N == 0) return dp[N][K] = 0;        int ans = DFS(N-1, K) + 1;        for (int i = 1; i < N; i++)            for (int j = 0; j < K; j++)                ans = min(ans, 1 + max(DFS(i, j), DFS(N-i, K-1-j)));        return dp[N][K] = ans;    }     int calc(int N, int K) {        MS(dp, -1);        return DFS(N, K);    }};
-```  
+
+```c++
+int dp[110][110];
+ 
+class CartInSupermarketEasy {
+public:
+    int DFS(int N, int K)
+    {
+        if (dp[N][K] != -1) return dp[N][K];
+        if (K == 0) return dp[N][K] = N;
+        if (N == 1) return dp[N][K] = 1;
+        if (N == 0) return dp[N][K] = 0;
+        int ans = DFS(N-1, K) + 1;
+        for (int i = 1; i < N; i++)
+            for (int j = 0; j < K; j++)
+                ans = min(ans, 1 + max(DFS(i, j), DFS(N-i, K-1-j)));
+        return dp[N][K] = ans;
+    }
+ 
+    int calc(int N, int K) {
+        MS(dp, -1);
+        return DFS(N, K);
+    }
+};
+```
+ 
 
 ```

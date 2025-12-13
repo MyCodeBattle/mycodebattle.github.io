@@ -23,10 +23,27 @@ layout: post
 每次访问哪个城市就加上那次的价钱。如果卖完了就不加了。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920
 
-| ```c++
-class TravellingSalesmanEasy {    public:    int getMaxProfit(int M, vector<int> profit, vector<int> city, vector<int> visit) {        int vis[MAXN];        MS(vis, 0);        vector<int> res[MAXN];        for (int i = 0; i < SZ(city); i++)            res[city[i]].PB(profit[i]);        for (int i = 1; i <= M; i++) sort(res[i].begin(), res[i].end(), greater<int>());        int ans = 0;        for (int i = 0; i < SZ(visit); i++)        {            int &ith = vis[visit[i]];            if (ith+1 > SZ(res[visit[i]])) continue;            ans += res[visit[i]][ith];            ith++;        }        return ans;    }};
+
+```c++
+class TravellingSalesmanEasy {
+    public:
+    int getMaxProfit(int M, vector<int> profit, vector<int> city, vector<int> visit) {
+        int vis[MAXN];
+        MS(vis, 0);
+        vector<int> res[MAXN];
+        for (int i = 0; i < SZ(city); i++)
+            res[city[i]].PB(profit[i]);
+        for (int i = 1; i <= M; i++) sort(res[i].begin(), res[i].end(), greater<int>());
+        int ans = 0;
+        for (int i = 0; i < SZ(visit); i++)
+        {
+            int &ith = vis[visit[i]];
+            if (ith+1 > SZ(res[visit[i]])) continue;
+            ans += res[visit[i]][ith];
+            ith++;
+        }
+        return ans;
+    }
+};
 ```

@@ -15,10 +15,38 @@ layout: post
 维护ans的最大值和vmax的最大值。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031
 
-| ```c++
-#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)using namespace std;const int MAXN = 1e5 + 5;const int INF = 0x3f3f3f3f; int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, n, a, fst, scd;    scanf("%d", &T);    while (T--)    {        scanf("%d", &n);        scanf("%d%d", &fst, &scd);        int ans = fst - scd;        int vmax;        n -= 2;        vmax = max(fst, scd);        while (n--)        {            scanf("%d", &a);            ans = max(ans, vmax - a);            vmax = max(vmax, a);        }        printf("%d\n", ans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+#define MP(a, b) make_pair(a, b)
+using namespace std;
+const int MAXN = 1e5 + 5;
+const int INF = 0x3f3f3f3f;
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j, n, a, fst, scd;
+    scanf("%d", &T);
+    while (T--)
+    {
+        scanf("%d", &n);
+        scanf("%d%d", &fst, &scd);
+        int ans = fst - scd;
+        int vmax;
+        n -= 2;
+        vmax = max(fst, scd);
+        while (n--)
+        {
+            scanf("%d", &a);
+            ans = max(ans, vmax - a);
+            vmax = max(vmax, a);
+        }
+        printf("%d\n", ans);
+    }
+    return 0;
+}
 ```

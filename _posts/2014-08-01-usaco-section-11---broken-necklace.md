@@ -19,10 +19,86 @@ layout: post
 先把字符串复制两遍，这样就不用处理临界点了。如果端点是w，还要寻找适合这个端点的颜色。而且两边的扫描不能碰到一起，这样就多数了。。。总之考虑的不够全面。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879
 
-| ```c++
-/*ID: mycodeb1LANG: C++TASK: beads*/ #include <bits/stdc++.h>using namespace std; string str;int n; char FindBase(int i, char ch){    if (ch == 'L')    {        for (int ii = i - 1; ii >= i - n; ii++)            if (str[ii] != 'w')                return str[ii];        return 'w';    }    if (ch == 'R')        for (int ii = i; ii < i + n; ii++)            if (str[ii] != 'w')                return str[ii];    return 'w';} int main(){    //freopen("input.txt", "r", stdin);    freopen("beads.in", "r", stdin);    freopen("beads.out", "w", stdout);    ios::sync_with_stdio(false);     string temp;    int i, j, ans = 0;    cin >> n;    cin >> temp;    for (i = 0; i < 3; i++)        str += temp;    int st = n;    for (i = st; i < st + n; i++)    {        int led = -1, red = -2;        char ch;        int lcnt = 0, rcnt = 0;        ch = (str[i] == 'w' ? FindBase(i, 'L') : str[i - 1]);        for (j = i - 1; j >= i - n; j--)        {            if (str[j] == ch || str[j] == 'w')                lcnt++;            else            {                led = j + 1;                break;            }        }        if (lcnt == n)  //如果全是一样的颜色，直接输出        {            cout << n << endl;            return 0;        }        ch = (str[i] == 'w' ? FindBase(i, 'R') : str[i - 1]);        for (j = i; j < i + n && j != led + n; j++)        {            if (str[j] == ch || str[j] == 'w')                rcnt++;            else            {                red = j - 1;                break;            }        }        ans = max(ans, lcnt + rcnt);    }    cout << ans << endl;    return 0;}
+
+```c++
+/*
+ID: mycodeb1
+LANG: C++
+TASK: beads
+*/
+ 
+#include <bits/stdc++.h>
+using namespace std;
+ 
+string str;
+int n;
+ 
+char FindBase(int i, char ch)
+{
+    if (ch == 'L')
+    {
+        for (int ii = i - 1; ii >= i - n; ii++)
+            if (str[ii] != 'w')
+                return str[ii];
+        return 'w';
+    }
+    if (ch == 'R')
+        for (int ii = i; ii < i + n; ii++)
+            if (str[ii] != 'w')
+                return str[ii];
+    return 'w';
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    freopen("beads.in", "r", stdin);
+    freopen("beads.out", "w", stdout);
+    ios::sync_with_stdio(false);
+ 
+    string temp;
+    int i, j, ans = 0;
+    cin >> n;
+    cin >> temp;
+    for (i = 0; i < 3; i++)
+        str += temp;
+    int st = n;
+    for (i = st; i < st + n; i++)
+    {
+        int led = -1, red = -2;
+        char ch;
+        int lcnt = 0, rcnt = 0;
+        ch = (str[i] == 'w' ? FindBase(i, 'L') : str[i - 1]);
+        for (j = i - 1; j >= i - n; j--)
+        {
+            if (str[j] == ch || str[j] == 'w')
+                lcnt++;
+            else
+            {
+                led = j + 1;
+                break;
+            }
+        }
+        if (lcnt == n)  //如果全是一样的颜色，直接输出
+        {
+            cout << n << endl;
+            return 0;
+        }
+        ch = (str[i] == 'w' ? FindBase(i, 'R') : str[i - 1]);
+        for (j = i; j < i + n && j != led + n; j++)
+        {
+            if (str[j] == ch || str[j] == 'w')
+                rcnt++;
+            else
+            {
+                red = j - 1;
+                break;
+            }
+        }
+        ans = max(ans, lcnt + rcnt);
+    }
+    cout << ans << endl;
+    return 0;
+}
 ```

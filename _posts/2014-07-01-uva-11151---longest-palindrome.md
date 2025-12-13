@@ -28,10 +28,49 @@ min(dp[i + 1][j], dp[i][j - 1]) + 1, & \text{if $str[i] != str[j]$} \\\
 \end{cases}$$
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;const int MAXN = 1000 + 10;int dp[MAXN][MAXN];char str[MAXN];int DFS(int x, int y){    int &ans = dp[x][y];    if (x > y)        return ans = 0;    if (ans != -1)        return ans;    ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1);    else        ans = min(DFS(x + 1, y), DFS(x, y - 1)) + 1;    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, len;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        len = strlen(str);        if (len == 0)        {            printf("0\n");            continue;        }        int temp = DFS(0, len - 1);        printf("%d\n", len - temp);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+const int MAXN = 1000 + 10;
+
+int dp[MAXN][MAXN];
+char str[MAXN];
+
+int DFS(int x, int y)
+{
+    int &ans = dp[x][y];
+    if (x > y)
+        return ans = 0;
+    if (ans != -1)
+        return ans;
+    ans = 0;
+    if (str[x] == str[y])
+        ans = DFS(x + 1, y - 1);
+    else
+        ans = min(DFS(x + 1, y), DFS(x, y - 1)) + 1;
+    return ans;
+}
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j, len;
+    scanf("%d%*c", &T);
+    while (T--)
+    {
+        memset(dp, -1, sizeof dp);
+        gets(str);
+        len = strlen(str);
+        if (len == 0)
+        {
+            printf("0\n");
+            continue;
+        }
+        int temp = DFS(0, len - 1);
+        printf("%d\n", len - temp);
+    }
+    return 0;
+}
 ```

@@ -21,10 +21,43 @@ layout: post
 并查集。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>#include <map>#include <queue>#define MP(a, b) make_pair(a, b)using namespace std;const int MAXN = 1000 + 5;const int INF = 0x3f3f3f3f; int pa[MAXN]; int Find(int x){    return pa[x] == x ? x : pa[x] = Find(pa[x]);} int main(){    //freopen("input.txt", "r", stdin);    int nw, n, i, j, a, b;    while (~scanf("%d%d", &nw, &n))    {        int cnt = 0;        for (i = 0; i < nw; i++)            pa[i] = i;        for (i = 0; i < n; i++)        {            scanf("%d%d", &a, &b);            int x = Find(a), y = Find(b);            x == y ? cnt++ : pa[x] = y;        }        printf("%d\n", cnt);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <map>
+#include <queue>
+#define MP(a, b) make_pair(a, b)
+using namespace std;
+const int MAXN = 1000 + 5;
+const int INF = 0x3f3f3f3f;
+ 
+int pa[MAXN];
+ 
+int Find(int x)
+{
+    return pa[x] == x ? x : pa[x] = Find(pa[x]);
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int nw, n, i, j, a, b;
+    while (~scanf("%d%d", &nw, &n))
+    {
+        int cnt = 0;
+        for (i = 0; i < nw; i++)
+            pa[i] = i;
+        for (i = 0; i < n; i++)
+        {
+            scanf("%d%d", &a, &b);
+            int x = Find(a), y = Find(b);
+            x == y ? cnt++ : pa[x] = y;
+        }
+        printf("%d\n", cnt);
+    }
+    return 0;
+}
 ```

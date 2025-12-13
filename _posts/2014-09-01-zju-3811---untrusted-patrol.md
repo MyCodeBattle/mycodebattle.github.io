@@ -17,10 +17,76 @@ layout: post
 如果有，遍历第二个传感器，依次。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869
 
-| ```c++
-#include <cstdio>#include <cstring>#include <vector>#define LL long long#define lowbit(x) ((x) & (-x))const int MAXN = 1e5 + 5;const int INF = 0x3f3f3f3f;using namespace std; vector<int> mp[MAXN];int Next[MAXN], vis[MAXN], cenvis[MAXN]; void DFS(int cur){    for (vector<int>::iterator it = mp[cur].begin(); it != mp[cur].end(); it++)    {        if (vis[*it]) continue;        vis[*it] = 1;        if (!cenvis[*it]) DFS(*it);    }} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, nroom, nway, nloc, nnext;    scanf("%d", &T);    while (T--)    {        memset(vis, 0, sizeof vis);        memset(cenvis, 0, sizeof cenvis);        scanf("%d%d%d", &nroom, &nway, &nloc);        for (i = 0; i < nloc; i++)        {            int a;            scanf("%d", &a);            cenvis[a] = 1;        }        for (i = 0; i < nway; i++)        {            int a, b;            scanf("%d%d", &a, &b);            mp[a].push_back(b);            mp[b].push_back(a);        }        scanf("%d", &nnext);        bool flag = false;        if (nnext < nloc)            flag = true;        for (i = 0; i < nnext; i++)            scanf("%d", &Next[i]);        vis[Next[0]] = 1;        for (i = 0; i < nnext; i++)        {            if (!vis[Next[i]])            {                flag = true;                break;            }            DFS(Next[i]);        }        for (i = 1; i <= nroom; i++)            if (!vis[i]) flag = true;        printf("%s\n", flag == false ? "Yes" : "No");        for (i = 0; i <= nroom; i++)            mp[i].clear();    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <vector>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+const int MAXN = 1e5 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+vector<int> mp[MAXN];
+int Next[MAXN], vis[MAXN], cenvis[MAXN];
+ 
+void DFS(int cur)
+{
+    for (vector<int>::iterator it = mp[cur].begin(); it != mp[cur].end(); it++)
+    {
+        if (vis[*it]) continue;
+        vis[*it] = 1;
+        if (!cenvis[*it]) DFS(*it);
+    }
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j, nroom, nway, nloc, nnext;
+    scanf("%d", &T);
+    while (T--)
+    {
+        memset(vis, 0, sizeof vis);
+        memset(cenvis, 0, sizeof cenvis);
+        scanf("%d%d%d", &nroom, &nway, &nloc);
+        for (i = 0; i < nloc; i++)
+        {
+            int a;
+            scanf("%d", &a);
+            cenvis[a] = 1;
+        }
+        for (i = 0; i < nway; i++)
+        {
+            int a, b;
+            scanf("%d%d", &a, &b);
+            mp[a].push_back(b);
+            mp[b].push_back(a);
+        }
+        scanf("%d", &nnext);
+        bool flag = false;
+        if (nnext < nloc)
+            flag = true;
+        for (i = 0; i < nnext; i++)
+            scanf("%d", &Next[i]);
+        vis[Next[0]] = 1;
+        for (i = 0; i < nnext; i++)
+        {
+            if (!vis[Next[i]])
+            {
+                flag = true;
+                break;
+            }
+            DFS(Next[i]);
+        }
+        for (i = 1; i <= nroom; i++)
+            if (!vis[i]) flag = true;
+        printf("%s\n", flag == false ? "Yes" : "No");
+        for (i = 0; i <= nroom; i++)
+            mp[i].clear();
+    }
+    return 0;
+}
 ```

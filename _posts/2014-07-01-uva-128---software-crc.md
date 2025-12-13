@@ -22,10 +22,33 @@ layout: post
 因为右移了两位，所以那时候余数是$t*256*256 \mod 34942$，可知只要加上$34942 - t \mod 34942$就是缺的数。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long longconst char con[] = "0123456789ABCDEF"; int main(){    //freopen("input.txt", "r", stdin);    char str[1100], rec[5];    LL t = 0, g = 34943, ans;    while (gets(str), str[0] != '#')    {        t = 0, ans = 0;        for (int i = 0; str[i]; i++)            t = (t * 256 + str[i]) % g;        ans = (g - t * 65536 % g) % g;        //printf("%d\n", ans);        for (int i = 0; i < 4; i++)        {            rec[i] = ans % 16;            ans /= 16;        }        printf("%c%c %c%c\n", con[rec[3]], con[rec[2]], con[rec[1]], con[rec[0]]);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+const char con[] = "0123456789ABCDEF";
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    char str[1100], rec[5];
+    LL t = 0, g = 34943, ans;
+    while (gets(str), str[0] != '#')
+    {
+        t = 0, ans = 0;
+        for (int i = 0; str[i]; i++)
+            t = (t * 256 + str[i]) % g;
+        ans = (g - t * 65536 % g) % g;
+        //printf("%d\n", ans);
+        for (int i = 0; i < 4; i++)
+        {
+            rec[i] = ans % 16;
+            ans /= 16;
+        }
+        printf("%c%c %c%c\n", con[rec[3]], con[rec[2]], con[rec[1]], con[rec[0]]);
+    }
+    return 0;
+}
 ```

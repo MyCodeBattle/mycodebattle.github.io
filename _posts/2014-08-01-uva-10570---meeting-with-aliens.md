@@ -31,10 +31,51 @@ n个外星人开会，一开始他们是乱坐的，现在要求把它们排有�
 忽然想起开学初C++老师布置的一个小作业，就是翻转一个数组。那时候要是知道这个函数。。。。。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000")const int MAXN = 500 + 10;const int INF = 0x3f3f3f3f; int num[MAXN * 2], n, vis[MAXN]; int GetV(int *pnum){    memset(vis, 0, sizeof vis);    int cnt = 0;    for (int i = 1; i <= n; i++)        if (!vis[i])        {            cnt++;            for (int j = i; !vis[j]; j = pnum[j])                vis[j] = 1;        }    return n - cnt;} int main(){    //freopen("input.txt", "r", stdin);    int i, j;    while (scanf("%d", &n), n)    {        for (i = 1; i <= n; i++)            scanf("%d", #[i]);        int ans = INF;        for (i = 0; i < 2; i++)        {            for (j = 1; j <= n; j++)                num[j + n] = num[j];            for (j = 1; j <= n; j++)                ans = min(ans, GetV(num + j));            reverse(num + 1, num + n + 1);        }        printf("%d\n", ans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+#pragma comment(linker, "/STACK:102400000,102400000")
+const int MAXN = 500 + 10;
+const int INF = 0x3f3f3f3f;
+ 
+int num[MAXN * 2], n, vis[MAXN];
+ 
+int GetV(int *pnum)
+{
+    memset(vis, 0, sizeof vis);
+    int cnt = 0;
+    for (int i = 1; i <= n; i++)
+        if (!vis[i])
+        {
+            cnt++;
+            for (int j = i; !vis[j]; j = pnum[j])
+                vis[j] = 1;
+        }
+    return n - cnt;
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j;
+    while (scanf("%d", &n), n)
+    {
+        for (i = 1; i <= n; i++)
+            scanf("%d", #[i]);
+        int ans = INF;
+        for (i = 0; i < 2; i++)
+        {
+            for (j = 1; j <= n; j++)
+                num[j + n] = num[j];
+            for (j = 1; j <= n; j++)
+                ans = min(ans, GetV(num + j));
+            reverse(num + 1, num + n + 1);
+        }
+        printf("%d\n", ans);
+    }
+    return 0;
+}
 ```

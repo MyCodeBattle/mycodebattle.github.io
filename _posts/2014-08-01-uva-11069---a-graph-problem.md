@@ -25,10 +25,24 @@ layout: post
 $dp[i] = dp[i - 2] + dp[i - 3]$
 
 ## 代码
-    
-    
-    1234567891011121314151617
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std; LL dp[100]; int main(){    int n;    dp[0] = 1, dp[1] = 1, dp[2] = 2;    for (int i = 3; i <= 76; i ++)        dp[i] = dp[i - 2] + dp[i - 3];    while (~scanf("%d", &n))        printf("%lld\n", dp[n]);    return 0; }
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+ 
+LL dp[100];
+ 
+int main()
+{
+    int n;
+    dp[0] = 1, dp[1] = 1, dp[2] = 2;
+    for (int i = 3; i <= 76; i ++)
+        dp[i] = dp[i - 2] + dp[i - 3];
+    while (~scanf("%d", &n))
+        printf("%lld\n", dp[n]);
+    return 0;
+ 
+}
 ```

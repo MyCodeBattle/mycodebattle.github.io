@@ -23,10 +23,64 @@ layout: post
 其实可以直接用string判断是否存在的，不用另外编号
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657
 
-| ```c++
-#include <cstdio>#include <map>#include <cstring>#include <iostream>#include <string>#include <cctype>#include <algorithm>using namespace std; map<string, int> mp;map<string, int> ans; string str; int main(){    //freopen("in.txt", "r", stdin);    int i, j, cnt = 1;    while (cin >> str)    {        if (str == "XXXXXX")            break;        string temp = str;        for (i = 0; i < str.size(); i++)            temp[i] = tolower(str[i]);        sort(temp.begin(), temp.end());        if (mp.count(temp))            ans.insert(make_pair(str, mp[temp]));        else        {            mp[temp] = cnt++;            ans.insert(make_pair(str, mp[temp]));        }    }    while (cin >> str)    {        if (str == "XXXXXX")            break;        string temp = str;        for (i = 0; i < str.size(); i++)            temp[i] = tolower(str[i]);        sort(temp.begin(), temp.end());        if (mp.count(temp))        {            for (map<string, int>::iterator it = ans.begin(); it != ans.end(); it++)                if (it->second == mp[temp])                    cout << it->first << endl;            printf("******\n");        }        else        {            printf("NOT A VALID WORD\n");            printf("******\n");        }    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <map>
+#include <cstring>
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <algorithm>
+using namespace std;
+ 
+map<string, int> mp;
+map<string, int> ans;
+ 
+string str;
+ 
+int main()
+{
+    //freopen("in.txt", "r", stdin);
+    int i, j, cnt = 1;
+    while (cin >> str)
+    {
+        if (str == "XXXXXX")
+            break;
+        string temp = str;
+        for (i = 0; i < str.size(); i++)
+            temp[i] = tolower(str[i]);
+        sort(temp.begin(), temp.end());
+        if (mp.count(temp))
+            ans.insert(make_pair(str, mp[temp]));
+        else
+        {
+            mp[temp] = cnt++;
+            ans.insert(make_pair(str, mp[temp]));
+        }
+    }
+    while (cin >> str)
+    {
+        if (str == "XXXXXX")
+            break;
+        string temp = str;
+        for (i = 0; i < str.size(); i++)
+            temp[i] = tolower(str[i]);
+        sort(temp.begin(), temp.end());
+        if (mp.count(temp))
+        {
+            for (map<string, int>::iterator it = ans.begin(); it != ans.end(); it++)
+                if (it->second == mp[temp])
+                    cout << it->first << endl;
+            printf("******\n");
+        }
+        else
+        {
+            printf("NOT A VALID WORD\n");
+            printf("******\n");
+        }
+    }
+    return 0;
+}
 ```

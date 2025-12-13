@@ -25,10 +25,32 @@ $7(0111)_2, 5(0101)_2$
 因为数据量小，直接暴力统计顺序对了。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425
 
-| ```c++
-class XorSequenceEasy {public:    int Check(const vector<int> &arr)    {        int cnt = 0;        for (int i = 0; i < SZ(arr); i++)            for (int j = i+1; j < SZ(arr); j++)                if (arr[i] < arr[j]) cnt++;        return cnt;    }     int getmax(vector<int> A, int N) {        int maxNum = 0, ori = Check(A), ans;        for (int i = 0; i < 30; i++)        {            int tmp = (1<<i);            //if ((ans|tmp) > N) break;            vector<int> B;            for (int j = 0; j < SZ(A); j++) B.PB(A[j]^tmp);            int comp = Check(B);            maxNum += max(0, comp - ori);        }        return maxNum + ori;    }};
+
+```c++
+class XorSequenceEasy {
+public:
+    int Check(const vector<int> &arr)
+    {
+        int cnt = 0;
+        for (int i = 0; i < SZ(arr); i++)
+            for (int j = i+1; j < SZ(arr); j++)
+                if (arr[i] < arr[j]) cnt++;
+        return cnt;
+    }
+ 
+    int getmax(vector<int> A, int N) {
+        int maxNum = 0, ori = Check(A), ans;
+        for (int i = 0; i < 30; i++)
+        {
+            int tmp = (1<<i);
+            //if ((ans|tmp) > N) break;
+            vector<int> B;
+            for (int j = 0; j < SZ(A); j++) B.PB(A[j]^tmp);
+            int comp = Check(B);
+            maxNum += max(0, comp - ori);
+        }
+        return maxNum + ori;
+    }
+};
 ```

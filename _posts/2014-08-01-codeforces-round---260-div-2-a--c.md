@@ -27,13 +27,32 @@ layout: post
 感谢(ˉ▽￣～)
 
 ### 代码
-    
-    
-    123456789101112131415161718192021
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000") int main(){    int a, b, i, n;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        scanf("%d%d", &a, &b);        if (a != b)        {            printf("Happy Alex\n");            return 0;        }    }    printf("Poor Alex\n");    return 0;}
-```  
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+#pragma comment(linker, "/STACK:102400000,102400000")
+ 
+int main()
+{
+    int a, b, i, n;
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d%d", &a, &b);
+        if (a != b)
+        {
+            printf("Happy Alex\n");
+            return 0;
+        }
+    }
+    printf("Poor Alex\n");
+    return 0;
+}
+```
+ 
 
 ## B. Fedya and Maths
 
@@ -56,13 +75,29 @@ layout: post
 能整除4的话就是末尾两位能整除。
 
 ### 代码
-    
-    
-    123456789101112131415161718
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000")const int MAXN = 1e5 + 10; char str[MAXN]; int main(){    int n, i, j;    gets(str);    int len = strlen(str);    char c = str[len - 1], d = str[len - 2];    int k = c - '0' + (d - '0') * 10;    printf("%d\n", k % 4 ? 0 : 4);    return 0;}
-```  
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+#pragma comment(linker, "/STACK:102400000,102400000")
+const int MAXN = 1e5 + 10;
+ 
+char str[MAXN];
+ 
+int main()
+{
+    int n, i, j;
+    gets(str);
+    int len = strlen(str);
+    char c = str[len - 1], d = str[len - 2];
+    int k = c - '0' + (d - '0') * 10;
+    printf("%d\n", k % 4 ? 0 : 4);
+    return 0;
+}
+```
+ 
 
 ## C. Boredom
 
@@ -83,10 +118,30 @@ layout: post
 $$dp[i] = max(i * dp[i] + dp[i - 2], dp[i - 1])$$
 
 ### 代码
-    
-    
-    1234567891011121314151617181920212223
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000")const int MAXN = 1e5 + 10; LL dp[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, i, j, a;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        scanf("%d", &a);        dp[a]++;    }    for (i = 2; i < MAXN; i++)        dp[i] = max(i * dp[i] + dp[i - 2], dp[i - 1]);    printf("%I64d\n", dp[100000]);    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+#pragma comment(linker, "/STACK:102400000,102400000")
+const int MAXN = 1e5 + 10;
+ 
+LL dp[MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, i, j, a;
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a);
+        dp[a]++;
+    }
+    for (i = 2; i < MAXN; i++)
+        dp[i] = max(i * dp[i] + dp[i - 2], dp[i - 1]);
+    printf("%I64d\n", dp[100000]);
+    return 0;
+}
 ```

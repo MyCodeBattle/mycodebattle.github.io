@@ -23,10 +23,53 @@ layout: post
 代码里的障碍物那句，我把普通的坐标轴转换成了行和列的坐标轴，因为其他的我会想乱掉。。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940414243444546
 
-| ```c++
-int mp[MAXN][MAXN], vis[MAXN][MAXN], ans = 0;const int O = 1000; struct POINT{    int x, y, time;    bool operator < (const POINT &a) const    {        return time > a.time;    }};priority_queue<POINT> Q; class TheGridDivTwo {public:    void BFS(int k)    {        Q.push((POINT){O, O, 0});        while (!Q.empty())        {            POINT tmp = Q.top(); Q.pop();            if (k - tmp.time + tmp.y - O <= ans) continue;            for (int i = 0; i < 4; i++)            {                int x = tmp.x, y = tmp.y;                int xx = x + dir[i][0], yy = dir[i][1] + y;                if (!vis[xx][yy] && !mp[xx][yy] && xx >= 0 && yy >= 0 && xx <= 2000 && yy <= 2000)                {                    vis[xx][yy] = 1;                    if (tmp.time + 1 <= k)                    {                        ans = max(ans, yy - O);                        Q.push((POINT){xx, yy, tmp.time + 1});                    }                }            }        }    }     int find(vector<int> x, vector<int> y, int k) {        for (int i = 0; i < SZ(x); i++)            mp[-y[i] + O][x[i] + O] = 1;        BFS(k);        return ans;    }};
+
+```c++
+int mp[MAXN][MAXN], vis[MAXN][MAXN], ans = 0;
+const int O = 1000;
+ 
+struct POINT
+{
+    int x, y, time;
+    bool operator < (const POINT &a) const
+    {
+        return time > a.time;
+    }
+};
+priority_queue<POINT> Q;
+ 
+class TheGridDivTwo {
+public:
+    void BFS(int k)
+    {
+        Q.push((POINT){O, O, 0});
+        while (!Q.empty())
+        {
+            POINT tmp = Q.top(); Q.pop();
+            if (k - tmp.time + tmp.y - O <= ans) continue;
+            for (int i = 0; i < 4; i++)
+            {
+                int x = tmp.x, y = tmp.y;
+                int xx = x + dir[i][0], yy = dir[i][1] + y;
+                if (!vis[xx][yy] && !mp[xx][yy] && xx >= 0 && yy >= 0 && xx <= 2000 && yy <= 2000)
+                {
+                    vis[xx][yy] = 1;
+                    if (tmp.time + 1 <= k)
+                    {
+                        ans = max(ans, yy - O);
+                        Q.push((POINT){xx, yy, tmp.time + 1});
+                    }
+                }
+            }
+        }
+    }
+ 
+    int find(vector<int> x, vector<int> y, int k) {
+        for (int i = 0; i < SZ(x); i++)
+            mp[-y[i] + O][x[i] + O] = 1;
+        BFS(k);
+        return ans;
+    }
+};
 ```

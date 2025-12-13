@@ -36,10 +36,32 @@ q是直到目前为止没有拿过一次两个红球的概率。
 $$\log \left( P^{i+d}\right) = i + d$$
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std;const int MAXN = 1e6; double dp[MAXN];    //at least one pick are two red ballsint ans[MAXN]; int main(){    int n;    LL i, j;    double p = 1, q = 1, t = 0;    for (i = 1; i <= MAXN; i++)    {        p = 1.0 / i / (i + 1);        q *= (1 - p);        dp[i] =  1 - q;        t += log10(1.0 * i * (i + 1));        ans[i] = (int)(t - fmod(t, 1));    }    while (~scanf("%d", &n))       printf("%.6f %d\n", dp[n], ans[n]);    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+const int MAXN = 1e6;
+ 
+double dp[MAXN];    //at least one pick are two red balls
+int ans[MAXN];
+ 
+int main()
+{
+    int n;
+    LL i, j;
+    double p = 1, q = 1, t = 0;
+    for (i = 1; i <= MAXN; i++)
+    {
+        p = 1.0 / i / (i + 1);
+        q *= (1 - p);
+        dp[i] =  1 - q;
+        t += log10(1.0 * i * (i + 1));
+        ans[i] = (int)(t - fmod(t, 1));
+    }
+    while (~scanf("%d", &n))
+       printf("%.6f %d\n", dp[n], ans[n]);
+    return 0;
+}
 ```

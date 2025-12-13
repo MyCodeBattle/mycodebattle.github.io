@@ -15,10 +15,40 @@ layout: post
 先判断素数，再快速幂一下。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233
 
-| ```c++
-LL Quick_Mod(LL a, LL m, LL n){    LL ans = 1;    while (m)    {        if (m & 1) ans = ans * a % n;        a = a * a % n;        m >>= 1;    }    return ans;} bool Check(LL p){    int m = sqrt(p + 0.5);    for (int i = 2; i <= m; i++)        if (p % i == 0) return false;    return true;} int main(){    //ROP;    LL p, a;    while (cin >> p >> a, p + a)    {        if (Check(p)) { cout << "no" << endl; continue; }        LL tmp = Quick_Mod(a, p, p);        if (tmp == a % p) cout << "yes" << endl;        else cout << "no" << endl;    }    return 0;}
+
+```c++
+LL Quick_Mod(LL a, LL m, LL n)
+{
+    LL ans = 1;
+    while (m)
+    {
+        if (m & 1) ans = ans * a % n;
+        a = a * a % n;
+        m >>= 1;
+    }
+    return ans;
+}
+ 
+bool Check(LL p)
+{
+    int m = sqrt(p + 0.5);
+    for (int i = 2; i <= m; i++)
+        if (p % i == 0) return false;
+    return true;
+}
+ 
+int main()
+{
+    //ROP;
+    LL p, a;
+    while (cin >> p >> a, p + a)
+    {
+        if (Check(p)) { cout << "no" << endl; continue; }
+        LL tmp = Quick_Mod(a, p, p);
+        if (tmp == a % p) cout << "yes" << endl;
+        else cout << "no" << endl;
+    }
+    return 0;
+}
 ```

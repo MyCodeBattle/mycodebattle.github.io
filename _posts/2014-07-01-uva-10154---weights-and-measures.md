@@ -32,10 +32,54 @@ layout: post
 状态转移方程$$dp[i][j] = min(dp[i - 1][j - 1] + w[i], dp[i - 1][j])$$
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int INF = 0x3f3f3f3f;const int MAXN = 6000; struct TURTLE{    int w, s;    bool operator < (const TURTLE &a) const    {        return s < a.s;    }}; int dp[MAXN][MAXN];TURTLE tur[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int i, j, n = 1, a, b;    while (~scanf("%d%d", &tur[n].w, &tur[n].s))        n++;    n--;    sort(tur + 1, tur + 1 + n);    for (i = 0; i <= n; i++)        for (j = 1; j <= n; j++)            dp[i][j] = INF;    for (i = 0; i <= n; i++)        dp[i][0] = 0;    for (i = 1; i <= n; i++)        for (j = 1; j <= i; j++)        {            dp[i][j] = dp[i - 1][j];            if (dp[i - 1][j - 1] + tur[i].w <= tur[i].s && dp[i - 1][j - 1] != INF)                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + tur[i].w);        }        for (i = n; i; i--)            if (dp[n][i] != INF)            {                printf("%d\n", i);                break;            }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+const int INF = 0x3f3f3f3f;
+const int MAXN = 6000;
+ 
+struct TURTLE
+{
+    int w, s;
+    bool operator < (const TURTLE &a) const
+    {
+        return s < a.s;
+    }
+};
+ 
+int dp[MAXN][MAXN];
+TURTLE tur[MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j, n = 1, a, b;
+    while (~scanf("%d%d", &tur[n].w, &tur[n].s))
+        n++;
+    n--;
+    sort(tur + 1, tur + 1 + n);
+    for (i = 0; i <= n; i++)
+        for (j = 1; j <= n; j++)
+            dp[i][j] = INF;
+    for (i = 0; i <= n; i++)
+        dp[i][0] = 0;
+    for (i = 1; i <= n; i++)
+        for (j = 1; j <= i; j++)
+        {
+            dp[i][j] = dp[i - 1][j];
+            if (dp[i - 1][j - 1] + tur[i].w <= tur[i].s && dp[i - 1][j - 1] != INF)
+                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + tur[i].w);
+        }
+        for (i = n; i; i--)
+            if (dp[n][i] != INF)
+            {
+                printf("%d\n", i);
+                break;
+            }
+    return 0;
+}
 ```

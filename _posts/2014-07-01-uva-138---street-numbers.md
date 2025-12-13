@@ -27,10 +27,24 @@ $$y_{i+1} = x_1y_i + y_1x_i$$
 只要用一个变量保存x即可。
 
 ## 代码
-    
-    
-    1234567891011121314151617
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long long int main(){    int i, j, x, y, X0 = 3, Y0 = 2;    x = X0, y = Y0;    for (i = 0; i < 10; i++)    {        int t = x;        x = 3 * t + 2 * 2 * y;        y = 3 * y + 2 * t;        printf("%10d%10d\n", y >> 1, (x - 1) >> 1);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+ 
+int main()
+{
+    int i, j, x, y, X0 = 3, Y0 = 2;
+    x = X0, y = Y0;
+    for (i = 0; i < 10; i++)
+    {
+        int t = x;
+        x = 3 * t + 2 * 2 * y;
+        y = 3 * y + 2 * t;
+        printf("%10d%10d\n", y >> 1, (x - 1) >> 1);
+    }
+    return 0;
+}
 ```

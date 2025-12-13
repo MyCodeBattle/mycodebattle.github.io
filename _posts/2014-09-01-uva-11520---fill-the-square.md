@@ -19,10 +19,53 @@ layout: post
 暴力。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425262728293031323334353637383940414243444546
 
-| ```c++
-#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))const int MAXN = 10 + 5;const int INF = 0x3f3f3f3f;using namespace std; char mp[MAXN][MAXN]; int main(){    //freopen("input.txt", "r", stdin);    bool flag;    int T, i, j, n, cases = 0;    scanf("%d", &T);    while (T--)    {        scanf("%d%*c", &n);        for (i = 0; i < n; i++)            gets(mp[i]);        for (i = 0; i < n; i++)            for (j = 0; j < n; j++)            {                if (mp[i][j] == '.')                {                    for (char k = 'A'; k <= 'Z'; k++)                    {                        flag = true;                        if (i > 0 && k == mp[i - 1][j]) flag = false;                        if (i < n - 1 && k == mp[i + 1][j]) flag = false;                        if (j > 0 && k == mp[i][j - 1]) flag = false;                        if (j < n - 1 && k == mp[i][j + 1]) flag = false;                        if (flag)                        {                            mp[i][j] = k;                            break;                        }                    }                }            }        printf("Case %d:\n", ++cases);        for (i = 0; i < n; i++)            puts(mp[i]);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+const int MAXN = 10 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+char mp[MAXN][MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    bool flag;
+    int T, i, j, n, cases = 0;
+    scanf("%d", &T);
+    while (T--)
+    {
+        scanf("%d%*c", &n);
+        for (i = 0; i < n; i++)
+            gets(mp[i]);
+        for (i = 0; i < n; i++)
+            for (j = 0; j < n; j++)
+            {
+                if (mp[i][j] == '.')
+                {
+                    for (char k = 'A'; k <= 'Z'; k++)
+                    {
+                        flag = true;
+                        if (i > 0 && k == mp[i - 1][j]) flag = false;
+                        if (i < n - 1 && k == mp[i + 1][j]) flag = false;
+                        if (j > 0 && k == mp[i][j - 1]) flag = false;
+                        if (j < n - 1 && k == mp[i][j + 1]) flag = false;
+                        if (flag)
+                        {
+                            mp[i][j] = k;
+                            break;
+                        }
+                    }
+                }
+            }
+        printf("Case %d:\n", ++cases);
+        for (i = 0; i < n; i++)
+            puts(mp[i]);
+    }
+    return 0;
+}
 ```

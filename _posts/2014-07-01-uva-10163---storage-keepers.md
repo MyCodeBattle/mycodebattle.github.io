@@ -22,10 +22,55 @@ $dp[i][j]$表示前i个人打扫j个柜子。
 之后根据求出来的值去求最小花费
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 100 + 10;const int INF = 0x3f3f3f3f; int safe[MAXN], dp[MAXN][MAXN], fee[MAXN][MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int sto, n, i, j;    while (scanf("%d%d", &sto, &n), sto + n)    {        memset(dp, 0, sizeof dp);        memset(fee, 0x3f, sizeof fee);        for (i = 1; i <= n; i++)            scanf("%d", &safe[i]);        for (i = 1; i <= n; i++)        {            dp[i - 1][0] = INF;            for (j = 1; j <= sto; j++)            {                dp[i][j] = dp[i - 1][j];                for (int k = 1; k <= j; k++)                    dp[i][j] = max(dp[i][j], min(dp[i - 1][j - k], safe[i] / k));            }        }        //printf("%d\n", dp[n][sto]);        for (i = 1; i <= n; i++)        {            fee[i - 1][0] = 0;            for (j = 1; j <= sto; j++)            {                fee[i][j] = fee[i - 1][j];                for (int k = 1; k <= j; k++)                    if (safe[i] / k >= dp[n][sto])                        fee[i][j] = min(fee[i][j], fee[i - 1][j - k] + safe[i]);            }        }        if (dp[n][sto] == 0)            printf("0 0\n");        else            printf("%d %d\n", dp[n][sto], fee[n][sto]);    }    return 0; }
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+const int MAXN = 100 + 10;
+const int INF = 0x3f3f3f3f;
+ 
+int safe[MAXN], dp[MAXN][MAXN], fee[MAXN][MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int sto, n, i, j;
+    while (scanf("%d%d", &sto, &n), sto + n)
+    {
+        memset(dp, 0, sizeof dp);
+        memset(fee, 0x3f, sizeof fee);
+        for (i = 1; i <= n; i++)
+            scanf("%d", &safe[i]);
+        for (i = 1; i <= n; i++)
+        {
+            dp[i - 1][0] = INF;
+            for (j = 1; j <= sto; j++)
+            {
+                dp[i][j] = dp[i - 1][j];
+                for (int k = 1; k <= j; k++)
+                    dp[i][j] = max(dp[i][j], min(dp[i - 1][j - k], safe[i] / k));
+            }
+        }
+        //printf("%d\n", dp[n][sto]);
+        for (i = 1; i <= n; i++)
+        {
+            fee[i - 1][0] = 0;
+            for (j = 1; j <= sto; j++)
+            {
+                fee[i][j] = fee[i - 1][j];
+                for (int k = 1; k <= j; k++)
+                    if (safe[i] / k >= dp[n][sto])
+                        fee[i][j] = min(fee[i][j], fee[i - 1][j - k] + safe[i]);
+            }
+        }
+        if (dp[n][sto] == 0)
+            printf("0 0\n");
+        else
+            printf("%d %d\n", dp[n][sto], fee[n][sto]);
+    }
+    return 0;
+ 
+}
 ```

@@ -19,10 +19,82 @@ layout: post
 因为只要比较底面，所以可以把一个矩形xyz变成xyz,xzy,yzx三种，每种的底面都不一样。然后和以前的矩形嵌套一样了。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>#include <vector>using namespace std;const int MAXN = 200; struct RECTAN{    int x, y, z;}; int n, dp[MAXN], mp[MAXN][MAXN];vector<RECTAN> ve; void Input(){    RECTAN temp;    int i;    for (i = 0; i < n; i++)    {        scanf("%d%d%d", &temp.x, &temp.y, &temp.z);        ve.push_back(temp);        swap(temp.y, temp.z);        ve.push_back(temp);        swap(temp.x, temp.z);        ve.push_back(temp);    }} bool isBigger(RECTAN a, RECTAN b){    if (a.x > a.y)        swap(a.x, a.y);    if (b.x > b.y)        swap(b.x, b.y);    if (a.x < b.x && a.y < b.y)        return true;    return false;} int DFS(int i){    int &ans = dp[i];    if (ans != -1)        return ans;    ans = 0;    for (int j = 0; j < ve.size(); j++)        if (mp[i][j])            ans = max(ans, DFS(j));    ans += ve[i].z;    return ans;} int main(){    //freopen("in.txt", "r", stdin);    int i, j, a, b, c, ans, cases = 1;    while (scanf("%d", &n), n)    {        memset(dp, -1, sizeof(dp));        memset(mp, 0, sizeof(mp));        ans = -1;        ve.clear();        Input();        for (i = 0; i < ve.size(); i++)            for (j = 0; j < ve.size(); j++)                if (isBigger(ve[i], ve[j]))                    mp[i][j] = 1;        for (i = 0; i < ve.size(); i++)            ans = max(ans, DFS(i));        printf("Case %d: maximum height = %d\n", cases++, ans);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <vector>
+using namespace std;
+const int MAXN = 200;
+ 
+struct RECTAN
+{
+    int x, y, z;
+};
+ 
+int n, dp[MAXN], mp[MAXN][MAXN];
+vector<RECTAN> ve;
+ 
+void Input()
+{
+    RECTAN temp;
+    int i;
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d%d%d", &temp.x, &temp.y, &temp.z);
+        ve.push_back(temp);
+        swap(temp.y, temp.z);
+        ve.push_back(temp);
+        swap(temp.x, temp.z);
+        ve.push_back(temp);
+    }
+}
+ 
+bool isBigger(RECTAN a, RECTAN b)
+{
+    if (a.x > a.y)
+        swap(a.x, a.y);
+    if (b.x > b.y)
+        swap(b.x, b.y);
+    if (a.x < b.x && a.y < b.y)
+        return true;
+    return false;
+}
+ 
+int DFS(int i)
+{
+    int &ans = dp[i];
+    if (ans != -1)
+        return ans;
+    ans = 0;
+    for (int j = 0; j < ve.size(); j++)
+        if (mp[i][j])
+            ans = max(ans, DFS(j));
+    ans += ve[i].z;
+    return ans;
+}
+ 
+int main()
+{
+    //freopen("in.txt", "r", stdin);
+    int i, j, a, b, c, ans, cases = 1;
+    while (scanf("%d", &n), n)
+    {
+        memset(dp, -1, sizeof(dp));
+        memset(mp, 0, sizeof(mp));
+        ans = -1;
+        ve.clear();
+        Input();
+        for (i = 0; i < ve.size(); i++)
+            for (j = 0; j < ve.size(); j++)
+                if (isBigger(ve[i], ve[j]))
+                    mp[i][j] = 1;
+        for (i = 0; i < ve.size(); i++)
+            ans = max(ans, DFS(i));
+        printf("Case %d: maximum height = %d\n", cases++, ans);
+    }
+    return 0;
+}
 ```

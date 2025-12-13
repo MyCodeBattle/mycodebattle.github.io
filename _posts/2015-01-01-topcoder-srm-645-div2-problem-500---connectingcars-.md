@@ -19,10 +19,46 @@ layout: post
 因为数据量少，所以就可以无脑暴力了，直接算出第i辆车不动的时候的最小距离，然后取最小值。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839
 
-| ```c++
-struct CAR{	LL st, ed;	bool operator < (const CAR &a) const	{		return st < a.st;	}}car[MAXN]; class ConnectingCars {    public:    long long minimizeCost(vector<int> pos, vector<int> len) {        int i, j, num = pos.size();        for (i = 0; i < pos.size(); i++)        {            car[i].st = pos[i];            car[i].ed = pos[i] + len[i];        }        sort(car, car + num);        LL ans = (1ll<<60);        for (i = 0; i < num; i++)        {            LL curAns = 0, add = 0;            for (j = i - 1; j >= 0; j--)            {                add += car[j + 1].st - car[j].ed;                curAns += add;            }            add = 0;            for (j = i + 1; j < num; j++)            {                add += car[j].st - car[j - 1].ed;                curAns += add;            }            ans = min(ans, curAns);        }        return ans;    }};
+
+```c++
+struct CAR
+{
+	LL st, ed;
+	bool operator < (const CAR &a) const
+	{
+		return st < a.st;
+	}
+}car[MAXN];
+ 
+class ConnectingCars {
+    public:
+    long long minimizeCost(vector<int> pos, vector<int> len) {
+        int i, j, num = pos.size();
+        for (i = 0; i < pos.size(); i++)
+        {
+            car[i].st = pos[i];
+            car[i].ed = pos[i] + len[i];
+        }
+        sort(car, car + num);
+        LL ans = (1ll<<60);
+        for (i = 0; i < num; i++)
+        {
+            LL curAns = 0, add = 0;
+            for (j = i - 1; j >= 0; j--)
+            {
+                add += car[j + 1].st - car[j].ed;
+                curAns += add;
+            }
+            add = 0;
+            for (j = i + 1; j < num; j++)
+            {
+                add += car[j].st - car[j - 1].ed;
+                curAns += add;
+            }
+            ans = min(ans, curAns);
+        }
+        return ans;
+    }
+};
 ```

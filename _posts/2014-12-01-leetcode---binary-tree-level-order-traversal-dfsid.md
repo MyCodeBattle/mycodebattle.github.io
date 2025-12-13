@@ -17,10 +17,49 @@ layout: post
 我用的DFSID。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142
 
-| ```c++
-#include <cstdio>#include <vector>using namespace std; class Solution {    int depth;    vector<vector<int> >ans;    bool flag;public:    void DFSID(TreeNode *curNode, int curDep)    {        if (curDep > depth) return;        if (curDep < depth)        {            if (curNode->left) DFSID(curNode->left, curDep + 1);            if (curNode->right) DFSID(curNode->right, curDep + 1);         }        if (curDep == depth)        {            ans[depth].push_back(curNode->val);            flag = true;        }    }     vector<vector<int> > levelOrder(TreeNode *root) {        if (root == 0) return ans;        int i, j;        depth = -1;        flag = true;        while (flag)        {            depth++;            flag = false;            vector<int> tmpVec;            ans.push_back(tmpVec);            DFSID(root, 0);        }        ans.pop_back();        return ans;    }};
+
+```c++
+#include <cstdio>
+#include <vector>
+using namespace std;
+ 
+class Solution {
+    int depth;
+    vector<vector<int> >ans;
+    bool flag;
+public:
+    void DFSID(TreeNode *curNode, int curDep)
+    {
+        if (curDep > depth) return;
+        if (curDep < depth)
+        {
+            if (curNode->left) DFSID(curNode->left, curDep + 1);
+            if (curNode->right) DFSID(curNode->right, curDep + 1);
+ 
+        }
+        if (curDep == depth)
+        {
+            ans[depth].push_back(curNode->val);
+            flag = true;
+        }
+    }
+ 
+    vector<vector<int> > levelOrder(TreeNode *root) {
+        if (root == 0) return ans;
+        int i, j;
+        depth = -1;
+        flag = true;
+        while (flag)
+        {
+            depth++;
+            flag = false;
+            vector<int> tmpVec;
+            ans.push_back(tmpVec);
+            DFSID(root, 0);
+        }
+        ans.pop_back();
+        return ans;
+    }
+};
 ```

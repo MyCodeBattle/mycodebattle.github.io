@@ -17,10 +17,36 @@ layout: post
 直接枚举公差，复杂度$O(nlogn)$
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829
 
-| ```c++
-int pos[MAXN]; int main(){    //ROP;    int n;    while (scanf("%d:", &n), n)    {        for (int i = 0; i < n; i++)        {            int tmp;            scanf("%d", &tmp);            pos[tmp] = i;        }        bool flag = false;        for (int i = 0; i < n; i++)        {            if (flag) break;            for (int j = 1; i + 2*j < n; j++)            {                if (pos[i] < pos[i+j] && pos[i+j] < pos[i+2*j]) flag = true;                if (pos[i] > pos[i+j] && pos[i+j] > pos[i+2*j]) flag = true;                if (flag) break;            }        }        printf("%s\n", flag ? "no": "yes");    }    return 0;}
+
+```c++
+int pos[MAXN];
+ 
+int main()
+{
+    //ROP;
+    int n;
+    while (scanf("%d:", &n), n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            int tmp;
+            scanf("%d", &tmp);
+            pos[tmp] = i;
+        }
+        bool flag = false;
+        for (int i = 0; i < n; i++)
+        {
+            if (flag) break;
+            for (int j = 1; i + 2*j < n; j++)
+            {
+                if (pos[i] < pos[i+j] && pos[i+j] < pos[i+2*j]) flag = true;
+                if (pos[i] > pos[i+j] && pos[i+j] > pos[i+2*j]) flag = true;
+                if (flag) break;
+            }
+        }
+        printf("%s\n", flag ? "no": "yes");
+    }
+    return 0;
+}
 ```

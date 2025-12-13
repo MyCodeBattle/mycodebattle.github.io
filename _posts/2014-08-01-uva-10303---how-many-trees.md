@@ -29,10 +29,23 @@ $$h(n)= h(0) * h(n-1)+h(1) * h(n-2) + … + h(n-1)h(0) (n>=2)$$
 $$h(n)=h(n-1) * (4*n-2)/(n+1)$$
 
 ## 代码
-    
-    
-    12345678910111213141516
 
-| ```c++
-import java.math.*;import java.io.*;import java.util.*;public class Main {    public static void main(String[] args) {        Scanner in = new Scanner(System.in);        BigInteger[] dp = new BigInteger[1100];        dp[1] = BigInteger.ONE;        for (int i = 2; i < 1100; i++)            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(4 * i - 2)).divide(BigInteger.valueOf(i + 1));        while (in.hasNext()) {            int n = in.nextInt();            System.out.println(dp[n]);        }    }}
+
+```c++
+import java.math.*;
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        BigInteger[] dp = new BigInteger[1100];
+        dp[1] = BigInteger.ONE;
+        for (int i = 2; i < 1100; i++)
+            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(4 * i - 2)).divide(BigInteger.valueOf(i + 1));
+        while (in.hasNext()) {
+            int n = in.nextInt();
+            System.out.println(dp[n]);
+        }
+    }
+}
 ```

@@ -21,10 +21,32 @@ layout: post
 顺便吐槽一下，连了一个上午加半个下午的TC，终于给连上了。
 
 ## 代码
-    
-    
-    12345678910111213141516171819202122232425
 
-| ```c++
-class LostCharacter {    public:    vector<int> getmins(vector<string> str) {        vector<int> ans;        vector<string> tmp;        tmp = str;        if (str.empty()) return ans;        for (int i = 0; i < str.size(); i++)        {            string target = str[i];            for (int j = 0; j < target.size(); j++)                if (target[j] == '?') target[j] = str[i][j] = 'a';            for (int j = 0; j < str.size(); j++)            {                if (i == j) continue;                for (int k = 0; k < str[j].size(); k++)                    if (str[j][k] == '?') str[j][k] = 'z';            }            sort(str.begin(), str.end());            ans.push_back(lower_bound(str.begin(), str.end(), target) - str.begin());            str = tmp;        }        return ans;    }};
+
+```c++
+class LostCharacter {
+    public:
+    vector<int> getmins(vector<string> str) {
+        vector<int> ans;
+        vector<string> tmp;
+        tmp = str;
+        if (str.empty()) return ans;
+        for (int i = 0; i < str.size(); i++)
+        {
+            string target = str[i];
+            for (int j = 0; j < target.size(); j++)
+                if (target[j] == '?') target[j] = str[i][j] = 'a';
+            for (int j = 0; j < str.size(); j++)
+            {
+                if (i == j) continue;
+                for (int k = 0; k < str[j].size(); k++)
+                    if (str[j][k] == '?') str[j][k] = 'z';
+            }
+            sort(str.begin(), str.end());
+            ans.push_back(lower_bound(str.begin(), str.end(), target) - str.begin());
+            str = tmp;
+        }
+        return ans;
+    }
+};
 ```

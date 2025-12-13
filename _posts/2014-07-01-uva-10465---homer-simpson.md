@@ -20,10 +20,37 @@ layout: post
 因为要凑整，所以先把DP里的数设置为<-10000的数，等到递推完成后从后面往前。如果dp[t]>0，说明正好可以吃完，输出，否则一直往下，找到第一个>0的，输出时间差。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930
 
-| ```c++
-#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 10000 + 10;const int INFS = -2147483648;int main(){    int time[2], dp[MAXN], i, j, t;    while (~scanf("%d%d%d", &time[0], &time[1], &t))    {        for (i = 0; i < MAXN; i++)            dp[i] = INFS;        dp[0] = 0;        for (i = 0; i < 2; i++)            for (j = time[i]; j <= t; j++)                dp[j] = max(dp[j], dp[j - time[i]] + 1);        for (i = t; i >= 0; i--)            if (dp[i] >= 0)            {                if (i == t)                    printf("%d\n", dp[i]);                else                    printf("%d %d\n", dp[i], t - i);                    break;            }    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+const int MAXN = 10000 + 10;
+const int INFS = -2147483648;
+
+int main()
+{
+    int time[2], dp[MAXN], i, j, t;
+    while (~scanf("%d%d%d", &time[0], &time[1], &t))
+    {
+        for (i = 0; i < MAXN; i++)
+            dp[i] = INFS;
+        dp[0] = 0;
+        for (i = 0; i < 2; i++)
+            for (j = time[i]; j <= t; j++)
+                dp[j] = max(dp[j], dp[j - time[i]] + 1);
+        for (i = t; i >= 0; i--)
+            if (dp[i] >= 0)
+            {
+                if (i == t)
+                    printf("%d\n", dp[i]);
+                else
+                    printf("%d %d\n", dp[i], t - i);
+                    break;
+            }
+    }
+    return 0;
+}
 ```

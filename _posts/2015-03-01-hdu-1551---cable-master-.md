@@ -15,10 +15,31 @@ layout: post
 二分
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324
 
-| ```c++
-bool Check(double num){    int cnt = 0;    for (int i = 0; i < n; i++) cnt += arr[i] / num;    return cnt >= k;} int main(){    //ROP;    while (scanf("%d%d", &n, &k), n)    {        for (int i = 0; i < n; i++) scanf("%lf", &arr[i]);        double l = 0, r = INF, mid;        while (r-l > 1e-4)        {            mid = (l+r)/2;            if (Check(mid)) l = mid;            else r = mid;        }        printf("%.2f\n", l);    }    return 0;}
+
+```c++
+bool Check(double num)
+{
+    int cnt = 0;
+    for (int i = 0; i < n; i++) cnt += arr[i] / num;
+    return cnt >= k;
+}
+ 
+int main()
+{
+    //ROP;
+    while (scanf("%d%d", &n, &k), n)
+    {
+        for (int i = 0; i < n; i++) scanf("%lf", &arr[i]);
+        double l = 0, r = INF, mid;
+        while (r-l > 1e-4)
+        {
+            mid = (l+r)/2;
+            if (Check(mid)) l = mid;
+            else r = mid;
+        }
+        printf("%.2f\n", l);
+    }
+    return 0;
+}
 ```

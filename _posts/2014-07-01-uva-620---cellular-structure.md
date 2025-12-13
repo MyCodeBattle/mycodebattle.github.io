@@ -20,10 +20,34 @@ layout: post
 记得以前做过一道一样的题目。根据给的字符串进行比较即可。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627
 
-| ```c++
-#include <cstdio>#include <iostream>#include <string>using namespace std; int main(){    //freopen("in.txt", "r", stdin);    int T, i, j;    string str;    scanf("%d", &T);    while (cin >> str)    {        int len = str.size();        if (len % 2 == 0)            printf("MUTANT\n");        else if (len == 1 && str[0] == 'A')            printf("SIMPLE\n");        else if (len >= 3 && str[len - 1] == 'B' && str[len - 2] == 'A')            printf("FULLY-GROWN\n");        else if (len >= 3 && str[0] == 'B' && str[len - 1] == 'A')            printf("MUTAGENIC\n");        else            printf("MUTANT\n");    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <iostream>
+#include <string>
+using namespace std;
+ 
+int main()
+{
+    //freopen("in.txt", "r", stdin);
+    int T, i, j;
+    string str;
+    scanf("%d", &T);
+    while (cin >> str)
+    {
+        int len = str.size();
+        if (len % 2 == 0)
+            printf("MUTANT\n");
+        else if (len == 1 && str[0] == 'A')
+            printf("SIMPLE\n");
+        else if (len >= 3 && str[len - 1] == 'B' && str[len - 2] == 'A')
+            printf("FULLY-GROWN\n");
+        else if (len >= 3 && str[0] == 'B' && str[len - 1] == 'A')
+            printf("MUTAGENIC\n");
+        else
+            printf("MUTANT\n");
+    }
+    return 0;
+}
 ```

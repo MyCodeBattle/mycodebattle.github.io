@@ -21,10 +21,52 @@ layout: post
 转换一下思路。记录A集合中的各个元素在B集合中的位置。对于一个长度为len的A的子集，如果他的元素在B中的最大位置-最小位置 + 1 等于len，说明这个序列的其他元素都在他们中间，也就是说这个序列也在中存在。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445
 
-| ```c++
-#include<bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 3000 + 5;const int INF = 0x3f3f3f3f;using namespace std; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int a[MAXN], b[MAXN], pos[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, i, j;    while (scanf("%d", &n), n)    {        for (i = 0; i < n; i++) scanf("%d", a + i);        for (i = 0; i < n; i++) scanf("%d", b + i);        for (i = 0; i < n; i++)            for (j = 0; j < n; j++)                if (a[i] == b[j])                {                    pos[a[i]] = j;                    break;                }        int ans = 0, maxPos, minPos;        for (i = 0; i < n - 1; i++)        {            maxPos = minPos = pos[a[i]];            for (j = i + 1; j < n; j++)            {                int len = j - i + 1;                maxPos = max(maxPos, pos[a[j]]);                minPos = min(minPos, pos[a[j]]);                if (maxPos - minPos + 1 == len) ans++;            }        }        printf("%d\n", ans);    }    return 0;}
+
+```c++
+#include<bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+#define MP(a, b) make_pair(a, b)
+const int MAXN = 3000 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+typedef pair<int, int> pii;
+typedef vector<int>::iterator viti;
+typedef vector<pii>::iterator vitii;
+ 
+int a[MAXN], b[MAXN], pos[MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, i, j;
+    while (scanf("%d", &n), n)
+    {
+        for (i = 0; i < n; i++) scanf("%d", a + i);
+        for (i = 0; i < n; i++) scanf("%d", b + i);
+        for (i = 0; i < n; i++)
+            for (j = 0; j < n; j++)
+                if (a[i] == b[j])
+                {
+                    pos[a[i]] = j;
+                    break;
+                }
+        int ans = 0, maxPos, minPos;
+        for (i = 0; i < n - 1; i++)
+        {
+            maxPos = minPos = pos[a[i]];
+            for (j = i + 1; j < n; j++)
+            {
+                int len = j - i + 1;
+                maxPos = max(maxPos, pos[a[j]]);
+                minPos = min(minPos, pos[a[j]]);
+                if (maxPos - minPos + 1 == len) ans++;
+            }
+        }
+        printf("%d\n", ans);
+    }
+    return 0;
+}
 ```

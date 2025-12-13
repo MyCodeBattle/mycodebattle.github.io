@@ -23,10 +23,78 @@ MST。只要把已经给出的楼的权值变为0即可。
 Prim算法做这题可以达到50ms，马上去看看（๑•̀ㅂ•́)و✧
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071
 
-| ```c++
-#include <bits/stdc++.h>using namespace std;#define LL long longconst int EMAXN = 3e5;const int DMAXN = 800; struct POINT{    int x, y;}pit[DMAXN]; double dis[EMAXN], ans;int u[EMAXN], v[EMAXN], r[EMAXN], p[DMAXN], mp[DMAXN][DMAXN];int ncable, n, nbuild; int cmp(const int i, const int j){    return dis[i] < dis[j];} int Find(int x){    return p[x] == x ? x : (p[x] = Find(p[x]));} void Kruscal(){    int i, j;    sort(r, r + n, cmp);    for (int i = 0; i < n; i++)    {        int e = r[i];        int x = Find(u[e]), y = Find(v[e]);        if (x != y)            ans += dis[e], p[x] = y;    }} int main(){    //freopen("input.txt", "r", stdin);    int i, j, a, b;    while (~scanf("%d", &nbuild))    {        memset(mp, 0, sizeof mp);        n = 0, ans = 0;        for (i = 1; i <= nbuild; i++)        {            p[i] = i;            scanf("%d%d", &pit[i].x, &pit[i].y);        }        scanf("%d", &ncable);        for (i = 0; i < ncable; i++)        {            scanf("%d%d", &a, &b);            mp[a][b] = mp[b][a] = 1;        }        for (i = 1; i <= nbuild; i++)            for (j = i + 1; j <= nbuild; j++)            {                u[n] = i, v[n] = j, r[n] = n;                if (mp[i][j])                    dis[n++] = 0;                else                    dis[n++] = hypot(pit[i].x - pit[j].x, pit[i].y - pit[j].y);            }        Kruscal();        printf("%.2f\n", ans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+#define LL long long
+const int EMAXN = 3e5;
+const int DMAXN = 800;
+ 
+struct POINT
+{
+    int x, y;
+}pit[DMAXN];
+ 
+double dis[EMAXN], ans;
+int u[EMAXN], v[EMAXN], r[EMAXN], p[DMAXN], mp[DMAXN][DMAXN];
+int ncable, n, nbuild;
+ 
+int cmp(const int i, const int j)
+{
+    return dis[i] < dis[j];
+}
+ 
+int Find(int x)
+{
+    return p[x] == x ? x : (p[x] = Find(p[x]));
+}
+ 
+void Kruscal()
+{
+    int i, j;
+    sort(r, r + n, cmp);
+    for (int i = 0; i < n; i++)
+    {
+        int e = r[i];
+        int x = Find(u[e]), y = Find(v[e]);
+        if (x != y)
+            ans += dis[e], p[x] = y;
+    }
+}
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int i, j, a, b;
+    while (~scanf("%d", &nbuild))
+    {
+        memset(mp, 0, sizeof mp);
+        n = 0, ans = 0;
+        for (i = 1; i <= nbuild; i++)
+        {
+            p[i] = i;
+            scanf("%d%d", &pit[i].x, &pit[i].y);
+        }
+        scanf("%d", &ncable);
+        for (i = 0; i < ncable; i++)
+        {
+            scanf("%d%d", &a, &b);
+            mp[a][b] = mp[b][a] = 1;
+        }
+        for (i = 1; i <= nbuild; i++)
+            for (j = i + 1; j <= nbuild; j++)
+            {
+                u[n] = i, v[n] = j, r[n] = n;
+                if (mp[i][j])
+                    dis[n++] = 0;
+                else
+                    dis[n++] = hypot(pit[i].x - pit[j].x, pit[i].y - pit[j].y);
+            }
+        Kruscal();
+        printf("%.2f\n", ans);
+    }
+    return 0;
+}
 ```

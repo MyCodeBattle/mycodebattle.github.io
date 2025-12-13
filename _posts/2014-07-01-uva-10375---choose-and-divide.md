@@ -23,10 +23,31 @@ $$C_{n}^{k}=\dfrac {n-k+1} {k}\cdot C_{n}^{k-1}$$
 一乘一除就不会溢出。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324
 
-| ```c++
-#include <bits/stdc++.h>#define LL long longusing namespace std; int main(){    //freopen("input.txt", "r", stdin);    int p, q, r, s, i, j;    while (~scanf("%d%d%d%d", &p, &q, &r, &s))    {        double ans = 1;        q = min(p - q, q);        s = min(r - s, s);        for (i = 1; i <= max(q, s); i++)        {            if (i <= q)                ans = ans * (p - i + 1) / i;            if (i <= s)                ans = ans / (r - i + 1) * i;        }        printf("%.05f\n", ans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+using namespace std;
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int p, q, r, s, i, j;
+    while (~scanf("%d%d%d%d", &p, &q, &r, &s))
+    {
+        double ans = 1;
+        q = min(p - q, q);
+        s = min(r - s, s);
+        for (i = 1; i <= max(q, s); i++)
+        {
+            if (i <= q)
+                ans = ans * (p - i + 1) / i;
+            if (i <= s)
+                ans = ans / (r - i + 1) * i;
+        }
+        printf("%.05f\n", ans);
+    }
+    return 0;
+}
 ```

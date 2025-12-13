@@ -19,10 +19,49 @@ layout: post
 第一个字符不能为1
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142
 
-| ```c++
-#include <cstdio>#include <cmath>#include <cstring>#include <ctime>#include <iostream>#include <algorithm>#include <set>#include <vector>#include <sstream>#include <typeinfo>#include <fstream> using namespace std; class SpecialStrings {    public:    bool Check(const string &str)    {        for (int i = 1; i < str.size(); i++)            if (str.substr(0, i) >= str.substr(i)) return false;        return true;    }     string findNext(string cur) {        int len = (int)cur.size();        if (len == 1 && cur[0] == '0') return "1";        int i, j;        for (i = len - 1; i >= 0; i--)        {            if (cur[i] == '1') continue;            if (i == 0) return "";            cur[i] = '1';            for (j = i + 1; j < len; j++)            {                cur[j] = '0';                if (!Check(cur)) cur[j] = '1';            }            return cur;        }        return "";    }};
+
+```c++
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <vector>
+#include <sstream>
+#include <typeinfo>
+#include <fstream>
+ 
+using namespace std;
+ 
+class SpecialStrings {
+    public:
+    bool Check(const string &str)
+    {
+        for (int i = 1; i < str.size(); i++)
+            if (str.substr(0, i) >= str.substr(i)) return false;
+        return true;
+    }
+ 
+    string findNext(string cur) {
+        int len = (int)cur.size();
+        if (len == 1 && cur[0] == '0') return "1";
+        int i, j;
+        for (i = len - 1; i >= 0; i--)
+        {
+            if (cur[i] == '1') continue;
+            if (i == 0) return "";
+            cur[i] = '1';
+            for (j = i + 1; j < len; j++)
+            {
+                cur[j] = '0';
+                if (!Check(cur)) cur[j] = '1';
+            }
+            return cur;
+        }
+        return "";
+    }
+};
 ```

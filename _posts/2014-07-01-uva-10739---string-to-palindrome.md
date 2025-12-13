@@ -26,10 +26,45 @@ layout: post
 想了很久想不懂，只能先背下来了。
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738
 
-| ```c++
-#include <cstdio>#include <algorithm>#include <cstring>using namespace std;const int MAXN = 1100;char str[MAXN];int dp[MAXN][MAXN];int DFS(int x, int y){    int &ans = dp[x][y];    if (ans != -1)        return ans;    if (x > y)        return ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1);    else        ans = min(min(DFS(x, y - 1), DFS(x + 1, y)), DFS(x + 1, y - 1)) + 1;    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, cases = 0;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        int len = strlen(str);        DFS(0, len - 1);        printf("Case %d: %d\n", ++cases, dp[0][len - 1]);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+const int MAXN = 1100;
+
+char str[MAXN];
+int dp[MAXN][MAXN];
+
+int DFS(int x, int y)
+{
+    int &ans = dp[x][y];
+    if (ans != -1)
+        return ans;
+    if (x > y)
+        return ans = 0;
+    if (str[x] == str[y])
+        ans = DFS(x + 1, y - 1);
+    else
+        ans = min(min(DFS(x, y - 1), DFS(x + 1, y)), DFS(x + 1, y - 1)) + 1;
+    return ans;
+}
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int T, i, j, cases = 0;
+    scanf("%d%*c", &T);
+    while (T--)
+    {
+        memset(dp, -1, sizeof dp);
+        gets(str);
+        int len = strlen(str);
+        DFS(0, len - 1);
+        printf("Case %d: %d\n", ++cases, dp[0][len - 1]);
+    }
+    return 0;
+}
 ```

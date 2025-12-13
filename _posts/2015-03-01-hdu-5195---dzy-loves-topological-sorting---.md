@@ -16,10 +16,52 @@ layout: post
 用优先队列维护。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627282930313233343536373839404142434445
 
-| ```c++
-int vis[MAXN], in[MAXN];vector<int> ans, G[MAXN]; int main(){    //ROP;    int n, m, k;    while (~scanf("%d%d%d", &n, &m, &k))    {        ans.clear();        MS(vis, 0);        for (int i = 1; i <= n; i++) G[i].clear();        for (int i = 0; i < m; i++)        {            int a, b;            scanf("%d%d", &a, &b);            G[a].PB(b);            in[b]++;        }        priority_queue<int> Q;        for (int i = 1; i <= n; i++)            if (in[i] <= k) Q.push(i);        while (!Q.empty())        {            int u = Q.top(); Q.pop();            if (!vis[u] && in[u] <= k)            {                k -= in[u];                in[u] = 0;                vis[u] = 1;            }            else continue;            for (int i = 0; i < SZ(G[u]); i++)            {                int v = G[u][i];                in[v]--;                if (in[v] <= k) Q.push(v);            }            ans.PB(u);        }        for (int i = 0; i < SZ(ans); i++)            printf("%d%c", ans[i], i!=SZ(ans)-1 ? ' ' : '\n');    }    return 0;}
+
+```c++
+int vis[MAXN], in[MAXN];
+vector<int> ans, G[MAXN];
+ 
+int main()
+{
+    //ROP;
+    int n, m, k;
+    while (~scanf("%d%d%d", &n, &m, &k))
+    {
+        ans.clear();
+        MS(vis, 0);
+        for (int i = 1; i <= n; i++) G[i].clear();
+        for (int i = 0; i < m; i++)
+        {
+            int a, b;
+            scanf("%d%d", &a, &b);
+            G[a].PB(b);
+            in[b]++;
+        }
+        priority_queue<int> Q;
+        for (int i = 1; i <= n; i++)
+            if (in[i] <= k) Q.push(i);
+        while (!Q.empty())
+        {
+            int u = Q.top(); Q.pop();
+            if (!vis[u] && in[u] <= k)
+            {
+                k -= in[u];
+                in[u] = 0;
+                vis[u] = 1;
+            }
+            else continue;
+            for (int i = 0; i < SZ(G[u]); i++)
+            {
+                int v = G[u][i];
+                in[v]--;
+                if (in[v] <= k) Q.push(v);
+            }
+            ans.PB(u);
+        }
+        for (int i = 0; i < SZ(ans); i++)
+            printf("%d%c", ans[i], i!=SZ(ans)-1 ? ' ' : '\n');
+    }
+    return 0;
+}
 ```

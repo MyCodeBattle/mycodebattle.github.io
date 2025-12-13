@@ -22,10 +22,75 @@ layout: post
 参考了[rising_fallmoon的解题报告](http://blog.csdn.net/rising_fallmoon/article/details/10474381)
 
 ## 代码
-    
-    
-    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768
 
-| ```c++
-#include <cstdio>#include <cstring>using namespace std;const int MAXN = 10 + 1;const int INF = 2147483647;struct RECTAN{    int row, colomn;}rectan[MAXN];int dp[MAXN][MAXN], next[MAXN][MAXN];int DFS(int st, int ed){    int i;    int &ans = dp[st][ed];    if (st == ed)        return ans = 0;    if (ans != -1)        return ans;    int temp;    ans = INF;    for (i = st; i < ed; i++)    {        temp = DFS(st, i) + DFS(i + 1, ed) + rectan[st].row * rectan[i].colomn * rectan[ed].colomn;        if (temp < ans)        {            ans = temp;            next[st][ed] = i;        }    }    return ans;}void PrintAns(int st, int ed){    if (st > ed)        return;    if (st == ed)    {        printf("A%d", st + 1);        return;    }    printf("(");    PrintAns(st, next[st][ed]);    printf(" x ");    PrintAns(next[st][ed] + 1, ed);    printf(")");}int main(){    //freopen("input.txt", "r", stdin);    int n, a, b, i, j, cases = 1;    while (scanf("%d", &n), n)    {        memset(dp, -1, sizeof(dp));        for (i = 0; i < n; i++)            scanf("%d%d", &rectan[i].row, &rectan[i].colomn);        int ans = DFS(0, n - 1);        //printf("%d\n", ans);        printf("Case %d: ", cases++);        PrintAns(0, n - 1);        printf("\n");    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cstring>
+using namespace std;
+const int MAXN = 10 + 1;
+const int INF = 2147483647;
+
+struct RECTAN
+{
+    int row, colomn;
+}rectan[MAXN];
+
+int dp[MAXN][MAXN], next[MAXN][MAXN];
+
+int DFS(int st, int ed)
+{
+    int i;
+    int &ans = dp[st][ed];
+    if (st == ed)
+        return ans = 0;
+    if (ans != -1)
+        return ans;
+    int temp;
+    ans = INF;
+    for (i = st; i < ed; i++)
+    {
+        temp = DFS(st, i) + DFS(i + 1, ed) + rectan[st].row * rectan[i].colomn * rectan[ed].colomn;
+        if (temp < ans)
+        {
+            ans = temp;
+            next[st][ed] = i;
+        }
+    }
+    return ans;
+}
+
+void PrintAns(int st, int ed)
+{
+    if (st > ed)
+        return;
+    if (st == ed)
+    {
+        printf("A%d", st + 1);
+        return;
+    }
+    printf("(");
+    PrintAns(st, next[st][ed]);
+    printf(" x ");
+    PrintAns(next[st][ed] + 1, ed);
+    printf(")");
+}
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, a, b, i, j, cases = 1;
+    while (scanf("%d", &n), n)
+    {
+        memset(dp, -1, sizeof(dp));
+        for (i = 0; i < n; i++)
+            scanf("%d%d", &rectan[i].row, &rectan[i].colomn);
+        int ans = DFS(0, n - 1);
+        //printf("%d\n", ans);
+        printf("Case %d: ", cases++);
+        PrintAns(0, n - 1);
+        printf("\n");
+    }
+    return 0;
+}
 ```

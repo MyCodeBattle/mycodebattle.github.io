@@ -19,10 +19,34 @@ layout: post
 下午随便选，让干得最少的人干最重的活。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021222324252627
 
-| ```c++
-#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 100 + 5;const int INF = 0x3f3f3f3f;using namespace std; int pit[MAXN], num[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, d, r, i, j;    while (scanf("%d%d%d", &n, &d, &r) && n + d + r > 0)    {        for (i = 0; i < n; i++) scanf("%d", &pit[i]);        for (i = 0; i < n; i++) scanf("%d", #[i]);        sort(pit, pit + n);        sort(num, num + n, greater<int>());        int ans = 0;        for (i = 0; i < n; i++)            ans += max((pit[i] + num[i] - d) * r, 0);        printf("%d\n", ans);    }    return 0;}
+
+```c++
+#include <bits/stdc++.h>
+#define LL long long
+#define lowbit(x) ((x) & (-x))
+#define MP(a, b) make_pair(a, b)
+const int MAXN = 100 + 5;
+const int INF = 0x3f3f3f3f;
+using namespace std;
+ 
+int pit[MAXN], num[MAXN];
+ 
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    int n, d, r, i, j;
+    while (scanf("%d%d%d", &n, &d, &r) && n + d + r > 0)
+    {
+        for (i = 0; i < n; i++) scanf("%d", &pit[i]);
+        for (i = 0; i < n; i++) scanf("%d", #[i]);
+        sort(pit, pit + n);
+        sort(num, num + n, greater<int>());
+        int ans = 0;
+        for (i = 0; i < n; i++)
+            ans += max((pit[i] + num[i] - d) * r, 0);
+        printf("%d\n", ans);
+    }
+    return 0;
+}
 ```

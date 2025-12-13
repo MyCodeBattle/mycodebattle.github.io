@@ -20,10 +20,28 @@ layout: post
 第一次选可能是奶牛也可能是车子，分别把概率算出来相加即可。
 
 ## 代码
-    
-    
-    123456789101112131415161718192021
 
-| ```c++
-#include <cstdio>#include <cmath> int main(){    //freopen("in.txt", "r", stdin);    int ncow, ncar, nshow, i, j;    while (~scanf("%d%d%d", &ncow, &ncar, &nshow))    {        //choose cow first        double cp1 = ncow * 1.0 / (ncow + ncar);        int cowrem = ncow - nshow - 1;        double cp2 = ncar * 1.0 / (cowrem + ncar);        //choose car first        double carp1 = ncar * 1.0 / (ncow + ncar);        double carp2 = (ncar - 1) * 1.0 / (ncow - nshow + ncar - 1);        double ans = cp1 * cp2 + carp1 * carp2;        printf("%.5f\n", ans);    }    return 0;}
+
+```c++
+#include <cstdio>
+#include <cmath>
+ 
+int main()
+{
+    //freopen("in.txt", "r", stdin);
+    int ncow, ncar, nshow, i, j;
+    while (~scanf("%d%d%d", &ncow, &ncar, &nshow))
+    {
+        //choose cow first
+        double cp1 = ncow * 1.0 / (ncow + ncar);
+        int cowrem = ncow - nshow - 1;
+        double cp2 = ncar * 1.0 / (cowrem + ncar);
+        //choose car first
+        double carp1 = ncar * 1.0 / (ncow + ncar);
+        double carp2 = (ncar - 1) * 1.0 / (ncow - nshow + ncar - 1);
+        double ans = cp1 * cp2 + carp1 * carp2;
+        printf("%.5f\n", ans);
+    }
+    return 0;
+}
 ```

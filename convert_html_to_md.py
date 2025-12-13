@@ -16,12 +16,27 @@ os.makedirs(POSTS_DIR, exist_ok=True)
 
 
 def extract_date_from_path(file_path):
-    """从文件路径中提取日期"""
+    """从文件路径中提取日期作为备用"""
     match = re.search(r'old_blog/(\d{4})/(\d{2})', file_path)
     if match:
         year, month = match.groups()
         return f"{year}-{month}-01"
     return datetime.datetime.now().strftime('%Y-%m-%d')
+
+
+def extract_date_from_html(soup):
+    """从HTML的time标签中提取准确日期"""
+    time_tag = soup.find('time', itemprop='datePublished')
+    if time_tag:
+        datetime_attr = time_tag.get('datetime')
+        if datetime_attr:
+            # 解析ISO格式日期：2014-11-07T03:15:04.000Z
+            try:
+                date_obj = datetime.datetime.fromisoformat(datetime_attr.replace('Z', '+00:00'))
+                return date_obj.strftime('%Y-%m-%d')
+            except ValueError:
+                pass
+    return None
 
 
 def extract_title(soup, html_file):
@@ -158,15 +173,17 @@ def convert_html_to_md(html_file):
     """将单个HTML文件转换为Markdown"""
     print(f"Processing: {html_file}")
     
-    # 提取日期
-    date = extract_date_from_path(html_file)
-    
     # 读取HTML文件
     with open(html_file, 'r', encoding='utf-8') as f:
         html_content = f.read()
     
     # 解析HTML
     soup = BeautifulSoup(html_content, 'html.parser')
+    
+    # 提取日期（优先从HTML的time标签获取准确日期）
+    date = extract_date_from_html(soup)
+    if not date:
+        date = extract_date_from_path(html_file)
     
     # 提取标题
     title = extract_title(soup, html_file)

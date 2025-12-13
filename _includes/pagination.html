@@ -10,24 +10,97 @@
     <span class="previous disabled"><前页</span>
   {% endif %}
 
-      {% if paginator.page == 1 %}
-      <span class="current-page">1</span>
-      {% else %}
-      <a href="{{ site.url }}/">1</a>
-      {% endif %}
-
-    {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
+  {% assign total_pages = paginator.total_pages %}
+  {% assign current_page = paginator.page %}
+  {% assign display_pages = 10 %}
+  {% assign half_display = display_pages | divided_by: 2 %}
+  
+  {% if total_pages <= display_pages %}
+    {% assign start_page = 1 %}
+    {% assign end_page = total_pages %}
+  {% else %}
+    {% assign start_page = current_page | minus: half_display %}
+    {% assign end_page = current_page | plus: half_display %}
+    
+    {% if start_page < 1 %}
+      {% assign start_page = 1 %}
+      {% assign end_page = display_pages %}
+    {% endif %}
+    
+    {% if end_page > total_pages %}
+      {% assign end_page = total_pages %}
+      {% assign start_page = total_pages | minus: display_pages | plus: 1 %}
+    {% endif %}
+  {% endif %}
+  
+  {% if start_page > 1 %}
+    {% if current_page == 1 %}
+    <span class="current-page">1</span>
+    {% else %}
+    <a href="{{ site.url }}/">1</a>
+    {% endif %}
+    {% if start_page > 2 %}
+    <span class="ellipsis">...</span>
+    {% endif %}
+  {% endif %}
+  
+  {% for count in (start_page..end_page) %}
+    {% if count != 1 %}
+      {% if count == current_page %}
       <span class="current-page">{{count}}</span>
       {% else %}
       <a href="{{ site.url }}/page{{count}}">{{count}}</a>
       {% endif %}
-    {% endfor %}
+    {% endif %}
+  {% endfor %}
+  
+  {% if end_page < total_pages %}
+    {% if end_page < total_pages | minus: 1 %}
+    <span class="ellipsis">...</span>
+    {% endif %}
+    {% if current_page == total_pages %}
+    <span class="current-page">{{total_pages}}</span>
+    {% else %}
+    <a href="{{ site.url }}/page{{total_pages}}">{{total_pages}}</a>
+    {% endif %}
+  {% endif %}
 
   {% if paginator.next_page %}
     <a class="next" href="{{ site.url }}/page{{paginator.next_page}}">后页></a>
   {% else %}
     <span class="next disabled" >后页></span>
   {% endif %}
+  
+  <div class="pagination-jump" data-total-pages="{{ total_pages }}" data-site-url="{{ site.url }}">
+    <span>共 {{ total_pages }} 页</span>
+    <span>到第</span>
+    <input type="number" id="page-jump-input" min="1" max="{{ total_pages }}" value="{{ current_page }}">
+    <span>页</span>
+    <button id="page-jump-btn">跳转</button>
+  </div>
+  
   (共{{ paginator.total_posts }}篇)
 </div>
+
+<script>
+  document.getElementById('page-jump-btn').addEventListener('click', function() {
+    var pageNum = parseInt(document.getElementById('page-jump-input').value);
+    var container = document.querySelector('.pagination-jump');
+    var totalPages = parseInt(container.getAttribute('data-total-pages'));
+    var siteUrl = container.getAttribute('data-site-url');
+    
+    if (pageNum >= 1 && pageNum <= totalPages) {
+      if (pageNum === 1) {
+        window.location.href = siteUrl + '/';
+      } else {
+        window.location.href = siteUrl + '/page' + pageNum;
+      }
+    }
+  });
+
+  document.getElementById('page-jump-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      document.getElementById('page-jump-btn').click();
+    }
+  });
+</script>

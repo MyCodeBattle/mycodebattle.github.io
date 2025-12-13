@@ -1,0 +1,43 @@
+---
+categories: Posts
+date: 2014-09-01 00:00:00
+title: LeetCode - Merge Sorted Array
+tags: []
+layout: post
+---
+
+#  [LeetCode - Merge Sorted Array](/2014/09/leetcode-merge-sorted-array/ "LeetCode - Merge Sorted Array")
+
+By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
+
+Published Sep 17 2014 16:25
+
+**Contents**
+
+  1. 1. 题意
+  2. 2. 思路
+  3. 3. 代码
+
+## 题意
+
+把两个排好序的数组合并到第一个里。
+
+## 思路
+
+从后面开始合并，这样不用移动原来数组中的元素。
+
+## 代码
+    
+    
+    1234567891011121314151617181920212223
+
+| 
+    
+    
+    class Solution {public:    void merge(int A[], int m, int B[], int n)    {        int i = m - 1, j = n - 1, pos = m + n - 1;        while (1)        {            if (j < 0)            {                while (i >= 0) A[pos--] = A[i--];                break;            }            if (i < 0)            {                while (j >= 0) A[pos--] = B[j--];                break;            }            if (A[i] < B[j]) A[pos--] = B[j--];            else A[pos--] = A[i--];            if (pos < 0) break;        }    }};  
+  
+---|---  
+  
+[Solving Reports](/categories/Solving-Reports/)
+
+[Online Judge - LeetCode](/tags/Online-Judge-LeetCode/)

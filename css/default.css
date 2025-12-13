@@ -2,13 +2,20 @@
 body {
   font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   background-color: white;
-  font-size: 100%;
+  font-size: 110%;
+}
+
+div.container {
+  margin: auto;
+  max-width: 1200px;
+  width: 90%;
 }
 
 div.main {
   margin: auto;
   padding: 2% 5% 5% 5%;
-  width: 700px;
+  width: 900px;
+  max-width: 100%;
   line-height: 150%;
   border: 1px solid LightGrey;
 }
@@ -16,27 +23,57 @@ div.main {
 H1, H2, H3, H4 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, SimSun, serif; 
   width: 98%;
-  line-height: 150%;
   color: #4A90E2;
-  font-size: 30px;
+
 }
 
-H1, H2 {
-  margin-bottom: 1.67em;
+H1 {
+  font-size: 2.25em;
+  line-height: 1.3;
+  margin: 1.5em 0 0.75em;
   padding: 0.2em;
   border-bottom: 2px #4A90E2 solid;
 }
 
-H3, H4 {
-  margin-top: 2.14em;
-  margin-bottom: 1.5em;
+H2 {
+  font-size: 1.875em;
+  line-height: 1.3;
+  margin: 1.25em 0 0.625em;
+  padding: 0.2em;
+  border-bottom: 2px #4A90E2 solid;
+}
+
+H3 {
+  font-size: 1.5em;
+  line-height: 1.4;
+  margin: 1em 0 0.5em;
   border-bottom: 1px #4A90E2 solid;
+}
+
+H4 {
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin: 0.875em 0 0.4375em;
+  border-bottom: 1px #4A90E2 solid;
+}
+
+H1:hover, H2:hover, H3:hover, H4:hover {
+  color: #357abd;
+  transform: translateX(5px);
 }
 
 blockquote {
   margin: 0 0 0 0.25em;
   padding: 0 0 0 0.5em;
   border-left: 0.25em #4A90E2 solid;
+
+  background-color: #f8f8ff;
+  border-radius: 0 3px 3px 0;
+}
+
+blockquote:hover {
+  background-color: #e8f0fe;
+  transform: translateX(5px);
 }
 
 pre {
@@ -45,11 +82,14 @@ pre {
   border-radius: 3px;
   background-color: #1e1e1e;
   padding: 12px 16px;
-  font-size: 1em;
+  font-size: 0.875em;
   line-height: 140%;
   overflow: auto;
   color: #d4d4d4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
 
 code {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
@@ -63,6 +103,8 @@ code {
   word-break: break-all;
 }
 
+
+
 pre code {
   border: none;
   margin: 0;
@@ -73,14 +115,21 @@ pre code {
 
 a {
   text-decoration: none;
-  padding: 1px;
+  padding: 2px 4px;
   color: #4A90E2;
   word-wrap: break-word;
   word-break: break-all;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  background-color: transparent;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background-color: #e8f0fe;
+  color: #357abd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 div.tag_cloud a {
@@ -91,6 +140,9 @@ div.tag_cloud a {
 div.nav a {
   text-decoration: none;
   color: #4A90E2;
+  padding: 0.25em 0.5em;
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
 div.nav a:hover {
@@ -103,22 +155,33 @@ div.nav {
   border-left: 1px solid #4A90E2;
   border-right: 1px solid #4A90E2;
   margin: auto;
-  padding: 0 5% 0 5%;
-  width: 700px;
-  height: 1.5em;
+  padding: 8px 5%;
+  width: 900px;
+  max-width: 100%;
   line-height: 150%;
   font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 div.nav_rss {
-  width: 20%;
   text-align: right;
-  float: right;
+  margin-left: 10px;
 }
 
 div.nav_nav {
-  width: 80%;
-  float: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav_search {
+  margin-left: auto;
+  position: relative;
+  display: inline-block;
 }
 
 img {
@@ -127,11 +190,26 @@ img {
   margin-right: auto;
   margin-bottom: 30px;
   max-width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
 }
 
 img.emoji {
   display: inline;
   margin-bottom: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+img.emoji:hover {
+  box-shadow: none;
+  transform: none;
 }
 
 hr {
@@ -164,57 +242,378 @@ div.date {
 }
 
 div.paginator {
-  margin-left: 20%;
+  margin-left: 10%;
   float: center;
-  width: 60%;
+  width: 80%;
   color: #4A90E2;
   text-align: center;
-  font-size: 0.75em;
+  font-size: 0.875em;
+  transition: all 0.3s ease;
+  padding: 1em 0;
+}
+
+/* 页码导航部分 */
+.page-navigation {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.125em;
+  margin-bottom: 0.5em;
+  overflow: hidden;
+}
+
+.page-navigation > * {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.25em 0.4em;
+  min-width: 1.8em;
+  box-sizing: border-box;
+}
+
+/* 当前页码样式 */
+.current-page {
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* 分页链接样式 */
+.page-navigation a,
+.page-navigation span {
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+/* 页码跳转部分 */
+.pagination-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  justify-content: center;
+}
+
+.pagination-jump input {
+  width: 40px;
+  margin: 0 0.25em;
+  padding: 0.125em;
+}
+
+.pagination-jump button {
+  margin: 0 0.25em;
+  padding: 0.125em 0.5em;
 }
 
 .prev_next {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 0;
   padding-top: 0.6em;
+  flex-wrap: nowrap;
 }
 
 .prev_next li {
   list-style-type: none;
   padding: 0 0 0.2em;
+  transition: all 0.3s ease;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: visible;
 }
 
-.prev_next li span {
-  padding: 0 0.5em 0 0.5em;
+.prev_next li span,
+.prev_next li a {
+  padding: 0.3em 0.8em;
   background-color: #4A90E2;
   color: #fff;
   margin-right: 0.5em;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid #4A90E2;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.prev_next li a {
+  background-color: #fff;
+  color: #4A90E2;
+}
+
+.prev_next li span:hover,
+.prev_next li a:hover {
+  background-color: #357abd;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.post_footer {
   text-align: right;
   font-size: 0.9em;
   font-style: italic;
+  transition: all 0.3s ease;
 }
 
 div.post_footer a {
   border: #4A90E2 1px dashed;
+  padding: 2px 5px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+div.post_footer a:hover {
+  border-style: solid;
+  background-color: #e8f0fe;
 }
 
 table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 th {
   padding: 0.375em 0.8125em;
   border: 1px solid #ddd;
   font-weight: bold;
+  background-color: #f5f8fa;
+  transition: all 0.3s ease;
+}
+
+th:hover {
+  background-color: #e8f0fe;
 }
 
 td {
   padding: 0.375em 0.8125em;
   border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+tr {
+  transition: all 0.3s ease;
 }
 
 tr:nth-child(2n) {
   background-color: #f8f8f8;
+}
+
+tr:hover {
+  background-color: #e8f0fe;
+}
+
+/* 文章内上一篇、下一篇链接样式 */
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+.article-nav .prev,
+.article-nav .next {
+  display: block;
+}
+
+.article-nav .prev strong,
+.article-nav .next strong {
+  margin-right: 0.5em;
+  display: inline;
+}
+
+.article-nav .prev br,
+.article-nav .next br {
+  display: none !important;
+}
+
+.article-nav a {
+  display: inline;
+  text-decoration: none;
+}
+
+.article-nav span {
+  display: inline;
+}
+
+/* 修复链接文本换行问题 */
+.article-nav a {
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.article-nav .prev a,
+.article-nav .next a {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 搜索功能样式 */
+.nav_search {
+  margin-left: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  padding: 6px 30px 6px 12px;
+  font-size: 0.875em;
+  border: 1px solid #4A90E2;
+  border-radius: 3px;
+  background-color: white;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 200px;
+}
+
+#search-input:focus {
+  border-color: #357abd;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4A90E2;
+  cursor: pointer;
+  font-size: 0.875em;
+  transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+  color: #357abd;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #4A90E2;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin-top: 4px;
+  display: none;
+}
+
+.search-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-result-item {
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.search-result-item:hover,
+.search-result-active {
+  background-color: #e8f0fe;
+}
+
+.search-result-link {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.search-result-link:hover {
+  background-color: transparent;
+  color: #333;
+}
+
+.search-result-title {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #4A90E2;
+  transition: color 0.3s ease;
+}
+
+.search-result-link:hover .search-result-title {
+  color: #357abd;
+}
+
+.search-result-date {
+  font-size: 0.75em;
+  color: #666;
+  font-style: italic;
+}
+
+.search-highlight {
+  background-color: #ffeb3b;
+  color: #333;
+  font-weight: bold;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.search-loading,
+.search-no-results {
+  padding: 12px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.search-no-results {
+  color: #999;
+}
+
+/* 响应式设计 */
+@media (max-width: 720px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 5%;
+  }
+  
+  .nav_nav {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .nav_search {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  #search-input {
+    width: 100%;
+  }
+  
+  #search-input:focus {
+    width: 100%;
+  }
+  
+  .search-results {
+    width: 100%;
+  }
+  
+  .nav_rss {
+    width: 100%;
+    text-align: left;
+    float: none;
+  }
 }

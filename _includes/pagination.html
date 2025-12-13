@@ -1,76 +1,101 @@
 <div id="post-pagination" class="paginator">
-
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
-    <a href="{{ site.url }}/"><前页</a>
-    {% else %}
-    <a href="{{ site.url }}/page{{paginator.previous_page}}"><前页</a>
-    {% endif %}
-  {% else %}
-    <span class="previous disabled"><前页</span>
-  {% endif %}
-
+  <!-- 先赋值变量 -->
   {% assign total_pages = paginator.total_pages %}
   {% assign current_page = paginator.page %}
-  {% assign display_pages = 10 %}
+  {% assign display_pages = 6 %}
   {% assign half_display = display_pages | divided_by: 2 %}
   
-  {% if total_pages <= display_pages %}
-    {% assign start_page = 1 %}
-    {% assign end_page = total_pages %}
-  {% else %}
-    {% assign start_page = current_page | minus: half_display %}
-    {% assign end_page = current_page | plus: half_display %}
-    
-    {% if start_page < 1 %}
-      {% assign start_page = 1 %}
-      {% assign end_page = display_pages %}
-    {% endif %}
-    
-    {% if end_page > total_pages %}
-      {% assign end_page = total_pages %}
-      {% assign start_page = total_pages | minus: display_pages | plus: 1 %}
-    {% endif %}
-  {% endif %}
-  
-  {% if start_page > 1 %}
+  <!-- 页码导航部分 -->
+  <div class="page-navigation">
+    <!-- 首页链接 -->
     {% if current_page == 1 %}
-    <span class="current-page">1</span>
+      <span class="current-page">首页</span>
     {% else %}
-    <a href="{{ site.url }}/">1</a>
+      <a href="{{ site.url }}/">首页</a>
     {% endif %}
-    {% if start_page > 2 %}
-    <span class="ellipsis">...</span>
-    {% endif %}
-  {% endif %}
-  
-  {% for count in (start_page..end_page) %}
-    {% if count != 1 %}
-      {% if count == current_page %}
-      <span class="current-page">{{count}}</span>
+    
+    <!-- 前页链接 -->
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+      <a href="{{ site.url }}/"><前页</a>
       {% else %}
-      <a href="{{ site.url }}/page{{count}}">{{count}}</a>
+      <a href="{{ site.url }}/page{{paginator.previous_page}}"><前页</a>
+      {% endif %}
+    {% else %}
+      <span class="previous disabled"><前页</span>
+    {% endif %}
+    
+    <!-- 页码显示 -->
+    {% if total_pages <= display_pages %}
+      <!-- 总页数较少，显示所有页码 -->
+      {% for count in (1..total_pages) %}
+        {% if count == current_page %}
+        <span class="current-page">{{ count }}</span>
+        {% else %}
+        <a href="{{ site.url }}{% if count == 1 %}/{% else %}/page{{ count }}{% endif %}">{{ count }}</a>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <!-- 总页数较多，显示部分页码 -->
+      
+      <!-- 计算起始和结束页码 -->
+      {% assign start_page = current_page | minus: half_display %}
+      {% assign end_page = current_page | plus: half_display %}
+      
+      <!-- 调整起始页码 -->
+      {% if start_page < 1 %}
+        {% assign end_page = end_page | minus: start_page | plus: 1 %}
+        {% assign start_page = 1 %}
+      {% endif %}
+      
+      <!-- 调整结束页码 -->
+      {% if end_page > total_pages %}
+        {% assign start_page = start_page | minus: end_page | plus: total_pages %}
+        {% assign end_page = total_pages %}
+      {% endif %}
+      
+      <!-- 显示第一页和省略号 -->
+      {% if start_page > 1 %}
+        <a href="{{ site.url }}/">1</a>
+        {% if start_page > 2 %}
+        <span class="ellipsis">...</span>
+        {% endif %}
+      {% endif %}
+      
+      <!-- 显示中间页码 -->
+      {% for count in (start_page..end_page) %}
+        {% if count == current_page %}
+        <span class="current-page">{{ count }}</span>
+        {% else %}
+        <a href="{{ site.url }}/page{{ count }}">{{ count }}</a>
+        {% endif %}
+      {% endfor %}
+      
+      <!-- 显示省略号和最后一页 -->
+      {% if end_page < total_pages %}
+        {% if end_page < total_pages | minus: 1 %}
+        <span class="ellipsis">...</span>
+        {% endif %}
+        <a href="{{ site.url }}/page{{ total_pages }}">{{ total_pages }}</a>
       {% endif %}
     {% endif %}
-  {% endfor %}
-  
-  {% if end_page < total_pages %}
-    {% if end_page < total_pages | minus: 1 %}
-    <span class="ellipsis">...</span>
-    {% endif %}
-    {% if current_page == total_pages %}
-    <span class="current-page">{{total_pages}}</span>
-    {% else %}
-    <a href="{{ site.url }}/page{{total_pages}}">{{total_pages}}</a>
-    {% endif %}
-  {% endif %}
 
-  {% if paginator.next_page %}
-    <a class="next" href="{{ site.url }}/page{{paginator.next_page}}">后页></a>
-  {% else %}
-    <span class="next disabled" >后页></span>
-  {% endif %}
+    <!-- 下一页链接 -->
+    {% if paginator.next_page %}
+      <a class="next" href="{{ site.url }}/page{{paginator.next_page}}">下一页></a>
+    {% else %}
+      <span class="next disabled" >下一页></span>
+    {% endif %}
+    
+    <!-- 尾页链接 -->
+    {% if current_page == total_pages %}
+      <span class="current-page">尾页</span>
+    {% else %}
+      <a href="{{ site.url }}/page{{total_pages}}">尾页</a>
+    {% endif %}
+  </div>
   
+  <!-- 页码跳转和统计部分 -->
   <div class="pagination-jump" data-total-pages="{{ total_pages }}" data-site-url="{{ site.url }}">
     <span>共 {{ total_pages }} 页</span>
     <span>到第</span>
@@ -79,7 +104,7 @@
     <button id="page-jump-btn">跳转</button>
   </div>
   
-  (共{{ paginator.total_posts }}篇)
+  <span>(共{{ paginator.total_posts }}篇)</span>
 </div>
 
 <script>

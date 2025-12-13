@@ -1,23 +1,43 @@
+body {
+  font-size: 105%;
+}
+
 div.main {
   width: 100%;
   padding: 0 0 0 0;
   border: none;
 }
 
-H1, H2 {
-  margin-bottom: 1.25em;
-  padding: 0;
+H1 {
+  margin: 1.25em 0 0.625em;
+  padding: 0.1em;
   width: 100%;
-  font-size: 1.25em;
+  font-size: 1.75em;
+  line-height: 1.3;
 }
 
-H3, H4 {
-  margin-top: 0.625em;
-  margin-bottom: 0.625em;
-  border: none;
+H2 {
+  margin: 1em 0 0.5em;
+  padding: 0.1em;
   width: 100%;
-  font-size: 1em;
-  color: blue;
+  font-size: 1.5em;
+  line-height: 1.3;
+}
+
+H3 {
+  margin: 0.875em 0 0.4375em;
+  border-bottom: 1px #4A90E2 solid;
+  width: 100%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+
+H4 {
+  margin: 0.75em 0 0.375em;
+  border-bottom: 1px #4A90E2 solid;
+  width: 100%;
+  font-size: 1.125em;
+  line-height: 1.4;
 }
 
 div.nav {

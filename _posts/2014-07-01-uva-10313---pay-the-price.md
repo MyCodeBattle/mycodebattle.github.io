@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10313 - Pay the Price](/2014/07/UVa-10313/ "UVa 10313 - Pay the Price")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 14 2014 13:05
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10313 - Pay the Price](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=114&page=show_problem&problem=1254)
@@ -45,13 +32,6 @@ Published Jul 14 2014 13:05
     
     1234567891011121314151617181920212223242526272829303132333435363738394041
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;const int MAXN = 301;const int INF = 0x3f3f3f3f;#define LL long long LL dp[MAXN][MAXN];int main(){   // freopen("input.txt", "r", stdin);    int n, i, j, st, ed, temp， money;    char str[20];    dp[0][0] = 1;    for (i = 0; i < MAXN; i++)        for (j = 1; j < MAXN; j++)        {            if (j <= i)                dp[i][j] = dp[i - j][j] + dp[i][j - 1];            else                dp[i][j] = dp[i][j - 1];        }    while (gets(str))    {        st = ed = -1;        sscanf(str, "%d%d%d", &money, &st, &ed);        st = min(st, 300), ed = min(ed, 300);        if (st == -1)            printf("%lld\n", dp[money][money]);        else if (ed == -1)            printf("%lld\n", dp[money][st]);        else        {            if (st < 2)                printf("%lld\n", dp[money][ed]);            else                printf("%lld\n", dp[money][ed] - dp[money][st - 1]);        }    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;const int MAXN = 301;const int INF = 0x3f3f3f3f;#define LL long long LL dp[MAXN][MAXN];int main(){   // freopen("input.txt", "r", stdin);    int n, i, j, st, ed, temp， money;    char str[20];    dp[0][0] = 1;    for (i = 0; i < MAXN; i++)        for (j = 1; j < MAXN; j++)        {            if (j <= i)                dp[i][j] = dp[i - j][j] + dp[i][j - 1];            else                dp[i][j] = dp[i][j - 1];        }    while (gets(str))    {        st = ed = -1;        sscanf(str, "%d%d%d", &money, &st, &ed);        st = min(st, 300), ed = min(ed, 300);        if (st == -1)            printf("%lld\n", dp[money][money]);        else if (ed == -1)            printf("%lld\n", dp[money][st]);        else        {            if (st < 2)                printf("%lld\n", dp[money][ed]);            else                printf("%lld\n", dp[money][ed] - dp[money][st - 1]);        }    }    return 0;}
+```

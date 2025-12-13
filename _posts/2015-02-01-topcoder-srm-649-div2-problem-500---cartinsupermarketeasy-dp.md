@@ -6,20 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [TopCoder SRM 649 Div2 Problem 500 - CartInSupermarketEasy (区间DP)](/2015/02/topcoder-srm-649-div2-500/ "TopCoder SRM 649 Div2 Problem 500 - CartInSupermarketEasy \(区间DP\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Feb 11 2015 11:35
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 题意
-  4. 4. 思路
-  5. 5. 代码
-
 ## 题意
 
 给出N和K。
@@ -28,6 +14,7 @@ Published Feb 11 2015 11:35
 
   1. 减一
   2. 拆成两个更小的数之和
+
 
 最多只能拆K次。
 
@@ -43,6 +30,7 @@ Published Feb 11 2015 11:35
 
   1. 减一
   2. 拆成两个更小的数之和
+
 
 最多只能拆K次。
 
@@ -66,15 +54,8 @@ $dp(i, j)$表示现在数是i，还有j次分解机会，这时候最少需要�
     
     12345678910111213141516171819202122
 
-| 
-    
-    
-    int dp[110][110]; class CartInSupermarketEasy {public:    int DFS(int N, int K)    {        if (dp[N][K] != -1) return dp[N][K];        if (K == 0) return dp[N][K] = N;        if (N == 1) return dp[N][K] = 1;        if (N == 0) return dp[N][K] = 0;        int ans = DFS(N-1, K) + 1;        for (int i = 1; i < N; i++)            for (int j = 0; j < K; j++)                ans = min(ans, 1 + max(DFS(i, j), DFS(N-i, K-1-j)));        return dp[N][K] = ans;    }     int calc(int N, int K) {        MS(dp, -1);        return DFS(N, K);    }};  
-  
----|---  
-  
+| ```c++
+int dp[110][110]; class CartInSupermarketEasy {public:    int DFS(int N, int K)    {        if (dp[N][K] != -1) return dp[N][K];        if (K == 0) return dp[N][K] = N;        if (N == 1) return dp[N][K] = 1;        if (N == 0) return dp[N][K] = 0;        int ans = DFS(N-1, K) + 1;        for (int i = 1; i < N; i++)            for (int j = 0; j < K; j++)                ans = min(ans, 1 + max(DFS(i, j), DFS(N-i, K-1-j)));        return dp[N][K] = ans;    }     int calc(int N, int K) {        MS(dp, -1);        return DFS(N, K);    }};
+```  
+
 ```
-
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - TopCoder](/tags/Online-Judge-TopCoder/)[DP - 区间](/tags/DP-区间/)

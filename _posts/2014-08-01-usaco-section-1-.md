@@ -6,16 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [USACO Section 1 备忘](/2014/08/USACO-sec-1-memo/ "USACO Section 1 备忘")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 10 2014 20:05
-
-**Contents**
-
-  1. 1. 计算某年某月某日是星期几的方法
-
 ## 计算某年某月某日是星期几的方法
 
 转载自[挥着翅膀的女孩](http://blog.sina.com.cn/s/blog_4bbf42da0100byde.html)
@@ -38,9 +28,8 @@ S=2006-1+[(2006-1)/4] -[(2006-1)/100] +[(2006-1)/400]+162
 =2005+501-20+5+162=2653  
 2653÷7=379，无余数，
 
+
 所以，今天是星期日。
 
 说明:  
 这个计算方法根据的是每四年一闰、百年不闰、四百年再闰的历法，该历法是从公元1582年开始实行的，所以，用这个方法可以计算公元1582年以后某年某月某日是星期几
-
-[Memorandum](/categories/Memorandum/)

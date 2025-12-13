@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 1312 - Cricket Field (高效枚举)](/2015/01/UVa-1312/ "UVa 1312 - Cricket Field \(高效枚举\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jan 29 2015 19:49
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 找出最大的正方形，不包含点。
@@ -33,13 +21,6 @@ Published Jan 29 2015 19:49
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869
 
-| 
-    
-    
-    int n, vis[MAXN], width;vector<int> x;pii P[MAXN]; bool cmp(const pii &a, const pii &b){    return a.Y < b.Y;} void Handle(){    for (int i = 0; i < n; i++) scanf("%d%d", &P[i].X, &P[i].Y);    x.clear();    MS(vis, 0);    vis[0] = 1;    x.PB(0);    for (int i = 0; i < n; i++)    {        if (!vis[P[i].X])        {            vis[P[i].X] = 1;            x.PB(P[i].X);        }    }    if (!vis[width]) x.PB(width);    sort(x.begin(), x.end());} int main(){    //ROP;    int height, T;    scanf("%d", &T);    while (T--)    {        scanf("%d%d%d", &n, &width, &height);        Handle();        sort(P, P + n, cmp);        int maxValue = 0, curBottom;        pii ans;        for (int i = 0; i < SZ(x); i++)        {            for (int j = i+1; j < SZ(x); j++)            {                int tmpWide = x[j] - x[i], curBottom = 0;                for (int k = 0; k < n; k++)                {                    if (P[k].X <= x[i] || P[k].X >= x[j]) continue;                    int tmpHeight = P[k].Y - curBottom;                    if (maxValue < min(tmpWide, tmpHeight))                    {                        maxValue = min(tmpWide, tmpHeight);                        ans.X = x[i]; ans.Y = curBottom;                    }                    curBottom = P[k].Y;                }                int tmpHeight = height - curBottom;                if (maxValue < min(tmpWide, tmpHeight))                {                    maxValue = min(tmpWide, tmpHeight);                    ans.X = x[i]; ans.Y = curBottom;                }            }        }        printf("%d %d %d\n", ans.X, ans.Y, maxValue);        if (T) puts("");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Foundation - Brute Force](/tags/Foundation-Brute-Force/)
+| ```c++
+int n, vis[MAXN], width;vector<int> x;pii P[MAXN]; bool cmp(const pii &a, const pii &b){    return a.Y < b.Y;} void Handle(){    for (int i = 0; i < n; i++) scanf("%d%d", &P[i].X, &P[i].Y);    x.clear();    MS(vis, 0);    vis[0] = 1;    x.PB(0);    for (int i = 0; i < n; i++)    {        if (!vis[P[i].X])        {            vis[P[i].X] = 1;            x.PB(P[i].X);        }    }    if (!vis[width]) x.PB(width);    sort(x.begin(), x.end());} int main(){    //ROP;    int height, T;    scanf("%d", &T);    while (T--)    {        scanf("%d%d%d", &n, &width, &height);        Handle();        sort(P, P + n, cmp);        int maxValue = 0, curBottom;        pii ans;        for (int i = 0; i < SZ(x); i++)        {            for (int j = i+1; j < SZ(x); j++)            {                int tmpWide = x[j] - x[i], curBottom = 0;                for (int k = 0; k < n; k++)                {                    if (P[k].X <= x[i] || P[k].X >= x[j]) continue;                    int tmpHeight = P[k].Y - curBottom;                    if (maxValue < min(tmpWide, tmpHeight))                    {                        maxValue = min(tmpWide, tmpHeight);                        ans.X = x[i]; ans.Y = curBottom;                    }                    curBottom = P[k].Y;                }                int tmpHeight = height - curBottom;                if (maxValue < min(tmpWide, tmpHeight))                {                    maxValue = min(tmpWide, tmpHeight);                    ans.X = x[i]; ans.Y = curBottom;                }            }        }        printf("%d %d %d\n", ans.X, ans.Y, maxValue);        if (T) puts("");    }    return 0;}
+```

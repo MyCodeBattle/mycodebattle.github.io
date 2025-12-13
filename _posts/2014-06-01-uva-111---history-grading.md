@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 111 - History Grading](/2014/06/UVa-111/ "UVa 111 - History Grading")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jun 28 2014 18:22
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 传送门：**[UVa 111 - History Grading](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=114&page=show_problem&problem=47)**
 
 ## 题意
@@ -37,13 +25,6 @@ Published Jun 28 2014 18:22
     
     1234567891011121314151617181920212223242526272829303132333435363738
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 20 + 10;int main(){    //freopen("input.txt", "r", stdin);    int temp, corOrder[MAXN], dp[MAXN][MAXN], wrOrder[MAXN];    int n, i, j;    scanf("%d", &n);    for (i = 1; i <= n; i++)    {        scanf("%d", &temp);        corOrder[temp] = i;    }    while (~scanf("%d", &temp))    {        memset(dp, 0, sizeof(dp));        wrOrder[temp] = 1;        for (i = 2; i <= n; i++)        {            scanf("%d", &temp);            wrOrder[temp] = i;        }        for (i = 1; i <= n; i++)            for (j = 1; j <= n; j++)            {                if (corOrder[i] == wrOrder[j])                    dp[i][j] = dp[i - 1][j - 1] + 1;                else                    dp[i][j] = max(dp[i][j - 1], dp[i - 1][j]);            }        printf("%d\n", dp[n][n]);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Dynamic Programming](/tags/Dynamic-Programming/)
+| ```c++
+#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 20 + 10;int main(){    //freopen("input.txt", "r", stdin);    int temp, corOrder[MAXN], dp[MAXN][MAXN], wrOrder[MAXN];    int n, i, j;    scanf("%d", &n);    for (i = 1; i <= n; i++)    {        scanf("%d", &temp);        corOrder[temp] = i;    }    while (~scanf("%d", &temp))    {        memset(dp, 0, sizeof(dp));        wrOrder[temp] = 1;        for (i = 2; i <= n; i++)        {            scanf("%d", &temp);            wrOrder[temp] = i;        }        for (i = 1; i <= n; i++)            for (j = 1; j <= n; j++)            {                if (corOrder[i] == wrOrder[j])                    dp[i][j] = dp[i - 1][j - 1] + 1;                else                    dp[i][j] = max(dp[i][j - 1], dp[i - 1][j]);            }        printf("%d\n", dp[n][n]);    }    return 0;}
+```

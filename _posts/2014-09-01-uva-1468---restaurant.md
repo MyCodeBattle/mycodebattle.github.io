@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 1468 - Restaurant](/2014/09/UVa-1468/ "UVa 1468 - Restaurant")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 15 2014 19:17
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 1468 - Restaurant](http://www.bnuoj.com/v3/problem_show.php?pid=37085)
@@ -57,13 +44,6 @@ Published Sep 15 2014 19:17
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960
 
-| 
-    
-    
-    #include<bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 60000 + 5;const int INF = 0x3f3f3f3f;using namespace std; typedef pair<int, int> pii;typedef vector<int> vei;typedef vector<pair<int, int> >veii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii;typedef priority_queue<pii, vector<pii>, greater<pii> >pquii; struct POINT{    int x, y;}; int h[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, n, len;    POINT a, b;    scanf("%d", &T);    while (T--)    {        int st = INF, ed = -1;        scanf("%d%d", &len, &n);        scanf("%d%d%d%d", &a.x, &a.y, &b.x, &b.y);        st = min(a.x, b.x), ed = max(a.x, b.x);        fill(h + st + 1, h + ed, len);        for (i = 3; i <= n; i++)        {            int x, y;            scanf("%d%d", &x, &y);            h[x] = min(h[x], abs(y - a.y));        }        h[st] = 0, h[ed] = 0;        for (i = st + 1; i < ed; i++)            h[i] = min(h[i], h[i - 1] + 1);        for (i = ed - 1; i > st; i--)            h[i] = min(h[i], h[i + 1] + 1);        LL ans = 0;        for (i = st + 1; i < ed; i++)        {            if (h[i])            {                ans++;                ans += min(a.y, h[i] - 1);                ans += min(len - a.y, h[i] - 1);            }        }        cout << ans << endl;    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Foundation - Greedy](/tags/Foundation-Greedy/)
+| ```c++
+#include<bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 60000 + 5;const int INF = 0x3f3f3f3f;using namespace std; typedef pair<int, int> pii;typedef vector<int> vei;typedef vector<pair<int, int> >veii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii;typedef priority_queue<pii, vector<pii>, greater<pii> >pquii; struct POINT{    int x, y;}; int h[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, n, len;    POINT a, b;    scanf("%d", &T);    while (T--)    {        int st = INF, ed = -1;        scanf("%d%d", &len, &n);        scanf("%d%d%d%d", &a.x, &a.y, &b.x, &b.y);        st = min(a.x, b.x), ed = max(a.x, b.x);        fill(h + st + 1, h + ed, len);        for (i = 3; i <= n; i++)        {            int x, y;            scanf("%d%d", &x, &y);            h[x] = min(h[x], abs(y - a.y));        }        h[st] = 0, h[ed] = 0;        for (i = st + 1; i < ed; i++)            h[i] = min(h[i], h[i - 1] + 1);        for (i = ed - 1; i > st; i--)            h[i] = min(h[i], h[i + 1] + 1);        LL ans = 0;        for (i = st + 1; i < ed; i++)        {            if (h[i])            {                ans++;                ans += min(a.y, h[i] - 1);                ans += min(len - a.y, h[i] - 1);            }        }        cout << ans << endl;    }    return 0;}
+```

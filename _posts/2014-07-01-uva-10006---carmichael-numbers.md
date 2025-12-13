@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10006 - Carmichael Numbers](/2014/07/UVa-10006/ "UVa 10006 - Carmichael Numbers")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 24 2014 22:54
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10006 - Carmichael Numbers](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=947)
@@ -36,13 +23,6 @@ Published Jul 24 2014 22:54
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 66000; int vis[MAXN]; LL PowMod(LL a, LL m, LL n){    if (m == 1)        return a % n;    LL x = PowMod(a, m >> 1, n);    LL ans = x * x % n;    if (m & 1)        ans = ans * a % n;    return ans;} int main(){    //freopen("input.txt", "r", stdin);    LL n, i;    for (i = 2; i <= MAXN; i++)        if (!vis[i])            for (LL j = i * i; j <= MAXN; j += i)                vis[j] = 1;    while (scanf("%lld", &n), n)    {        if (!vis[n])        {            printf("%lld is normal.\n", n);            continue;        }        for (i = 2; i < n; i++)            if (i != PowMod(i, n, n))            {                printf("%lld is normal.\n", n);                break;            }        if (i == n)            printf("The number %lld is a Carmichael number.\n", n);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Math - Number Theory](/tags/Math-Number-Theory/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 66000; int vis[MAXN]; LL PowMod(LL a, LL m, LL n){    if (m == 1)        return a % n;    LL x = PowMod(a, m >> 1, n);    LL ans = x * x % n;    if (m & 1)        ans = ans * a % n;    return ans;} int main(){    //freopen("input.txt", "r", stdin);    LL n, i;    for (i = 2; i <= MAXN; i++)        if (!vis[i])            for (LL j = i * i; j <= MAXN; j += i)                vis[j] = 1;    while (scanf("%lld", &n), n)    {        if (!vis[n])        {            printf("%lld is normal.\n", n);            continue;        }        for (i = 2; i < n; i++)            if (i != PowMod(i, n, n))            {                printf("%lld is normal.\n", n);                break;            }        if (i == n)            printf("The number %lld is a Carmichael number.\n", n);    }    return 0;}
+```

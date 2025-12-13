@@ -6,17 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [PKU 2777 - Count Color (线段树 + 区间修改)](/2014/10/PKU-2777/ "PKU 2777 - Count Color \(线段树 + 区间修改\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Oct 2 2014 19:06
-
-**Contents**
-
-  1. 1. 思路
-  2. 2. 代码
-
 ## 思路
 
 线段树练习第四发
@@ -36,13 +25,6 @@ Published Oct 2 2014 19:06
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118
 
-| 
-    
-    
-    #include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <ctime>#include <cstdlib>#include <fstream>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 1e5 + 5;const int MOD = 20071027; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int col[MAXN << 2], cnt;set<int> mp; void PushDown(int rt){    if (col[rt])    {        col[LRT] = col[RRT] = col[rt];        col[rt] = 0;        return;    }} void Query(int rt, int l, int r, int L, int R){    if (col[rt])    {        cnt |= (1 << col[rt]);        return;    }    int mid = MID(l, r);    if (L <= mid) Query(LC, L, R);    if (R > mid) Query(RC, L, R);} void Update(int rt, int l, int r, int L, int R, int val){    if (L <= l && r <= R)    {        col[rt] = val;        return;    }    PushDown(rt);    int mid = MID(l, r);    if (L <= mid) Update(LC, L, R, val);    if (R > mid) Update(RC, L, R, val);} void Build(int rt, int l, int r){    col[rt] = 1;    if (l == r) return;    int mid = MID(l, r);    Build(LC); Build(RC);} int main(){    //ROP;    int n, i, j, nQuary, nCol;    while (~scanf("%d%d%d", &n, &nCol, &nQuary))    {        Build(1, 1, n);        char str[2];        int a, b, c;        for (i = 0; i < nQuary; i++)        {            scanf("%s", str);            if (str[0] == 'C')            {                scanf("%d%d%d", &a, &b, &c);                if (a > b) swap(a, b);                Update(1, 1, n, a, b, c);            }            else            {                MS(vis, 0), cnt = 0;                scanf("%d%d", &a, &b);                if (a > b) swap(a, b);                Query(1, 1, n, a, b);                printf("%d\n", BitCount(cnt));            }        }    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - PKU](/tags/Online-Judge-PKU/)[Data Structure - Seg Tree](/tags/Data-Structure-Seg-Tree/)
+| ```c++
+#include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <ctime>#include <cstdlib>#include <fstream>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 1e5 + 5;const int MOD = 20071027; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int col[MAXN << 2], cnt;set<int> mp; void PushDown(int rt){    if (col[rt])    {        col[LRT] = col[RRT] = col[rt];        col[rt] = 0;        return;    }} void Query(int rt, int l, int r, int L, int R){    if (col[rt])    {        cnt |= (1 << col[rt]);        return;    }    int mid = MID(l, r);    if (L <= mid) Query(LC, L, R);    if (R > mid) Query(RC, L, R);} void Update(int rt, int l, int r, int L, int R, int val){    if (L <= l && r <= R)    {        col[rt] = val;        return;    }    PushDown(rt);    int mid = MID(l, r);    if (L <= mid) Update(LC, L, R, val);    if (R > mid) Update(RC, L, R, val);} void Build(int rt, int l, int r){    col[rt] = 1;    if (l == r) return;    int mid = MID(l, r);    Build(LC); Build(RC);} int main(){    //ROP;    int n, i, j, nQuary, nCol;    while (~scanf("%d%d%d", &n, &nCol, &nQuary))    {        Build(1, 1, n);        char str[2];        int a, b, c;        for (i = 0; i < nQuary; i++)        {            scanf("%s", str);            if (str[0] == 'C')            {                scanf("%d%d%d", &a, &b, &c);                if (a > b) swap(a, b);                Update(1, 1, n, a, b, c);            }            else            {                MS(vis, 0), cnt = 0;                scanf("%d%d", &a, &b);                if (a > b) swap(a, b);                Query(1, 1, n, a, b);                printf("%d\n", BitCount(cnt));            }        }    }    return 0;}
+```

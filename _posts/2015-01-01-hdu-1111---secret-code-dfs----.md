@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [HDU 1111 - Secret Code (DFS + 一点数学 + 模拟)](/2015/01/HDU-1111/ "HDU 1111 - Secret Code \(DFS + 一点数学 + 模拟\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jan 24 2015 17:04
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 题意看了半小时才懂。
@@ -43,13 +31,6 @@ $X = a_0 + a_1*B + a_2 * B^2 + ... + a_n * B^n$
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| 
-    
-    
-    LL Xi, Xr, Bi, Br, limit;int cnt, ans[MAXN];bool flag; void DFS(LL r, LL ii, int pos){    if (pos > 100 || flag) return;    if (ii == 0 && r == 0)    {        cnt = pos;        flag = true;        return;    }    for (int i = 0; i*i < limit; i++)    {        ans[pos] = i;        LL a = (r-i) * Br + ii*Bi, b = ii*Br - (r-i) * Bi;        if (a % limit == 0 && b % limit == 0)        {            DFS(a / limit, b / limit, pos + 1);            if (flag) return;        }    }} int main(){    //ROP;    ios::sync_with_stdio(0);     int T, i, j;    cin >> T;    while (T--)    {        flag = false;        cin >> Xr >> Xi >> Br >> Bi;        limit = Br*Br + Bi*Bi;        DFS(Xr, Xi, 0);        if (!flag) cout << "The code cannot be decrypted.";        else        {            cout << ans[cnt-1];            for (int i = cnt-2; i >= 0; i--) cout << "," << ans[i];        }        cout << endl;    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - HDU](/tags/Online-Judge-HDU/)[Foundation - Search](/tags/Foundation-Search/)[Math - Others](/tags/Math-Others/)
+| ```c++
+LL Xi, Xr, Bi, Br, limit;int cnt, ans[MAXN];bool flag; void DFS(LL r, LL ii, int pos){    if (pos > 100 || flag) return;    if (ii == 0 && r == 0)    {        cnt = pos;        flag = true;        return;    }    for (int i = 0; i*i < limit; i++)    {        ans[pos] = i;        LL a = (r-i) * Br + ii*Bi, b = ii*Br - (r-i) * Bi;        if (a % limit == 0 && b % limit == 0)        {            DFS(a / limit, b / limit, pos + 1);            if (flag) return;        }    }} int main(){    //ROP;    ios::sync_with_stdio(0);     int T, i, j;    cin >> T;    while (T--)    {        flag = false;        cin >> Xr >> Xi >> Br >> Bi;        limit = Br*Br + Bi*Bi;        DFS(Xr, Xi, 0);        if (!flag) cout << "The code cannot be decrypted.";        else        {            cout << ans[cnt-1];            for (int i = cnt-2; i >= 0; i--) cout << "," << ans[i];        }        cout << endl;    }    return 0;}
+```

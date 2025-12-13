@@ -6,23 +6,12 @@ tags: []
 layout: post
 ---
 
-#  [Codeforces 476C - Dreamoon and Sums (数学)](/2014/10/codeforces-476c/ "Codeforces 476C - Dreamoon and Sums \(数学\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Oct 13 2014 13:28
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 给出a, b，算出有几个数，符合
 
   1. 商和余数相除等于k，k属于[1, a]。
+
 
 ## 思路
 
@@ -42,13 +31,6 @@ Published Oct 13 2014 13:28
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253
 
-| 
-    
-    
-    #include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>#define LL long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 2000 + 10;const int MOD = 1e9 + 7;const int dir[][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} }; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int main(){    LL a, b;    cin >> a >> b;    LL tmp1 = ((1 + a) * a) >> 1;    tmp1 %= MOD;    tmp1 = tmp1 * b % MOD;    tmp1 += a;    LL tmp2 = (b * (b - 1)) >> 1;    tmp2 %= MOD;    LL ans = tmp1 * tmp2 % MOD;    cout << ans << endl;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - Codeforces](/tags/Online-Judge-Codeforces/)[Math - Others](/tags/Math-Others/)
+| ```c++
+#include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>#define LL long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 2000 + 10;const int MOD = 1e9 + 7;const int dir[][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} }; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int main(){    LL a, b;    cin >> a >> b;    LL tmp1 = ((1 + a) * a) >> 1;    tmp1 %= MOD;    tmp1 = tmp1 * b % MOD;    tmp1 += a;    LL tmp2 = (b * (b - 1)) >> 1;    tmp2 %= MOD;    LL ans = tmp1 * tmp2 % MOD;    cout << ans << endl;}
+```

@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 128 - Software CRC](/2014/07/UVa-128/ "UVa 128 - Software CRC")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 25 2014 16:29
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 128 - Software CRC](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=115&page=show_problem&problem=64)
@@ -39,13 +26,6 @@ Published Jul 25 2014 16:29
     
     1234567891011121314151617181920212223242526
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long longconst char con[] = "0123456789ABCDEF"; int main(){    //freopen("input.txt", "r", stdin);    char str[1100], rec[5];    LL t = 0, g = 34943, ans;    while (gets(str), str[0] != '#')    {        t = 0, ans = 0;        for (int i = 0; str[i]; i++)            t = (t * 256 + str[i]) % g;        ans = (g - t * 65536 % g) % g;        //printf("%d\n", ans);        for (int i = 0; i < 4; i++)        {            rec[i] = ans % 16;            ans /= 16;        }        printf("%c%c %c%c\n", con[rec[3]], con[rec[2]], con[rec[1]], con[rec[0]]);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Math - Number Theory](/tags/Math-Number-Theory/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long longconst char con[] = "0123456789ABCDEF"; int main(){    //freopen("input.txt", "r", stdin);    char str[1100], rec[5];    LL t = 0, g = 34943, ans;    while (gets(str), str[0] != '#')    {        t = 0, ans = 0;        for (int i = 0; str[i]; i++)            t = (t * 256 + str[i]) % g;        ans = (g - t * 65536 % g) % g;        //printf("%d\n", ans);        for (int i = 0; i < 4; i++)        {            rec[i] = ans % 16;            ans /= 16;        }        printf("%c%c %c%c\n", con[rec[3]], con[rec[2]], con[rec[1]], con[rec[0]]);    }    return 0;}
+```

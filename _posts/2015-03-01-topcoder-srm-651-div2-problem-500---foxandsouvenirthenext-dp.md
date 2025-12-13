@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [TopCoder SRM 651 Div2 Problem 500 - FoxAndSouvenirTheNext (DP)](/2015/03/topcoder-651-500/ "TopCoder SRM 651 Div2 Problem 500 - FoxAndSouvenirTheNext \(DP\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Mar 15 2015 20:15
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 问能不能选出n/2个数，使得她们的和为sum/2。
@@ -36,13 +24,6 @@ $dp[i][j] = dp[i-1][j-v[n]]$
     
     1234567891011121314151617181920212223
 
-| 
-    
-    
-    ​class FoxAndSouvenirTheNext {public:    int dep, sum;    int dp[55][3000];    string ableToSplit(vector<int> v) {        if (SZ(v) & 1) return "Impossible";        v.insert(v.begin(), -1);        sum = 0;        dp[0][0] = 1;        for (int i = 1; i < SZ(v); i++) sum += v[i];        if (sum & 1) return "Impossible";        sum /= 2;        for (int i = 1; i < SZ(v); i++)        {            for (int j = i; j > 0; j--)            {                for (int k = MAXN; k >= v[i]; k--)                    if (!dp[j][k] && dp[j-1][k-v[i]]) dp[j][k] = 1;            }        }        return dp[SZ(v)/2][sum] ? "Possible" : "Impossible";    }};  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - TopCoder](/tags/Online-Judge-TopCoder/)[DP - 背包](/tags/DP-背包/)
+| ```c++
+​class FoxAndSouvenirTheNext {public:    int dep, sum;    int dp[55][3000];    string ableToSplit(vector<int> v) {        if (SZ(v) & 1) return "Impossible";        v.insert(v.begin(), -1);        sum = 0;        dp[0][0] = 1;        for (int i = 1; i < SZ(v); i++) sum += v[i];        if (sum & 1) return "Impossible";        sum /= 2;        for (int i = 1; i < SZ(v); i++)        {            for (int j = i; j > 0; j--)            {                for (int k = MAXN; k >= v[i]; k--)                    if (!dp[j][k] && dp[j-1][k-v[i]]) dp[j][k] = 1;            }        }        return dp[SZ(v)/2][sum] ? "Possible" : "Impossible";    }};
+```

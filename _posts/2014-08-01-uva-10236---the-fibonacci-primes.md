@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10236 - The Fibonacci Primes](/2014/08/UVa-10236/ "UVa 10236 - The Fibonacci Primes")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 4 2014 17:30
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10236 - The Fibonacci Primes](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1177)
@@ -44,13 +31,6 @@ $$Fibonacci\\_prime[k] = Fibonacci[prime[k]]$$
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;const int MAXN = 250000;const int MAX = 1e9; double fibo[MAXN];int prime[MAXN], vis[MAXN]; void Init(){    int k = 1;    for (int i = 2; i < 500; i++)        if (!vis[i])        {            for (int j = i * i; j < MAXN; j += i)                vis[j] = 1;        }    for (int i = 2; i < MAXN; i++)        if (!vis[i])            prime[k++] = i;    fibo[1] = fibo[2] = 1;    int flag = 0;    for (int i = 3; i < MAXN; i++)    {        fibo[i] = fibo[i - 1];        if (flag)            fibo[i] += fibo[i - 2] / 10;        else            fibo[i] += fibo[i - 2];        flag = 0;        while (fibo[i] >= MAX)        {            flag = 1;            fibo[i] /= 10;        }    }    prime[1] = 3, prime[2] = 4;} int main(){    //freopen("input.txt", "r", stdin);    Init();    int n;    while (~scanf("%d", &n))        printf("%d\n", (int)fibo[prime[n]]);    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;const int MAXN = 250000;const int MAX = 1e9; double fibo[MAXN];int prime[MAXN], vis[MAXN]; void Init(){    int k = 1;    for (int i = 2; i < 500; i++)        if (!vis[i])        {            for (int j = i * i; j < MAXN; j += i)                vis[j] = 1;        }    for (int i = 2; i < MAXN; i++)        if (!vis[i])            prime[k++] = i;    fibo[1] = fibo[2] = 1;    int flag = 0;    for (int i = 3; i < MAXN; i++)    {        fibo[i] = fibo[i - 1];        if (flag)            fibo[i] += fibo[i - 2] / 10;        else            fibo[i] += fibo[i - 2];        flag = 0;        while (fibo[i] >= MAX)        {            flag = 1;            fibo[i] /= 10;        }    }    prime[1] = 3, prime[2] = 4;} int main(){    //freopen("input.txt", "r", stdin);    Init();    int n;    while (~scanf("%d", &n))        printf("%d\n", (int)fibo[prime[n]]);    return 0;}
+```

@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10673 - Play with Floor and Ceil](/2014/07/UVa-10673/ "UVa 10673 - Play with Floor and Ceil")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 26 2014 21:09
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10673 - Play with Floor and Ceil](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=115&page=show_problem&problem=1614)
@@ -36,13 +23,6 @@ Published Jul 26 2014 21:09
     
     12345678910111213141516171819202122232425262728293031323334
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 1e6 + 100;const int INF = 0x3f3f3f3f; void GCDExt(LL a, LL b, LL &d, LL &x, LL &y){    if (!b)        d = a, x = 1, y = 0;    else    {        GCDExt(b, a % b, d, y, x);        y -= x * (a / b);    }} int main(){    //freopen("input.txt", "r", stdin);    LL x, y, d, a, b, k, i, j, T, c;    scanf("%lld", &T);    while (T--)    {        scanf("%lld%lld", &c, &k);        LL a = (LL)floor(c * 1.0 / k);        LL b = (LL)ceil(c * 1.0 / k);        GCDExt(a, b, d, x, y);        x *= (c / d);        y *= (c / d);        printf("%lld %lld\n", x, y);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Math - Number Theory](/tags/Math-Number-Theory/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 1e6 + 100;const int INF = 0x3f3f3f3f; void GCDExt(LL a, LL b, LL &d, LL &x, LL &y){    if (!b)        d = a, x = 1, y = 0;    else    {        GCDExt(b, a % b, d, y, x);        y -= x * (a / b);    }} int main(){    //freopen("input.txt", "r", stdin);    LL x, y, d, a, b, k, i, j, T, c;    scanf("%lld", &T);    while (T--)    {        scanf("%lld%lld", &c, &k);        LL a = (LL)floor(c * 1.0 / k);        LL b = (LL)ceil(c * 1.0 / k);        GCDExt(a, b, d, x, y);        x *= (c / d);        y *= (c / d);        printf("%lld %lld\n", x, y);    }    return 0;}
+```

@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 825 - Walking on the Safe Side](/2014/07/UVa-825/ "UVa 825 - Walking on the Safe Side")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 8 2014 19:05
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 825 - Walking on the Safe Side](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=114&problem=766&mosmsg=Submission+received+with+ID+13850675)
@@ -39,13 +26,6 @@ Published Jul 8 2014 19:05
     
     123456789101112131415161718192021222324252627282930313233343536373839404142
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>#include <cctype>using namespace std;const int MAXN = 200; int mp[MAXN][MAXN], row, col, dp[MAXN][MAXN]; int main(){    //freopen("in.txt", "r", stdin);    int T, i, j, tempRow, temp;    scanf("%d", &T);    while (T--)    {        memset(mp, 0, sizeof(mp));        memset(dp, 0, sizeof(dp));        scanf("%d%d", &row, &col);        for (i = 0; i < row; i++)        {            scanf("%d", &tempRow);            char str[1000];            gets(str);            for (j = 0, temp = 0; j <= strlen(str); j++)            {                if (isdigit(str[j]))                    temp = temp * 10 + str[j] - '0';                else                    mp[tempRow][temp] = 1, temp = 0;            }        }        dp[1][1] = mp[1][1] = 1;        for (i = 1; i <= row; i++)            for (j = 1; j <= col; j++)                if (!mp[i][j])  //如果没障碍                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];        printf("%d\n", dp[row][col]);        if (T)            printf("\n");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Dynamic Programming](/tags/Dynamic-Programming/)
+| ```c++
+#include <cstdio>#include <cstring>#include <cctype>using namespace std;const int MAXN = 200; int mp[MAXN][MAXN], row, col, dp[MAXN][MAXN]; int main(){    //freopen("in.txt", "r", stdin);    int T, i, j, tempRow, temp;    scanf("%d", &T);    while (T--)    {        memset(mp, 0, sizeof(mp));        memset(dp, 0, sizeof(dp));        scanf("%d%d", &row, &col);        for (i = 0; i < row; i++)        {            scanf("%d", &tempRow);            char str[1000];            gets(str);            for (j = 0, temp = 0; j <= strlen(str); j++)            {                if (isdigit(str[j]))                    temp = temp * 10 + str[j] - '0';                else                    mp[tempRow][temp] = 1, temp = 0;            }        }        dp[1][1] = mp[1][1] = 1;        for (i = 1; i <= row; i++)            for (j = 1; j <= col; j++)                if (!mp[i][j])  //如果没障碍                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];        printf("%d\n", dp[row][col]);        if (T)            printf("\n");    }    return 0;}
+```

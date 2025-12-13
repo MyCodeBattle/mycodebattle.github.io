@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [HDU 5063 - Operation the Sequence (置换)](/2014/10/HDU-5063/ "HDU 5063 - Operation the Sequence \(置换\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Oct 12 2014 9:53
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 给出三个操作和一个询问，输出询问。
@@ -33,13 +21,6 @@ Published Oct 12 2014 9:53
     
     12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879
 
-| 
-    
-    
-    #include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>#define LL long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 1e5 + 10;const int MOD = 1e9 + 7;const int dir[][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} }; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int fun[3][MAXN];vector<int> icmd; int main(){    //ROP;    int T, i, j, n, m;    scanf("%d", &T);    while (T--)    {        j = 1;        icmd.clear();        scanf("%d%d", &n, &m);        for (i = 1; i <= n; i += 2) fun[1][j++] = i;        for (i = 2; i <= n; i += 2) fun[1][j++] = i;        j = 1;        for (i = n; i >= 1; i--) fun[2][j++] = i;        int cnt = 0;        while (m--)        {            char cmd[3];            int a;            scanf("%s%d", cmd, &a);            if (cmd[0] == 'O')            {                if (a == 3) cnt++;                else icmd.PB(a);            }            else            {                LL x = a;                for (i = SZ(icmd) - 1; i >= 0; i--) x = fun[icmd[i]][x];                for (i = 1; i <= cnt; i++) x = x * x % MOD;                printf("%I64d\n", x);            }        }    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - HDU](/tags/Online-Judge-HDU/)[Foundation - Others](/tags/Foundation-Others/)
+| ```c++
+#include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>#define LL long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 1e5 + 10;const int MOD = 1e9 + 7;const int dir[][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} }; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; int fun[3][MAXN];vector<int> icmd; int main(){    //ROP;    int T, i, j, n, m;    scanf("%d", &T);    while (T--)    {        j = 1;        icmd.clear();        scanf("%d%d", &n, &m);        for (i = 1; i <= n; i += 2) fun[1][j++] = i;        for (i = 2; i <= n; i += 2) fun[1][j++] = i;        j = 1;        for (i = n; i >= 1; i--) fun[2][j++] = i;        int cnt = 0;        while (m--)        {            char cmd[3];            int a;            scanf("%s%d", cmd, &a);            if (cmd[0] == 'O')            {                if (a == 3) cnt++;                else icmd.PB(a);            }            else            {                LL x = a;                for (i = SZ(icmd) - 1; i >= 0; i--) x = fun[icmd[i]][x];                for (i = 1; i <= cnt; i++) x = x * x % MOD;                printf("%I64d\n", x);            }        }    }    return 0;}
+```

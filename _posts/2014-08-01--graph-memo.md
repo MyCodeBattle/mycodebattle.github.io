@@ -1,0 +1,104 @@
+---
+categories: Posts
+date: 2014-08-01 00:00:00
+title: 图论部分备忘
+tags: []
+layout: post
+---
+
+## 其他
+
+### 关于Floyd
+
+转载自[EnigmaJJ](http://www.cnblogs.com/twjcnblog/archive/2011/09/07/2170306.html)
+
+正如我们所知道的，Floyd算法用于求最短路径。Floyd算法可以说是Warshall算法的扩展，三个for循环就可以解决问题，所以它的时间复杂度为$O(n^3)$
+
+Floyd算法的基本思想如下：从任意节点A到任意节点B的最短路径不外乎2种可能，1是直接从A到B，2是从A经过若干个节点X到B。所以，我们假设Dis(AB)为节点A到节点B的最短路径的距离，对于每一个节点X，我们检查Dis(AX) + Dis(XB) < Dis(AB)是否成立，如果成立，证明从A到X再到B的路径比A直接到B的路径短，我们便设置Dis(AB) = Dis(AX) + Dis(XB)，这样一来，当我们遍历完所有节点X，Dis(AB)中记录的便是A到B的最短路径的距离。
+
+很简单吧，代码看起来可能像下面这样：
+    
+    
+    12345678
+
+| ```c++
+for ( int i = 0; i < 节点个数; ++i )    for ( int j = 0; j < 节点个数; ++j )        for ( int k = 0; k < 节点个数; ++k )            if ( Dis[i][k] + Dis[k][j] < Dis[i][j] )            {                // 找到更短路径                Dis[i][j] = Dis[i][k] + Dis[k][j];            }
+```  
+
+![ ](http://pic002.cnblogs.com/images/2011/284166/2011090720565477.png)
+
+但是这样是错的。因为A→C的路径还没确定。
+
+## 模板
+
+### 强联通
+    
+    
+    123456789101112131415161718192021222324252627282930313233343536373839
+
+| ```c++
+//lowlink(u)为u及其后代能追溯到的最早（最先被发现）祖先点v的pre(v)值，scc_cnt为SCC计数器，sccno[i]为i所在的SCC编号int scc_cnt, dfs_clock, pre[MAXN], lowlink[MAXN], sccno[MAXN];stack<int> st;vector<int> G[MAXN]; void DFS(int from){    pre[from] = lowlink[from] = ++dfs_clock;    st.push(from);    for (int i = 0; i < SZ(G[from]); i++)    {        int to = G[from][i];        if (!pre[to])        {            DFS(to);            lowlink[from] = min(lowlink[from], lowlink[to]);        }        else if (!sccno[to]) lowlink[from] = min(lowlink[from], pre[to]);    }    if (lowlink[from] == pre[from])    {        scc_cnt++;        while (1)        {            int x = st.top(); st.pop();            sccno[x] = scc_cnt;            if (x == from) break;        }    }} void FindSCC(int n){    dfs_clock = scc_cnt = 0;    MS(sccno, 0); MS(pre, 0); MS(lowlink, 0);    for (int i = 1; i <= n; i++)        if (!pre[i]) DFS(i);}
+```  
+
+### 最小生成树(Kruskal)
+    
+    
+    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061
+
+| ```c++
+struct POINT{    double x, y;}point[MAXN]; int u[MAXN], v[MAXN], p[MAXN], r[MAXN], n, k;double dis[MAXN], ans; int cmp(const int i, const int j){    return dis[i] < dis[j];} int Find(int x){    return p[x] == x ? x : p[x] = Find(p[x]);} void Kruskal(){    for (int i = 0; i < k; i++)        p[i] = i;    for (int i = 0; i < k; i++)        r[i] = i;    sort(r, r + k, cmp);    for (int i = 0; i < k; i++)    {        int e = r[i];        int x = Find(u[e]), y = Find(v[e]);        if (x != y)        {            ans += dis[e];            p[x] = y;        }    }} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j;    scanf("%d", &T);    while (T--)    {        k = ans = 0;        scanf("%d", &n);        for (i = 0; i < n; i++)            scanf("%lf%lf", &point[i].x, &point[i].y);        for (i = 0; i < n; i++)            for (j = i + 1; j < n; j++)            {                u[k] = i, v[k] = j;                dis[k++] = hypot(point[i].x - point[j].x, point[i].y - point[j].y);            }        Kruskal();        printf("%.2f\n", ans);        if (T)            printf("\n");    }    return 0;}
+```  
+
+### Floyd
+    
+    
+    1234567
+
+| ```c++
+void Floyd(){    for (int k = 1; k < MAXN; k++)        for (int i = 1; i < MAXN; i++)            for (int j = 1; j < MAXN; j++)                dis[i][j] = min(dis[i][k] + dis[k][j], dis[i][j]);}
+```  
+
+### SPFA & Dijkstra
+    
+    
+    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586
+
+| ```c++
+struct EDGE{    int from, to, cost;}; struct HEAPNODE{    int d, u;    bool operator < (const HEAPNODE &a) const    {        return d > a.d;    }}; struct S_PATH{    int N, cnt, d[MAXN];    int vis[MAXN], next[MAXN * MAXN], head[MAXN];    vector<EDGE> edges;     void add_edge(int from, int to, int cost)    {        edges.push_back((EDGE){from, to, cost});        int m = SZ(edges);        next[m - 1] = head[from];        head[from] = m - 1;    }     void init(int N)    {        this->N = N;        MS(head, -1);        edges.clear();        cnt = 0;    }     void dijkstra(int st)    {        priority_queue<HEAPNODE> pqu;        fill(d, d + N + 1, INF);        d[st] = 0;        pqu.push((HEAPNODE){d[st], st});        while (!pqu.empty())        {            HEAPNODE x = pqu.top(); pqu.pop();            int u = x.u;            if (x.d != d[u]) continue;            for (int i = head[u]; i != -1; i = next[i])            {                EDGE &e = edges[i];                if (d[e.to] > d[u] + e.cost)                {                    d[e.to] = d[u] + e.cost;                    pqu.push((HEAPNODE){d[e.to], e.to});                }            }        }    }     void SPFA(int st)    {        MS(vis, 0);        queue<int> qu;        fill(d, d + N + 1, INF);        d[st] = 0;        qu.push(st);        while (!qu.empty())        {            int u = qu.front(); qu.pop();            vis[u] = 0;            for (int i = head[u]; i != -1; i = next[i])            {                EDGE &e = edges[i];                if (d[e.to] > d[u] + e.cost)                {                    d[e.to] = d[u] + e.cost;                    if (!vis[e.to])                    {                        vis[e.to] = 1;                        qu.push(e.to);                    }                }            }        }    }}s;
+```  
+
+### 最小费用最大流
+    
+    
+    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667
+
+| ```c++
+struct EDGE{    int from, to, cap, flow, cost;}; struct MCMF{    int n, m, st, ed;    vector<EDGE> edges;    vector<int> G[MAXN];    int inq[MAXN];  //是否在队列中    int d[MAXN];    //bellman-Ford    int p[MAXN];    //上一条弧    int a[MAXN];    //可改进量     void init(int n)    {        this->n = n;        for (int i = 0; i < n; i++) G[i].clear();        edges.clear();    }     void add_edge(int from, int to, int cap, int cost)    {        edges.PB((EDGE){from, to, cap, 0, cost});        edges.PB((EDGE){to, from, 0, 0, -cost});        m = SZ(edges);        G[from].PB(m - 2);        G[to].PB(m - 1);    }     bool SPFA(int st, int ed, int &flow, int &cost)    {        fill(d, d + n + 1, INF);        MS(inq, 0);        d[st] = 0; inq[st] = 1; p[st] = -1; a[st] = INF;        queue<int> qu;        qu.push(st);        while (!qu.empty())        {            int u = qu.front(); qu.pop();            inq[u] = 0;            for (int i = 0; i < SZ(G[u]); i++)            {                EDGE &e = edges[G[u][i]];                if (e.cap > e.flow && d[e.to] > d[u] + e.cost)                {                    d[e.to] = d[u] + e.cost;                    p[e.to] = G[u][i];                    a[e.to] = min(a[u], e.cap - e.flow);                    if (!inq[e.to])                        qu.push(e.to), inq[e.to] = 1;                }            }        }        if (d[ed] == INF) return false;        flow += a[ed]; cost += d[ed] * a[ed];        int u = ed;        while (u != st)        {            edges[p[u]].flow += a[ed];            edges[p[u] ^ 1].flow -= a[ed];            u = edges[p[u]].from;        }        return true;    }};
+```  
+
+### 最大流(STL版Dinic)
+    
+    
+    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273
+
+| ```c++
+struct DINIC{    int d[MAXN], cur[MAXN], vis[MAXN], st, ed;    vector<EDGE> edges;    vector<int> G[MAXN];    void add_edge(int from, int to, int cap)    {        edges.PB((EDGE){from, to, cap, 0});        edges.PB((EDGE){to, from, 0, 0});        int m = SZ(edges);        G[from].PB(m - 2); G[to].PB(m - 1);    }     void init(int st, int ed)    {        this->st = st, this->ed = ed;        edges.clear();        for(int i = 0; i <= ed; i++) G[i].clear();    }     int maxFlow()    {        int flow = 0;        while (BFS())        {            MS(cur, 0);            flow += DFS(st, INF);        }        return flow;    }      bool BFS()    {        MS(vis, 0);        queue<int> qu;        qu.push(st);        d[st] = 0; vis[st] = 1;        while (!qu.empty())        {            int x = qu.front(); qu.pop();            for (int i = 0; i < SZ(G[x]); i++)            {                EDGE &e = edges[G[x][i]];                if (!vis[e.to] && e.cap > e.flow)                {                    vis[e.to] = 1;                    d[e.to] = d[x] + 1;                    qu.push(e.to);                }            }        }        return vis[ed];    }     int DFS(int x, int a)    {        if (x == ed || a == 0) return a;        int flow = 0, f;        for (int &i = cur[x]; i < SZ(G[x]); i++)        {            EDGE &e = edges[G[x][i]];            if (d[x] + 1 == d[e.to] && (f = DFS(e.to, min(a, e.cap - e.flow))) > 0)            {                e.flow += f;                edges[G[x][i] ^ 1].flow -= f;                flow += f;                a -= f;                if (a == 0) break;            }        }        return flow;    }}maxFlow;
+```  
+
+### 最大流(数组版ISAP)
+    
+    
+    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117
+
+| ```c++
+struct MAXFLOW{    //p是前驱，num是和ed的最短距离等于i的结点数量，d是残量网络中i到ed的最短距离    int p[MAXN], num[MAXN], cur[MAXN], d[MAXN], head[MAXN], next[MAXN * MAXN], st, ed, N;    bool vis[MAXN];    vector<EDGE> edges;     void init(int st, int ed, int N)    //N是V的数量    {        this->ed = ed; this->st = st;        this->N = N;        edges.clear();        MS(head, -1);    }     void add_edge(int from, int to, int cap)    {        edges.PB((EDGE){from, to, cap, 0});        edges.PB((EDGE){to, from, 0, 0});        int m = SZ(edges);        next[m - 2] = head[from];        head[from] = m - 2;        next[m - 1] = head[to];        head[to] = m - 1;    }     // 预处理, 反向 BFS 构造 d 数组    void bfs()    {        memset(vis, 0, sizeof(vis));        queue<int> qu;        qu.push(ed);        vis[ed] = 1; d[ed] = 0;        while (!qu.empty())        {            int u = qu.front();            qu.pop();            for (int i = head[u]; i != -1; i = next[i])            {                EDGE &e = edges[i];                if (!vis[e.to])                {                    vis[e.to] = true;                    d[e.to] = d[u] + 1;                    qu.push(e.to);                }            }        }    }     // 增广    int augment()    {        int u = ed, a = INF;        // 从汇点到源点通过 p 追踪增广路径, df 为一路上最小的残量        while (u != st)        {            EDGE &e = edges[p[u]];            a = min(a, e.cap - e.flow);            u = edges[p[u]].from;        }        u = ed;        // 从汇点到源点更新流量        while (u != st)        {            edges[p[u]].flow += a;            edges[p[u]^1].flow -= a;            u = edges[p[u]].from;        }        return a;    }     int max_flow()    {        int flow = 0;        bfs();        memset(num, 0, sizeof(num));        for (int i = 0; i < N; i++) num[d[i]]++;        int u = st;        memset(cur, 0, sizeof(cur));        memcpy(cur, head, sizeof head);        while (d[st] < N)        {            if (u == ed)            {                flow += augment();                u = st;            }            int ok = 0;            for (int &i = cur[u]; i != -1; i = next[i])            {                EDGE& e = edges[i];                if (e.cap > e.flow && d[u] == d[e.to] + 1)                {                    ok = 1;                    p[e.to] = i;                    u = e.to;                    break;                }            }            if (!ok)            {                // retreat                int m = N - 1;                for (int i = head[u]; i != -1; i = next[i])                    if (edges[i].cap > edges[i].flow)                        m = min(m, d[edges[i].to]);                if (--num[d[u]] == 0) break; // gap 优化                num[d[u] = m + 1]++;                cur[u] = head[u];                if (u != st)                    u = edges[p[u]].from;            }        }        return flow;    }}maxFlow;
+```  
+
+### 二分图匹配匈牙利算法
+    
+    
+    12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455
+
+| ```c++
+struct EDGE{    int from, to;}; struct BIMATCHING{    int link[MAXN], head[MAXN], next[MAXN * MAXN];    bool vis[MAXN];    vector<EDGE> edges;    void init()    {        MS(link, -1); MS(head, -1);        edges.clear();    }    void add_edge(int from, int to)    {        edges.PB((EDGE){from, to});        int m = SZ(edges);        next[m - 1] = head[from];        head[from] = m - 1;    }     bool dfs(int u)    {        for (int i = head[u]; i != -1; i = next[i])        {            EDGE &e = edges[i];            int v = e.to;            if (!vis[v])            {                vis[v] = 1;                if (link[v] == -1 || dfs(link[v]))                {                    link[v] = u;                    return true;                }            }        }        return false;    }     int hungary(int n)  //n是待匹配的总数，这里默认从1开始    {        int res = 0;        for (int i = 1; i <= n; i++)        {            MS(vis, 0);            if (dfs(i)) res++;        }        return res;    }}hun;
+```

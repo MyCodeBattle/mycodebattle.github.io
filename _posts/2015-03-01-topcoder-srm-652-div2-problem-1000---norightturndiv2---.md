@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [TopCoder SRM 652 Div2 Problem 1000 - NoRightTurnDiv2 (几何 + 贪心)](/2015/03/topcoder-652-div2-1000/ "TopCoder SRM 652 Div2 Problem 1000 - NoRightTurnDiv2 \(几何 + 贪心\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Mar 10 2015 16:31
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 只能走出一个逆时针的三角形，并且路线不能交叉。求路线。
@@ -39,13 +27,6 @@ Published Mar 10 2015 16:31
     
     1234567891011121314151617181920212223
 
-| 
-    
-    
-    class NoRightTurnDiv2 {    public:    vector<int> findPath(vector<int> x, vector<int> y) {        MS(vis, 0);        int n = SZ(x), cur = 0;        vector<int> res;        cur = min_element(x.begin(), x.end()) - x.begin();        for (int k = 0; k < n; k++)        {            res.PB(cur);            vis[cur] = 1;            int nxt = -1;            for (int i = 0; i < n; i++)            {                if (vis[i]) continue;                if (nxt == -1) nxt = i;                else if ((x[nxt]-x[cur]) * (y[i]-y[cur]) - (x[i]-x[cur]) * (y[nxt]-y[cur]) < 0) nxt = i;            }            cur = nxt;        }        return res;    }};  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - TopCoder](/tags/Online-Judge-TopCoder/)[Foundation - Greedy](/tags/Foundation-Greedy/)
+| ```c++
+class NoRightTurnDiv2 {    public:    vector<int> findPath(vector<int> x, vector<int> y) {        MS(vis, 0);        int n = SZ(x), cur = 0;        vector<int> res;        cur = min_element(x.begin(), x.end()) - x.begin();        for (int k = 0; k < n; k++)        {            res.PB(cur);            vis[cur] = 1;            int nxt = -1;            for (int i = 0; i < n; i++)            {                if (vis[i]) continue;                if (nxt == -1) nxt = i;                else if ((x[nxt]-x[cur]) * (y[i]-y[cur]) - (x[i]-x[cur]) * (y[nxt]-y[cur]) < 0) nxt = i;            }            cur = nxt;        }        return res;    }};
+```

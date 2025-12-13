@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [Codeforces Round 267 (Div. 2) C - George and Job](/2014/09/Codeforces-Round-267-C/ "Codeforces Round 267 \(Div. 2\) C - George and Job")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 19 2014 10:41
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 找出一个序列中k个长度为m区间的最大和。
@@ -37,13 +25,6 @@ dp[i][j]表示前i个数选j个区间的最大和。
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| 
-    
-    
-    #include <cstdio>#include <algorithm>#include <functional>#include <stack>#include <iostream>#include <string>#include <vector>#include <queue>#include <cstring>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 5000 + 5;const int INF = 0x3f3f3f3f;using namespace std; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; LL num[MAXN], dp[MAXN][MAXN]; int main(){    //freopen("input.txt", "r", stdin);    ios::sync_with_stdio(false);     int n, m, k, i, j;    cin >> n >> m >> k;    for (i = 1; i <= n; i++)    {        cin >> num[i];        num[i] += num[i - 1];    }    for (i = 1; i <= n; i++)        for (j = 1; j <= k; j++)        {            dp[i][j] = dp[i - 1][j];            if (i >= m)                dp[i][j] = max(dp[i][j], dp[i - m][j - 1] + num[i] - num[i - m]);        }    cout << dp[n][k] << endl;    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - Codeforces](/tags/Online-Judge-Codeforces/)[DP - 背包](/tags/DP-背包/)
+| ```c++
+#include <cstdio>#include <algorithm>#include <functional>#include <stack>#include <iostream>#include <string>#include <vector>#include <queue>#include <cstring>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)const int MAXN = 5000 + 5;const int INF = 0x3f3f3f3f;using namespace std; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; LL num[MAXN], dp[MAXN][MAXN]; int main(){    //freopen("input.txt", "r", stdin);    ios::sync_with_stdio(false);     int n, m, k, i, j;    cin >> n >> m >> k;    for (i = 1; i <= n; i++)    {        cin >> num[i];        num[i] += num[i - 1];    }    for (i = 1; i <= n; i++)        for (j = 1; j <= k; j++)        {            dp[i][j] = dp[i - 1][j];            if (i >= m)                dp[i][j] = max(dp[i][j], dp[i - m][j - 1] + num[i] - num[i - m]);        }    cout << dp[n][k] << endl;    return 0;}
+```

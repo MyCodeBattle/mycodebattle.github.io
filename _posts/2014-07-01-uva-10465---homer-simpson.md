@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10465 - Homer Simpson](/2014/07/UVa-10465/ "UVa 10465 - Homer Simpson")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 7 2014 16:45
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10465 - Homer Simpson](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=114&problem=1406&mosmsg=Submission+received+with+ID+13844475)
@@ -37,13 +24,6 @@ Published Jul 7 2014 16:45
     
     123456789101112131415161718192021222324252627282930
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 10000 + 10;const int INFS = -2147483648;int main(){    int time[2], dp[MAXN], i, j, t;    while (~scanf("%d%d%d", &time[0], &time[1], &t))    {        for (i = 0; i < MAXN; i++)            dp[i] = INFS;        dp[0] = 0;        for (i = 0; i < 2; i++)            for (j = time[i]; j <= t; j++)                dp[j] = max(dp[j], dp[j - time[i]] + 1);        for (i = t; i >= 0; i--)            if (dp[i] >= 0)            {                if (i == t)                    printf("%d\n", dp[i]);                else                    printf("%d %d\n", dp[i], t - i);                    break;            }    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Dynamic Programming](/tags/Dynamic-Programming/)[Must Be Done Again](/tags/Must-Be-Done-Again/)
+| ```c++
+#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int MAXN = 10000 + 10;const int INFS = -2147483648;int main(){    int time[2], dp[MAXN], i, j, t;    while (~scanf("%d%d%d", &time[0], &time[1], &t))    {        for (i = 0; i < MAXN; i++)            dp[i] = INFS;        dp[0] = 0;        for (i = 0; i < 2; i++)            for (j = time[i]; j <= t; j++)                dp[j] = max(dp[j], dp[j - time[i]] + 1);        for (i = t; i >= 0; i--)            if (dp[i] >= 0)            {                if (i == t)                    printf("%d\n", dp[i]);                else                    printf("%d %d\n", dp[i], t - i);                    break;            }    }    return 0;}
+```

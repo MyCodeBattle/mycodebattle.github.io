@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [TopCoder SRM 634 Div2 Problem 1000 - SpecialStrings](/2014/09/topcoder-634-div2-1000/ "TopCoder SRM 634 Div2 Problem 1000 - SpecialStrings")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 27 2014 16:07
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 给一个字符串，求满足条件的下一个字典序的字符串。
@@ -35,13 +23,6 @@ Published Sep 27 2014 16:07
     
     123456789101112131415161718192021222324252627282930313233343536373839404142
 
-| 
-    
-    
-    #include <cstdio>#include <cmath>#include <cstring>#include <ctime>#include <iostream>#include <algorithm>#include <set>#include <vector>#include <sstream>#include <typeinfo>#include <fstream> using namespace std; class SpecialStrings {    public:    bool Check(const string &str)    {        for (int i = 1; i < str.size(); i++)            if (str.substr(0, i) >= str.substr(i)) return false;        return true;    }     string findNext(string cur) {        int len = (int)cur.size();        if (len == 1 && cur[0] == '0') return "1";        int i, j;        for (i = len - 1; i >= 0; i--)        {            if (cur[i] == '1') continue;            if (i == 0) return "";            cur[i] = '1';            for (j = i + 1; j < len; j++)            {                cur[j] = '0';                if (!Check(cur)) cur[j] = '1';            }            return cur;        }        return "";    }};  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - TopCoder](/tags/Online-Judge-TopCoder/)[Foundation - Strings](/tags/Foundation-Strings/)
+| ```c++
+#include <cstdio>#include <cmath>#include <cstring>#include <ctime>#include <iostream>#include <algorithm>#include <set>#include <vector>#include <sstream>#include <typeinfo>#include <fstream> using namespace std; class SpecialStrings {    public:    bool Check(const string &str)    {        for (int i = 1; i < str.size(); i++)            if (str.substr(0, i) >= str.substr(i)) return false;        return true;    }     string findNext(string cur) {        int len = (int)cur.size();        if (len == 1 && cur[0] == '0') return "1";        int i, j;        for (i = len - 1; i >= 0; i--)        {            if (cur[i] == '1') continue;            if (i == 0) return "";            cur[i] = '1';            for (j = i + 1; j < len; j++)            {                cur[j] = '0';                if (!Check(cur)) cur[j] = '1';            }            return cur;        }        return "";    }};
+```

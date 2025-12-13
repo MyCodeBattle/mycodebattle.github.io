@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10617 - Again Palindrome](/2014/07/UVa-10617/ "UVa 10617 - Again Palindrome")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 11 2014 21:25
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10617 - Again Palindrome](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1558)
@@ -47,13 +34,6 @@ $$
     
     123456789101112131415161718192021222324252627282930313233343536373839
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>#include <algorithm>using namespace std; char str[100];long long dp[65][65]; long long DFS(int x, int y){    long long &ans = dp[x][y];    if (ans != -1)        return ans;    if (x > y)        return ans = 0;    if (x == y)        return ans = 1;    ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1) + 1;    ans += DFS(x + 1, y) + DFS(x, y - 1) - DFS(x + 1, y - 1);    return ans;} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        int len = strlen(str);        DFS(0, len - 1);        printf("%lld\n", dp[0][len - 1]);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Dynamic Programming](/tags/Dynamic-Programming/)
+| ```c++
+#include <cstdio>#include <cstring>#include <algorithm>using namespace std; char str[100];long long dp[65][65]; long long DFS(int x, int y){    long long &ans = dp[x][y];    if (ans != -1)        return ans;    if (x > y)        return ans = 0;    if (x == y)        return ans = 1;    ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1) + 1;    ans += DFS(x + 1, y) + DFS(x, y - 1) - DFS(x + 1, y - 1);    return ans;} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        int len = strlen(str);        DFS(0, len - 1);        printf("%lld\n", dp[0][len - 1]);    }    return 0;}
+```

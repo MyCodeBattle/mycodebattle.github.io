@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10862 - Connect the Cable Wires](/2014/08/UVa-10862/ "UVa 10862 - Connect the Cable Wires")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 3 2014 16:01
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10862 - Connect the Cable Wires](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1803)
@@ -54,13 +41,6 @@ $$dp[n] = 3 * dp[n - 1] - dp[n - 2]$$
     
     123456789101112131415161718192021
 
-| 
-    
-    
-    import java.math.*;import java.util.*;import java.io.*; public class Main {    public static void main(String[] args) {        Scanner in = new Scanner(System.in);        BigInteger[] dp = new BigInteger[2014];        dp[1] = BigInteger.valueOf(1);        dp[2] = BigInteger.valueOf(3);        for (int i = 3; i < 2014; i++)            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(3)).subtract(dp[i - 2]);        while (true) {            int n = in.nextInt();            if (n == 0)                break;            System.out.println(dp[n]);        }     }}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Java - BigInteger](/tags/Java-BigInteger/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+import java.math.*;import java.util.*;import java.io.*; public class Main {    public static void main(String[] args) {        Scanner in = new Scanner(System.in);        BigInteger[] dp = new BigInteger[2014];        dp[1] = BigInteger.valueOf(1);        dp[2] = BigInteger.valueOf(3);        for (int i = 3; i < 2014; i++)            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(3)).subtract(dp[i - 2]);        while (true) {            int n = in.nextInt();            if (n == 0)                break;            System.out.println(dp[n]);        }     }}
+```

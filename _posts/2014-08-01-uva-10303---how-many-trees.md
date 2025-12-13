@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10303 - How Many Trees?](/2014/08/UVa-10303/ "UVa 10303 - How Many Trees?")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 2 2014 12:27
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10303 - How Many Trees?](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=115&problem=1244&mosmsg=Submission+received+with+ID+13978433)
@@ -46,13 +33,6 @@ $$h(n)=h(n-1) * (4*n-2)/(n+1)$$
     
     12345678910111213141516
 
-| 
-    
-    
-    import java.math.*;import java.io.*;import java.util.*;public class Main {    public static void main(String[] args) {        Scanner in = new Scanner(System.in);        BigInteger[] dp = new BigInteger[1100];        dp[1] = BigInteger.ONE;        for (int i = 2; i < 1100; i++)            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(4 * i - 2)).divide(BigInteger.valueOf(i + 1));        while (in.hasNext()) {            int n = in.nextInt();            System.out.println(dp[n]);        }    }}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Math - Number Theory](/tags/Math-Number-Theory/)
+| ```c++
+import java.math.*;import java.io.*;import java.util.*;public class Main {    public static void main(String[] args) {        Scanner in = new Scanner(System.in);        BigInteger[] dp = new BigInteger[1100];        dp[1] = BigInteger.ONE;        for (int i = 2; i < 1100; i++)            dp[i] = dp[i - 1].multiply(BigInteger.valueOf(4 * i - 2)).divide(BigInteger.valueOf(i + 1));        while (in.hasNext()) {            int n = in.nextInt();            System.out.println(dp[n]);        }    }}
+```

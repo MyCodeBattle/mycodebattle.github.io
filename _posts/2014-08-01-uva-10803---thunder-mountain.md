@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10803 - Thunder Mountain](/2014/08/UVa-10803/ "UVa 10803 - Thunder Mountain")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 16 2014 12:04
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10803 - Thunder Mountain](http://vjudge.net/vjudge/problem/viewProblem.action?id=24950)
@@ -40,13 +27,6 @@ Floyd
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 100 + 5;const int INF = 0x3f3f3f3f; struct POINT{    int x, y;}pit[MAXN]; double dis[MAXN][MAXN];int n; void Floyd(){    for (int k = 0; k < n; k++)        for (int i = 0; i < n; i++)            for (int j = 0; j < n; j++)                dis[i][j] = min(dis[i][j], dis[i][k] + dis[k][j]);} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, cases = 0;    scanf("%d", &T);    while (T--)    {        scanf("%d", &n);        double temp = 0;        for (i = 0; i < n; i++)        {            scanf("%d%d", &pit[i].x, &pit[i].y);            for (j = 0; j < i; j++)            {                temp = hypot(pit[i].x - pit[j].x, pit[i].y - pit[j].y);                dis[i][j] = dis[j][i] = (temp > 10 ? INF : temp);            }        }        Floyd();        double ans = -1;        for (i = 0; i < n; i++)            for (j = 0; j < n; j++)                ans = max(ans, dis[i][j]);        printf("Case #%d:\n", ++cases);        ans == INF ? printf("Send Kurdy\n") : printf("%.4f\n", ans);        printf("\n");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Algorithm - Shortest Path](/tags/Algorithm-Shortest-Path/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 100 + 5;const int INF = 0x3f3f3f3f; struct POINT{    int x, y;}pit[MAXN]; double dis[MAXN][MAXN];int n; void Floyd(){    for (int k = 0; k < n; k++)        for (int i = 0; i < n; i++)            for (int j = 0; j < n; j++)                dis[i][j] = min(dis[i][j], dis[i][k] + dis[k][j]);} int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, cases = 0;    scanf("%d", &T);    while (T--)    {        scanf("%d", &n);        double temp = 0;        for (i = 0; i < n; i++)        {            scanf("%d%d", &pit[i].x, &pit[i].y);            for (j = 0; j < i; j++)            {                temp = hypot(pit[i].x - pit[j].x, pit[i].y - pit[j].y);                dis[i][j] = dis[j][i] = (temp > 10 ? INF : temp);            }        }        Floyd();        double ans = -1;        for (i = 0; i < n; i++)            for (j = 0; j < n; j++)                ans = max(ans, dis[i][j]);        printf("Case #%d:\n", ++cases);        ans == INF ? printf("Send Kurdy\n") : printf("%.4f\n", ans);        printf("\n");    }    return 0;}
+```

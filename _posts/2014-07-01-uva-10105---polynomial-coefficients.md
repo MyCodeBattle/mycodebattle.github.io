@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10105 - Polynomial Coefficients](/2014/07/UVa-10105/ "UVa 10105 - Polynomial Coefficients")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 30 2014 11:53
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10105 - Polynomial Coefficients](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=115&problem=1046&mosmsg=Submission+received+with+ID+13965168)
@@ -42,13 +29,6 @@ $$\dfrac {n!} {k_{0}\cdot \left({n-k_0}!\right)}\cdot \dfrac {\left( n-k_{0}\rig
     
     123456789101112131415161718192021222324252627282930
 
-| 
-    
-    
-    #include <bits/stdc++.h>#define LL long longusing namespace std; int fac[20]; void Fac(){    fac[1] = fac[0] = 1;    for (int i = 2; i <= 14; i++)        fac[i] = fac[i - 1] * i;} int main(){    //freopen("input.txt", "r", stdin);    Fac();    int n, k, i, j, temp;    while (~scanf("%d%d", &n, &k))    {        int ans = fac[n];        for (i = 0; i < k; i++)        {            scanf("%d", &temp);            ans /= fac[temp];        }        printf("%d\n", ans);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Math - Number Theory](/tags/Math-Number-Theory/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>#define LL long longusing namespace std; int fac[20]; void Fac(){    fac[1] = fac[0] = 1;    for (int i = 2; i <= 14; i++)        fac[i] = fac[i - 1] * i;} int main(){    //freopen("input.txt", "r", stdin);    Fac();    int n, k, i, j, temp;    while (~scanf("%d%d", &n, &k))    {        int ans = fac[n];        for (i = 0; i < k; i++)        {            scanf("%d", &temp);            ans /= fac[temp];        }        printf("%d\n", ans);    }    return 0;}
+```

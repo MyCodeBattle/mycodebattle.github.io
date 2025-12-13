@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [HDU 2841 - Visible Trees (容斥原理)](/2014/11/HDU-2841/ "HDU 2841 - Visible Trees \(容斥原理\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Nov 17 2014 13:13
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 输出在（0,0）点能看到的树的数目。
@@ -46,13 +34,6 @@ Published Nov 17 2014 13:13
     
     12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394
 
-| 
-    
-    
-    #include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>#define LL long long#define ULL unsigned long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)#define BitCountll(x) __builtin_popcountll(x)#define LeftPos(x) 32 - __builtin_clz(x) - 1#define LeftPosll(x) 64 - __builtin_clzll(x) - 1const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const double eps = 1e-8;const int MAXN = 100000 + 10;const int MOD = 1000007;const int dir[][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };  //0123£¬ÉÏÏÂ×óÓÒ typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; vector<int> pri[MAXN];int vis[MAXN]; void GetPrime(){    for (int i = 2; i < MAXN; i++)    {        if (!vis[i])        {            pri[i].push_back(i);            for (int j = i * 2; j < MAXN; j += i)            {                pri[j].PB(i);                vis[j] = 1;            }        }    }} int n, m; int CountPrime(int cur){    int ans = 0;    for (int i = 1; i < (1 << SZ(pri[cur])); i++)    {        int pro = 1, num = 0;        for (int s = 0; s < SZ(pri[cur]); s++)            if (i & (1 << s)) pro *= pri[cur][s], num++;        if (num & 1) ans += n / pro;        else ans -= n / pro;    }    return n - ans;}     int main(){    GetPrime();    int T, i, j;    cin >> T;    while (T--)    {        cin >> m >> n;        LL ans = n;        for (i = 2; i <= m; i++) ans += CountPrime(i);        cout << ans << endl;    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - HDU](/tags/Online-Judge-HDU/)[Math - Combinatorics](/tags/Math-Combinatorics/)
+| ```c++
+#include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>#define LL long long#define ULL unsigned long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1#define BitCount(x) __builtin_popcount(x)#define BitCountll(x) __builtin_popcountll(x)#define LeftPos(x) 32 - __builtin_clz(x) - 1#define LeftPosll(x) 64 - __builtin_clzll(x) - 1const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const double eps = 1e-8;const int MAXN = 100000 + 10;const int MOD = 1000007;const int dir[][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };  //0123£¬ÉÏÏÂ×óÓÒ typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; vector<int> pri[MAXN];int vis[MAXN]; void GetPrime(){    for (int i = 2; i < MAXN; i++)    {        if (!vis[i])        {            pri[i].push_back(i);            for (int j = i * 2; j < MAXN; j += i)            {                pri[j].PB(i);                vis[j] = 1;            }        }    }} int n, m; int CountPrime(int cur){    int ans = 0;    for (int i = 1; i < (1 << SZ(pri[cur])); i++)    {        int pro = 1, num = 0;        for (int s = 0; s < SZ(pri[cur]); s++)            if (i & (1 << s)) pro *= pri[cur][s], num++;        if (num & 1) ans += n / pro;        else ans -= n / pro;    }    return n - ans;}     int main(){    GetPrime();    int T, i, j;    cin >> T;    while (T--)    {        cin >> m >> n;        LL ans = n;        for (i = 2; i <= m; i++) ans += CountPrime(i);        cout << ans << endl;    }    return 0;}
+```

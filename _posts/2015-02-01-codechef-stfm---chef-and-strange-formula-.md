@@ -6,17 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [CodeChef STFM - Chef and Strange Formula (康托展开)](/2015/02/codechef-stfm/ "CodeChef STFM - Chef and Strange Formula \(康托展开\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Feb 16 2015 20:58
-
-**Contents**
-
-  1. 1. 思路
-  2. 2. 代码
-
 ## 思路
 
 康托展开$X=a[n]*(n-1)!+a[n-1]*(n-2)!+...+a[i]*(i-1)!+...+a[1]*0!$
@@ -44,13 +33,6 @@ x+1, x, x-1, …, 2, 1 的康托展开。
     
     12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273
 
-| 
-    
-    
-    #include <stack>#include <cstdio>#include <list>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>using namespace std;#define LL long long#define ULL unsigned long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define X first#define Y second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;const double eps = 1e-8;const int MAXN = 1e7 + 10;const int MOD = 1e9 + 7;const int dir[][2] = { {-1, 0}, {0, -1}, { 1, 0 }, { 0, 1 } };const int hash_size = 4e5 + 10;int cases = 0;typedef pair<int, int> pii; LL Fac[MAXN], m; inline LL Mod(LL n){    return n % m;} int main(){    //ROP;    LL n;    cin >> n >> m;    Fac[0] = 1;    for (int i = 1; i <= m; i++) Fac[i] = Mod(Fac[i-1] * i);    LL ans = 0;    for (int i = 0; i < n; i++)    {        //先计算sum        LL tmp, tmpAns = 0;        cin >> tmp;        if (tmp & 1) tmpAns = Mod(Mod(tmp) * Mod(Mod(tmp) * Mod((tmp+1)/2)));        else tmpAns = Mod(Mod(tmp) * Mod(Mod(tmp>>1) * (Mod(tmp+1))));        //compute factorial        LL fac;        if (tmp >= m-1) fac = 0;        else fac = Fac[tmp+1];        tmpAns = Mod(tmpAns + fac - 1);        ans = Mod(ans + tmpAns);    }    cout << ans << endl;    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - CodeChef](/tags/Online-Judge-CodeChef/)[Math - Number Theory](/tags/Math-Number-Theory/)
+| ```c++
+#include <stack>#include <cstdio>#include <list>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <string>#include <map>#include <cmath>using namespace std;#define LL long long#define ULL unsigned long long#define SZ(x) (int)x.size()#define Lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define X first#define Y second#define ROP freopen("input.txt", "r", stdin);#define MID(a, b) (a + ((b - a) >> 1))#define LC rt << 1, l, mid#define RC rt << 1|1, mid + 1, r#define LRT rt << 1#define RRT rt << 1|1const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;const double eps = 1e-8;const int MAXN = 1e7 + 10;const int MOD = 1e9 + 7;const int dir[][2] = { {-1, 0}, {0, -1}, { 1, 0 }, { 0, 1 } };const int hash_size = 4e5 + 10;int cases = 0;typedef pair<int, int> pii; LL Fac[MAXN], m; inline LL Mod(LL n){    return n % m;} int main(){    //ROP;    LL n;    cin >> n >> m;    Fac[0] = 1;    for (int i = 1; i <= m; i++) Fac[i] = Mod(Fac[i-1] * i);    LL ans = 0;    for (int i = 0; i < n; i++)    {        //先计算sum        LL tmp, tmpAns = 0;        cin >> tmp;        if (tmp & 1) tmpAns = Mod(Mod(tmp) * Mod(Mod(tmp) * Mod((tmp+1)/2)));        else tmpAns = Mod(Mod(tmp) * Mod(Mod(tmp>>1) * (Mod(tmp+1))));        //compute factorial        LL fac;        if (tmp >= m-1) fac = 0;        else fac = Fac[tmp+1];        tmpAns = Mod(tmpAns + fac - 1);        ans = Mod(ans + tmpAns);    }    cout << ans << endl;    return 0;}
+```

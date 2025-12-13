@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [LeetCode - Repeated DNA Sequences (Hash)](/2015/02/leetcode-repeted dna sequences/ "LeetCode - Repeated DNA Sequences \(Hash\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Feb 23 2015 23:52
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 输出重复两次以上的字符串。
@@ -62,7 +50,3 @@ else mp[H] = 1;
 return ans;  
 }  
 };
-
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - LeetCode](/tags/Online-Judge-LeetCode/)[Foundation - Strings](/tags/Foundation-Strings/)

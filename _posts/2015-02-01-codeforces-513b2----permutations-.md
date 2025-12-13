@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [Codeforces 513B2 - Permutations (思维)](/2015/02/codeforces-513b/ "Codeforces 513B2 -  Permutations \(思维\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Feb 8 2015 14:00
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 P为一个序列。
@@ -47,13 +35,6 @@ P为一个序列。
     
     12345678910111213141516171819202122232425262728
 
-| 
-    
-    
-    int vis[100];vector<int> ans; int main(){    LL n, k;    cin >> n >> k;    int pos = 1;    for (int i = 0; i < n; i++)        for (; pos <= n; pos++)        {            if (k > (1ll<<(n-pos-1))) k -= (1ll<<(n-pos-1));            else            {                vis[pos] = 1;                ans.PB(pos);                pos++;                break;            }        }    for (int i = n; i >= 1; i--)    {        if (vis[i]) continue;        ans.PB(i);    }    for (auto i: ans) printf("%d ", i);    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - Codeforces](/tags/Online-Judge-Codeforces/)[Foundation - Jizhi](/tags/Foundation-Jizhi/)
+| ```c++
+int vis[100];vector<int> ans; int main(){    LL n, k;    cin >> n >> k;    int pos = 1;    for (int i = 0; i < n; i++)        for (; pos <= n; pos++)        {            if (k > (1ll<<(n-pos-1))) k -= (1ll<<(n-pos-1));            else            {                vis[pos] = 1;                ans.PB(pos);                pos++;                break;            }        }    for (int i = n; i >= 1; i--)    {        if (vis[i]) continue;        ans.PB(i);    }    for (auto i: ans) printf("%d ", i);    return 0;}
+```

@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 590 - Always on the run](/2014/07/UVa-590/ "UVa 590 - Always on the run")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 10 2014 9:27
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 590 - Always on the run](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=531)
@@ -41,13 +28,6 @@ Published Jul 10 2014 9:27
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int INF = 0x3f3f3f3f int dp[15][1100], price[15][15][35], day[15][15]; int main(){    //freopen("in.txt", "r", stdin);    int n, k, i, j, ii, jj, cases = 1;    while (scanf("%d%d", &n, &k) && n && k)    {        memset(price, 0, sizeof(price));        memset(day, 0, sizeof(day));        for (i = 1; i <= n; i++)            for (j = 1; j <= n; j++)            {                if (i != j)                {                    scanf("%d", &day[i][j]);                    for (int jj = 1; jj <= day[i][j]; jj++)                        scanf("%d", &price[i][j][jj]);                }            }        for (i = 0; i <= n; i++)            for (j = 0; j <= k; j++)                dp[i][j] = INF;        dp[1][0] = 0;        for (int d = 1; d <= k; d++)            for (i = 1; i <= n; i++)                for (j = 1; j <= n; j++)                {                    if (i != j)                    {                        int thatDay = (d - 1) % day[j][i] + 1;                        if (price[j][i][thatDay] && dp[j][d - 1] != INF)                            dp[i][d] = min(dp[i][d], dp[j][d - 1] + price[j][i][thatDay]);                    }                }        printf("Scenario #%d\n", cases++);        if (dp[n][k] != INF)            printf("The best flight costs %d.\n\n", dp[n][k]);        else            printf("No flight possible.\n\n");     }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)[Must Be Done Again](/tags/Must-Be-Done-Again/)
+| ```c++
+#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int INF = 0x3f3f3f3f int dp[15][1100], price[15][15][35], day[15][15]; int main(){    //freopen("in.txt", "r", stdin);    int n, k, i, j, ii, jj, cases = 1;    while (scanf("%d%d", &n, &k) && n && k)    {        memset(price, 0, sizeof(price));        memset(day, 0, sizeof(day));        for (i = 1; i <= n; i++)            for (j = 1; j <= n; j++)            {                if (i != j)                {                    scanf("%d", &day[i][j]);                    for (int jj = 1; jj <= day[i][j]; jj++)                        scanf("%d", &price[i][j][jj]);                }            }        for (i = 0; i <= n; i++)            for (j = 0; j <= k; j++)                dp[i][j] = INF;        dp[1][0] = 0;        for (int d = 1; d <= k; d++)            for (i = 1; i <= n; i++)                for (j = 1; j <= n; j++)                {                    if (i != j)                    {                        int thatDay = (d - 1) % day[j][i] + 1;                        if (price[j][i][thatDay] && dp[j][d - 1] != INF)                            dp[i][d] = min(dp[i][d], dp[j][d - 1] + price[j][i][thatDay]);                    }                }        printf("Scenario #%d\n", cases++);        if (dp[n][k] != INF)            printf("The best flight costs %d.\n\n", dp[n][k]);        else            printf("No flight possible.\n\n");     }    return 0;}
+```

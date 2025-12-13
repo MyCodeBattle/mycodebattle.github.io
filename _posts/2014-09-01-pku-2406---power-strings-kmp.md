@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [PKU 2406 - Power Strings (KMP性质的应用)](/2014/09/PKU-2406/ "PKU 2406 - Power Strings \(KMP性质的应用\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 30 2014 11:04
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 输出整个字符串中的最短循环节的数目
@@ -39,13 +27,6 @@ Published Sep 30 2014 11:04
     
     12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273
 
-| 
-    
-    
-    #include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <ctime>#include <cstdlib>#include <fstream>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 1e6 + 5;const int MOD = 20071027; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; char str[MAXN];int f[MAXN], len, ans; void GetFail(){    f[0] = f[1] = 0;    for (int i = 1; i < len; i++)    {        int j = f[i];        while (j && str[j] != str[i])j = f[j];        f[i + 1] = (str[j] == str[i] ? j + 1 : 0);    }} void KMP(){    GetFail();    int j = 0;    if (f[len] && len % (len - f[len]) == 0) ans = len / (len - f[len]);    else ans = 1;}  int main(){    //ROP;    int i, j;    while (scanf("%s", str), str[0] != '.')    {        ans = 0;        len = strlen(str);        KMP();        printf("%d\n", ans);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - PKU](/tags/Online-Judge-PKU/)[Algorithm - KMP](/tags/Algorithm-KMP/)
+| ```c++
+#include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <ctime>#include <cstdlib>#include <fstream>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);#define BitCount(x) __builtin_popcount(x)const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 1e6 + 5;const int MOD = 20071027; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; char str[MAXN];int f[MAXN], len, ans; void GetFail(){    f[0] = f[1] = 0;    for (int i = 1; i < len; i++)    {        int j = f[i];        while (j && str[j] != str[i])j = f[j];        f[i + 1] = (str[j] == str[i] ? j + 1 : 0);    }} void KMP(){    GetFail();    int j = 0;    if (f[len] && len % (len - f[len]) == 0) ans = len / (len - f[len]);    else ans = 1;}  int main(){    //ROP;    int i, j;    while (scanf("%s", str), str[0] != '.')    {        ans = 0;        len = strlen(str);        KMP();        printf("%d\n", ans);    }    return 0;}
+```

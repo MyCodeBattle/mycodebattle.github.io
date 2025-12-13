@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [HDU 1121 - Complete the Sequence (差分递推规律)](/2015/01/HDU-1121/ "HDU 1121 - Complete the Sequence \(差分递推规律\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jan 24 2015 23:46
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 找后面的k像，要求degree越小越好。
@@ -36,13 +24,6 @@ Published Jan 24 2015 23:46
     
     12345678910111213141516171819202122
 
-| 
-    
-    
-    int dp[MAXN][MAXN]; int main(){    //ROP;    int T;    scanf("%d", &T);    while (T--)    {        int n, k;        scanf("%d%d", &n, &k);        for (int i = 1; i <= n; i++) scanf("%d", &dp[0][i]);        for (int i = 1; i < n; i++)            for (int j = 1; i+j <= n; j++) dp[i][j] = dp[i-1][j+1] - dp[i-1][j];        for (int i = 2; i <= k+1; i++) dp[n-1][i] = dp[n-1][1];        for (int i = n-2; i >= 0; i--)            for (int j = n-i; j <= n+k; j++) dp[i][j] = dp[i+1][j-1] + dp[i][j-1];        for (int i = n+1; i < n+k; i++) printf("%d ", dp[0][i]);        printf("%d\n", dp[0][n+k]);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - HDU](/tags/Online-Judge-HDU/)[Math - Others](/tags/Math-Others/)
+| ```c++
+int dp[MAXN][MAXN]; int main(){    //ROP;    int T;    scanf("%d", &T);    while (T--)    {        int n, k;        scanf("%d%d", &n, &k);        for (int i = 1; i <= n; i++) scanf("%d", &dp[0][i]);        for (int i = 1; i < n; i++)            for (int j = 1; i+j <= n; j++) dp[i][j] = dp[i-1][j+1] - dp[i-1][j];        for (int i = 2; i <= k+1; i++) dp[n-1][i] = dp[n-1][1];        for (int i = n-2; i >= 0; i--)            for (int j = n-i; j <= n+k; j++) dp[i][j] = dp[i+1][j-1] + dp[i][j-1];        for (int i = n+1; i < n+k; i++) printf("%d ", dp[0][i]);        printf("%d\n", dp[0][n+k]);    }    return 0;}
+```

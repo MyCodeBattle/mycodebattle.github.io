@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 991 - Safe Salutations](/2014/08/UVa-991/ "UVa 991 - Safe Salutations")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 4 2014 18:43
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 传送门坏了。
@@ -46,13 +33,6 @@ $$ f\left( n\right) =\dfrac {f\left( n-1\right) \cdot \left( 4n-2\right) } {n+1}
     
     123456789101112131415161718192021
 
-| 
-    
-    
-    #include <bits/stdc++.h>#define LL long longusing namespace std; int main(){    bool first = true;    LL C[20], i;    int n;    C[0] = 0, C[1] = 1;    for (i = 2; i <= 10; i++)        C[i] = C[i - 1] * (4 * i - 2) / (i + 1);    while (~scanf("%d", &n))    {        if (!first)            printf("\n");        first = false;        printf("%lld\n", C[n]);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>#define LL long longusing namespace std; int main(){    bool first = true;    LL C[20], i;    int n;    C[0] = 0, C[1] = 1;    for (i = 2; i <= 10; i++)        C[i] = C[i - 1] * (4 * i - 2) / (i + 1);    while (~scanf("%d", &n))    {        if (!first)            printf("\n");        first = false;        printf("%lld\n", C[n]);    }    return 0;}
+```

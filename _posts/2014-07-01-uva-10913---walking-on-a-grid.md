@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10913 - Walking on a Grid](/2014/07/UVa-10913/ "UVa 10913 - Walking on a Grid")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 22 2014 10:47
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10913 - Walking on a Grid](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=114&problem=1854&mosmsg=Submission+received+with+ID+13920500)
@@ -38,13 +25,6 @@ Published Jul 22 2014 10:47
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 75 + 5;const int INF = 1061109567;const int dir[3][2] = { {0, 1}, {0, -1}, {1, 0} }; int mp[MAXN][MAXN], vis[MAXN][MAXN][10][5], k, n;LL dp[MAXN][MAXN][10][5], ans; LL DFS(int x, int y, int kk, int way){    LL &cur = dp[x][y][kk][way];    if (vis[x][y][kk][way])        return cur;    vis[x][y][kk][way] = 1;    if (mp[x][y] < 0)        kk++;    if (kk > k)        return cur = -INF;    if (x == n && y == n)        return cur = mp[n][n];    for (int i = 0; i < 3; i++)    {        int xx = x + dir[i][0], yy = y + dir[i][1];        if (way != 1 && i == 0) //way = 1, 右方向进来        {            if (xx >= 1 && xx <= n && yy >= 1 && yy <= n)            {                if (DFS(xx, yy, kk, 0) != -INF)                    cur = max(cur, DFS(xx, yy, kk, 0) + mp[x][y]);            }        }        if (way != 0 && i == 1) //way = 0, 左方向进来        {            if (xx >= 1 && xx <= n && yy >= 1 && yy <= n)            {                if (DFS(xx, yy, kk, 1) != -INF)                    cur = max(cur, DFS(xx, yy, kk, 1) + mp[x][y]);            }        }        if (i == 2 && xx >= 1 && xx <= n && yy >= 1 && yy <= n)        {            if (DFS(xx, yy, kk, 2) != -INF)                cur = max(cur, DFS(xx, yy, kk, 2) + mp[x][y]);        }    }    return cur;} int main(){    //freopen("input.txt", "r", stdin);    int i, j, cases = 0;    while (scanf("%d%d", &n, &k), n + k)    {        ans = -INF;        //memset(dp, 0xc0, sizeof dp);        memset(vis, 0, sizeof vis);        for (i = 1; i <= n; i++)            for (j = 1; j <= n; j++)            {                scanf("%d", ∓[i][j]);                for (int k = 0; k < 10; k++)                    for (int l = 0; l < 5; l++)                        dp[i][j][k][l] = -INF;            }        ans = DFS(1, 1, 0, 0);        if (ans != -INF)            printf("Case %d: %lld\n",++cases, ans);        else            printf("Case %d: impossible\n",++cases);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long longconst int MAXN = 75 + 5;const int INF = 1061109567;const int dir[3][2] = { {0, 1}, {0, -1}, {1, 0} }; int mp[MAXN][MAXN], vis[MAXN][MAXN][10][5], k, n;LL dp[MAXN][MAXN][10][5], ans; LL DFS(int x, int y, int kk, int way){    LL &cur = dp[x][y][kk][way];    if (vis[x][y][kk][way])        return cur;    vis[x][y][kk][way] = 1;    if (mp[x][y] < 0)        kk++;    if (kk > k)        return cur = -INF;    if (x == n && y == n)        return cur = mp[n][n];    for (int i = 0; i < 3; i++)    {        int xx = x + dir[i][0], yy = y + dir[i][1];        if (way != 1 && i == 0) //way = 1, 右方向进来        {            if (xx >= 1 && xx <= n && yy >= 1 && yy <= n)            {                if (DFS(xx, yy, kk, 0) != -INF)                    cur = max(cur, DFS(xx, yy, kk, 0) + mp[x][y]);            }        }        if (way != 0 && i == 1) //way = 0, 左方向进来        {            if (xx >= 1 && xx <= n && yy >= 1 && yy <= n)            {                if (DFS(xx, yy, kk, 1) != -INF)                    cur = max(cur, DFS(xx, yy, kk, 1) + mp[x][y]);            }        }        if (i == 2 && xx >= 1 && xx <= n && yy >= 1 && yy <= n)        {            if (DFS(xx, yy, kk, 2) != -INF)                cur = max(cur, DFS(xx, yy, kk, 2) + mp[x][y]);        }    }    return cur;} int main(){    //freopen("input.txt", "r", stdin);    int i, j, cases = 0;    while (scanf("%d%d", &n, &k), n + k)    {        ans = -INF;        //memset(dp, 0xc0, sizeof dp);        memset(vis, 0, sizeof vis);        for (i = 1; i <= n; i++)            for (j = 1; j <= n; j++)            {                scanf("%d", ∓[i][j]);                for (int k = 0; k < 10; k++)                    for (int l = 0; l < 5; l++)                        dp[i][j][k][l] = -INF;            }        ans = DFS(1, 1, 0, 0);        if (ans != -INF)            printf("Case %d: %lld\n",++cases, ans);        else            printf("Case %d: impossible\n",++cases);    }    return 0;}
+```

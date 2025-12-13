@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10404 - Bachet's Game](/2014/07/UVa-10404/ "UVa 10404 - Bachet's Game")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 8 2014 11:28
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10404 - Bachet’s Game](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=114&problem=1345&mosmsg=Submission+received+with+ID+13848531)
@@ -37,13 +24,6 @@ Published Jul 8 2014 11:28
     
     123456789101112131415161718192021222324252627282930
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>using namespace std;const int MAXN = 1000000 + 1000;int dp[MAXN], stone[20];int main(){    //freopen("input.txt", "r", stdin);    int i, j, n, m;    while (~scanf("%d%d", &n, &m))    {        memset(dp, 0, sizeof(dp));        for (i = 0; i < m; i++)            scanf("%d", &stone[i]);        for (i = 1; i <= n; i++)            for (j = 0; j < m; j++)                if (i >= stone[j] && dp[i - stone[j]] == 0)                {                    dp[i] = 1;                    break;                }        if (dp[n])            printf("Stan wins\n");        else            printf("Ollie wins\n");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <cstdio>#include <cstring>using namespace std;const int MAXN = 1000000 + 1000;int dp[MAXN], stone[20];int main(){    //freopen("input.txt", "r", stdin);    int i, j, n, m;    while (~scanf("%d%d", &n, &m))    {        memset(dp, 0, sizeof(dp));        for (i = 0; i < m; i++)            scanf("%d", &stone[i]);        for (i = 1; i <= n; i++)            for (j = 0; j < m; j++)                if (i >= stone[j] && dp[i - stone[j]] == 0)                {                    dp[i] = 1;                    break;                }        if (dp[n])            printf("Stan wins\n");        else            printf("Ollie wins\n");    }    return 0;}
+```

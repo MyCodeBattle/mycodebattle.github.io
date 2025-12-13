@@ -6,37 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [TopCoder SRM 633 Div2 Problem 250 - Target](/2014/09/topcoder-srm-633-div2-250/ "TopCoder SRM 633 Div2 Problem 250 - Target")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 19 2014 18:36
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
-* include 
-* include 
-* include 
-* include 
-* include 
-* include 
-* include 
-* include 
-* include 
-* include 
-* include 
-* include 
-* define LL long long
-* define lowbit(x) ((x) & (-x))
-* define MP(a, b) make_pair(a, b)
-* define MS(arr, num) memset(arr, num, sizeof(arr))
-* define PB push_back
-* define ROP freopen(“input.txt”, “r”, stdin);
-
 ## 题意
 
 打出相同的图案。
@@ -135,7 +104,3 @@ ans.push_back(str);
 return ans;  
 }  
 };
-
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - TopCoder](/tags/Online-Judge-TopCoder/)[Foundation - Strings](/tags/Foundation-Strings/)

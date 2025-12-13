@@ -6,28 +6,11 @@ tags: []
 layout: post
 ---
 
-#  [HDU 1920 - Jackpot (LCM)](/2015/01/HDU-1920/ "HDU 1920 - Jackpot \(LCM\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jan 30 2015 10:17
-
-**Contents**
-
-  1. 1. 代码
-
 ## 代码
     
     
     123456789101112131415161718192021222324252627
 
-| 
-    
-    
-    int main(){    int T;    const LL MAX = 1e9;    cin >> T;    while (T--)    {        LL tmp, ans = 1;        int n;        cin >> n;        bool flag = false;        while (n--)        {            cin >> tmp;            if (flag) continue;            ans = ans / __gcd(ans, tmp) * tmp;            if (ans >= MAX)            {                flag = true;                continue;            }        }        if (flag) cout << "More than a billion." << endl;        else cout << ans << endl;    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - HDU](/tags/Online-Judge-HDU/)[Math - Number Theory](/tags/Math-Number-Theory/)
+| ```c++
+int main(){    int T;    const LL MAX = 1e9;    cin >> T;    while (T--)    {        LL tmp, ans = 1;        int n;        cin >> n;        bool flag = false;        while (n--)        {            cin >> tmp;            if (flag) continue;            ans = ans / __gcd(ans, tmp) * tmp;            if (ans >= MAX)            {                flag = true;                continue;            }        }        if (flag) cout << "More than a billion." << endl;        else cout << ans << endl;    }    return 0;}
+```

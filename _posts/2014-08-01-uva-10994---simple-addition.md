@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10994 - Simple Addition](/2014/08/UVa-10994/ "UVa 10994 - Simple Addition")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 9 2014 21:31
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10994 - Simple Addition](http://vjudge.net/problem/viewProblem.action?id=23306)
@@ -42,13 +29,6 @@ Published Aug 9 2014 21:31
     
     123456789101112131415161718192021222324252627282930
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000") LL Cal(LL n){    LL ans = 0;    while (n)    {        int t = n % 10;        n /= 10;        ans += (1 + t) * t / 2 + 45 * n;    }    return ans;} int main(){    LL p, q;    int i, j;    while (scanf("%lld%lld", &p, &q), p + q >= 0)    {        if (p == q)            printf("%lld\n", Cal(q));        else            printf("%lld\n", Cal(q) - Cal(p - 1));    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Math - Number Theory](/tags/Math-Number-Theory/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000") LL Cal(LL n){    LL ans = 0;    while (n)    {        int t = n % 10;        n /= 10;        ans += (1 + t) * t / 2 + 45 * n;    }    return ans;} int main(){    LL p, q;    int i, j;    while (scanf("%lld%lld", &p, &q), p + q >= 0)    {        if (p == q)            printf("%lld\n", Cal(q));        else            printf("%lld\n", Cal(q) - Cal(p - 1));    }    return 0;}
+```

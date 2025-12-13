@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 348 - Optimal Array Multiplication Sequence](/2014/07/UVa-348/ "UVa 348 - Optimal Array Multiplication Sequence")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 5 2014 20:01
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 348 - Optimal Array Multiplication Sequence](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=114&page=show_problem&problem=284)
@@ -39,13 +26,6 @@ Published Jul 5 2014 20:01
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>using namespace std;const int MAXN = 10 + 1;const int INF = 2147483647;struct RECTAN{    int row, colomn;}rectan[MAXN];int dp[MAXN][MAXN], next[MAXN][MAXN];int DFS(int st, int ed){    int i;    int &ans = dp[st][ed];    if (st == ed)        return ans = 0;    if (ans != -1)        return ans;    int temp;    ans = INF;    for (i = st; i < ed; i++)    {        temp = DFS(st, i) + DFS(i + 1, ed) + rectan[st].row * rectan[i].colomn * rectan[ed].colomn;        if (temp < ans)        {            ans = temp;            next[st][ed] = i;        }    }    return ans;}void PrintAns(int st, int ed){    if (st > ed)        return;    if (st == ed)    {        printf("A%d", st + 1);        return;    }    printf("(");    PrintAns(st, next[st][ed]);    printf(" x ");    PrintAns(next[st][ed] + 1, ed);    printf(")");}int main(){    //freopen("input.txt", "r", stdin);    int n, a, b, i, j, cases = 1;    while (scanf("%d", &n), n)    {        memset(dp, -1, sizeof(dp));        for (i = 0; i < n; i++)            scanf("%d%d", &rectan[i].row, &rectan[i].colomn);        int ans = DFS(0, n - 1);        //printf("%d\n", ans);        printf("Case %d: ", cases++);        PrintAns(0, n - 1);        printf("\n");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Dynamic Programming](/tags/Dynamic-Programming/)[Must Be Done Again](/tags/Must-Be-Done-Again/)
+| ```c++
+#include <cstdio>#include <cstring>using namespace std;const int MAXN = 10 + 1;const int INF = 2147483647;struct RECTAN{    int row, colomn;}rectan[MAXN];int dp[MAXN][MAXN], next[MAXN][MAXN];int DFS(int st, int ed){    int i;    int &ans = dp[st][ed];    if (st == ed)        return ans = 0;    if (ans != -1)        return ans;    int temp;    ans = INF;    for (i = st; i < ed; i++)    {        temp = DFS(st, i) + DFS(i + 1, ed) + rectan[st].row * rectan[i].colomn * rectan[ed].colomn;        if (temp < ans)        {            ans = temp;            next[st][ed] = i;        }    }    return ans;}void PrintAns(int st, int ed){    if (st > ed)        return;    if (st == ed)    {        printf("A%d", st + 1);        return;    }    printf("(");    PrintAns(st, next[st][ed]);    printf(" x ");    PrintAns(next[st][ed] + 1, ed);    printf(")");}int main(){    //freopen("input.txt", "r", stdin);    int n, a, b, i, j, cases = 1;    while (scanf("%d", &n), n)    {        memset(dp, -1, sizeof(dp));        for (i = 0; i < n; i++)            scanf("%d%d", &rectan[i].row, &rectan[i].colomn);        int ans = DFS(0, n - 1);        //printf("%d\n", ans);        printf("Case %d: ", cases++);        PrintAns(0, n - 1);        printf("\n");    }    return 0;}
+```

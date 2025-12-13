@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10169 - Urn-ball Probabilities !](/2014/08/UVa-10169/ "UVa 10169 - Urn-ball Probabilities !")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 1 2014 17:41
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10169 - Urn-ball Probabilities !](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=115&problem=1110&mosmsg=Submission+received+with+ID+13975621)
@@ -53,13 +40,6 @@ $$\log \left( P^{i+d}\right) = i + d$$
     
     12345678910111213141516171819202122232425
 
-| 
-    
-    
-    #include <bits/stdc++.h>#define LL long longusing namespace std;const int MAXN = 1e6; double dp[MAXN];    //at least one pick are two red ballsint ans[MAXN]; int main(){    int n;    LL i, j;    double p = 1, q = 1, t = 0;    for (i = 1; i <= MAXN; i++)    {        p = 1.0 / i / (i + 1);        q *= (1 - p);        dp[i] =  1 - q;        t += log10(1.0 * i * (i + 1));        ans[i] = (int)(t - fmod(t, 1));    }    while (~scanf("%d", &n))       printf("%.6f %d\n", dp[n], ans[n]);    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)[Math - Number Theory](/tags/Math-Number-Theory/)
+| ```c++
+#include <bits/stdc++.h>#define LL long longusing namespace std;const int MAXN = 1e6; double dp[MAXN];    //at least one pick are two red ballsint ans[MAXN]; int main(){    int n;    LL i, j;    double p = 1, q = 1, t = 0;    for (i = 1; i <= MAXN; i++)    {        p = 1.0 / i / (i + 1);        q *= (1 - p);        dp[i] =  1 - q;        t += log10(1.0 * i * (i + 1));        ans[i] = (int)(t - fmod(t, 1));    }    while (~scanf("%d", &n))       printf("%.6f %d\n", dp[n], ans[n]);    return 0;}
+```

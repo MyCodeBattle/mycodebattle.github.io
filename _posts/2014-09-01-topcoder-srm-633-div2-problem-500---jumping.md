@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [TopCoder SRM 633 Div2 Problem 500 - Jumping](/2014/09/topcoder-srm-633-250/ "TopCoder SRM 633 Div2 Problem 500 - Jumping")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 19 2014 18:11
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 有个青蛙，给出目标点和跳的距离，求能否到达。
@@ -34,6 +22,7 @@ Published Sep 19 2014 18:11
   2. 最大一步的距离比前面的距离都要大。  
 这样的话，就算一直朝反方向跳，最后一步也会跳出头。
 
+
 其余情况都可以跳到。
 
 ## 代码
@@ -41,13 +30,6 @@ Published Sep 19 2014 18:11
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950
 
-| 
-    
-    
-    #include <cstdio>#include <cmath>#include <cstring>#include <ctime>#include <iostream>#include <algorithm>#include <set>#include <vector>#include <sstream>#include <typeinfo>#include <fstream>#define LL long long using namespace std; class Jumping {public:    string ableToGet(int x, int y, vector<int> jumpLengths) {        sort(jumpLengths.begin(), jumpLengths.end());        if (jumpLengths.size() == 1)        {            int cur = jumpLengths[0];            if (cur * cur != x * x + y * y) return "Not able";            else return "Able";        }        else        {            LL dis = 0, judgeDis = 0;            for (int i = 0; i < jumpLengths.size(); i++)            {                dis += jumpLengths[i];                if (i == jumpLengths.size() - 2) judgeDis = dis;            }            int cur = jumpLengths.back();            if (dis * dis >= x * x + y * y)            {                if (cur > judgeDis)                {                    if ((cur - judgeDis) * (cur - judgeDis) <= x * x + y * y)                        return "Able";                    else return "Not able";                }                return "Able";            }            else return "Not able";        }    }}; // Powered by Greed 2.0-RC  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - TopCoder](/tags/Online-Judge-TopCoder/)
+| ```c++
+#include <cstdio>#include <cmath>#include <cstring>#include <ctime>#include <iostream>#include <algorithm>#include <set>#include <vector>#include <sstream>#include <typeinfo>#include <fstream>#define LL long long using namespace std; class Jumping {public:    string ableToGet(int x, int y, vector<int> jumpLengths) {        sort(jumpLengths.begin(), jumpLengths.end());        if (jumpLengths.size() == 1)        {            int cur = jumpLengths[0];            if (cur * cur != x * x + y * y) return "Not able";            else return "Able";        }        else        {            LL dis = 0, judgeDis = 0;            for (int i = 0; i < jumpLengths.size(); i++)            {                dis += jumpLengths[i];                if (i == jumpLengths.size() - 2) judgeDis = dis;            }            int cur = jumpLengths.back();            if (dis * dis >= x * x + y * y)            {                if (cur > judgeDis)                {                    if ((cur - judgeDis) * (cur - judgeDis) <= x * x + y * y)                        return "Able";                    else return "Not able";                }                return "Able";            }            else return "Not able";        }    }}; // Powered by Greed 2.0-RC
+```

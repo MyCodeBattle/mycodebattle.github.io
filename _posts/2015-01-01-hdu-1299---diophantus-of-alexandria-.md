@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [HDU 1299 - Diophantus of Alexandria (唯一分解定理)](/2015/01/HDU-1299/ "HDU 1299 - Diophantus of Alexandria \(唯一分解定理\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jan 26 2015 14:34
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 给定一个n，问有几组$\Large \frac {1}{x} + \frac {1}{y} = \frac {1}{n}$
@@ -41,13 +29,6 @@ Published Jan 26 2015 14:34
     
     12345678910111213141516171819202122232425262728293031323334353637383940414243444546
 
-| 
-    
-    
-    vector<int> prime;int vis[MAXN]; void GetPrimeTable(){    int m = (int)sqrt(MAXN + 0.5);    for (int i = 2; i <= m; i++) if (!vis[i])        for (int j = i*i; j < MAXN; j += i) vis[j] = 1;    for (int i = 2; i < MAXN; i++) if (!vis[i])        prime.PB(i);} int Solve(int n){    int ans = 1;    for (int i = 0; i < SZ(prime); i++)    {        int cnt = 0;        if (prime[i] > n) break;        while (n % prime[i] == 0)        {            cnt++;            n /= prime[i];        }        ans *= ((cnt<<1) + 1);    }    if (n != 1) ans *= 3;    return ans;} int main(){    GetPrimeTable();    int T;    scanf("%d", &T);    while (T--)    {        int n;        scanf("%d", &n);        int ans = Solve(n);        printf("Scenario #%d:\n", ++cases);        printf("%d\n", (ans+1) >> 1);        puts("");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - HDU](/tags/Online-Judge-HDU/)[Math - Number Theory](/tags/Math-Number-Theory/)
+| ```c++
+vector<int> prime;int vis[MAXN]; void GetPrimeTable(){    int m = (int)sqrt(MAXN + 0.5);    for (int i = 2; i <= m; i++) if (!vis[i])        for (int j = i*i; j < MAXN; j += i) vis[j] = 1;    for (int i = 2; i < MAXN; i++) if (!vis[i])        prime.PB(i);} int Solve(int n){    int ans = 1;    for (int i = 0; i < SZ(prime); i++)    {        int cnt = 0;        if (prime[i] > n) break;        while (n % prime[i] == 0)        {            cnt++;            n /= prime[i];        }        ans *= ((cnt<<1) + 1);    }    if (n != 1) ans *= 3;    return ans;} int main(){    GetPrimeTable();    int T;    scanf("%d", &T);    while (T--)    {        int n;        scanf("%d", &n);        int ans = Solve(n);        printf("Scenario #%d:\n", ++cases);        printf("%d\n", (ans+1) >> 1);        puts("");    }    return 0;}
+```

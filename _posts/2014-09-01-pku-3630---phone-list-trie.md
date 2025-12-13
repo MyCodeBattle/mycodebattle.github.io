@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [PKU 3630 - Phone List (Trie)](/2014/09/PKU-3630/ "PKU 3630 - Phone List \(Trie\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 22 2014 18:57
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 查找是否有串是其他串的子串。
@@ -35,13 +23,6 @@ Published Sep 22 2014 18:57
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283
 
-| 
-    
-    
-    #include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <ctime>#include <cstdlib>#include <fstream>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 10000 + 5; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; struct TRIE{    int ed, pass;    int next[10];}trie[MAXN * 10]; int cnt;char str[15]; bool Insert(int root, char *str){    int cur = root;    for (int i = 0; str[i]; i++)    {        int idx = str[i] - '0';        if (trie[cur].next[idx] == 0)            trie[cur].next[idx] = ++cnt;        cur = trie[cur].next[idx];        trie[cur].pass++;        if (trie[cur].ed) return false;    }    if (trie[cur].pass > 1) return false;    trie[cur].ed = 1;    return true;} int main(){    //ROP;    int T, i, j, n;    scanf("%d", &T);    while(T--)    {        cnt = 0;        MS(trie, 0);        scanf("%d%*c", &n);        bool flag = false;        for (i = 0; i < n; i++)        {             gets(str);            if (flag) continue;            if (Insert(0, str) == false) flag = true;        }        printf("%s\n", flag ? "NO" : "YES");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - PKU](/tags/Online-Judge-PKU/)[Data Structure - Trie](/tags/Data-Structure-Trie/)
+| ```c++
+#include <cstdio>#include <stack>#include <set>#include <iostream>#include <string>#include <vector>#include <queue>#include <functional>#include <cstring>#include <algorithm>#include <cctype>#include <ctime>#include <cstdlib>#include <fstream>#include <string>#include <sstream>#include <map>#include <cmath>#define LL long long#define lowbit(x) ((x) & (-x))#define MP(a, b) make_pair(a, b)#define MS(arr, num) memset(arr, num, sizeof(arr))#define PB push_back#define F first#define S second#define ROP freopen("input.txt", "r", stdin);const double PI = acos(-1.0);const int INF = 0x3f3f3f3f;using namespace std;const int MAXN = 10000 + 5; typedef pair<int, int> pii;typedef vector<int>::iterator viti;typedef vector<pii>::iterator vitii; struct TRIE{    int ed, pass;    int next[10];}trie[MAXN * 10]; int cnt;char str[15]; bool Insert(int root, char *str){    int cur = root;    for (int i = 0; str[i]; i++)    {        int idx = str[i] - '0';        if (trie[cur].next[idx] == 0)            trie[cur].next[idx] = ++cnt;        cur = trie[cur].next[idx];        trie[cur].pass++;        if (trie[cur].ed) return false;    }    if (trie[cur].pass > 1) return false;    trie[cur].ed = 1;    return true;} int main(){    //ROP;    int T, i, j, n;    scanf("%d", &T);    while(T--)    {        cnt = 0;        MS(trie, 0);        scanf("%d%*c", &n);        bool flag = false;        for (i = 0; i < n; i++)        {             gets(str);            if (flag) continue;            if (Insert(0, str) == false) flag = true;        }        printf("%s\n", flag ? "NO" : "YES");    }    return 0;}
+```

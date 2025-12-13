@@ -14,123 +14,123 @@ POSTS_DIR = './_posts'
 # 确保输出目录存在
 os.makedirs(POSTS_DIR, exist_ok=True)
 
-# 初始化html2text转换器
-converter = html2text.HTML2Text()
-converter.ignore_links = False
-converter.ignore_images = False
-converter.body_width = 0  # 不自动换行
-converter.use_automatic_links = True
-
 
 def extract_date_from_path(file_path):
     """从文件路径中提取日期"""
-    # 匹配路径中的 YYYY/MM 格式，没有DD则使用01
     match = re.search(r'old_blog/(\d{4})/(\d{2})', file_path)
     if match:
         year, month = match.groups()
-        # 尝试从目录名中提取可能的日期信息
-        # 例如：old_blog/2014/06/UVa-10003/index.html -> 2014-06-01
         return f"{year}-{month}-01"
-    return None
+    return datetime.datetime.now().strftime('%Y-%m-%d')
 
 
-def extract_title(soup, file_path):
+def extract_title(soup, html_file):
     """从HTML中提取标题，如果失败则使用目录名"""
-    # 尝试从h1标签中提取
-    h1_tags = soup.find_all('h1')
-    for h1 in h1_tags:
-        text = h1.get_text(strip=True)
-        if text and text != 'PureFrog\'s Home':  # 排除网站标题
-            return text
-    
-    # 尝试从h2标签中提取
-    h2_tags = soup.find_all('h2')
-    for h2 in h2_tags:
-        text = h2.get_text(strip=True)
-        if text and text != 'PureFrog\'s Home':
-            return text
-    
-    # 尝试从meta标签中提取
-    meta_title = soup.find('meta', property='og:title') or soup.find('meta', name='title')
-    if meta_title and meta_title.get('content'):
-        title = meta_title['content']
-        if title != 'PureFrog\'s Home':
-            return title
-    
-    # 尝试从title标签中提取
-    title_tag = soup.find('title')
-    if title_tag:
-        title = title_tag.get_text(strip=True)
-        # 通常title格式为 "文章标题 - 网站名称"，尝试提取文章标题部分
-        if ' - ' in title:
-            title = title.split(' - ')[0]
-        if title != 'PureFrog\'s Home':
-            return title
-    
-    # 如果都失败，使用目录名作为标题
-    # 例如：old_blog/2014/06/UVa-10003/index.html -> UVa-10003
-    dir_name = os.path.basename(os.path.dirname(file_path))
-    return dir_name
-
-
-def extract_content(soup):
-    """从HTML中提取正文内容"""
-    # 尝试多种可能的正文位置
+    # 1. 尝试从文章内容中的h1/h2标签提取
     content_selectors = [
         'article',
         '.article-content',
         '.post-content',
         '#content',
         '.content',
-        'div[class*="content"]',
-        '.main-content',
-        '.entry-content'
+        'div[class*="content"]'
     ]
     
     for selector in content_selectors:
         content = soup.select_one(selector)
         if content:
-            return content
+            # 在内容区域内查找标题
+            h1 = content.find('h1')
+            if h1:
+                text = h1.get_text(strip=True)
+                if text and text != 'PureFrog\'s Home':
+                    return text
+            
+            h2 = content.find('h2')
+            if h2:
+                text = h2.get_text(strip=True)
+                if text and text != 'PureFrog\'s Home':
+                    return text
     
-    # 如果找不到特定的内容容器，返回body，但移除不需要的元素
-    body = soup.find('body')
-    if body:
-        # 移除一些不需要的元素
-        elements_to_remove = [
-            'header', 'footer', 'nav', '.sidebar', '#disqus_thread', 
-            'script', 'style', '.toc', '#toc', '.categorieslist', 
-            '.tagslist', '.linkslist', '.rsspart', '.share', 
-            '#asidepart', '.openaside', '#totop'
-        ]
-        for elem in body.select(','.join(elements_to_remove)):
-            elem.decompose()
-        return body
+    # 2. 尝试从整个页面的h1/h2标签提取
+    h1_tags = soup.find_all('h1')
+    for h1 in h1_tags:
+        text = h1.get_text(strip=True)
+        if text and text != 'PureFrog\'s Home':
+            return text
     
-    return soup
+    h2_tags = soup.find_all('h2')
+    for h2 in h2_tags:
+        text = h2.get_text(strip=True)
+        if text and text != 'PureFrog\'s Home':
+            return text
+    
+    # 3. 尝试从title标签提取
+    title_tag = soup.find('title')
+    if title_tag:
+        title = title_tag.get_text(strip=True)
+        # 通常title格式为 "文章标题 - 网站名称"，尝试提取文章标题部分
+        if ' - ' in title:
+            title = title.split(' - ')[0]
+        if title and title != 'PureFrog\'s Home' and len(title) > 5:
+            return title
+    
+    # 4. 使用目录名作为标题（最后手段）
+    dir_name = os.path.basename(os.path.dirname(html_file))
+    return dir_name
 
 
-def get_unique_filename(date, title, counter):
-    """生成唯一的文件名"""
-    # 清理标题，用于文件名
-    slug = re.sub(r'[^a-zA-Z0-9\s\-_]', '', title)
-    slug = slug.lower().replace(' ', '-')
-    # 如果标题太短，添加counter确保唯一性
-    if len(slug) < 5:
-        slug += f"-{counter}"
-    filename = f"{date}-{slug}.md"
-    return filename
+def extract_code_blocks(html_content):
+    """提取HTML中的代码块，返回清理后的HTML和代码块列表"""
+    soup = BeautifulSoup(html_content, 'html.parser')
+    
+    # 移除不需要的元素
+    elements_to_remove = [
+        'header', 'footer', 'nav', '.sidebar', '#disqus_thread', 
+        'script', 'style', '.toc', '#toc', '.categorieslist', 
+        '.tagslist', '.linkslist', '.rsspart', '.share', 
+        '#asidepart', '.openaside', '#totop', '.article-info',
+        '.article-meta', '.post-meta', '.meta', '.entry-meta'
+    ]
+    for elem in soup.select(','.join(elements_to_remove)):
+        elem.decompose()
+    
+    # 提取代码块
+    code_blocks = []
+    code_counter = 0
+    
+    # 处理<pre>标签中的代码
+    for pre in soup.find_all('pre'):
+        code = pre.get_text()
+        # 清理代码，移除行号和特殊字符
+        code = re.sub(r'^\s*\d+\s*', '', code, flags=re.MULTILINE)
+        code = code.strip()
+        if code:
+            # 替换代码块为标记
+            placeholder = f"__CODE_BLOCK_{code_counter}__"
+            pre.replace_with(placeholder)
+            code_blocks.append(code)
+            code_counter += 1
+    
+    # 处理<code>标签中的代码（如果有的话）
+    for code_tag in soup.find_all('code'):
+        code = code_tag.get_text()
+        code = code.strip()
+        if code:
+            placeholder = f"__CODE_BLOCK_{code_counter}__"
+            code_tag.replace_with(placeholder)
+            code_blocks.append(code)
+            code_counter += 1
+    
+    return str(soup), code_blocks
 
 
-def convert_html_to_md(html_file, counter):
+def convert_html_to_md(html_file):
     """将单个HTML文件转换为Markdown"""
     print(f"Processing: {html_file}")
     
     # 提取日期
     date = extract_date_from_path(html_file)
-    if not date:
-        # 如果从路径中提取不到日期，使用当前日期
-        date = datetime.datetime.now().strftime('%Y-%m-%d')
-        print(f"  Warning: Could not extract date from path, using current date: {date}")
     
     # 读取HTML文件
     with open(html_file, 'r', encoding='utf-8') as f:
@@ -143,18 +143,42 @@ def convert_html_to_md(html_file, counter):
     title = extract_title(soup, html_file)
     print(f"  Title: {title}")
     
-    # 提取正文
-    content_element = extract_content(soup)
-    html_content = str(content_element)
+    # 提取代码块
+    processed_html, code_blocks = extract_code_blocks(html_content)
     
     # 转换为Markdown
-    md_content = converter.handle(html_content)
+    converter = html2text.HTML2Text()
+    converter.ignore_links = False
+    converter.ignore_images = False
+    converter.body_width = 0
+    converter.use_automatic_links = True
+    md_content = converter.handle(processed_html)
+    
+    # 恢复代码块
+    for i, code in enumerate(code_blocks):
+        placeholder = f"__CODE_BLOCK_{i}__"
+        if code:
+            # 确保代码块正确换行
+            code_lines = code.split('\n')
+            formatted_code = '\n'.join(code_lines)
+            md_content = md_content.replace(placeholder, f'```c++\n{formatted_code}\n```')
     
     # 清理Markdown内容
-    md_content = re.sub(r'^#+\s*$', '', md_content, flags=re.MULTILINE)  # 移除空标题行
-    md_content = re.sub(r'\n{3,}', '\n\n', md_content)  # 最多保留两个连续换行
-    # 移除可能的重复标题
-    md_content = re.sub(r'^#\s+PureFrog\'s Home\s*\n+', '', md_content)
+    # 移除网站标题
+    md_content = re.sub(r'#\s*PureFrog\'s Home\s*\n+', '', md_content)
+    # 移除作者和发布信息
+    md_content = re.sub(r'By.*?Published.*?\n+', '', md_content, flags=re.DOTALL)
+    # 移除分类和标签链接
+    md_content = re.sub(r'\[Solving Reports\](/categories/Solving-Reports/)', '', md_content)
+    md_content = re.sub(r'\[Online Judge.*?\](/tags/.*?)', '', md_content)
+    md_content = re.sub(r'\[Math.*?\](/tags/.*?)', '', md_content)
+    # 移除表格格式残留
+    md_content = re.sub(r'^---\|---\s*$', '', md_content, flags=re.MULTILINE)
+    md_content = re.sub(r'^\|\s*$', '', md_content, flags=re.MULTILINE)
+    # 清理多余的空行
+    md_content = re.sub(r'\n{4,}', '\n\n\n', md_content)
+    # 清理文件开头和结尾的空行
+    md_content = md_content.strip()
     
     # 生成YAML前置元数据
     yaml_frontmatter = f"""---
@@ -168,7 +192,11 @@ layout: post
 """
     
     # 生成唯一的文件名
-    filename = get_unique_filename(date, title, counter)
+    slug = re.sub(r'[^a-zA-Z0-9\s\-_]', '', title)
+    slug = slug.lower().replace(' ', '-')
+    if len(slug) < 5:
+        slug = f"{slug}-{os.path.basename(os.path.dirname(html_file))}"
+    filename = f"{date}-{slug}.md"
     file_path = os.path.join(POSTS_DIR, filename)
     
     # 保存Markdown文件
@@ -193,7 +221,7 @@ def main():
             if file.endswith('.html'):
                 html_file = os.path.join(root, file)
                 try:
-                    convert_html_to_md(html_file, counter)
+                    convert_html_to_md(html_file)
                     counter += 1
                 except Exception as e:
                     print(f"Error processing {html_file}: {e}")

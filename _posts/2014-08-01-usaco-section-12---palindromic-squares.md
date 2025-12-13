@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [USACO Section 1.2 - Palindromic Squares](/2014/08/USACO-1_2-palsquare/ "USACO Section 1.2 - Palindromic Squares")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 15 2014 19:39
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 给出一个进制，求1 ~ 300以内十进制转换成这个进制是不是回文串，是的话输出。
@@ -31,13 +19,6 @@ Published Aug 15 2014 19:39
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354
 
-| 
-    
-    
-    /*ID: mycodeb1LANG: C++TASK: palsquare*/ #include <bits/stdc++.h>using namespace std;const int WMAXN = 5000;const char cstr[] = "0123456789ABCDEFGHIJ"; string str;int base; string Convert(int num){    str.clear();    int k = 0;    while (num)    {        str += cstr[num % base];        num /= base;    }    return str;} bool isOK(string s){    int len = s.length();    for (int i = 0, j = len - 1; i < j; i++, j--)        if (s[i] != s[j])            return false;    return true;} int main(){    freopen("palsquare.in", "r", stdin);    freopen("palsquare.out", "w", stdout);    ios::sync_with_stdio(false);     int i, j;    scanf("%d", &base);    for (i = 1; i <= 300; i++)        if (isOK(Convert(i * i)))        {            Convert(i);            reverse(str.begin(), str.end());            cout << str << " ";            Convert(i * i);            cout << str << endl;        }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - USACO](/tags/Online-Judge-USACO/)[Foundation - Strings](/tags/Foundation-Strings/)
+| ```c++
+/*ID: mycodeb1LANG: C++TASK: palsquare*/ #include <bits/stdc++.h>using namespace std;const int WMAXN = 5000;const char cstr[] = "0123456789ABCDEFGHIJ"; string str;int base; string Convert(int num){    str.clear();    int k = 0;    while (num)    {        str += cstr[num % base];        num /= base;    }    return str;} bool isOK(string s){    int len = s.length();    for (int i = 0, j = len - 1; i < j; i++, j--)        if (s[i] != s[j])            return false;    return true;} int main(){    freopen("palsquare.in", "r", stdin);    freopen("palsquare.out", "w", stdout);    ios::sync_with_stdio(false);     int i, j;    scanf("%d", &base);    for (i = 1; i <= 300; i++)        if (isOK(Convert(i * i)))        {            Convert(i);            reverse(str.begin(), str.end());            cout << str << " ";            Convert(i * i);            cout << str << endl;        }    return 0;}
+```

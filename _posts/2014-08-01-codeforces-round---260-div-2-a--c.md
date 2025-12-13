@@ -6,28 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [Codeforces Round - 260 (Div. 2) A ~ C](/2014/08/Codeforces-Round-260-Div2/ "Codeforces Round - 260 \(Div. 2\) A ~ C")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 9 2014 11:22
-
-**Contents**
-
-  1. 1. A. Laptops
-    1. 1.1. 传送门
-    2. 1.2. 题意
-    3. 1.3. 代码
-  2. 2. B. Fedya and Maths
-    1. 2.1. 传送门
-    2. 2.2. 思路
-    3. 2.3. 代码
-  3. 3. C. Boredom
-    1. 3.1. 传送门
-    2. 3.2. 题意
-    3. 3.3. 思路
-    4. 3.4. 代码
-
 ## A. Laptops
 
 ### 传送门
@@ -53,13 +31,10 @@ Published Aug 9 2014 11:22
     
     123456789101112131415161718192021
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000") int main(){    int a, b, i, n;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        scanf("%d%d", &a, &b);        if (a != b)        {            printf("Happy Alex\n");            return 0;        }    }    printf("Poor Alex\n");    return 0;}  
-  
----|---  
-  
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000") int main(){    int a, b, i, n;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        scanf("%d%d", &a, &b);        if (a != b)        {            printf("Happy Alex\n");            return 0;        }    }    printf("Poor Alex\n");    return 0;}
+```  
+
 ## B. Fedya and Maths
 
 ### 传送门
@@ -85,13 +60,10 @@ Published Aug 9 2014 11:22
     
     123456789101112131415161718
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000")const int MAXN = 1e5 + 10; char str[MAXN]; int main(){    int n, i, j;    gets(str);    int len = strlen(str);    char c = str[len - 1], d = str[len - 2];    int k = c - '0' + (d - '0') * 10;    printf("%d\n", k % 4 ? 0 : 4);    return 0;}  
-  
----|---  
-  
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000")const int MAXN = 1e5 + 10; char str[MAXN]; int main(){    int n, i, j;    gets(str);    int len = strlen(str);    char c = str[len - 1], d = str[len - 2];    int k = c - '0' + (d - '0') * 10;    printf("%d\n", k % 4 ? 0 : 4);    return 0;}
+```  
+
 ## C. Boredom
 
 ### 传送门
@@ -115,13 +87,6 @@ $$dp[i] = max(i * dp[i] + dp[i - 2], dp[i - 1])$$
     
     1234567891011121314151617181920212223
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000")const int MAXN = 1e5 + 10; LL dp[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, i, j, a;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        scanf("%d", &a);        dp[a]++;    }    for (i = 2; i < MAXN; i++)        dp[i] = max(i * dp[i] + dp[i - 2], dp[i - 1]);    printf("%I64d\n", dp[100000]);    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - Codeforces](/tags/Online-Judge-Codeforces/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long long#pragma comment(linker, "/STACK:102400000,102400000")const int MAXN = 1e5 + 10; LL dp[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, i, j, a;    scanf("%d", &n);    for (i = 0; i < n; i++)    {        scanf("%d", &a);        dp[a]++;    }    for (i = 2; i < MAXN; i++)        dp[i] = max(i * dp[i] + dp[i - 2], dp[i - 1]);    printf("%I64d\n", dp[100000]);    return 0;}
+```

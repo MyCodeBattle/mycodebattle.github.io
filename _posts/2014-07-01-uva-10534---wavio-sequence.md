@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10534 - Wavio Sequence](/2014/07/UVa-10534/ "UVa 10534 - Wavio Sequence")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 9 2014 12:37
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10534 - Wavio Sequence](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=114&problem=1475&mosmsg=Submission+received+with+ID+13854295)
@@ -37,13 +24,6 @@ Published Jul 9 2014 12:37
     
     123456789101112131415161718192021222324252627282930313233343536373839404142434445464748
 
-| 
-    
-    
-    #include <cstdio>#include <vector>#include <algorithm>using namespace std;const int MAXN = 10000 + 100; int num[MAXN], left[MAXN], right[MAXN];vector<int> ve; ​int main(){    //freopen("in.txt", "r", stdin);    int T, i, j, n;    while (~scanf("%d", &n))    {        for (i = 0; i < n; i++)            scanf("%d", #[i]);        ve.clear();        for (i = 0; i < n; i++)        {            if (ve.empty() || num[i] > ve.back())                ve.push_back(num[i]);            else            {                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();                ve[t] = num[i];            }            left[i] = ve.size();        }        ve.clear();        for (i = n - 1; i >= 0; i--)        {            if (ve.empty() || num[i] > ve.back())                ve.push_back(num[i]);            else            {                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();                ve[t] = num[i];            }            right[i] = ve.size();        }        int ans = 0;        for (i = 0; i < n; i++)            ans = max(ans, min(left[i], right[i]) * 2 - 1);        printf("%d\n", ans);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <cstdio>#include <vector>#include <algorithm>using namespace std;const int MAXN = 10000 + 100; int num[MAXN], left[MAXN], right[MAXN];vector<int> ve; ​int main(){    //freopen("in.txt", "r", stdin);    int T, i, j, n;    while (~scanf("%d", &n))    {        for (i = 0; i < n; i++)            scanf("%d", #[i]);        ve.clear();        for (i = 0; i < n; i++)        {            if (ve.empty() || num[i] > ve.back())                ve.push_back(num[i]);            else            {                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();                ve[t] = num[i];            }            left[i] = ve.size();        }        ve.clear();        for (i = n - 1; i >= 0; i--)        {            if (ve.empty() || num[i] > ve.back())                ve.push_back(num[i]);            else            {                int t = lower_bound(ve.begin(), ve.end(), num[i]) - ve.begin();                ve[t] = num[i];            }            right[i] = ve.size();        }        int ans = 0;        for (i = 0; i < n; i++)            ans = max(ans, min(left[i], right[i]) * 2 - 1);        printf("%d\n", ans);    }    return 0;}
+```

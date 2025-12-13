@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10739 - String to Palindrome](/2014/07/UVa-10739/ "UVa 10739 - String to Palindrome")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 11 2014 12:49
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10739 - String to Palindrome](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1680)
@@ -35,6 +22,7 @@ Published Jul 11 2014 12:49
 
   2. s[i] != s[j]. 这时就要考虑到底是删除，插入还是替换。由于删除和插入所需要的操作步数以及影响是一致的，只需要考虑插入或者删除就行了。对于插入则dp[i][j] = min(dp[i+1][j], dp[i][j-1]) + 1;对于替换则有dp[i][j] = min(dp[i][j], dp[i+1][j-1] + 1)
 
+
 想了很久想不懂，只能先背下来了。
 
 ## 代码
@@ -42,13 +30,6 @@ Published Jul 11 2014 12:49
     
     1234567891011121314151617181920212223242526272829303132333435363738
 
-| 
-    
-    
-    #include <cstdio>#include <algorithm>#include <cstring>using namespace std;const int MAXN = 1100;char str[MAXN];int dp[MAXN][MAXN];int DFS(int x, int y){    int &ans = dp[x][y];    if (ans != -1)        return ans;    if (x > y)        return ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1);    else        ans = min(min(DFS(x, y - 1), DFS(x + 1, y)), DFS(x + 1, y - 1)) + 1;    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, cases = 0;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        int len = strlen(str);        DFS(0, len - 1);        printf("Case %d: %d\n", ++cases, dp[0][len - 1]);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)[Must Be Done Again](/tags/Must-Be-Done-Again/)
+| ```c++
+#include <cstdio>#include <algorithm>#include <cstring>using namespace std;const int MAXN = 1100;char str[MAXN];int dp[MAXN][MAXN];int DFS(int x, int y){    int &ans = dp[x][y];    if (ans != -1)        return ans;    if (x > y)        return ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1);    else        ans = min(min(DFS(x, y - 1), DFS(x + 1, y)), DFS(x + 1, y - 1)) + 1;    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, cases = 0;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        int len = strlen(str);        DFS(0, len - 1);        printf("Case %d: %d\n", ++cases, dp[0][len - 1]);    }    return 0;}
+```

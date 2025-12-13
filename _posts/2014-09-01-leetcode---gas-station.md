@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [LeetCode - Gas Station](/2014/09/leetcode-gas-station/ "LeetCode - Gas Station")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 14 2014 16:33
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 判断从哪个加油站开始可以走一圈。
@@ -35,13 +23,6 @@ Published Sep 14 2014 16:33
     
     1234567891011121314151617181920
 
-| 
-    
-    
-    class Solution {public:    int canCompleteCircuit(vector<int> &gas, vector<int> &cost)    {        int len = gas.size(), k;        for (int i = 0; i < gas.size(); i++) //枚举起点        {            int rem = 0, cnt = i;            for (k = 0; k < len; k++)            {                if (cnt + k == len) cnt = -k;                rem += gas[cnt + k];                if (rem < cost[cnt + k]) break;                rem -= cost[cnt + k];            }            if (k == len) return i;        }        return -1;    }};  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - LeetCode](/tags/Online-Judge-LeetCode/)
+| ```c++
+class Solution {public:    int canCompleteCircuit(vector<int> &gas, vector<int> &cost)    {        int len = gas.size(), k;        for (int i = 0; i < gas.size(); i++) //枚举起点        {            int rem = 0, cnt = i;            for (k = 0; k < len; k++)            {                if (cnt + k == len) cnt = -k;                rem += gas[cnt + k];                if (rem < cost[cnt + k]) break;                rem -= cost[cnt + k];            }            if (k == len) return i;        }        return -1;    }};
+```

@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 1339 - Ancient Cipher](/2014/09/UVa-1339/ "UVa 1339 - Ancient Cipher")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Sep 3 2014 15:50
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 1339 - Ancient Cipher](http://vjudge.net/problem/viewProblem.action?id=36142)
@@ -36,13 +23,6 @@ Published Sep 3 2014 15:50
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647
 
-| 
-    
-    
-    #include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))const int MAXN = 26 + 5;const int INF = 0x3f3f3f3f;using namespace std; int ori[MAXN], fn[MAXN];vector<int> oAns, fAns; int main(){    //freopen("input.txt", "r", stdin);    int i, j, n;    char str[110];    while (gets(str))    {        oAns.clear();        fAns.clear();        memset(ori, 0, sizeof ori);        memset(fn, 0, sizeof fn);        for (i = 0; str[i]; i++)            ori[str[i] - 'A']++;        gets(str);        for (i = 0; str[i]; i++)            fn[str[i] - 'A']++;        for (i = 0; i < 27; i++)        {            if (ori[i]) oAns.push_back(ori[i]);            if (fn[i]) fAns.push_back(fn[i]);        }        sort(oAns.begin(), oAns.end());        sort(fAns.begin(), fAns.end());        if (oAns.size() != fAns.size())        {            printf("NO\n");            continue;        }        for (i = 0; i < oAns.size(); i++)        {            if (oAns[i] != fAns[i])                break;        }        printf("%s\n", i == oAns.size() ? "YES" : "NO");    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>#define LL long long#define lowbit(x) ((x) & (-x))const int MAXN = 26 + 5;const int INF = 0x3f3f3f3f;using namespace std; int ori[MAXN], fn[MAXN];vector<int> oAns, fAns; int main(){    //freopen("input.txt", "r", stdin);    int i, j, n;    char str[110];    while (gets(str))    {        oAns.clear();        fAns.clear();        memset(ori, 0, sizeof ori);        memset(fn, 0, sizeof fn);        for (i = 0; str[i]; i++)            ori[str[i] - 'A']++;        gets(str);        for (i = 0; str[i]; i++)            fn[str[i] - 'A']++;        for (i = 0; i < 27; i++)        {            if (ori[i]) oAns.push_back(ori[i]);            if (fn[i]) fAns.push_back(fn[i]);        }        sort(oAns.begin(), oAns.end());        sort(fAns.begin(), fAns.end());        if (oAns.size() != fAns.size())        {            printf("NO\n");            continue;        }        for (i = 0; i < oAns.size(); i++)        {            if (oAns[i] != fAns[i])                break;        }        printf("%s\n", i == oAns.size() ? "YES" : "NO");    }    return 0;}
+```

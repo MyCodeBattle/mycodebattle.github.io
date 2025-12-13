@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 11151 - Longest Palindrome](/2014/07/UVa-11151/ "UVa 11151 - Longest Palindrome")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 14 2014 18:46
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 11151 - Longest Palindrome](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=114&problem=2092&mosmsg=Submission+received+with+ID+13881450)
@@ -45,13 +32,6 @@ min(dp[i + 1][j], dp[i][j - 1]) + 1, & \text{if $str[i] != str[j]$} \\\
     
     123456789101112131415161718192021222324252627282930313233343536373839404142
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;const int MAXN = 1000 + 10;int dp[MAXN][MAXN];char str[MAXN];int DFS(int x, int y){    int &ans = dp[x][y];    if (x > y)        return ans = 0;    if (ans != -1)        return ans;    ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1);    else        ans = min(DFS(x + 1, y), DFS(x, y - 1)) + 1;    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, len;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        len = strlen(str);        if (len == 0)        {            printf("0\n");            continue;        }        int temp = DFS(0, len - 1);        printf("%d\n", len - temp);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;const int MAXN = 1000 + 10;int dp[MAXN][MAXN];char str[MAXN];int DFS(int x, int y){    int &ans = dp[x][y];    if (x > y)        return ans = 0;    if (ans != -1)        return ans;    ans = 0;    if (str[x] == str[y])        ans = DFS(x + 1, y - 1);    else        ans = min(DFS(x + 1, y), DFS(x, y - 1)) + 1;    return ans;}int main(){    //freopen("input.txt", "r", stdin);    int T, i, j, len;    scanf("%d%*c", &T);    while (T--)    {        memset(dp, -1, sizeof dp);        gets(str);        len = strlen(str);        if (len == 0)        {            printf("0\n");            continue;        }        int temp = DFS(0, len - 1);        printf("%d\n", len - temp);    }    return 0;}
+```

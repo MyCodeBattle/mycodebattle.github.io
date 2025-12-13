@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 10154 - Weights and Measures](/2014/07/UVa-10154/ "UVa 10154 - Weights and Measures")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jul 12 2014 15:01
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 10154 - Weights and Measures](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=114&problem=1095&mosmsg=Submission+received+with+ID+13870908)
@@ -49,13 +36,6 @@ Published Jul 12 2014 15:01
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647
 
-| 
-    
-    
-    #include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int INF = 0x3f3f3f3f;const int MAXN = 6000; struct TURTLE{    int w, s;    bool operator < (const TURTLE &a) const    {        return s < a.s;    }}; int dp[MAXN][MAXN];TURTLE tur[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int i, j, n = 1, a, b;    while (~scanf("%d%d", &tur[n].w, &tur[n].s))        n++;    n--;    sort(tur + 1, tur + 1 + n);    for (i = 0; i <= n; i++)        for (j = 1; j <= n; j++)            dp[i][j] = INF;    for (i = 0; i <= n; i++)        dp[i][0] = 0;    for (i = 1; i <= n; i++)        for (j = 1; j <= i; j++)        {            dp[i][j] = dp[i - 1][j];            if (dp[i - 1][j - 1] + tur[i].w <= tur[i].s && dp[i - 1][j - 1] != INF)                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + tur[i].w);        }        for (i = n; i; i--)            if (dp[n][i] != INF)            {                printf("%d\n", i);                break;            }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Dynamic Programming](/tags/Dynamic-Programming/)[Online Judge - UVa](/tags/Online-Judge-UVa/)[Must Be Done Again](/tags/Must-Be-Done-Again/)
+| ```c++
+#include <cstdio>#include <cstring>#include <algorithm>using namespace std;const int INF = 0x3f3f3f3f;const int MAXN = 6000; struct TURTLE{    int w, s;    bool operator < (const TURTLE &a) const    {        return s < a.s;    }}; int dp[MAXN][MAXN];TURTLE tur[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int i, j, n = 1, a, b;    while (~scanf("%d%d", &tur[n].w, &tur[n].s))        n++;    n--;    sort(tur + 1, tur + 1 + n);    for (i = 0; i <= n; i++)        for (j = 1; j <= n; j++)            dp[i][j] = INF;    for (i = 0; i <= n; i++)        dp[i][0] = 0;    for (i = 1; i <= n; i++)        for (j = 1; j <= i; j++)        {            dp[i][j] = dp[i - 1][j];            if (dp[i - 1][j - 1] + tur[i].w <= tur[i].s && dp[i - 1][j - 1] != INF)                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + tur[i].w);        }        for (i = n; i; i--)            if (dp[n][i] != INF)            {                printf("%d\n", i);                break;            }    return 0;}
+```

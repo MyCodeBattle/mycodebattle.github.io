@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [TopCoder SRM 649 Div2 Problem 1000 - XorSequenceEasy (思维)](/2015/02/topcoder-srm-649-div2-1000/ "TopCoder SRM 649 Div2 Problem 1000 - XorSequenceEasy \(思维\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Feb 17 2015 17:58
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 给一串序列，现在要求选一个B，让序列的每一个数都异或B。
@@ -41,13 +29,6 @@ $7(0111)_2, 5(0101)_2$
     
     12345678910111213141516171819202122232425
 
-| 
-    
-    
-    class XorSequenceEasy {public:    int Check(const vector<int> &arr)    {        int cnt = 0;        for (int i = 0; i < SZ(arr); i++)            for (int j = i+1; j < SZ(arr); j++)                if (arr[i] < arr[j]) cnt++;        return cnt;    }     int getmax(vector<int> A, int N) {        int maxNum = 0, ori = Check(A), ans;        for (int i = 0; i < 30; i++)        {            int tmp = (1<<i);            //if ((ans|tmp) > N) break;            vector<int> B;            for (int j = 0; j < SZ(A); j++) B.PB(A[j]^tmp);            int comp = Check(B);            maxNum += max(0, comp - ori);        }        return maxNum + ori;    }};  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - TopCoder](/tags/Online-Judge-TopCoder/)[Foundation - Jizhi](/tags/Foundation-Jizhi/)
+| ```c++
+class XorSequenceEasy {public:    int Check(const vector<int> &arr)    {        int cnt = 0;        for (int i = 0; i < SZ(arr); i++)            for (int j = i+1; j < SZ(arr); j++)                if (arr[i] < arr[j]) cnt++;        return cnt;    }     int getmax(vector<int> A, int N) {        int maxNum = 0, ori = Check(A), ans;        for (int i = 0; i < 30; i++)        {            int tmp = (1<<i);            //if ((ans|tmp) > N) break;            vector<int> B;            for (int j = 0; j < SZ(A); j++) B.PB(A[j]^tmp);            int comp = Check(B);            maxNum += max(0, comp - ori);        }        return maxNum + ori;    }};
+```

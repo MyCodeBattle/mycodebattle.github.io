@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [Codeforces 508C - Anya and Ghosts (模拟 + 贪心)](/2015/01/codeforces-508c/ "Codeforces 508C - Anya and Ghosts \(模拟 + 贪心\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Jan 28 2015 9:49
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 Anya因为很喜欢看鬼片，所以鬼要来她家做客。
@@ -47,13 +35,6 @@ Anya点亮一根蜡烛要一秒，每根蜡烛持续m秒
     
     12345678910111213141516171819202122232425262728293031
 
-| 
-    
-    
-    priority_queue<int, vector<int>, greater<int> >Q; int main(){    //ROP;    int n, last, least;    scanf("%d%d%d", &n, &last, &least);    if (last < least)    {        puts("-1");        return 0;    }    int fir, ans = 0;    for (int i = 0; i < n; i++)    {        int tme;        scanf("%d", &tme);        while (!Q.empty() && Q.top() < tme) Q.pop();        if (SZ(Q) < least)        {            int tmp = SZ(Q);            for (int j = tme - 1, cnt = 0; cnt < least - tmp; cnt++, j--)            {                Q.push(j + last);                ans++;            }        }    }    printf("%d\n", ans);    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - Codeforces](/tags/Online-Judge-Codeforces/)[Foundation - Simulate](/tags/Foundation-Simulate/)
+| ```c++
+priority_queue<int, vector<int>, greater<int> >Q; int main(){    //ROP;    int n, last, least;    scanf("%d%d%d", &n, &last, &least);    if (last < least)    {        puts("-1");        return 0;    }    int fir, ans = 0;    for (int i = 0; i < n; i++)    {        int tme;        scanf("%d", &tme);        while (!Q.empty() && Q.top() < tme) Q.pop();        if (SZ(Q) < least)        {            int tmp = SZ(Q);            for (int j = tme - 1, cnt = 0; cnt < least - tmp; cnt++, j--)            {                Q.push(j + last);                ans++;            }        }    }    printf("%d\n", ans);    return 0;}
+```

@@ -6,19 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [UVa 11729 - Commando War](/2014/08/UVa-11729/ "UVa 11729 - Commando War")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 20 2014 11:09
-
-**Contents**
-
-  1. 1. 传送门
-  2. 2. 题意
-  3. 3. 思路
-  4. 4. 代码
-
 ## 传送门
 
 [UVa 11729 - Commando War](http://vjudge.net/vjudge/problem/viewProblem.action?id=28436)
@@ -36,13 +23,6 @@ Published Aug 20 2014 11:09
     
     1234567891011121314151617181920212223242526272829303132333435
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long long#define MP(a, b) make_pair(a, b)const int MAXN = 1000 + 10;const int INF = 0x3f3f3f3f; struct P{    int b, j;    bool operator < (const P &a) const    {        return j > a.j;    }}pp[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, i, j, cases = 0;    while (scanf("%d", &n), n)    {        for (i = 0; i < n; i++)            scanf("%d%d", &pp[i].b, &pp[i].j);        sort(pp, pp + n);        int ans = 0, vt = 0;        for (i = 0; i < n; i++)        {            vt += pp[i].b;            ans = max(ans, vt + pp[i].j);        }        printf("Case %d: %d\n", ++cases, ans);    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Foundation - Greedy](/tags/Foundation-Greedy/)[Online Judge - UVa](/tags/Online-Judge-UVa/)
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long long#define MP(a, b) make_pair(a, b)const int MAXN = 1000 + 10;const int INF = 0x3f3f3f3f; struct P{    int b, j;    bool operator < (const P &a) const    {        return j > a.j;    }}pp[MAXN]; int main(){    //freopen("input.txt", "r", stdin);    int n, i, j, cases = 0;    while (scanf("%d", &n), n)    {        for (i = 0; i < n; i++)            scanf("%d%d", &pp[i].b, &pp[i].j);        sort(pp, pp + n);        int ans = 0, vt = 0;        for (i = 0; i < n; i++)        {            vt += pp[i].b;            ans = max(ans, vt + pp[i].j);        }        printf("Case %d: %d\n", ++cases, ans);    }    return 0;}
+```

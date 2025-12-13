@@ -6,18 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [HDU 3496 - Watch The Movie (二维背包)](/2015/03/HDU-3496/ "HDU 3496 - Watch The Movie \(二维背包\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Mar 6 2015 14:42
-
-**Contents**
-
-  1. 1. 题意
-  2. 2. 思路
-  3. 3. 代码
-
 ## 题意
 
 小明看电影有限制，最多选m部，看l分钟长。问在此前提下他能获得的最大满意值。
@@ -31,13 +19,6 @@ Published Mar 6 2015 14:42
     
     123456789101112131415161718192021222324
 
-| 
-    
-    
-    int dp[110][1100];pii arr[MAXN]; int main(){    //ROP;    int T;    scanf("%d", &T);    while (T--)    {        int n, m, l;        scanf("%d%d%d", &n, &m, &l);        for (int i = 0; i <= m; i++)            for (int j = 0; j <= l; j++)                dp[i][j] = (i == 0 ? 0 : -INF);        for (int i = 1; i <= n; i++) scanf("%d%d", &arr[i].X, &arr[i].Y);        for (int i = 1; i <= n; i++)            for (int j = m; j >= 1; j--)                for (int k = l; k >= arr[i].X; k--)                    dp[j][k] = max(dp[j][k], dp[j-1][k-arr[i].X] + arr[i].Y);        printf("%d\n", max(0, dp[m][l]));    }    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - HDU](/tags/Online-Judge-HDU/)[DP - 背包](/tags/DP-背包/)
+| ```c++
+int dp[110][1100];pii arr[MAXN]; int main(){    //ROP;    int T;    scanf("%d", &T);    while (T--)    {        int n, m, l;        scanf("%d%d%d", &n, &m, &l);        for (int i = 0; i <= m; i++)            for (int j = 0; j <= l; j++)                dp[i][j] = (i == 0 ? 0 : -INF);        for (int i = 1; i <= n; i++) scanf("%d%d", &arr[i].X, &arr[i].Y);        for (int i = 1; i <= n; i++)            for (int j = m; j >= 1; j--)                for (int k = l; k >= arr[i].X; k--)                    dp[j][k] = max(dp[j][k], dp[j-1][k-arr[i].X] + arr[i].Y);        printf("%d\n", max(0, dp[m][l]));    }    return 0;}
+```

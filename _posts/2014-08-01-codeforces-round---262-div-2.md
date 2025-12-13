@@ -6,24 +6,6 @@ tags: []
 layout: post
 ---
 
-#  [Codeforces Round - 262 (Div. 2)](/2014/08/Codeforces-Round-262/ "Codeforces Round - 262 \(Div. 2\)")
-
-By [MyCodeBattle](http://mycodebattle.gitcafe.io/about "MyCodeBattle")
-
-Published Aug 21 2014 9:49
-
-**Contents**
-
-  1. 1. A - Vasya and Socks
-    1. 1.1. 思路
-    2. 1.2. 代码
-  2. 2. B - Little Dima and Equation
-    1. 2.1. 代码
-  3. 3. C - Present
-    1. 3.1. 题意
-    2. 3.2. 思路
-    3. 3.3. 代码
-
 ## A - Vasya and Socks
 
 ### 思路
@@ -37,13 +19,10 @@ Published Aug 21 2014 9:49
     
     1234567891011121314151617181920212223
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long long#define MP(a, b) make_pair(a, b)const int MAXN = 1e5 + 10;const int INF = 0x3f3f3f3f; int main(){    //freopen("input.txt", "r", stdin);    int n, m, i, j, cnt = 0;    scanf("%d%d", &n, &m);    int res = n;    while (res > 0)    {        cnt++;        if (cnt % m == 0)            res++;        res--;    }    printf("%d\n", cnt);    return 0;}  
-  
----|---  
-  
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long long#define MP(a, b) make_pair(a, b)const int MAXN = 1e5 + 10;const int INF = 0x3f3f3f3f; int main(){    //freopen("input.txt", "r", stdin);    int n, m, i, j, cnt = 0;    scanf("%d%d", &n, &m);    int res = n;    while (res > 0)    {        cnt++;        if (cnt % m == 0)            res++;        res--;    }    printf("%d\n", cnt);    return 0;}
+```  
+
 ## B - Little Dima and Equation
 
 枚举每个数显然是不现实的，所以要枚举s(x)，范围只有1 ~ 81，然后验证一下位数之和是不是s(x)  
@@ -56,13 +35,10 @@ Published Aug 21 2014 9:49
     
     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647
 
-| 
-    
-    
-    #include <bits/stdc++.h>using namespace std;#define LL long long#define MP(a, b) make_pair(a, b)const int MAXN = 1e5 + 10;const int INF = 0x3f3f3f3f; vector<LL> ve; int Get(LL v){    if (v < 0 || v >= 1e9)        return -1;    int ans = 0;    while (v)    {        ans += v % 10;        v /= 10;    }    return ans;} int main(){    //freopen("input.txt", "r", stdin);    LL a, b, c;    LL i;    int ans = 0;    scanf("%I64d%I64d%I64d", &a, &b, &c);    for (i = 1; i <= 81; i++)    {        LL k = 1;        for (int l = 0; l < a; l++)            k *= i;        LL t = b * k + c;        if (Get(t) == i)        {            ans++;            ve.push_back(t);        }    }    sort(ve.begin(), ve.end());    printf("%d\n", ans);    for (i = 0; i < ve.size(); i++)        i != ve.size() - 1 ? printf("%I64d ", ve[i]) : printf("%I64d\n", ve[i]);    return 0;}  
-  
----|---  
-  
+| ```c++
+#include <bits/stdc++.h>using namespace std;#define LL long long#define MP(a, b) make_pair(a, b)const int MAXN = 1e5 + 10;const int INF = 0x3f3f3f3f; vector<LL> ve; int Get(LL v){    if (v < 0 || v >= 1e9)        return -1;    int ans = 0;    while (v)    {        ans += v % 10;        v /= 10;    }    return ans;} int main(){    //freopen("input.txt", "r", stdin);    LL a, b, c;    LL i;    int ans = 0;    scanf("%I64d%I64d%I64d", &a, &b, &c);    for (i = 1; i <= 81; i++)    {        LL k = 1;        for (int l = 0; l < a; l++)            k *= i;        LL t = b * k + c;        if (Get(t) == i)        {            ans++;            ve.push_back(t);        }    }    sort(ve.begin(), ve.end());    printf("%d\n", ans);    for (i = 0; i < ve.size(); i++)        i != ve.size() - 1 ? printf("%I64d ", ve[i]) : printf("%I64d\n", ve[i]);    return 0;}
+```  
+
 ## C - Present
 
 ### 题意
@@ -83,13 +59,6 @@ Published Aug 21 2014 9:49
     
     12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061
 
-| 
-    
-    
-    #include <cstdio>#include <algorithm>#include <cstring>using namespace std;const int MAXN = 1e5 + 10;const int INF = 0x3f3f3f3f; int flw[MAXN], hmax = -1, hmin = INF, temp[MAXN], w, m, n; bool Check(int mid){    int cnt = 0, add = 0;    memset(temp, 0, sizeof temp);    for (int i = 0; i < n; i++)    {        if (i >= w)            add -= temp[i - w];        if (add + flw[i] < mid)        {            temp[i] = mid - (add + flw[i]);            add += temp[i];            cnt += temp[i];            if (cnt > m)                return false;        }    }    return true;} int Solve(){    int l = hmin, r = hmax, mid, ans;    while (l <= r)    {        mid = l + (r - l) / 2;        if (Check(mid))        {            ans = mid;            l = mid + 1;        }        else            r = mid - 1;    }    return ans;} int main(){    //freopen("input.txt", "r", stdin);    int i, j;    scanf("%d%d%d", &n, &m, &w);    for (i = 0; i < n; i++)    {        scanf("%d", &flw[i]);        hmax = max(hmax, flw[i]);        hmin = min(hmin, flw[i]);    }    hmax += m;    printf("%d\n", Solve());    return 0;}  
-  
----|---  
-  
-[Solving Reports](/categories/Solving-Reports/)
-
-[Online Judge - Codeforces](/tags/Online-Judge-Codeforces/)
+| ```c++
+#include <cstdio>#include <algorithm>#include <cstring>using namespace std;const int MAXN = 1e5 + 10;const int INF = 0x3f3f3f3f; int flw[MAXN], hmax = -1, hmin = INF, temp[MAXN], w, m, n; bool Check(int mid){    int cnt = 0, add = 0;    memset(temp, 0, sizeof temp);    for (int i = 0; i < n; i++)    {        if (i >= w)            add -= temp[i - w];        if (add + flw[i] < mid)        {            temp[i] = mid - (add + flw[i]);            add += temp[i];            cnt += temp[i];            if (cnt > m)                return false;        }    }    return true;} int Solve(){    int l = hmin, r = hmax, mid, ans;    while (l <= r)    {        mid = l + (r - l) / 2;        if (Check(mid))        {            ans = mid;            l = mid + 1;        }        else            r = mid - 1;    }    return ans;} int main(){    //freopen("input.txt", "r", stdin);    int i, j;    scanf("%d%d%d", &n, &m, &w);    for (i = 0; i < n; i++)    {        scanf("%d", &flw[i]);        hmax = max(hmax, flw[i]);        hmin = min(hmin, flw[i]);    }    hmax += m;    printf("%d\n", Solve());    return 0;}
+```

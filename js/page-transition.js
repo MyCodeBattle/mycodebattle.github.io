@@ -1,16 +1,46 @@
 // 页面过渡动画处理
 (function() {
-  // 页面加载完成后添加进入动画
-  document.addEventListener('DOMContentLoaded', function() {
-    // 为内容区域添加过渡动画类
+  // 为内容区域添加过渡动画类
+  function addTransitionClass() {
     const mainContent = document.querySelector('.main');
     if (mainContent) {
-      mainContent.classList.add('page-transition', 'page-enter');
+      mainContent.classList.add('page-transition');
+    }
+  }
+
+  // 页面进入动画
+  function playEnterAnimation() {
+    const mainContent = document.querySelector('.main');
+    if (mainContent) {
+      // 重置状态
+      mainContent.classList.remove('page-exit', 'page-enter');
       
-      // 添加页面进入动画
+      // 触发重排
+      mainContent.offsetHeight;
+      
+      // 添加进入动画
+      mainContent.classList.add('page-enter');
+      
       setTimeout(() => {
         mainContent.classList.remove('page-enter');
       }, 300);
+    }
+  }
+
+  // 页面加载完成后初始化
+  function initPage() {
+    addTransitionClass();
+    playEnterAnimation();
+  }
+
+  // 页面加载完成后添加进入动画
+  document.addEventListener('DOMContentLoaded', initPage);
+
+  // 监听页面显示事件（包括从缓存中加载）
+  window.addEventListener('pageshow', function(e) {
+    // 检查是否是从缓存中加载的页面
+    if (e.persisted) {
+      initPage();
     }
   });
 
@@ -37,6 +67,7 @@
         
         // 动画结束后跳转页面
         setTimeout(() => {
+          // 使用location.replace()避免在历史记录中添加重复条目
           window.location.href = href;
         }, 300);
       } else {
@@ -48,13 +79,9 @@
 
   // 监听浏览器前进/后退按钮事件
   window.addEventListener('popstate', function() {
-    const mainContent = document.querySelector('.main');
-    if (mainContent) {
-      mainContent.classList.add('page-enter');
-      
-      setTimeout(() => {
-        mainContent.classList.remove('page-enter');
-      }, 300);
-    }
+    // 延迟执行，确保页面内容已经更新
+    setTimeout(() => {
+      playEnterAnimation();
+    }, 10);
   });
 })();

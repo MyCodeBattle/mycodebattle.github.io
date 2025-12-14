@@ -627,3 +627,64 @@ tr:hover {
     float: none;
   }
 }
+
+/* 页面过渡动画 */
+.page-transition {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition.exit {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.page-transition.enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* 确保动画在所有浏览器中正常工作 */
+.page-transition {
+  -webkit-transition: opacity 0.3s ease, transform 0.3s ease;
+  -moz-transition: opacity 0.3s ease, transform 0.3s ease;
+  -o-transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 页面内容容器 */
+.main-content {
+  transition: all 0.3s ease;
+  will-change: opacity, transform;
+}
+
+/* 页面加载动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.page-enter {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.page-exit {
+  animation: fadeOut 0.3s ease forwards;
+}

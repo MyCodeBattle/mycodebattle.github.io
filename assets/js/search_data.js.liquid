@@ -1,0 +1,13 @@
+/* eslint-disable */
+/* jshint ignore:start */
+// 预加载所有文章数据
+const searchPosts = [
+    {% for post in site.posts %}
+    {
+        "title": "{{ post.title | escape }}",
+        "url": "{{ site.url }}{{ post.url }}",
+        "date": "{{ post.date | date: '%b %d, %Y' }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+];
+/* jshint ignore:end */

@@ -231,6 +231,16 @@ div.detail {
   margin-left: 28%;
 }
 
+div.detail a {
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center left;
+}
+
+div.detail a:hover {
+  transform: scale(1.1);
+}
+
 div.date { 
   padding-top: 1px;
   float: left; 

@@ -17,7 +17,7 @@ div.main {
   width: 900px;
   max-width: 100%;
   line-height: 150%;
-  border: 1px solid LightGrey;
+  border: 1px solid #4A90E2;
 }
 
 H1, H2, H3, H4 {
@@ -388,7 +388,7 @@ table {
 
 th {
   padding: 0.375em 0.8125em;
-  border: 1px solid #ddd;
+  border: 1px solid #4A90E2;
   font-weight: bold;
   background-color: #f5f8fa;
   transition: all 0.3s ease;
@@ -400,7 +400,7 @@ th:hover {
 
 td {
   padding: 0.375em 0.8125em;
-  border: 1px solid #ddd;
+  border: 1px solid #4A90E2;
   transition: all 0.3s ease;
 }
 
@@ -628,63 +628,88 @@ tr:hover {
   }
 }
 
-/* 页面过渡动画 */
-.page-transition {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-transition.exit {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.page-transition.enter {
-  opacity: 0;
-  transform: translateY(20px);
-}
+/* 页面过渡动画 - 统一的进入和退出效果 */
 
 /* 确保动画在所有浏览器中正常工作 */
-.page-transition {
-  -webkit-transition: opacity 0.3s ease, transform 0.3s ease;
-  -moz-transition: opacity 0.3s ease, transform 0.3s ease;
-  -o-transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* 页面内容容器 */
-.main-content {
-  transition: all 0.3s ease;
-  will-change: opacity, transform;
-}
-
-/* 页面加载动画 */
-@keyframes fadeIn {
-  from {
+@-webkit-keyframes fadeIn {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15px);
   }
 }
 
 @keyframes fadeOut {
-  from {
+  0% {
     opacity: 1;
     transform: translateY(0);
   }
-  to {
+  100% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-15px);
   }
 }
 
+/* 统一的动画设置：相同的持续时间和缓动函数 */
 .page-enter {
-  animation: fadeIn 0.3s ease forwards;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  will-change: opacity, transform;
 }
 
 .page-exit {
-  animation: fadeOut 0.3s ease forwards;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  will-change: opacity, transform;
+}
+
+/* 页面进入动画 */
+.page-enter {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* 页面退出动画 */
+.page-exit {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+/* 确保内容初始状态正确 */
+.main {
+  opacity: 1;
+  transform: translateY(0);
 }

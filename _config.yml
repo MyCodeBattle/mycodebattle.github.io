@@ -10,7 +10,7 @@ author: Catsith
 # ---------------- #
 #   RSS / Email    #
 # ---------------- #
-subscribe_rss: /feed.xml
+# subscribe_rss: /feed.xml
 email:
 
 # ---------------- #
@@ -24,7 +24,7 @@ permalink: /:year/:month/:day/:title/
 plugins:
     - jekyll-paginate
     - jekyll-sitemap
-    - jekyll-feed
+    # - jekyll-feed
     # - jemoji
 collections:
     wiki:

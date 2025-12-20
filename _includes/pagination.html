@@ -67,7 +67,7 @@
         {% if count == current_page %}
         <span class="current-page">{{ count }}</span>
         {% else %}
-        <a href="{{ site.url }}/page{{ count }}">{{ count }}</a>
+        <a href="{{ site.url }}{% if count == 1 %}/{% else %}/page{{ count }}{% endif %}">{{ count }}</a>
         {% endif %}
       {% endfor %}
       

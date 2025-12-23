@@ -708,8 +708,14 @@ tr:hover {
   animation-name: fadeOut;
 }
 
-/* 确保内容初始状态正确 */
+/* 初始状态透明，等待JS添加动画类后淡入，避免闪烁 */
 .main {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+/* 动画结束后的最终状态 */
+.main.page-enter-done {
   opacity: 1;
   transform: translateY(0);
 }

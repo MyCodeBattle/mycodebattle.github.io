@@ -56,6 +56,7 @@
     animationEndListener = (e) => {
       if (e.animationName === 'fadeIn') {
         mainContent.classList.remove('page-enter');
+        mainContent.classList.add('page-enter-done');
         animationEndListener = null;
       }
     };
@@ -65,6 +66,7 @@
     // 添加超时保护，防止动画结束事件不触发
     navigationTimeout = setTimeout(() => {
       mainContent.classList.remove('page-enter');
+      mainContent.classList.add('page-enter-done');
       if (animationEndListener) {
         mainContent.removeEventListener('animationend', animationEndListener);
         animationEndListener = null;
@@ -137,6 +139,10 @@
   window.addEventListener('pageshow', (e) => {
     // 从缓存加载的页面需要重新播放动画
     if (e.persisted) {
+      const mainContent = getMainContent();
+      if (mainContent) {
+        mainContent.classList.remove('page-enter-done');
+      }
       // 重置动画标记，允许重新播放
       hasPlayedEnterAnimation = false;
       initEnterAnimation();
@@ -151,9 +157,13 @@
     // 清理任何待处理的导航
     cleanupAnimation();
     isPlayingExitAnimation = false;
-    
+
     // 延迟执行，确保页面内容已经更新
     setTimeout(() => {
+      const mainContent = getMainContent();
+      if (mainContent) {
+        mainContent.classList.remove('page-enter-done');
+      }
       // 重置动画标记，允许重新播放
       hasPlayedEnterAnimation = false;
       initEnterAnimation();

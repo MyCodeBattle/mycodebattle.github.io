@@ -11,13 +11,20 @@ div.container {
   width: 90%;
 }
 
-div.main {
+div.main-border {
   margin: auto;
   padding: 2% 5% 5% 5%;
   width: 900px;
   max-width: 100%;
-  line-height: 150%;
   border: 1px solid #4A90E2;
+}
+
+div.main {
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  line-height: 150%;
 }
 
 H1, H2, H3, H4 {

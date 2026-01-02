@@ -5,3 +5,4 @@ _site/
 a
 *.DS_Store*
 *cache*
+/vendor/bundle

@@ -40,7 +40,7 @@ comments_provider: disqus
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: MyCodeBattle
+    username: purefrog
 # https://imsun.net/posts/gitment-introduction/
 
 # 在使用其它评论组件时可点击显示 Disqus

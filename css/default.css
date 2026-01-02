@@ -503,14 +503,20 @@ tr:hover {
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
-  color: #4A90E2;
   cursor: pointer;
-  font-size: 0.875em;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.search-icon:hover {
-  color: #357abd;
+.search-icon svg {
+  display: block;
+  transition: stroke 0.3s ease;
+}
+
+.search-icon:hover svg {
+  stroke: #357abd;
 }
 
 .search-results {

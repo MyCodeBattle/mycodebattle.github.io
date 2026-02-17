@@ -1,6 +1,10 @@
 /* modified from http://www.yinwang.org/main.css */
+:root {
+  --font-serif-main: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", "思源宋体", "Songti SC", "STSong", "SimSun", serif;
+}
+
 body {
-  font-family: "SimSun", "STSong", "宋体", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif-main);
   background-color: white;
   font-size: 110%;
 }
@@ -28,7 +32,7 @@ div.main {
 }
 
 H1, H2, H3, H4 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, SimSun, serif; 
+  font-family: var(--font-serif-main);
   width: 98%;
   color: #4A90E2;
 

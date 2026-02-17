@@ -8,6 +8,22 @@ div.main {
   border: none;
 }
 
+.article-content p,
+.article-content li,
+.article-content blockquote p,
+.article-content td,
+.article-content th {
+  font-size: 1.175rem;
+}
+
+.article-content p code,
+.article-content li code,
+.article-content td code,
+.article-content th code,
+.article-content blockquote code {
+  font-size: 0.85rem;
+}
+
 H1 {
   margin: 1.25em 0 0.625em;
   padding: 0.1em;

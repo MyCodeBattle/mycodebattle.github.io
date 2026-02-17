@@ -4,7 +4,9 @@
     <div class="main-border">
         <div class="main">
             <h2> {{ page.title }} </h2>
-            {{ content }}
+            <article class="article-content">
+                {{ content }}
+            </article>
             {% include comments.html %}
         </div>
     </div>

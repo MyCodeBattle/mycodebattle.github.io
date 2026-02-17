@@ -31,6 +31,23 @@ div.main {
   line-height: 150%;
 }
 
+.article-content p,
+.article-content li,
+.article-content blockquote p,
+.article-content td,
+.article-content th {
+  font-size: 1.225rem;
+  line-height: 1.7;
+}
+
+.article-content p code,
+.article-content li code,
+.article-content td code,
+.article-content th code,
+.article-content blockquote code {
+  font-size: 0.9rem;
+}
+
 H1, H2, H3, H4 {
   font-family: var(--font-serif-main);
   width: 98%;
